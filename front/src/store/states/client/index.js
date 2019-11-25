@@ -1,6 +1,6 @@
 import { DynamicState } from 'dynamic-redux';
 
-import { setLanguageMiddleware } from './middlewares';
+import { setLanguageMiddleware } from '../middlewares';
 
 // new : create an object's instance
 const clientState = new DynamicState('client', {
@@ -8,7 +8,7 @@ const clientState = new DynamicState('client', {
   language: '',
 }, {
   // strictTyping : is an option that will locks the type of values in the state
-  strictTyping: true,
+  strictTyping: !global.isProd,
 });
 
 // create actions for the state

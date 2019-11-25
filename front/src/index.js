@@ -4,14 +4,12 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import './i18n';
 import './assets/styles/index.scss';
+import App from './components/Globals/App';
 import * as serviceWorker from './serviceWorker';
 
-const Root = () => (
-  <>
-  </>
-);
+global.isProd = process.env.NODE_ENV === 'production';
 
-ReactDOM.render(<Root />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

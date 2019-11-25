@@ -90,3 +90,35 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 librairie css qui regroupe pleins de fonctionnalités pour le css
 
 `mediaport` execut css code depending on the screen resolution
+
+`production` when the app is online
+`developement` when you work on it
+
+`React.PureComponent` It's a component that will avoid the useless update
+
+```jsx
+import WithTrans from "../../Shared/WithTrans";
+
+export const myComponentTitle = () => (
+    // i18nKey is the path to the translation
+  <WithTrans i18nKey="mycomponent:title">
+    {/*Default translation*/ }
+    My title
+  </WithTrans>
+);
+
+// the component that uses this function needs to use withTranslation for react-i18next
+export const imgAltTranslation = t => t('mycomponent:img.alt');
+```
+```jsx
+import React from 'react';
+import { withTranslation } from 'react-i18next';
+
+import { imgAltTranslation } from './translations';
+
+const MyComponent = ({ t }) => (
+  <p>{imgAltTranslation(t)}</p>
+);
+
+export default withTranslation()(MyComponent);
+```
