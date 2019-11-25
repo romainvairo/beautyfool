@@ -122,3 +122,4 @@ const MyComponent = ({ t }) => (
 
 export default withTranslation()(MyComponent);
 ```
+`Material-UI` high-priority on tailWindCss (create own class)
