@@ -66,3 +66,27 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+# Commentary of project
+
+`Locale module` : is a module user that you've create yourself which not in npm documentation it's an personnal extension
+
+`Middleware` : a program that will be executed between the starting point and the end point
+
+`JS-doc` : anotations avec:
+```js
+/**
+* @type
+*/
+```
+
+`<React.Fragment>` == <></> : groups muttiple elements into one
+
+`globalComponents` are components that are used globally. example: (navbar, footer, header)
+`sharedComponents` are components that are used in several components. example: (input, loader)
+`pageComponents` are components that used for the pages of the website.
+
+`Library tailwindcss`: https://tailwindcss.com/
+librairie css qui regroupe pleins de fonctionnalités pour le css
+
+`mediaport` execut css code depending on the screen resolution
