@@ -56,7 +56,6 @@ const transformFields = (items, validationsArr, fieldsState, props, source) => {
       return;
     }
 
-    console.log(item.name, item.defaultValue)
     fieldsState[item.name] = item.defaultValue || '';
 
     const setPropertyFromLang = createSetPropertyFromLang(item, props.lang);
@@ -75,7 +74,6 @@ const transformFields = (items, validationsArr, fieldsState, props, source) => {
  * @param {Object} props caller's props
  * @param {Array} validationsArr array of validations
  * @param {Object} fieldsState state of the fields
- * @param {String?} lang
  * @returns {Array}
  */
 export const getFields = (props, validationsArr, fieldsState) => {

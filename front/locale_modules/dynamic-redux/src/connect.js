@@ -21,8 +21,8 @@ try {
 
 /**
  *
- * @param {String | Object | Function | undefined} mapper
- * @param {Function} dynamicMapper
+ * @param {String | Object | Function | undefined} map
+ * @param {Function} mapper
  * @returns {Function | undefined}
  */
 const getMap = (map, mapper) => {
