@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "cross-env NODE_ENV=development webpack",
-    "start": "cross-env NODE_ENV=development DEBUG=beautyfool:* nodemon dist"
+    "start": "cross-env NODE_ENV=development DEBUG=beautyfool:* nodemon ."
   },
   "author": "",
   "license": "ISC",
