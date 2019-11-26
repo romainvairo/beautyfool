@@ -1,2 +1,0 @@
-import './middlewares';
-import './router';

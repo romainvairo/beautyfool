@@ -1,0 +1,10 @@
+exports.actuality = require('./Actuality');
+exports.appointment = require('./Appointment');
+exports.beautyTip = require('./BeautyTip');
+exports.comment = require('./Comment');
+exports.feedback = require('./Feedback');
+exports.image = require('./Image');
+exports.question = require('./Question');
+exports.schedule = require('./Schedule');
+exports.service = require('./Service');
+exports.user = require('./User');

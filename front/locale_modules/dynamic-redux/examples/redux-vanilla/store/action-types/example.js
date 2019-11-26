@@ -1,1 +1,0 @@
-export const SET_MY_PROPERTY = 'SET_MY_PROPERTY';

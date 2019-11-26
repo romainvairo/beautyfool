@@ -27,32 +27,6 @@ css librairy which regroup several functionnalities in css
 
 `React.PureComponent` It's a component that will avoid the useless update
 
-```jsx
-import WithTrans from "../../Shared/WithTrans";
-
-export const myComponentTitle = () => (
-    // i18nKey is the path to the translation
-  <WithTrans i18nKey="mycomponent:title">
-    {/*Default translation*/ }
-    My title
-  </WithTrans>
-);
-
-// the component that uses this function needs to use withTranslation for react-i18next
-export const imgAltTranslation = t => t('mycomponent:img.alt');
-```
-```jsx
-import React from 'react';
-import { withTranslation } from 'react-i18next';
-
-import { imgAltTranslation } from './translations';
-
-const MyComponent = ({ t }) => (
-  <p>{imgAltTranslation(t)}</p>
-);
-
-export default withTranslation()(MyComponent);
-```
 `Material-UI` high-priority on tailWindCss (create own class)
 
 `querybuilder`: something to build a query more easily
@@ -65,16 +39,20 @@ User
 ```
 'FIND `user` LIMIT 5';
 ```
-`@prop({})`: is a function to put the property into database
-
-`@arrayProp({})` : is a function to put the array property into database
-
 `MongoDB`: is the database
 
 `Mongoose`: adds schemas and other features with mongoDB
 
-`Typegoose`: adds typescript's typing on mongoose
+`collection`: terme utiliser par mmongoDB pour dire table
 
-`ref`: reference in typegoose for an object
+`Schema`: creer un schema de structure pour la table
 
-`itemsRef`: items reference in typegoose for the items in array
+`modele` pour faire les requetes sur la table
+
+`module.exports` = export default
+
+`promise` The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
+
+`payload` the value of the action
+
+next()
