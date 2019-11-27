@@ -1,9 +1,16 @@
 import React from 'react';
-import { connect } from 'dynamic-redux';
+import { connect } from 'react-redux';
 
 import AppView from './App-view';
+import { setLanguage } from '../../../store/actions/client';
 
-const mapDispatchToProps = 'client: setLanguage';
+// function that have an argument dispatch
+const mapDispatchToProps = (dispatch) => ({
+
+  // function that dispatch the action `setLanguage` into the middlewares and reducers
+  setLanguage: value => dispatch(setLanguage(value))
+
+});
 
 // PureComponent avoid useless update
 class AppContainer extends React.PureComponent {
