@@ -7,6 +7,9 @@ const HomeView = ()  => (
   
   <section>
     <GalleryCarousel />
+    <div className='mostRecentNews'>
+    </div>
+
   </section>
 
 );
