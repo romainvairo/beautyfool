@@ -2,7 +2,7 @@ import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
-const GalleryCarouselView = ({ images })  => (
+const FeedbacksCarouselView = ({ images })  => (
   
   <section>
     <AliceCarousel>
@@ -14,4 +14,4 @@ const GalleryCarouselView = ({ images })  => (
 
 );
 
-export default GalleryCarouselView;
+export default FeedbacksCarouselView;

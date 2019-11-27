@@ -5,7 +5,7 @@ import {
 
 const initialState = {
   user : {},
-  language: '',
+  language: 'en',
 };
 
 const reducer = (state = initialState, action) => {
