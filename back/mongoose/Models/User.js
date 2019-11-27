@@ -65,7 +65,6 @@ const user = new mongoose.Schema({
   },
   phone: {
     type: String,
-    unique: true,
   },
   isEmailValid: {
     type: Boolean,

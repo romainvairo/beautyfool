@@ -21,13 +21,10 @@ const comment = new mongoose.Schema({
     required: true,
     ref: 'User',
   },
-  feedbacks: {
-    type: [{
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: 'Feedback',
-    }],
-    default: []
+  feedback: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'Feedback',
   }
 });
 

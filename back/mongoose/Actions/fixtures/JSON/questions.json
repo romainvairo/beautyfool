@@ -1,0 +1,34 @@
+[
+  {
+    "_id": "5dde879c8e27d4868c316fc7",
+    "question": "What is this shitty website for?",
+    "answer": "To bother you!",
+    "createdAt": "2019-11-27T14:26:36.036Z",
+    "updatedAt": "2019-11-27T14:26:36.036Z",
+    "__v": 0
+  },
+  {
+    "_id": "5dde879c8e27d4868c316fc8",
+    "question": "Who made this website",
+    "answer": "Your mom",
+    "createdAt": "2019-11-27T14:26:36.036Z",
+    "updatedAt": "2019-11-27T14:26:36.036Z",
+    "__v": 0
+  },
+  {
+    "_id": "5dde879c8e27d4868c316fc9",
+    "question": "Just a simple question",
+    "answer": "With a simple answer",
+    "createdAt": "2019-11-27T14:26:36.037Z",
+    "updatedAt": "2019-11-27T14:26:36.037Z",
+    "__v": 0
+  },
+  {
+    "_id": "5dde879c8e27d4868c316fca",
+    "question": "Why do you do when you don't do anything?",
+    "answer": "I don't do anything",
+    "createdAt": "2019-11-27T14:26:36.037Z",
+    "updatedAt": "2019-11-27T14:26:36.037Z",
+    "__v": 0
+  }
+]
