@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const user = new mongoose.Schema({
   createdAt: {
@@ -103,6 +104,18 @@ const user = new mongoose.Schema({
     default: [],
   }
 });
+
+user.methods.comparePassword = function (candidatePassword) {
+  return new Promise((resolve, reject) => {
+    bcrypt.compare(candidatePassword, this.password, (err, match) => {
+      if (err) {
+        return reject(err);
+      }
+
+      resolve(match);
+    });
+  });
+}
 
 const UserModel = mongoose.model('User', user);
 

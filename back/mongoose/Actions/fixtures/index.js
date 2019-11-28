@@ -1,6 +1,5 @@
 const fileWriter = require('./JSON/fileWriter');
 
-
 // write the fixtures' results into JSON files
 module.exports = async () => {
   await fileWriter('roles', require('./roles'));
