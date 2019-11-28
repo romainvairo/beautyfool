@@ -2,12 +2,17 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import Router from '../Router';
+import Header from '../Header';
+import Footer from '../Footer';
+import Navbar from '../Navbar';
 
 const AppView = () => (
   <BrowserRouter>
     <>
-      {/* <AsyncComponent name="Navbar" moduleProvider={Navbar} fallback={false} /> */}
+      <Header />
+      <Navbar />
       <Router />
+      <Footer />
     </>
   </BrowserRouter>
 );
