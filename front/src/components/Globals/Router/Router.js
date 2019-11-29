@@ -6,6 +6,7 @@ import Home from '../../Pages/Home';
 import PageNotFound from '../../Pages/PageNotFound';
 // user routes
 import Login from '../../Pages/Login';
+import Signup from '../../Pages/Signup';
 // admin routes
 import Admin from '../../Pages/Admin';
 import AdminActualities from '../../Pages/Admin/Actualities';
@@ -59,6 +60,8 @@ const Router = () => (
 
     {/* user routes */}
     <Route exact path={['/login', '/connexion']} component={Login} />
+    <Route exact path={['/signup', '/inscription']} component={Signup} />
+
 
     {/* admin routes */}
     <Route exact path="/admin" component={Admin} />
