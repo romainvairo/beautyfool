@@ -1,0 +1,38 @@
+{
+  "calendar": {
+    "content": "Calendrier des rendez-vous",
+    "link": "/admin/calendrier"
+  },
+  "services": {
+    "content": "Prestations",
+    "link": "/admin/prestations"
+  },
+  "actualities": {
+    "content": "Actualités",
+    "link": "/admin/actualites"
+  },
+  "users": {
+    "content": "Utilisateurs",
+    "link": "/admin/utilisateurs"
+  },
+  "feedbacks": {
+    "content": "Avis",
+    "link": "/admin/avis"
+  },
+  "comments": {
+    "content": "Commentaires",
+    "link": "/admin/commentaires"
+  },
+  "gallery": {
+    "content": "Galerie",
+    "link": "/admin/galerie"
+  },
+  "beautyTips": {
+    "content": "Astuces beauté",
+    "link": "/admin/astuces-beaute"
+  },
+  "newsletter": {
+    "content": "Newsletter",
+    "link": "/admin/newsletter"
+  }
+}

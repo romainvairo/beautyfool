@@ -1,0 +1,7 @@
+{
+  "email": "Email",
+  "password": "Password",
+  "forgottenPassword": "Forgotten password",
+  "submitButton": "Login",
+  "signup": "Signup"
+}

@@ -17,6 +17,51 @@ export class Auth {
   static secretKey = 'beautyfoolSecretKey';
 
   /**
+   * get the user from the store
+   * @returns {Object}
+   */
+  static getUser = () => store.getState().clientReducer.user || {};
+
+  /**
+   * get whether the user is logged
+   * @returns {Boolean}
+   */
+  static isLogged = () => Auth.getUser().logged;
+
+  /**
+   * get the roles from the user
+   * @param {Object} user
+   * @param {Object[]} user.roles
+   * @param {String} user.roles[].name
+   * @returns {String[]}
+   */
+  static getUserRoles = user => {
+    user.roles = user.roles || [];
+    return user.roles.map(role => role.name);
+  }
+
+  /**
+   * get whether the user has the given `role`
+   * @param {String} role
+   * @returns {Boolean}
+   */
+  static hasRole = role => {
+    return Auth.getUser().roles.includes(role);
+  }
+
+  /**
+   * get if the user is a user
+   * @returns {Boolean}
+   */
+  static isUser = () => Auth.hasRole('user');
+
+  /**
+   * get if the user is an admin
+   * @returns {Boolean}
+   */
+  static isAdmin = () => Auth.hasRole('admin');
+
+  /**
    * save the user data into the store and encrypt into a cookie for on day
    * @param {Object} user
    */
@@ -39,22 +84,22 @@ export class Auth {
   /**
    * JSdoc
    * encrypts datas
-   * @param {Any} data
+   * @param {*} data
    * @returns {String}
    */
   static encrypt = data => {
     return CryptoJs.AES.encrypt(JSON.stringify(data), Auth.secretKey);
   }
-  
+
   /**
    * decrypts data
-   * @param {Any} data
-   * @returns {Any}
+   * @param {*} data
+   * @returns {*}
    */
   static decrypt = data => {
     if (!data) {
       return;
-    }   
+    }
 
     const bytes = CryptoJs.AES.decrypt(data.toString(), Auth.secretKey);
     return JSON.parse(bytes.toString(CryptoJs.enc.Utf8));
@@ -70,7 +115,7 @@ export class Auth {
     }
 
     if (user) {
-      Auth.saveUser(user); 
+      Auth.saveUser(user);
     }
   }
 
@@ -83,7 +128,15 @@ export class Auth {
       Auth.saveUser(user);
     }
   }
-  
+
+  /**
+   * logout the user and remove its cookie session
+   */
+  static logout = () => {
+    Cookies.remove(Auth.cookieName);
+    actions.setUser({});
+  }
+
   /**
    * get user data from this state
    * @returns {Object}

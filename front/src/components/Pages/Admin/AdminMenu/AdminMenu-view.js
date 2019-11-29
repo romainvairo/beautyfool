@@ -1,0 +1,21 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button, Grid } from '@material-ui/core';
+
+import './AdminMenu.scss';
+
+const AdminMenuView = ({ translations, menuData }) => (
+  <>
+    {menuData.map(menuData => (
+      <Grid xs={12} sm={6} md={4} item className="menu-item">
+        <Button variant="contained" color="primary" className="menu-button w-full">
+          <Link to={translations[menuData].link}>
+            {translations[menuData].content}
+          </Link>
+        </Button>
+      </Grid>
+    ))}
+  </>
+);
+
+export default AdminMenuView;

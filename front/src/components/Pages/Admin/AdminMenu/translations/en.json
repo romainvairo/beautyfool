@@ -1,0 +1,38 @@
+{
+  "calendar": {
+    "content": "Calendar of appointments",
+    "link": "/admin/calendar"
+  },
+  "services": {
+    "content": "Services",
+    "link": "/admin/services"
+  },
+  "actualities": {
+    "content": "Actualities",
+    "link": "/admin/actualities"
+  },
+  "users": {
+    "content": "Users",
+    "link": "/admin/users"
+  },
+  "feedbacks": {
+    "content": "Feedbacks",
+    "link": "/admin/feedbacks"
+  },
+  "comments": {
+    "content": "Comments",
+    "link": "/admin/comments"
+  },
+  "gallery": {
+    "content": "Gallery",
+    "link": "/admin/gallery"
+  },
+  "beautyTips": {
+    "content": "Beauty tips",
+    "link": "/admin/beauty-tips"
+  },
+  "newsletter": {
+    "content": "Newsletter",
+    "link": "/admin/newsletter"
+  }
+}
