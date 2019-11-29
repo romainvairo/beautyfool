@@ -1,0 +1,37 @@
+[
+  {
+    "services": [
+      "5dde879c8e27d4868c316fcc",
+      "5dde879c8e27d4868c316fcd"
+    ],
+    "_id": "5dde879c8e27d4868c316fd5",
+    "date": "2019-11-27T13:00:00.000Z",
+    "customer": "5dde879b8e27d4868c316fc2",
+    "createdAt": "2019-11-27T14:26:36.701Z",
+    "updatedAt": "2019-11-27T14:26:36.701Z",
+    "__v": 0
+  },
+  {
+    "services": [
+      "5dde879c8e27d4868c316fcd"
+    ],
+    "_id": "5dde879c8e27d4868c316fd6",
+    "date": "2019-11-29T09:00:00.000Z",
+    "customer": "5dde879b8e27d4868c316fc3",
+    "createdAt": "2019-11-27T14:26:36.709Z",
+    "updatedAt": "2019-11-27T14:26:36.709Z",
+    "__v": 0
+  },
+  {
+    "services": [
+      "5dde879c8e27d4868c316fcb",
+      "5dde879c8e27d4868c316fcd"
+    ],
+    "_id": "5dde879c8e27d4868c316fd7",
+    "date": "2019-12-25T17:00:00.000Z",
+    "customer": "5dde879b8e27d4868c316fc5",
+    "createdAt": "2019-11-27T14:26:36.722Z",
+    "updatedAt": "2019-11-27T14:26:36.722Z",
+    "__v": 0
+  }
+]

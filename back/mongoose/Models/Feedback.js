@@ -37,6 +37,20 @@ const feedback = new mongoose.Schema({
       ref: 'Comment',
     }],
     default: []
+  },
+  appointment: {
+    type: {
+      metadata: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Metadata'
+      },
+      server: {
+        type: mongoose.Schema.Types.Mixed,
+        validator: [
+          value =>
+        ]
+      }
+    }
   }
 });
 

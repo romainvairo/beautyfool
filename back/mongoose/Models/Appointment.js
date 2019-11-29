@@ -23,8 +23,7 @@ const appointment = new mongoose.Schema({
   services: {
     type: [{
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: 'User',
+      ref: 'Service',
     }],
     default: []
   }

@@ -12,7 +12,7 @@ const server = new http.Server(app);
 // make the server listen on a specific port
 server.listen(port, () => debug.server(`Http server listening on port ${port}`));
 
-export {
+module.exports = {
   server,
   app,
   port,

@@ -1,2 +1,2 @@
-import './config';
-import './express';
+require('./config');
+require('./express');

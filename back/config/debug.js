@@ -23,4 +23,4 @@ const debugs = {
   },
 };
 
-export { debugs as debug };
+exports.debug = debugs;

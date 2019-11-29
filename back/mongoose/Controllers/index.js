@@ -1,0 +1,11 @@
+exports.UserController = require('./User');
+exports.RoleController = require('./Role');
+exports.QuestionController = require('./Question');
+exports.ImageController = require('./Image');
+exports.ScheduleController = require('./Schedule');
+exports.FeedbackController = require('./Feedback');
+exports.CommentController = require('./Comment');
+exports.BeautyTipController = require('./BeautyTip');
+exports.ActualityController = require('./Actuality');
+exports.AppointmentController = require('./Appointment');
+exports.ServiceController = require('./Service');
