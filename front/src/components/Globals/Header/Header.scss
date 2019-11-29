@@ -14,7 +14,12 @@
   }
 
   &-SocialNetworkLinks {
-    margin: auto;
+    margin: auto 5vw 1vh auto;
+
+    &-Link {
+      margin-left: 2vw;
+      margin-right: 2vw;
+    }
   }
 
   &-Login {
@@ -28,6 +33,7 @@
   }
 
   &-Slogan {
+    font-size: 4.5vh;
     margin: auto 2vw;
     color: rgb(202, 25, 78);
     font-family: Baskerville;
@@ -36,8 +42,7 @@
 }
 
 .fab, .fa-share-alt {
-  font-size: 3vh;
-  margin: 0 1vw;
+  font-size: 4vh;
 }
 
 .fa-user {
