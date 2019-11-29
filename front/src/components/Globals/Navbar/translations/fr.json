@@ -1,5 +1,9 @@
 {
-  
- 
-  
+  "Home": "Accueil",
+  "Actualities": "Actualités",
+  "Services": "Prestations",
+  "BeautyTips": "Astuces beauté",
+  "Gallery": "Galerie",
+  "Presentation": "Presentation",
+  "ContactUs": "Contactez-nous"
 }
