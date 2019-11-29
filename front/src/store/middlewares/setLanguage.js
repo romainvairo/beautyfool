@@ -12,9 +12,9 @@ export const setLanguageMiddleware = store => next => action => {
     // avoid to update the language if the language is the same as the current one
     if(action.payload !== language) {
       // go to next middleware or the reducer if there's no more reducer
-      next();
+      next(action);
     }
   } else {
-    next();
+    next(action);
   }
 }
