@@ -1,0 +1,12 @@
+{
+
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "userName": "Pseudo",
+    "email": "Adresse Email",
+    "password": "Mot de Passe",
+    "confirmedPassword": "Comfirmer le mot de passe",
+    "submitButton": "S'inscrire",
+    "subscribeNewsLetter": "Souscrire à la newsletter"
+
+}

@@ -1,17 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-  },
-}));
-
-const PageNotFound = ({ translations }) => {
-  const classes = useStyles();
+const PageNotFoundView = ({ translations }) => {
 
   return (
     <section className="PageNotFound">
@@ -19,7 +9,7 @@ const PageNotFound = ({ translations }) => {
         { translations.title }
         { translations.description }
       </div>
-      <div className={classes.root}>
+      <div>
         <Button variant="contained" color="primary">
           { translations.button }
         </Button>
@@ -28,6 +18,4 @@ const PageNotFound = ({ translations }) => {
 
  )};
 
-export default PageNotFound;
-
-
+export default PageNotFoundView;
