@@ -1,50 +1,71 @@
 import React from 'react';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
-
-const SignupView = ({ translations }) => (
+const SignupFormView = ({ translations }) => (
   <form>
     <div>
       <TextField
         required
         id="standard-required"
+        checking=""
+        name="firstName"
         label={ translations.firstName }
-        defaultValue="Hello World"
         margin="normal"
+        value={firstName}
+        onInputChange={onInputChange}
       />
-      <TextField
+        <TextField
         required
         id="standard-required"
+        checking=""
+        name="lastName"
         label={ translations.lastName }
-        defaultValue="Hello World"
         margin="normal"
+        value={lastName}
+        onInputChange={onInputChange}
       />
-      <TextField
+        <TextField
         required
         id="standard-required"
+        checking=""
+        name="userName"
         label={ translations.userName }
-        defaultValue="Hello World"
         margin="normal"
+        value={userName}
+        onInputChange={onInputChange}
       />
-      <TextField
+        <TextField
         required
         id="standard-required"
+        checking=""
+        name="email"
         label={ translations.email }
-        defaultValue="Hello World"
         margin="normal"
+        value={email}
+        onInputChange={onInputChange}
       />
-      <TextField
+        <TextField
         required
         id="standard-required"
+        checking=""
+        name="password"
         label={ translations.password }
-        defaultValue="Hello World"
         margin="normal"
+        value={password}
+        onInputChange={onInputChange}
       />
-      <TextField
+        <TextField
         required
         id="standard-required"
+        checking=""
+        name="confirmedPassword"
         label={ translations.confirmedPassword }
-        defaultValue="Hello World"
         margin="normal"
+        value={confirmedPassword}
+        onInputChange={onInputChange}
       />
       <Button variant="contained" color="primary">
         { translations.submitButton }
@@ -52,6 +73,8 @@ const SignupView = ({ translations }) => (
       <FormControlLabel
         control={
           <Checkbox
+            checking=""
+            name="subscribeNewsLetter"
             checked={true}
             onChange={() => {}}
             value={''}
@@ -62,3 +85,5 @@ const SignupView = ({ translations }) => (
     </div>
   </form>
 );
+
+export default SignupFormView;
