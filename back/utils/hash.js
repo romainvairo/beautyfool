@@ -1,10 +1,10 @@
-import bcrypt from 'bcrypt';
+const bcrypt = require('bcrypt');
 
 const salt = 10;
 
 /**
  * Hashes the given data
- * @param {Any} data
+ * @param {*} data
  * @returns {Promise<String>}
  */
 module.exports = data => new Promise((resolve, reject) => {

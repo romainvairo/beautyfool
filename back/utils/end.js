@@ -1,6 +1,6 @@
 /**
  * @param {Object} res express' response
- * @param {Object} data data to send to the user
+ * @param {Object} data data to send to the client
  * @param {Boolean} success say if the request succeeded
  */
 module.exports = (res, data, success = false) => {

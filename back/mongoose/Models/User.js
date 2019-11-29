@@ -105,8 +105,16 @@ const user = new mongoose.Schema({
   }
 });
 
+/**
+ * 'methods' is a native function of mongoose
+ * compare the encrypted password of the current user with the given password
+ * @param {String} candidatePassword
+ * @returns {Promise<Boolean>}
+ */
 user.methods.comparePassword = function (candidatePassword) {
   return new Promise((resolve, reject) => {
+    // 'this' with word function (ES5) is the context of the current scope,
+    // if 'this' is used in arrow function (ES6), it is the context of the upper scope
     bcrypt.compare(candidatePassword, this.password, (err, match) => {
       if (err) {
         return reject(err);

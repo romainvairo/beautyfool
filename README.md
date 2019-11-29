@@ -55,4 +55,15 @@ User
 
 `payload` the value of the action
 
+`API REST (Application Programming Interface RepresEntational State Transfert)` est un ensemble de protocole d'echange de requete et reponse entre un client et un serveur (ensemble de standar a respecté si tu veux t'appeller restFull)
+- sans etat
+- cachable (cache memoire)
+- orienté client/serveur
+- une interface uniforme
+- system de couche
+- code a la demande
+- JSON
+- RSS
+- XML (site map)
+
 jeremy

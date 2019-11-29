@@ -26,3 +26,7 @@ try {
 
 throw // if you don't throw errors, the errors are not in the try/catch
 ```
+
+`stack trace` the informations on the files that throws an error
+
+`buffer (données en memoire tamppon)`

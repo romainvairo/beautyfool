@@ -22,6 +22,7 @@ module.exports = async () => {
     console.error(error);
     process.exit(1);
   }
+
   // wait for the request finish
   await Promise.all(requests);
   debug.mongoose('the DB has been cleared');

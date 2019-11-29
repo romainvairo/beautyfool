@@ -29,4 +29,28 @@ module.exports = class BaseError extends Error {
     this.code = code;
     return this;
   }
+
+  /**
+   * get if the given data is a BaseError
+   * @static
+   * @param {*} data
+   * @returns {Boolean}
+   */
+  static isBaseError(data) {
+    return data.constructor.name === 'BaseError';
+  }
+
+  /**
+   * get the correct error.
+   * return `error` if it's a `BaseError` otherwise it will
+   * create a `BaseError` with `defaultError`
+   * @param {*} error
+   * @param {*} defaultError
+   * @returns {BaseError}
+   */
+  static correctError(error, defaultError) {
+    return BaseError.isBaseError(error)
+      ? new BaseError(defaultError)
+      : error;
+  }
 }
