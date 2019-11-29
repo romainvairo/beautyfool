@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development DEBUG=beautyfool:* nodemon ."
+    "start": "cross-env NODE_ENV=development DEBUG=beautyfool:* nodemon .",
+    "db:populate": "cross-env DEBUG=beautyfool:* node mongoose/Actions/populate",
+    "db:clear": "cross-env DEBUG=beautyfool:* node mongoose/Actions/clear",
+    "db:reset": "cross-env DEBUG=beautyfool:* node mongoose/Actions/reset"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +17,7 @@
     "express": "^4.17.1",
     "helmet": "^3.21.2",
     "lodash": "^4.17.15",
+    "moment": "^2.24.0",
     "mongoose": "^5.7.11",
     "pretty-error": "^2.1.1",
     "socket.io": "^2.3.0"

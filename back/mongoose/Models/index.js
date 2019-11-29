@@ -8,3 +8,4 @@ exports.question = require('./Question');
 exports.schedule = require('./Schedule');
 exports.service = require('./Service');
 exports.user = require('./User');
+exports.role = require('./Role');

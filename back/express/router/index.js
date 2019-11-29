@@ -1,1 +1,12 @@
 require('./staticFiles');
+require('./actuality');
+require('./appointment');
+require('./beautyTip');
+require('./comment');
+require('./feedback');
+require('./image');
+require('./question');
+require('./role');
+require('./schedule');
+require('./service');
+require('./user');

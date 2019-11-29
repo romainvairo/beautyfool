@@ -1,0 +1,102 @@
+[
+  {
+    "fidelity": 0,
+    "isEmailValid": false,
+    "newsletterSubscribed": false,
+    "appointments": [],
+    "roles": [
+      "5dde879b8e27d4868c316fc1"
+    ],
+    "feedbacks": [],
+    "comments": [],
+    "_id": "5dde879b8e27d4868c316fc2",
+    "username": "zougui",
+    "firstname": "zougui",
+    "lastname": "something",
+    "password": "mypassword",
+    "email": "zouguidu91@gmail.com",
+    "createdAt": "2019-11-27T14:26:35.909Z",
+    "updatedAt": "2019-11-27T14:26:35.909Z",
+    "__v": 0
+  },
+  {
+    "fidelity": 0,
+    "isEmailValid": false,
+    "newsletterSubscribed": false,
+    "appointments": [],
+    "roles": [
+      "5dde879b8e27d4868c316fc1"
+    ],
+    "feedbacks": [],
+    "comments": [],
+    "_id": "5dde879b8e27d4868c316fc3",
+    "username": "rokxis",
+    "firstname": "romain",
+    "lastname": "lerow",
+    "password": "raclack",
+    "email": "moneycash@gmail.com",
+    "createdAt": "2019-11-27T14:26:35.910Z",
+    "updatedAt": "2019-11-27T14:26:35.910Z",
+    "__v": 0
+  },
+  {
+    "fidelity": 0,
+    "isEmailValid": false,
+    "newsletterSubscribed": false,
+    "appointments": [],
+    "roles": [
+      "5dde879b8e27d4868c316fc1"
+    ],
+    "feedbacks": [],
+    "comments": [],
+    "_id": "5dde879b8e27d4868c316fc4",
+    "username": "leicko",
+    "firstname": "rino",
+    "lastname": "bidocrak",
+    "password": "menola",
+    "email": "kalamita@gmail.com",
+    "createdAt": "2019-11-27T14:26:35.910Z",
+    "updatedAt": "2019-11-27T14:26:35.910Z",
+    "__v": 0
+  },
+  {
+    "fidelity": 0,
+    "isEmailValid": false,
+    "newsletterSubscribed": false,
+    "appointments": [],
+    "roles": [
+      "5dde879b8e27d4868c316fc1"
+    ],
+    "feedbacks": [],
+    "comments": [],
+    "_id": "5dde879b8e27d4868c316fc5",
+    "username": "konishiuah",
+    "firstname": "cliko",
+    "lastname": "banality",
+    "password": "mokado",
+    "email": "mirola@gmail.com",
+    "createdAt": "2019-11-27T14:26:35.910Z",
+    "updatedAt": "2019-11-27T14:26:35.910Z",
+    "__v": 0
+  },
+  {
+    "fidelity": 0,
+    "isEmailValid": false,
+    "newsletterSubscribed": false,
+    "appointments": [],
+    "roles": [
+      "5dde879b8e27d4868c316fc1"
+    ],
+    "feedbacks": [],
+    "comments": [],
+    "_id": "5dde879b8e27d4868c316fc6",
+    "username": "blablana",
+    "firstname": "kokinoa",
+    "lastname": "kaniglou",
+    "password": "dofus",
+    "email": "ankamah@gmail.com",
+    "createdAt": "2019-11-27T14:26:35.911Z",
+    "updatedAt": "2019-11-27T14:26:35.911Z",
+    "__v": 0
+  }
+]

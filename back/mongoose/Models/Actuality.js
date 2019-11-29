@@ -24,6 +24,7 @@ const actuality = new mongoose.Schema({
   }
 });
 
+// create a model based on a schema wich will allow the capability to perform requests
 const ActualityModel = mongoose.model('Actuality', actuality);
 
 exports.actuality = actuality;

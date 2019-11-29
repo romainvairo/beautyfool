@@ -1,0 +1,20 @@
+[
+  {
+    "_id": "5dde879c8e27d4868c316fce",
+    "title": "A simple tip",
+    "content": "Just read this message to be able to do anything you want",
+    "createdAt": "2019-11-27T14:26:36.249Z",
+    "updatedAt": "2019-11-27T14:26:36.249Z",
+    "__v": 0
+  },
+  {
+    "_id": "5dde879c8e27d4868c316fcf",
+    "title": "How to be incredibly beautiful",
+    "media": "https://d.facdn.net/art/vality/1502811838/1502811838.vality_vality.png",
+    "mediaType": "image",
+    "content": "Just look like this!",
+    "createdAt": "2019-11-27T14:26:36.249Z",
+    "updatedAt": "2019-11-27T14:26:36.249Z",
+    "__v": 0
+  }
+]

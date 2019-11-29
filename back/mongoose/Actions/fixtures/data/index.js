@@ -1,0 +1,10 @@
+exports.users = require('./users');
+exports.roles = require('./roles');
+exports.questions = require('./questions');
+exports.services = require('./services');
+exports.actualities = require('./actualities');
+exports.appointments = require('./appointments');
+exports.beautyTips = require('./beautyTips');
+exports.feedbacks = require('./feedbacks');
+exports.images = require('./images');
+exports.comments = require('./comments');

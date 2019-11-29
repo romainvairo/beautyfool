@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "5dde879c8e27d4868c316fd0",
+    "title": "First actuality",
+    "content": "some text because why not",
+    "createdAt": "2019-11-27T14:26:36.344Z",
+    "updatedAt": "2019-11-27T14:26:36.345Z",
+    "__v": 0
+  },
+  {
+    "_id": "5dde879c8e27d4868c316fd1",
+    "title": "Apparently something new",
+    "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, dignissimos corporis ipsa quam totam ducimus reiciendis? Numquam itaque doloremque obcaecati, ratione laborum beatae consequuntur. Blanditiis soluta dolore labore rem fugit.",
+    "createdAt": "2019-11-27T14:26:36.345Z",
+    "updatedAt": "2019-11-27T14:26:36.345Z",
+    "__v": 0
+  }
+]
