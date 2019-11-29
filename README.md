@@ -55,9 +55,6 @@ User
 
 `payload` the value of the action
 
-<<<<<<< HEAD
-romain
-=======
 `API REST (Application Programming Interface RepresEntational State Transfert)` est un ensemble de protocole d'echange de requete et reponse entre un client et un serveur (ensemble de standar a respecté si tu veux t'appeller restFull)
 - sans etat
 - cachable (cache memoire)
@@ -70,4 +67,3 @@ romain
 - XML (site map)
 
 jeremy
->>>>>>> master
