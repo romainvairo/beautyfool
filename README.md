@@ -65,6 +65,3 @@ User
 - JSON
 - RSS
 - XML (site map)
-
-jeremy
-master
