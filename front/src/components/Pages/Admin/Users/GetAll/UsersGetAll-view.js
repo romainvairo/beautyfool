@@ -1,7 +1,9 @@
 import React from 'react';
 
-const UsersGetAllView = ({ translations }) => (
-  <div></div>
+const UsersGetAllView = ({ translations, users }) => (
+  <div>
+
+  </div>
 );
 
 export default UsersGetAllView;

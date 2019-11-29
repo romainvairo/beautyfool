@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GalleryGetAllView = ({ translations }) => (
+const GalleryGetAllView = ({ translations, gallery }) => (
   <div></div>
 );
 

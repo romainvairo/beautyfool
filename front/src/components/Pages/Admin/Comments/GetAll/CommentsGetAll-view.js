@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CommentsGetAllView = ({ translations }) => (
+const CommentsGetAllView = ({ translations, comments }) => (
   <div></div>
 );
 

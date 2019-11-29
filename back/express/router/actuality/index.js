@@ -5,8 +5,8 @@ const getActualityById = require('./getActualityById');
 const editActualityById = require('./editActualityById');
 const deleteActualityById = require('./deleteActualityById');
 
-app.get('/api/Actualities', getActualities);
-app.post('/api/Actualities/add', addActuality);
-app.get('/api/Actualities/:id', getActualityById);
-app.put('/api/Actualities/:id/edit', editActualityById);
-app.delete('/api/Actualities/:id/delete', deleteActualityById);
+app.get('/api/actualities/:page', getActualities);
+app.post('/api/actualities/add', addActuality);
+app.get('/api/actualities/:id', getActualityById);
+app.put('/api/actualities/:id/edit', editActualityById);
+app.delete('/api/actualities/:id/delete', deleteActualityById);

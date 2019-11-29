@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ActualitiesGetOneView = ({ translations }) => (
+const ActualitiesGetOneView = ({ translations, actuality }) => (
   <div></div>
 );
 

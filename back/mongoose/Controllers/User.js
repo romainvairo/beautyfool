@@ -44,10 +44,18 @@ const UserController = {
   },
 
   /**
+   * get all users that are subscribed to the newsletter
+   */
+  findForNewsletter: () => {
+    return UserModel.find({ newsletterSubscribed: true });
+    //return UserModel.find({ newsletterSubscribed: true });
+  },
+
+  /**
    * log a user using its email and password
    * @param {Object} user
-   * @param {string} user.email
-   * @param {string} user.password
+   * @param {String} user.email
+   * @param {String} user.password
    * @returns {Promise}
    */
   login: async user => {
@@ -95,13 +103,14 @@ const UserController = {
    * @param {String} id
    * @param {Object} user
    * @param {String} user.password
+   * @param {Promise<Object>}
    */
-  editUserById: (id, user) => {
+  editUserById: async (id, user) => {
     if (user.password) {
-      user.password = hash(user.password);
+      user.password = await hash(user.password);
     }
 
-    return UserModel.findByIdAndUpdate(id, user);
+    return await UserModel.findByIdAndUpdate(id, user);
   },
 
   /**

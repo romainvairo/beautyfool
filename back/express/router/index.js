@@ -10,3 +10,4 @@ require('./role');
 require('./schedule');
 require('./service');
 require('./user');
+require('./newsletter');

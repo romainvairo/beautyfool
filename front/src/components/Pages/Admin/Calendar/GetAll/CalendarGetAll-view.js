@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CalendarGetAllView = ({ translations }) => (
+const CalendarGetAllView = ({ translations, schedules }) => (
   <div></div>
 );
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BeautyTipsGetOneView = ({ translations }) => (
+const BeautyTipsGetOneView = ({ translations, beautyTip }) => (
   <div></div>
 );
 

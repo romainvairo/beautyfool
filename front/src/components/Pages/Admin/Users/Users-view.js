@@ -1,7 +1,11 @@
 import React from 'react';
 
-const UsersView = ({ translations }) => (
-  <div></div>
+import UsersGetAllView from './GetAll';
+
+const UsersView = ({ translations, page }) => (
+  <div>
+    <UsersGetAllView page={page} />
+  </div>
 );
 
 export default UsersView;

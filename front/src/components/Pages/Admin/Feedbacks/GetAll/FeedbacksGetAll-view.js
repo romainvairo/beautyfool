@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FeedbacksGetAllView = ({ translations }) => (
+const FeedbacksGetAllView = ({ translations, feedbacks }) => (
   <div></div>
 );
 
