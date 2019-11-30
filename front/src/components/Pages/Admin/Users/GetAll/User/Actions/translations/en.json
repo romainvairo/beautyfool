@@ -1,0 +1,9 @@
+{
+  "deleteButton": "delete",
+  "editButton": "edit",
+  "snackbar": {
+    "start": "Deleting user...",
+    "success": "User has been deleted",
+    "error": "User couldn't be deleted"
+  }
+}

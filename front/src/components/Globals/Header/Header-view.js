@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import './Header.scss';
 
 const HeaderView = ({ translations }) => (
   <header className="Header">
     <div className="Header-Logo">
-      <a href="">
+      <Link to="/">
         <img src={require('../../../assets/images/logo.png')} alt="Logo" />
-      </a>
+      </Link>
     </div>
     <p className="Header-Slogan">{translations.slogan}</p>
     <div className="Header-SocialNetworkLinks">
@@ -16,9 +18,9 @@ const HeaderView = ({ translations }) => (
       <a className="Header-SocialNetworkLinks-Link" href=""><i className="fas fa-share-alt"></i></a>
     </div>
     <div className="Header-Login">
-      <a className="Header-Login-Link" href="">
+      <Link className="Header-Login-Link" to="/profile">
         <i className="fas fa-user"></i>Mon Compte
-      </a>
+      </Link>
     </div>
   </header>
 );

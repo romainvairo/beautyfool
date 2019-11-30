@@ -1,0 +1,17 @@
+@mixin colorToClass($name, $color) {
+  .color-#{$name} {
+    color: $color;
+
+    &-hover:hover {
+      color: $color;
+    }
+  }
+
+  .bg-#{$name} {
+    background-color: $color;
+
+    &-hover:hover {
+      background-color: $color;
+    }
+  }
+}

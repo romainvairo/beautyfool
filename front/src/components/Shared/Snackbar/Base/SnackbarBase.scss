@@ -1,0 +1,30 @@
+.z-snackbar {
+  &.success {
+    background-color: #43a047 !important;
+  }
+
+  &.info {
+    background-color: #1976d2 !important;
+  }
+
+  &.warning {
+    background-color: #ffa000 !important;
+  }
+
+  &.error {
+    background-color: #d32f2f !important;
+  }
+
+  .icon {
+    font-size: 20px,
+  }
+
+  .icon-variant {
+    opacity: 0.9 !important;
+  }
+
+  .message {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,0 +1,13 @@
+@function color($list, $colorTheme, $color) {
+  @if not map-has-key($list, $colorTheme) {
+    @warn "Key `#{$colorTheme}` not found in `#{$list}` map";
+  }
+
+  $theme: map-get($list, $colorTheme);
+
+  @if not map-has-key($theme, $color) {
+    @warn "Key `#{$color}` not found in `#{$theme}` map";
+  }
+
+  @return map-get($theme, $color);
+}

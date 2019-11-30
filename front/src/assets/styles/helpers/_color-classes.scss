@@ -1,0 +1,16 @@
+@import '../mixins/index';
+@import '../functions/index';
+@import 'color-variables';
+
+
+@each $themeName, $theme in $colors {
+  @each $colorType, $color in $theme {
+    $className: $themeName;
+
+    @if($colorType != 'base') {
+      $className: '#{$themeName}-#{$colorType}';
+    }
+
+    @include colorToClass($className, color($colors, $themeName, $colorType));
+  }
+}

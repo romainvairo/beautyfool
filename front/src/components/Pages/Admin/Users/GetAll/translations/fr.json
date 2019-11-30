@@ -1,3 +1,7 @@
 {
-
+  "snackbar": {
+    "start": "Suppression de l'utilisateur...",
+    "success": "L'utilisateur a été supprimé",
+    "error": "L'utilisateur n'a pas pu être supprimé"
+  }
 }
