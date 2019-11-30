@@ -1,89 +1,83 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import { TextField, Button, Checkbox, FormControlLabel } from '@material-ui/core';
 
-const SignupFormView = ({ translations }) => (
-  <form>
-    <div>
-      <TextField
-        required
-        id="standard-required"
-        checking=""
-        name="firstName"
-        label={ translations.firstName }
-        margin="normal"
-        value={firstName}
-        onInputChange={onInputChange}
-      />
-        <TextField
-        required
-        id="standard-required"
-        checking=""
-        name="lastName"
-        label={ translations.lastName }
-        margin="normal"
-        value={lastName}
-        onInputChange={onInputChange}
-      />
-        <TextField
-        required
-        id="standard-required"
-        checking=""
-        name="userName"
-        label={ translations.userName }
-        margin="normal"
-        value={userName}
-        onInputChange={onInputChange}
-      />
-        <TextField
-        required
-        id="standard-required"
-        checking=""
-        name="email"
-        label={ translations.email }
-        margin="normal"
-        value={email}
-        onInputChange={onInputChange}
-      />
-        <TextField
-        required
-        id="standard-required"
-        checking=""
-        name="password"
-        label={ translations.password }
-        margin="normal"
-        value={password}
-        onInputChange={onInputChange}
-      />
-        <TextField
-        required
-        id="standard-required"
-        checking=""
-        name="confirmedPassword"
-        label={ translations.confirmedPassword }
-        margin="normal"
-        value={confirmedPassword}
-        onInputChange={onInputChange}
-      />
-      <Button variant="contained" color="primary">
-        { translations.submitButton }
-      </Button>
-      <FormControlLabel
-        control={
-          <Checkbox
-            checking=""
-            name="subscribeNewsLetter"
-            checked={true}
-            onChange={() => {}}
-            value={''}
-          />
-        }
-        label={ translations.subscribeNewsLetter }
-      />
-    </div>
+const SignupFormView = ({
+  translations,
+  firstName,
+  lastName,
+  userName,
+  email,
+  password,
+  confirmedPassword,
+  subscribeNewsLetter,
+  onChange,
+
+}) => (
+
+  <form className="SignupFormForm">
+    <TextField
+      required
+      variant="outlined"
+      label={translations.firstName}
+      margin="normal"
+      value={firstName}
+      onChange={onChange('firstName')}
+    />
+    <TextField
+      required
+      variant="outlined"
+      label={translations.lastName}
+      margin="normal"
+      value={lastName}
+      onChange={onChange('lastName')}
+    />
+    <TextField
+      required
+      variant="outlined"
+      label={translations.userName}
+      margin="normal"
+      value={userName}
+      onChange={onChange('userName')}
+    />
+    <TextField
+      required
+      variant="outlined"
+      label={translations.email}
+      margin="normal"
+      value={email}
+      onChange={onChange('email')}
+    />
+    <TextField
+      required
+      variant="outlined"
+      label={translations.password}
+      margin="normal"
+      value={password}
+      onChange={onChange('password')}
+    />
+    <TextField
+      required
+      variant="outlined"
+      label={translations.confirmedPassword}
+      margin="normal"
+      value={confirmedPassword}
+      onChange={onChange('confirmedPassword')}
+    />
+    <Button variant="contained" color="primary">
+      {translations.submitButton}
+    </Button>
+    <FormControlLabel
+      control={
+        <Checkbox
+          checked={subscribeNewsLetter}
+          onChange={onChange('subscribeNewsLetter', 'checked')}
+          value={subscribeNewsLetter}
+        />
+      }
+      label={translations.subscribeNewsLetter}
+    />
   </form>
+
 );
 
 export default SignupFormView;

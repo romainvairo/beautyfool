@@ -30,10 +30,6 @@ class LoginFormContainer extends React.PureComponent {
       .catch();
   }*/
 
-  handleResponse = (response) => {
-    console.log(response);
-  }
-
   render() {
     const { password, email } = this.state;
     const { language } = this.props;
@@ -46,6 +42,5 @@ class LoginFormContainer extends React.PureComponent {
     />;
   }
 }
-
 
 export default connect(mapStateToProps, null)(LoginFormContainer);
