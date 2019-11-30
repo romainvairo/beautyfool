@@ -21,6 +21,7 @@ class UsersGetAllContainer extends React.PureComponent {
   componentDidMount() {
     const { page } = this.props;
 
+    // get all users
     axios.get('/api/users/' + page)
       .then(({ data }) => {
         if (data.success) {
@@ -30,36 +31,50 @@ class UsersGetAllContainer extends React.PureComponent {
       .catch(console.error);
   }
 
+  /**
+   * @param {String} id
+   */
   deleteUserById = id => {
     this.setState(state => {
+      // delete a single user
       const users = state.users.filter(u => u._id !== id);
 
+      // update the users in the state
       return { users };
     });
   }
 
+  /**
+   * @param {Object} user
+   * @param {String} user._id
+   */
   deleteAction = user => () => {
     const { language } = this.props;
 
+    // start a new snackbar
     this.snackbar.new(translations[language].snackbar);
 
+    // delete the user from the DB
     axios.delete('/api/users/' + user._id + '/delete')
       .then(({ data }) => {
         if (data.success) {
+          // change the snackbar to success
           this.snackbar.status('success');
+          // delete the user from the state
           this.deleteUserById(user._id);
         } else {
           this.error(data.error);
         }
       })
       .catch(this.error);
-    /*setTimeout(() => {
-      this.snackbar.status('success');
-    }, 3000);*/
   }
 
+  /**
+   * @param {String} err
+   */
   error = err => {
     console.error(err);
+    // change the snackbar to error
     this.snackbar.status('error');
   }
 
