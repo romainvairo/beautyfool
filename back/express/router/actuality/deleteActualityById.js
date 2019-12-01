@@ -4,7 +4,7 @@ const { end } = require('../../../utils');
 
 module.exports = async (req, res) => {
   try {
-    await ActualityController.deleteById(req.body.id);
+    await ActualityController.deleteById(req.params.id);
   } catch (error) {
     return end(res, { error: errorCodes.actuality.deleteById });
   }

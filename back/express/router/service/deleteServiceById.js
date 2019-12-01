@@ -5,5 +5,5 @@ const { RequestHandler } = require('../../../services');
 module.exports = (req, res) => {
   new RequestHandler(res)
     .error(errorCodes.service.deleteById)
-    .then(() => ServiceController.deleteById(req.body.id));
+    .then(() => ServiceController.deleteById(req.params.id));
 }
