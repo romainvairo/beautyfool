@@ -11,10 +11,13 @@ module.exports = class BaseError extends Error {
     // set the prototype to allow this object and its childrens to implements custom methods
     Object.setPrototypeOf(this, BaseError.prototype);
     // capture the stack trace without having this class to be in it
+    // @ts-ignore
     Error.captureStackTrace(this, BaseError);
 
     if (_.isObject(error)) {
+      // @ts-ignore
       this.message = error.message;
+      // @ts-ignore
       this.code = error.code;
     } else {
       this.code = code;

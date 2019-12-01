@@ -7,6 +7,7 @@ module.exports = async (req, res) => {
   try {
     await UserController.add(req.body);
   } catch (error) {
+    // @ts-ignore
     return end(res, { error: errorCodes.user.signup });
   }
 
