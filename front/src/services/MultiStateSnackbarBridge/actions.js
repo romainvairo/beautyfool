@@ -1,5 +1,3 @@
-import { MultiStateSnackbarBridge } from '.';
-
 /**
  * @typedef {import('.').MultiStateSnackbarBridge} MultiStateSnackbarBridge
  * @typedef {(message: String, loader?: Boolean | JSX.Element) => MultiStateSnackbarBridge} SnackbarSetter
@@ -12,9 +10,6 @@ export const defaultSnackbar = {
   data: {},
   open: false,
 };
-
-// all the status of the snackbar
-const snackbarProperties = ['success', 'warning', 'error', 'info'];
 
 /**
  * close the snackbar

@@ -11,7 +11,7 @@ class SnackbarMultiStateContainer extends React.PureComponent {
     data: this.props.data,
   };
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     const { status, data } = this.props;
 
     if (status !== prevProps.status) {
@@ -39,6 +39,9 @@ class SnackbarMultiStateContainer extends React.PureComponent {
       case 'warning':
       case 'info':
         this.getDataFromState(status);
+        break;
+      default:
+        break;
     }
   }
 

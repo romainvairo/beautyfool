@@ -12,10 +12,10 @@ const HeaderView = ({ translations }) => (
     </div>
     <p className="Header-Slogan">{translations.slogan}</p>
     <div className="Header-SocialNetworkLinks">
-      <a className="Header-SocialNetworkLinks-Link" href=""><i className="fab fa-facebook"></i></a>
-      <a className="Header-SocialNetworkLinks-Link" href=""><i className="fab fa-twitter"></i></a>
-      <a className="Header-SocialNetworkLinks-Link" href=""><i className="fab fa-instagram"></i></a>
-      <a className="Header-SocialNetworkLinks-Link" href=""><i className="fas fa-share-alt"></i></a>
+      <Link className="Header-SocialNetworkLinks-Link" to=""><i className="fab fa-facebook"></i></Link>
+      <Link className="Header-SocialNetworkLinks-Link" to=""><i className="fab fa-twitter"></i></Link>
+      <Link className="Header-SocialNetworkLinks-Link" to=""><i className="fab fa-instagram"></i></Link>
+      <Link className="Header-SocialNetworkLinks-Link" to=""><i className="fas fa-share-alt"></i></Link>
     </div>
     <div className="Header-Login">
       <Link className="Header-Login-Link" to="/profile">
