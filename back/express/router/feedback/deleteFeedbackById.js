@@ -4,7 +4,7 @@ const { end } = require('../../../utils');
 
 module.exports = async (req, res) => {
   try {
-    await FeedbackController.deleteById(req.body.id);
+    await FeedbackController.deleteById(req.params.id);
   } catch (error) {
     return end(res, { error: errorCodes.feedback.deleteById });
   }

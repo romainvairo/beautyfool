@@ -5,8 +5,8 @@ const getBeautyTipById = require('./getBeautyTipById');
 const editBeautyTipById = require('./editBeautyTipById');
 const deleteBeautyTipById = require('./deleteBeautyTipById');
 
-app.get('/api/BeautyTips', getBeautyTips);
-app.post('/api/BeautyTips/add', addBeautyTip);
-app.get('/api/BeautyTips/:id', getBeautyTipById);
-app.put('/api/BeautyTips/:id/edit', editBeautyTipById);
-app.delete('/api/BeautyTips/:id/delete', deleteBeautyTipById);
+app.get('/api/beauty-tips/:page', getBeautyTips);
+app.post('/api/beauty-tips/add', addBeautyTip);
+app.get('/api/beauty-tips/:id', getBeautyTipById);
+app.put('/api/beauty-tips/:id/edit', editBeautyTipById);
+app.delete('/api/beauty-tips/:id/delete', deleteBeautyTipById);

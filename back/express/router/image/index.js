@@ -5,8 +5,8 @@ const getImageById = require('./getImageById');
 const editImageById = require('./editImageById');
 const deleteImageById = require('./deleteImageById');
 
-app.get('/api/Images', getImages);
-app.post('/api/Images/add', addImage);
-app.get('/api/Images/:id', getImageById);
-app.put('/api/Images/:id/edit', editImageById);
-app.delete('/api/Images/:id/delete', deleteImageById);
+app.get('/api/images/:page', getImages);
+app.post('/api/images/add', addImage);
+app.get('/api/images/:id', getImageById);
+app.put('/api/images/:id/edit', editImageById);
+app.delete('/api/images/:id/delete', deleteImageById);

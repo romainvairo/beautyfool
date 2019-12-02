@@ -5,5 +5,5 @@ const { RequestHandler } = require('../../../services');
 module.exports = (req, res) => {
   new RequestHandler(res)
     .error(errorCodes.user.deleteById)
-    .then(() => UserController.deleteUserById(req.body.id))
+    .then(() => UserController.deleteUserById(req.params.id))
 }

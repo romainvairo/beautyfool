@@ -4,7 +4,7 @@ const { end } = require('../../../utils');
 
 module.exports = async (req, res) => {
   try {
-    await AppointmentController.deleteById(req.body.id);
+    await AppointmentController.deleteById(req.params.id);
   } catch (error) {
     return end(res, { error: errorCodes.appointment.deleteById });
   }

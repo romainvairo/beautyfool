@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UsersGetOneView = ({ translations }) => (
+const UsersGetOneView = ({ translations, user }) => (
   <div></div>
 );
 

@@ -5,8 +5,8 @@ const getCommentById = require('./getCommentById');
 const editCommentById = require('./editCommentById');
 const deleteCommentById = require('./deleteCommentById');
 
-app.get('/api/Comments', getComments);
-app.post('/api/Comments/add', addComment);
-app.get('/api/Comments/:id', getCommentById);
-app.put('/api/Comments/:id/edit', editCommentById);
-app.delete('/api/Comments/:id/delete', deleteCommentById);
+app.get('/api/comments/:page', getComments);
+app.post('/api/comments/add', addComment);
+app.get('/api/comments/:id', getCommentById);
+app.put('/api/comments/:id/edit', editCommentById);
+app.delete('/api/comments/:id/delete', deleteCommentById);

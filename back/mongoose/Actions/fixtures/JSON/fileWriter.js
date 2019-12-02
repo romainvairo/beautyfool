@@ -6,6 +6,8 @@ module.exports = async (name, fixtures) => {
     return;
   }
 
+  const data = await fixtures();
+
   // write in the file the data returned by fixtures
-  fs.writeFileSync(__dirname + '/' + name + '.json', JSON.stringify(await fixtures(), null, 2));
+  //fs.writeFileSync(__dirname + '/' + name + '.json', JSON.stringify(data, null, 2));
 }

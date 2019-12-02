@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
   let images;
 
   try {
-    images = await ImageController.findImages(req.body.page);
+    images = await ImageController.findImages(req.params.page);
   } catch (error) {
     return end(res, { error: errorCodes.image.findAll });
   }

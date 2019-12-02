@@ -5,8 +5,8 @@ const getQuestionById = require('./getQuestionById');
 const editQuestionById = require('./editQuestionById');
 const deleteQuestionById = require('./deleteQuestionById');
 
-app.get('/api/Questions', getQuestions);
-app.post('/api/Questions/add', addQuestion);
-app.get('/api/Questions/:id', getQuestionById);
-app.put('/api/Questions/:id/edit', editQuestionById);
-app.delete('/api/Questions/:id/delete', deleteQuestionById);
+app.get('/api/questions/:page', getQuestions);
+app.post('/api/questions/add', addQuestion);
+app.get('/api/questions/:id', getQuestionById);
+app.put('/api/questions/:id/edit', editQuestionById);
+app.delete('/api/questions/:id/delete', deleteQuestionById);

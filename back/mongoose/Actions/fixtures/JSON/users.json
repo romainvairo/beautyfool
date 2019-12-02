@@ -5,18 +5,18 @@
     "newsletterSubscribed": false,
     "appointments": [],
     "roles": [
-      "5dde879b8e27d4868c316fc1"
+      "5de29a70530e8220dc4ef914"
     ],
     "feedbacks": [],
     "comments": [],
-    "_id": "5dde879b8e27d4868c316fc2",
+    "_id": "5de29a71530e8220dc4ef916",
     "username": "zougui",
     "firstname": "zougui",
     "lastname": "something",
-    "password": "mypassword",
+    "password": "$2b$10$S1kf0pR.7JLWf/r7x.2sZeKfm1KEySVR67AyvNyoRJ0/BaMs8bUAm",
     "email": "zouguidu91@gmail.com",
-    "createdAt": "2019-11-27T14:26:35.909Z",
-    "updatedAt": "2019-11-27T14:26:35.909Z",
+    "createdAt": "2019-11-30T16:36:01.142Z",
+    "updatedAt": "2019-11-30T16:36:01.142Z",
     "__v": 0
   },
   {
@@ -25,18 +25,18 @@
     "newsletterSubscribed": false,
     "appointments": [],
     "roles": [
-      "5dde879b8e27d4868c316fc1"
+      "5de29a70530e8220dc4ef914"
     ],
     "feedbacks": [],
     "comments": [],
-    "_id": "5dde879b8e27d4868c316fc3",
+    "_id": "5de29a71530e8220dc4ef917",
     "username": "rokxis",
     "firstname": "romain",
     "lastname": "lerow",
-    "password": "raclack",
+    "password": "$2b$10$x8ejFWsrNFouPnaRIdqYCetoq38iKOPm9jhokHbBW8Gd64dYPZfwK",
     "email": "moneycash@gmail.com",
-    "createdAt": "2019-11-27T14:26:35.910Z",
-    "updatedAt": "2019-11-27T14:26:35.910Z",
+    "createdAt": "2019-11-30T16:36:01.143Z",
+    "updatedAt": "2019-11-30T16:36:01.143Z",
     "__v": 0
   },
   {
@@ -45,18 +45,18 @@
     "newsletterSubscribed": false,
     "appointments": [],
     "roles": [
-      "5dde879b8e27d4868c316fc1"
+      "5de29a70530e8220dc4ef914"
     ],
     "feedbacks": [],
     "comments": [],
-    "_id": "5dde879b8e27d4868c316fc4",
+    "_id": "5de29a71530e8220dc4ef918",
     "username": "leicko",
     "firstname": "rino",
     "lastname": "bidocrak",
-    "password": "menola",
+    "password": "$2b$10$S7FFuetw5IAdxsigyRhXxumgFgPV5YGJWDttZ7JzP17/npBUnWO6.",
     "email": "kalamita@gmail.com",
-    "createdAt": "2019-11-27T14:26:35.910Z",
-    "updatedAt": "2019-11-27T14:26:35.910Z",
+    "createdAt": "2019-11-30T16:36:01.145Z",
+    "updatedAt": "2019-11-30T16:36:01.145Z",
     "__v": 0
   },
   {
@@ -65,18 +65,18 @@
     "newsletterSubscribed": false,
     "appointments": [],
     "roles": [
-      "5dde879b8e27d4868c316fc1"
+      "5de29a70530e8220dc4ef914"
     ],
     "feedbacks": [],
     "comments": [],
-    "_id": "5dde879b8e27d4868c316fc5",
+    "_id": "5de29a71530e8220dc4ef919",
     "username": "konishiuah",
     "firstname": "cliko",
     "lastname": "banality",
-    "password": "mokado",
+    "password": "$2b$10$42WrjDzzMDum2Ep2aec5xOPVQTobWPQ1qRX46Ag7IgEJB2t1Ylcfq",
     "email": "mirola@gmail.com",
-    "createdAt": "2019-11-27T14:26:35.910Z",
-    "updatedAt": "2019-11-27T14:26:35.910Z",
+    "createdAt": "2019-11-30T16:36:01.194Z",
+    "updatedAt": "2019-11-30T16:36:01.194Z",
     "__v": 0
   },
   {
@@ -85,18 +85,18 @@
     "newsletterSubscribed": false,
     "appointments": [],
     "roles": [
-      "5dde879b8e27d4868c316fc1"
+      "5de29a70530e8220dc4ef914"
     ],
     "feedbacks": [],
     "comments": [],
-    "_id": "5dde879b8e27d4868c316fc6",
+    "_id": "5de29a71530e8220dc4ef915",
     "username": "blablana",
     "firstname": "kokinoa",
     "lastname": "kaniglou",
-    "password": "dofus",
+    "password": "$2b$10$BqpGMeQK439XWslp0IoThufbTZ/6YYiEq3Tbb0JGne6UvFWya0jhu",
     "email": "ankamah@gmail.com",
-    "createdAt": "2019-11-27T14:26:35.911Z",
-    "updatedAt": "2019-11-27T14:26:35.911Z",
+    "createdAt": "2019-11-30T16:36:01.139Z",
+    "updatedAt": "2019-11-30T16:36:01.139Z",
     "__v": 0
   }
 ]

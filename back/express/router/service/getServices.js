@@ -5,5 +5,5 @@ const { RequestHandler } = require('../../../services');
 module.exports = (req, res) => {
   new RequestHandler(res)
     .error(errorCodes.service.findAll)
-    .then(() => ServiceController.findServices(req.body.page));
+    .then(() => ServiceController.findServices(req.params.page));
 }

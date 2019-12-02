@@ -34,6 +34,7 @@ module.exports = class RequestHandler {
     try {
       data = await callback();
     } catch (error) {
+      console.log(error);
       error = BaseError.correctError(error, this.errorCode);
 
       return end(this.res, { error });

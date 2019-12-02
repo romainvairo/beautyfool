@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BenefitsGetOneView = ({ translations }) => (
+const BenefitsGetOneView = ({ translations, service }) => (
   <div></div>
 );
 

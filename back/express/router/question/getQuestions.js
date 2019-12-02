@@ -5,5 +5,5 @@ const { RequestHandler } = require('../../../services');
 module.exports = (req, res) => {
   new RequestHandler(res)
     .error(errorCodes.question.findAll)
-    .then(() => QuestionController.findQuestions(req.body.page));
+    .then(() => QuestionController.findQuestions(req.params.page));
 }
