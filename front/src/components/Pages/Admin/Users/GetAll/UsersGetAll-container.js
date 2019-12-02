@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { throttle } from 'lodash';
 
 import axios from '../../../../../axios';
 import UsersGetAllView from './UsersGetAll-view';
@@ -12,23 +13,56 @@ const mapStateToProps = state => ({
 
 class UsersGetAllContainer extends React.PureComponent {
 
-  snackbar = new MultiSnackbar(this);
+  deleteSnackbar = new MultiSnackbar(this);
+  getSnackbar = new MultiSnackbar(this);
+  getting = false;
+  page = this.props.page;
 
   state = {
     users: [],
   };
 
   componentDidMount() {
-    const { page } = this.props;
+    this.request(this.page);
+
+    window.addEventListener('scroll', throttle(this.scroll, 100));
+  }
+
+  request = page => {
+    const { language } = this.props;
+
+    this.getting = true;
+    this.getSnackbar.new(translations[language].snackbar.get);
 
     // get all users
     axios.get('/api/users/' + page)
       .then(({ data }) => {
         if (data.success) {
-          this.setState({ users: data.data });
+          setTimeout(() => {
+            this.getSnackbar.status('success');
+            this.setState(state => ({ users: state.users.concat(data.data) }));
+            this.getting = false;
+          }, 1500);
         }
       })
-      .catch(console.error);
+      .catch(err => {
+        this.getting = false;
+        console.error(err);
+      });
+  }
+
+  scroll = () => {
+    if (this.getting) {
+      return;
+    }
+
+    const infiniteScrollContainer = document.getElementById('infinite-scroll');
+    const bounding = infiniteScrollContainer.getBoundingClientRect();
+    const thresold = (bounding.height + bounding.top) - window.innerHeight;
+
+    if (thresold < 400) {
+      this.request(++this.page);
+    }
   }
 
   /**
@@ -52,14 +86,14 @@ class UsersGetAllContainer extends React.PureComponent {
     const { language } = this.props;
 
     // start a new snackbar
-    this.snackbar.new(translations[language].snackbar);
+    this.deleteSnackbar.new(translations[language].snackbar.delete);
 
     // delete the user from the DB
     axios.delete('/api/users/' + user._id + '/delete')
       .then(({ data }) => {
         if (data.success) {
           // change the snackbar to success
-          this.snackbar.status('success');
+          this.deleteSnackbar.status('success');
           // delete the user from the state
           this.deleteUserById(user._id);
         } else {
@@ -75,7 +109,7 @@ class UsersGetAllContainer extends React.PureComponent {
   error = err => {
     console.error(err);
     // change the snackbar to error
-    this.snackbar.status('error');
+    this.deleteSnackbar.status('error');
   }
 
   render() {
@@ -83,7 +117,8 @@ class UsersGetAllContainer extends React.PureComponent {
 
     return <UsersGetAllView
       users={users}
-      Snackbar={this.snackbar.Snackbar}
+      DeleteSnackbar={this.deleteSnackbar.Snackbar}
+      GetSnackbar={this.getSnackbar.Snackbar}
       deleteAction={this.deleteAction}
     />;
   }

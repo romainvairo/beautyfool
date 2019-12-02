@@ -1,1 +1,1 @@
-export const getPage = match => match.page || 1;
+export const getPage = match => (match.params && match.params.page) || 1;

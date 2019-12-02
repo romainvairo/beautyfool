@@ -1,5 +1,5 @@
 import React from 'react';
-import { isEqual, isFunction } from 'lodash';
+import { isEqual, isFunction, set } from 'lodash';
 
 import Snackbar from '..';
 
@@ -12,10 +12,12 @@ class SnackbarMultiStateContainer extends React.PureComponent {
   };
 
   componentDidUpdate(prevProps) {
-    const { status, data } = this.props;
+    const { status, data, overData } = this.props;
 
     if (status !== prevProps.status) {
-      this.getData();
+      if(this.isValidStatus()) {
+        this.getDataFromState();
+      }
     }
 
     if (!isEqual(data, prevProps.data)) {
@@ -30,7 +32,7 @@ class SnackbarMultiStateContainer extends React.PureComponent {
   /**
    * get data from `this.state` if `this.props.status` is a valid status
    */
-  getData = () => {
+  isValidStatus = () => {
     const { status } = this.props;
 
     switch (status) {
@@ -38,8 +40,7 @@ class SnackbarMultiStateContainer extends React.PureComponent {
       case 'error':
       case 'warning':
       case 'info':
-        this.getDataFromState(status);
-        break;
+        return true;
       default:
         break;
     }
@@ -47,11 +48,14 @@ class SnackbarMultiStateContainer extends React.PureComponent {
 
   /**
    * get data from `this.state`
-   * @param {String} status
    */
-  getDataFromState = status => {
-    const { data } = this.state;
-    const { timeout, onClose, successCallback } = this.props;
+  getDataFromState = () => {
+    let { data } = this.state;
+    const { timeout, onClose, successCallback, status } = this.props;
+
+    if(isFunction(data)){
+      data = data();
+    }
 
     if (data[status]) {
       data[status].variant = status;
@@ -60,7 +64,6 @@ class SnackbarMultiStateContainer extends React.PureComponent {
 
     if (status === 'success') {
       this.timeout = setTimeout(() => {
-        console.log('timeout')
         onClose();
 
         if (isFunction(successCallback)) {
