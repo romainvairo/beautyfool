@@ -19,7 +19,7 @@ const HeaderView = ({ translations }) => (
     </div>
     <div className="Header-Login">
       <Link className="Header-Login-Link" to="/profile">
-        <i className="fas fa-user"></i>Mon Compte
+        <i className="fas fa-user"></i>{translations.login}
       </Link>
     </div>
   </header>
