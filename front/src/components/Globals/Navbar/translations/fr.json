@@ -1,3 +1,13 @@
 {
+<<<<<<< HEAD
 
+=======
+  "Home": "Accueil",
+  "Actualities": "Actualités",
+  "Services": "Prestations",
+  "BeautyTips": "Astuces beauté",
+  "Gallery": "Galerie",
+  "Presentation": "Presentation",
+  "ContactUs": "Contactez-nous"
+>>>>>>> 58c951de84aa8c5a14f73c665b1532af75223732
 }

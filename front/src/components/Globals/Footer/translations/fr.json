@@ -1,3 +1,12 @@
 {
+<<<<<<< HEAD
 
+=======
+  "LegalsMentions": "Mentions Légales",
+  "TermsOfService": "Conditions générales d'utilisation",
+  "TermsOfSalse": "Conditions générales de vente",
+  "SiteMap": "Plan D'accès",
+  "FAQ": "FAQ",
+  "Copyright": "Copyright 2019 (c)"
+>>>>>>> 58c951de84aa8c5a14f73c665b1532af75223732
 }

@@ -3,8 +3,20 @@ import { Link } from 'react-router-dom';
 
 import './Header.scss';
 
+import './Header.scss';
+
 const HeaderView = ({ translations }) => (
   <header className="Header">
+    <ul className="burger">
+      <li className="burger">hey</li>
+      <li>hi</li>
+      <li>moune</li>
+      <li>miam</li>
+      <li>miou</li>
+      <li>ajouka</li>
+      <li>aboook</li>
+      <li>riahanna</li>
+    </ul>
     <div className="Header-Logo">
       <Link to="/">
         <img src={require('../../../assets/images/logo.png')} alt="Logo" />

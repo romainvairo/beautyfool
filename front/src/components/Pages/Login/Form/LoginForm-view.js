@@ -16,6 +16,7 @@ const LoginFormView = ({ translations, onChange, password, email }) => (
       value={password}
       variant="outlined"
       onChange={onChange('password')}
+      type='password'
     />
 
     <Link to="sqds">
