@@ -1,0 +1,11 @@
+{
+  "title": "Options de recherche",
+  "placeholder": "Ecris ici pour rechercher",
+  "search": "Recherche",
+  "sortCriteria": {
+    "title": "Critère de recherche",
+    "order": "ordre",
+    "ascending": "ascendant",
+    "descending": "descendant"
+  }
+}

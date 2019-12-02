@@ -17,6 +17,7 @@ class UsersGetAllContainer extends React.PureComponent {
   getSnackbar = new MultiSnackbar(this);
   getting = false;
   page = this.props.page;
+  maxY = 0;
 
   state = {
     users: [],
@@ -28,6 +29,15 @@ class UsersGetAllContainer extends React.PureComponent {
     window.addEventListener('scroll', throttle(this.scroll, 100));
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('scroll', throttle(this.scroll, 100));
+  }
+
+
+  /**
+   * request to get the list
+   * @param {Number} page
+   */
   request = page => {
     const { language } = this.props;
 
@@ -37,29 +47,38 @@ class UsersGetAllContainer extends React.PureComponent {
     // get all users
     axios.get('/api/users/' + page)
       .then(({ data }) => {
-        if (data.success) {
-          setTimeout(() => {
-            this.getSnackbar.status('success');
-            this.setState(state => ({ users: state.users.concat(data.data) }));
-            this.getting = false;
-          }, 1500);
-        }
+        this.getSnackbar.status('success');
+        // update the list
+        this.setState(state => ({ users: state.users.concat(data.data) }));
+        this.getting = false;
       })
       .catch(err => {
+        this.getSnackbar.status('error');
         this.getting = false;
         console.error(err);
       });
   }
 
+  /**
+   * called when the user scrolls
+   */
   scroll = () => {
-    if (this.getting) {
+    // avoid useless processing
+    if (this.getting || window.scrollY <= this.maxY) {
       return;
     }
 
+    this.maxY = window.scrollY;
+
+    // get the element that contains the list
     const infiniteScrollContainer = document.getElementById('infinite-scroll');
+    // get its height and top position
     const bounding = infiniteScrollContainer.getBoundingClientRect();
+    // calculate the user's scroll position
     const thresold = (bounding.height + bounding.top) - window.innerHeight;
 
+    // if the bottom of the user's scroll is less than 400 pixels
+    // to the end of the list we perform a request to get more entries
     if (thresold < 400) {
       this.request(++this.page);
     }
@@ -90,15 +109,11 @@ class UsersGetAllContainer extends React.PureComponent {
 
     // delete the user from the DB
     axios.delete('/api/users/' + user._id + '/delete')
-      .then(({ data }) => {
-        if (data.success) {
-          // change the snackbar to success
-          this.deleteSnackbar.status('success');
-          // delete the user from the state
-          this.deleteUserById(user._id);
-        } else {
-          this.error(data.error);
-        }
+      .then(() => {
+        // change the snackbar to success
+        this.deleteSnackbar.status('success');
+        // delete the user from the state
+        this.deleteUserById(user._id);
       })
       .catch(this.error);
   }
