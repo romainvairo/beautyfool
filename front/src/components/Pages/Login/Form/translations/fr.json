@@ -3,5 +3,6 @@
   "password": "Mot de passe",
   "forgottenPassword": "Mot de passe oublié",
   "submitButton": "Se connecter",
-  "signup": "S'inscrire à la newsletter"
+  "signup": "S'inscrire à la newsletter",
+  "signupButton": "S'inscrire"
 }

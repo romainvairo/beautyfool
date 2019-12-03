@@ -1,31 +1,56 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TextField, Button } from '@material-ui/core';
+import { TextField, Button, Grid } from '@material-ui/core';
+
+import Divider from "../../../Shared/Divider"
+import './LoginForm.scss';
+
 
 const LoginFormView = ({ translations, onChange, password, email }) => (
-  <form className="loginForm">
-    <TextField
-      label={translations.email}
-      value={email}
-      variant="outlined"
-      onChange={onChange('email')}
-    />
-
-    <TextField
-      label={translations.password}
-      value={password}
-      variant="outlined"
-      onChange={onChange('password')}
-    />
-
-    <Link to="sqds">
-      {translations.forgottenPassword}
-    </Link>
-    <Button variant="contained">{translations.submitButton}</Button>
-    <Link to="/signup">
-      {translations.submitButton}
-    </Link>
-  </form>
+  <Grid container justify="center">
+    <Grid xs={10} md={8} lg={6} item>
+      <form className="loginForm">
+        <Grid container spacing={2} direction="column" >
+          <Grid container item>
+            <TextField
+              fullWidth
+              className="email"
+              label={translations.email}
+              margin="normal"
+              value={email}
+              variant="outlined"
+              onChange={onChange('email')}
+            />
+          </Grid>
+          <Grid container item>
+            <TextField
+              fullWidth
+              className="password"
+              label={translations.password}
+              margin="normal"
+              value={password}
+              variant="outlined"
+              onChange={onChange('password')}
+              type='password'
+            />
+          </Grid>
+          <Grid container item justify="center">
+            <Link to="sqds" className="forgottenPassword">
+              {translations.forgottenPassword}
+            </Link>
+          </Grid>
+          <Grid container item justify="center">
+            <Button className="submitButton" color="primary" variant="contained">{translations.submitButton}</Button>
+          </Grid>
+          <Grid container item justify="center" className="mt-3">
+            <Link className="signup" to="/signup" >
+              {translations.signupButton}
+            </Link>
+          </Grid>
+        </Grid>
+      </form>
+    </Grid>
+  </Grid>
 );
 
 export default LoginFormView;

@@ -8,6 +8,6 @@ const mapStateToProps = (state) => ({
   language: state.clientReducer.language,
 });
 
-const LoginContainer = ({ language }) => <LoginView tranlations={translations[language]} />;
+const LoginContainer = ({ language }) => <LoginView translations={translations[language]} />;
 
 export default connect(mapStateToProps, null)(LoginContainer);

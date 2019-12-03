@@ -9,6 +9,7 @@ import Benefits from '../../Pages/Benefits';
 // user routes
 import Login from '../../Pages/Login';
 import Signup from '../../Pages/Signup';
+import News from '../../Pages/News';
 // admin routes
 import Admin from '../../Pages/Admin';
 import AdminActualities from '../../Pages/Admin/Actualities';
@@ -65,6 +66,7 @@ const Router = () => (
     {/* user routes */}
     <Route exact path={['/login', '/connexion']} component={Login} />
     <Route exact path={['/signup', '/inscription']} component={Signup} />
+    <Route exact path={['/news', '/actualités']} component={News} />
 
 
     {/* admin routes */}
