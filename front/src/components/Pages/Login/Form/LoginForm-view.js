@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TextField, Button, Grid } from '@material-ui/core';
 
+import Divider from "../../../Shared/Divider"
 import './LoginForm.scss';
 
 
@@ -41,7 +42,7 @@ const LoginFormView = ({ translations, onChange, password, email }) => (
           <Grid container item justify="center">
             <Button className="submitButton" color="primary" variant="contained">{translations.submitButton}</Button>
           </Grid>
-          <Grid container item justify="center">
+          <Grid container item justify="center" className="mt-3">
             <Link className="signup" to="/signup" >
               {translations.signupButton}
             </Link>
