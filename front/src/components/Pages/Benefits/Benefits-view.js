@@ -1,7 +1,13 @@
 import React from 'react';
 
 const BenefitsView = ({ translations }) => (
-  <div></div>
+  <div className="Benefits">
+    <div>
+
+    </div>
+
+
+  </div>
 );
 
 export default BenefitsView;

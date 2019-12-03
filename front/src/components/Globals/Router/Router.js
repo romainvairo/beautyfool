@@ -4,6 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 // guest routes
 import Home from '../../Pages/Home';
 import PageNotFound from '../../Pages/PageNotFound';
+import Gallery from '../../Pages/Gallery';
+import Benefits from '../../Pages/Benefits';
 // user routes
 import Login from '../../Pages/Login';
 import Signup from '../../Pages/Signup';
@@ -54,6 +56,8 @@ import AdminNewsletter from '../../Pages/Admin/Newsletter';
 const Router = () => (
   <Switch>
     {/* guest routes */}
+    <Route exact path={['/gallery', '/galerie']} component={Gallery} />
+    <Route exact path={['/benefits', '/prestations']} component={Benefits} />
 
     {/* If the path in the browser matches one of the pathes it will render the component Home */}
     <Route exact path={['/', '/home', '/accueil']} component={Home} />

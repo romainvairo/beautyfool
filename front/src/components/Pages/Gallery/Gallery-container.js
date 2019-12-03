@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 
 import GalleryView from './Gallery-view';
 import translations from './translations';
+import { images } from './data';
 
 const mapStateToProps = state => ({
   language: state.clientReducer.language,
 });
 
 const GalleryContainer = ({ language }) =>
-  <GalleryView translations={translations[language]} />;
+  <GalleryView images={images} translations={translations[language]} />;
 
 export default connect(mapStateToProps)(GalleryContainer);
