@@ -1,7 +1,14 @@
 {
   "snackbar": {
-    "start": "Deleting user...",
-    "success": "User has been deleted",
-    "error": "User couldn't be deleted"
+    "delete": {
+      "start": "Deleting user...",
+      "success": "User has been deleted",
+      "error": "User couldn't be deleted"
+    },
+    "get": {
+      "start": "Getting users...",
+      "success": "Users has been retrieved",
+      "error": "Users couldn't be retrieved"
+    }
   }
 }

@@ -1,3 +1,16 @@
+const { passwordGenerator } = require('../../../../services');
+
+const moreUsers = [];
+for (let i = 0; i < 100; i++) {
+  moreUsers.push({
+    username: passwordGenerator(),
+    firstname: passwordGenerator(),
+    lastname: passwordGenerator(),
+    password: passwordGenerator(),
+    email: passwordGenerator() + '@gmail.com',
+  });
+}
+
 module.exports = [
   {
     username: 'zougui',
@@ -33,5 +46,6 @@ module.exports = [
     lastname: 'kaniglou',
     password: 'dofus',
     email: 'ankamah@gmail.com',
-  }
+  },
+  ...moreUsers,
 ];

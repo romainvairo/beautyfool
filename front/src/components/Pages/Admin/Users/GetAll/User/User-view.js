@@ -5,12 +5,12 @@ import UserInfo from './Info';
 import UserActions from './Actions';
 import Divider from '../../../../../Shared/Divider';
 
-const UserView = ({ user, deleteAction }) => (
+const UserView = ({ user, callDeleteRequest }) => (
   <Grid container item className="mb-2">
     <Grid xs={12} item>
       <Grid container className="px-1">
         <UserInfo user={user} />
-        <UserActions user={user} deleteAction={deleteAction} />
+        <UserActions user={user} callDeleteRequest={callDeleteRequest} />
       </Grid>
 
       <Divider className="mt-2" />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { isBoolean, isFunction } from 'lodash';
+import { CircularProgress } from '@material-ui/core';
 
 import SnackbarView from './Snackbar-view';
 import SnackbarBase from './Base';
@@ -34,20 +35,24 @@ class SnackbarContainer extends React.PureComponent {
   getMessage = () => {
     let { message, Loader } = this.props;
 
+    if(isFunction(message)){
+      message = message();
+    }
+
     if (!Loader) {
       return message;
     }
 
     if (isBoolean(Loader)) {
-      //Loader = <LoaderComponent loading size={20} color="secondary" />;
+      Loader = <CircularProgress size={20} color="secondary" />;
     } else if (isFunction(Loader)) {
       Loader = Loader();
     }
 
     return (
       <>
-        <span className="mr-3">{message}</span>
         {Loader}
+        <span className="ml-3">{message}</span>
       </>
     );
   }

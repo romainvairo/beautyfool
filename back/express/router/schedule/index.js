@@ -5,7 +5,7 @@ const getScheduleById = require('./getScheduleById');
 const editScheduleById = require('./editScheduleById');
 const deleteScheduleById = require('./deleteScheduleById');
 
-app.get('/api/schedules/:page', getSchedules);
+app.get('/api/schedules/page/:page', getSchedules);
 app.post('/api/schedules/add', addSchedule);
 app.get('/api/schedules/:id', getScheduleById);
 app.put('/api/schedules/:id/edit', editScheduleById);

@@ -20,7 +20,10 @@ module.exports = function passwordGenerator() {
      * 1/3 of chance to get a number
      */
     if (j <= 1) {
-      const character = randomArr(characters);
+      let character;
+      while (!character) {
+        character = randomArr(characters);
+      }
 
       if (j === 0) {
         password += character.toUpperCase();

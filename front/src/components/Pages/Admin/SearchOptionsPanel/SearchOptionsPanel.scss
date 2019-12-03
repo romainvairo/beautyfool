@@ -1,0 +1,23 @@
+.SearchOptionsPanel {
+  .bg {
+    max-width: 320px !important;
+  }
+
+  .text-field {
+    &.grouped > * {
+      border-bottom-right-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+    }
+
+    .MuiInputBase-input {
+      padding-top: 13px;
+      padding-bottom: 13px;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .md-block {
+    display: none !important;
+  }
+}

@@ -5,7 +5,7 @@ const getServiceById = require('./getServiceById');
 const editServiceById = require('./editServiceById');
 const deleteServiceById = require('./deleteServiceById');
 
-app.get('/api/services/:page', getServices);
+app.get('/api/services/page/:page', getServices);
 app.post('/api/services/add', addService);
 app.get('/api/services/:id', getServiceById);
 app.put('/api/services/:id/edit', editServiceById);

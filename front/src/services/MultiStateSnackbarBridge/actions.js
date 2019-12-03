@@ -18,7 +18,6 @@ export const defaultSnackbar = {
  */
 export const close = thisArg => () => {
   thisArg.setSnackbar({ ...defaultSnackbar });
-  console.log("bridge's close")
   return thisArg;
 }
 

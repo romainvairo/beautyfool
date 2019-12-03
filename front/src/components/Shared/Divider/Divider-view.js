@@ -8,6 +8,7 @@ const Divider = ({ border, color, className }) => (
 Divider.defaultProps = {
   border: 2,
   color: 'gray-800',
+  className: ''
 };
 
 export default Divider;

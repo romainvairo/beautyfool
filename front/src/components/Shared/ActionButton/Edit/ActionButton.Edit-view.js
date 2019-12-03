@@ -6,7 +6,7 @@ import ActionButton from '..';
 const ActionButtonEdit = ({ className, children, ...props }) => (
   <ActionButton
     {...props}
-    className={classNames('bg-gray-lighter-2', className)}
+    className={classNames('bg-gray-lighter-3', className)}
   >
     {children}
   </ActionButton>

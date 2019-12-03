@@ -1,0 +1,11 @@
+{
+  "title": "Search options",
+  "placeholder": "Type here to search",
+  "search": "Search",
+  "sortCriteria": {
+    "title": "Sort criteria",
+    "order": "order",
+    "ascending": "ascending",
+    "descending": "descending"
+  }
+}
