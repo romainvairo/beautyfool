@@ -8,11 +8,7 @@ const mapStateToProps = (state) => ({
   language: state.clientReducer.language,
 });
 
-<<<<<<< HEAD
 // Create the function DropdownContainer that render the view
-=======
-// Create the function HeaderContainer that render the view
->>>>>>> romain
 const DropdownContainer = ({ language }) => <DropdownView translations={translations[language]} />;
 
 export default connect(mapStateToProps, null)(DropdownContainer);

@@ -1,28 +1,16 @@
 .Header {
   display: flex;
-<<<<<<< HEAD
   padding: 1rem;
   background-color: #F5F5F5;
   border-bottom: 0.2rem solid rgb(70, 66, 66);
   height: 7rem;
-=======
-  padding: 0.5%;
-  background-color: #F5F5F5;
-  border-bottom: 0.05em solid rgb(70, 66, 66);
-  height: 9vh;
-  font-size: 2em;
->>>>>>> romain
   text-shadow: 0 0.2em 0.2em rgb(70, 66, 66);
 
 
   &-Logo {
-<<<<<<< HEAD
-    width: 5rem;
-=======
     img {
       width: 5rem;
     }
->>>>>>> romain
   }
 
   &-SocialNetworkLinks {
@@ -35,30 +23,12 @@
   }
 
   &-Login {
-<<<<<<< HEAD
     font-size: 1rem;
     font-weight: bold;
   }
 
   &-Slogan {
     display: none
-=======
-    font-size: 1vh;
-    color: red;
-
-    &-Link {
-      font-weight: bold;
-      font-size: 20px;
-    }
-  }
-
-  &-Slogan {
-    display: inline-block;
-    font-size: 2.5vh;
-    color: rgb(202, 25, 78);
-    font-family: Baskerville;
-    text-shadow: 0 0.2em 0.2em rgb(202, 25, 78);
->>>>>>> romain
   }
 }
 
@@ -67,17 +37,9 @@
 }
 
 .fa-user {
-<<<<<<< HEAD
   display: block;
   font-size: 2rem;
   text-align: center;
-=======
-  font-size: 3em;
-}
-
-header {
-  background-color: #F5F5F5;
->>>>>>> romain
 }
 
 @media (min-width: 1025) {
