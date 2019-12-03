@@ -1,38 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Grid, Paper} from '@material-ui/core';
 
 import './Header.scss';
-
-import './Header.scss';
+import Dropdown from './Dropdown';
 
 const HeaderView = ({ translations }) => (
-  <header className="Header">
-    <ul className="burger">
-      <li className="burger">hey</li>
-      <li>hi</li>
-      <li>moune</li>
-      <li>miam</li>
-      <li>miou</li>
-      <li>ajouka</li>
-      <li>aboook</li>
-      <li>riahanna</li>
-    </ul>
-    <div className="Header-Logo">
-      <Link to="/">
-        <img src={require('../../../assets/images/logo.png')} alt="Logo" />
-      </Link>
-    </div>
-    <p className="Header-Slogan">{translations.slogan}</p>
-    <div className="Header-SocialNetworkLinks">
+  <header>
+    <Grid container justify="space-between">
+      <Grid xs={3} sm={2} item>
+        <Dropdown />
+      </Grid>
+      <Grid xs={6} sm={8} container item alignItems="center" direction="column" className="Header-Logo">
+        <Grid item>
+          <Link to="/">
+            <img src={require('../../../assets/images/logo.png')} alt="Logo" />
+          </Link>
+        </Grid>
+        <Grid item>
+          <p className="Header-Slogan">{translations.slogan}</p>
+        </Grid>
+      </Grid>
+      <Grid xs={3} sm={2} container item justify="flex-end">
+        <Grid item className="pr-2">
+          <Link className="Header-Login-Link" to="/profile">
+            <i className="fas fa-user block text-center"></i>
+            <span className="block text-center text-xs">
+              Mon compte
+            </span>
+          </Link>
+        </Grid>
+      </Grid>
+    </Grid>
+    <div className="Header-SocialNetworkLinks hidden md:block">
       <Link className="Header-SocialNetworkLinks-Link" to=""><i className="fab fa-facebook"></i></Link>
       <Link className="Header-SocialNetworkLinks-Link" to=""><i className="fab fa-twitter"></i></Link>
       <Link className="Header-SocialNetworkLinks-Link" to=""><i className="fab fa-instagram"></i></Link>
       <Link className="Header-SocialNetworkLinks-Link" to=""><i className="fas fa-share-alt"></i></Link>
-    </div>
-    <div className="Header-Login">
-      <Link className="Header-Login-Link" to="/profile">
-        <i className="fas fa-user"></i>Mon Compte
-      </Link>
     </div>
   </header>
 );
