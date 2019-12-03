@@ -5,19 +5,22 @@ import FeedbacksCarousel from './FeedbacksCarousel';
 import CategoriesCarousel from './CategoriesCarousel';
 // import AccessMap from './AccessMap';
 
+import './Home.scss';
+
 const HomeView = ({ translations })  => (
-  
-  <section>
+
+  <section className="Home">
     <GalleryCarousel />
-    <div className="mostRecentNews">
+    <div className="Home-MostRecentNews">
     </div>
     <CategoriesCarousel />
     <FeedbacksCarousel />
-    <div className="contactInformation">
-      { translations.contactInformation.phone }
-      { translations.contactInformation.address }
-      { translations.contactInformation.zipcode }
-      { translations.contactInformation.city }
+    {/* <AccessMap /> */}
+    <div className="Home-ContactInformation">
+      <p className="Home-ContactInformation-Subsections">{ translations.contactInformation.address }</p>
+      <p className="Home-ContactInformation-Subsections">{ translations.contactInformation.zipcode }</p>
+      <p className="Home-ContactInformation-Subsections">{ translations.contactInformation.city }</p>
+      <p className="Home-ContactInformation-Subsections">{ translations.contactInformation.phone }</p>
     </div>
   </section>
 

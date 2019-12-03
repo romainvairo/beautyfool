@@ -1,8 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import CategoriesCarouselView from './CategoriesCarousel-view';
 import { images } from './data';
 
-const CategoriesCarouselContainer = () => <CategoriesCarouselView images={images} />;
+import translations from './translations';
 
-export default CategoriesCarouselContainer;
+const mapStateToProps = (state) => ({
+  language: state.clientReducer.language,
+});
+
+
+const CategoriesCarouselContainer = ({ language }) => <CategoriesCarouselView images={images} translations={translations[language]} />;
+
+export default connect(mapStateToProps, null)(CategoriesCarouselContainer);

@@ -2,12 +2,18 @@ import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
+import './CategoriesCarousel.scss';
+
 const CategoriesCarouselView = ({ images })  => (
 
-  <section>
+  <section className="CategoriesCarousel">
     <AliceCarousel>
       {images.map(image => (
-        <img key={image} src={image} alt="" />
+
+        <section className="CategoriesCarousel-Subsection">
+          <img className="CategoriesCarousel-Images" key={image} src={image} alt="" />
+          <p className="CategoriesCarousel-Paragraph">CategoriesCarousel</p>
+        </section>
       ))}
     </AliceCarousel>
   </section>

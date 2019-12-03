@@ -1,8 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import GalleryCarouselView from './GalleryCarousel-view';
 import { images } from './data';
 
-const GalleryCarouselContainer = () => <GalleryCarouselView images={images} />;
+import translations from './translations';
 
-export default GalleryCarouselContainer;
+const mapStateToProps = (state) => ({
+  language: state.clientReducer.language,
+});
+
+
+const GalleryCarouselContainer = ({ language }) => <GalleryCarouselView images={images} translations={translations[language]} />;
+
+export default connect(mapStateToProps, null)(GalleryCarouselContainer);
