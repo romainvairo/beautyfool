@@ -1,5 +1,5 @@
 import React from 'react';
-import { isEqual, isFunction, set } from 'lodash';
+import { isEqual, isFunction } from 'lodash';
 
 import Snackbar from '..';
 
@@ -12,7 +12,7 @@ class SnackbarMultiStateContainer extends React.PureComponent {
   };
 
   componentDidUpdate(prevProps) {
-    const { status, data, overData } = this.props;
+    const { status, data } = this.props;
 
     if (status !== prevProps.status) {
       if(this.isValidStatus()) {

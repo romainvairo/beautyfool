@@ -15,14 +15,26 @@ const mapDispatchToProps = dispatch => ({
 
 class UserActionsContainer extends React.PureComponent {
 
+  state = {
+    redirection: '',
+  }
+
+  editAction = user => () => {
+    const { setAdminUser } = this.props;
+    setAdminUser(user);
+    this.setState({ redirection: `/admin/users/${user._id}/edit` });
+  }
+
   render() {
-    const { language, user, deleteAction, setAdminUser } = this.props;
+    const { language, user, callDeleteRequest } = this.props;
+    const { redirection } = this.state;
 
     return <UserActionsView
       translations={translations[language]}
-      deleteAction={deleteAction}
-      setAdminUser={setAdminUser}
+      callDeleteRequest={callDeleteRequest}
+      editAction={this.editAction}
       user={user}
+      redirection={redirection}
     />;
   }
 }

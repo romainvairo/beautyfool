@@ -5,7 +5,7 @@ const getQuestionById = require('./getQuestionById');
 const editQuestionById = require('./editQuestionById');
 const deleteQuestionById = require('./deleteQuestionById');
 
-app.get('/api/questions/:page', getQuestions);
+app.get('/api/questions/page/:page', getQuestions);
 app.post('/api/questions/add', addQuestion);
 app.get('/api/questions/:id', getQuestionById);
 app.put('/api/questions/:id/edit', editQuestionById);

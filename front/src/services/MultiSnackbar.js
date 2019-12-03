@@ -1,6 +1,11 @@
 import { MultiStateSnackbarBridge } from '.';
 import { stringFormatter } from '../utils';
 
+/**
+ *
+ * @typedef {{ success: String | JSX.Element, error: String | JSX.Element, start: String | JSX.Element }} SnackbarText
+ */
+
 export class MultiSnackbar extends MultiStateSnackbarBridge {
 
   /**
@@ -26,25 +31,35 @@ export class MultiSnackbar extends MultiStateSnackbarBridge {
 
   /**
    * create a new multi state snackbar
-   * @param {Object} text
-   * @param {String} text.start
-   * @param {String} text.success
-   * @param {String} text.error
-   * @returns {MultiSnackbar}
+   * @param {SnackbarText} text
+   * @returns {this}
    */
   new = (text, loader = true) => {
-    this.text = text;
     this
+      .setText(text)
+      // @ts-ignore
       .start(stringFormatter(text.start, ...this.startArguments), this.withLoader = loader)
+      // @ts-ignore
       .success(stringFormatter(text.success, ...this.successArguments))
+      // @ts-ignore
       .error(stringFormatter(text.error, ...this.errorArguments))
       .open();
     return this;
   }
 
   /**
+   * set the text for the snackbar
+   * @param {SnackbarText} text
+   * @returns {this}
+   */
+  setText = text => {
+    this.text = text;
+    return this;
+  }
+
+  /**
    * @param {Array} args
-   * @returns {MultiSnackbar}
+   * @returns {this}
    */
   startArgs = (...args) => {
     this.startArguments = args;
@@ -59,7 +74,7 @@ export class MultiSnackbar extends MultiStateSnackbarBridge {
 
   /**
    * @param {Array} args
-   * @returns {MultiSnackbar}
+   * @returns {this}
    */
   successArgs = (...args) => {
     this.successArguments = args;
@@ -68,7 +83,7 @@ export class MultiSnackbar extends MultiStateSnackbarBridge {
 
   /**
    * @param {Array} args
-   * @returns {MultiSnackbar}
+   * @returns {this}
    */
   errorArgs = (...args) => {
     this.errorArguments = args;

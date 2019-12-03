@@ -1,3 +1,10 @@
 {
-
+  "title": "Edit the user",
+  "snackbar": {
+    "get": {
+      "start": "Getting user...",
+      "success": "User has been retrieved",
+      "error": "User couldn't be retrieved"
+    }
+  }
 }

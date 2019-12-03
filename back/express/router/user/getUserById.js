@@ -1,13 +1,15 @@
 const { UserController } = require('../../../mongoose/Controllers');
 const { errorCodes } = require('../../../Errors');
-const { end } = require('../../../utils');
+const { end, random } = require('../../../utils');
 
 module.exports = async (req, res) => {
   let user;
 
   try {
-    user = await UserController.findById(req.body.id);
+    user = await UserController.findById(req.params.id);
   } catch (error) {
+    console.error(error);
+    res.status(500);
     return end(res, { error: errorCodes.user.findById });
   }
 

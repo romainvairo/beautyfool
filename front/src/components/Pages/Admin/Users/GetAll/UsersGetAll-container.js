@@ -4,7 +4,7 @@ import { throttle } from 'lodash';
 
 import axios from '../../../../../axios';
 import UsersGetAllView from './UsersGetAll-view';
-import { MultiSnackbar } from '../../../../../services';
+import { RequestSnackbar } from '../../../../../services';
 import translations from './translations';
 
 const mapStateToProps = state => ({
@@ -13,8 +13,8 @@ const mapStateToProps = state => ({
 
 class UsersGetAllContainer extends React.PureComponent {
 
-  deleteSnackbar = new MultiSnackbar(this);
-  getSnackbar = new MultiSnackbar(this);
+  deleteSnackbar = new RequestSnackbar(this);
+  getSnackbar = new RequestSnackbar(this);
   getting = false;
   page = this.props.page;
   maxY = 0;
@@ -24,7 +24,9 @@ class UsersGetAllContainer extends React.PureComponent {
   };
 
   componentDidMount() {
-    this.request(this.page);
+    this.setGetRequest();
+    this.callGetRequest();
+    this.setDeleteRequest();
 
     window.addEventListener('scroll', throttle(this.scroll, 100));
   }
@@ -33,30 +35,59 @@ class UsersGetAllContainer extends React.PureComponent {
     window.removeEventListener('scroll', throttle(this.scroll, 100));
   }
 
-
   /**
-   * request to get the list
-   * @param {Number} page
+   * set the request to `this.getSnackbar`
    */
-  request = page => {
+  setGetRequest = () => {
     const { language } = this.props;
 
-    this.getting = true;
-    this.getSnackbar.new(translations[language].snackbar.get);
-
-    // get all users
-    axios.get('/api/users/' + page)
+    this.getSnackbar
+      .setText(translations[language].snackbar.get)
+      .setRequest(() => axios.get('/api/users/page/' + this.page++))
       .then(({ data }) => {
-        this.getSnackbar.status('success');
         // update the list
         this.setState(state => ({ users: state.users.concat(data.data) }));
-        this.getting = false;
       })
       .catch(err => {
-        this.getSnackbar.status('error');
+        console.error(err);
+      })
+      .finally(() => {
         this.getting = false;
+      });
+  }
+
+  /**
+   * call the get request
+   */
+  callGetRequest = () => {
+    this.getting = true;
+    this.getSnackbar.call();
+  }
+
+  /**
+   * set the request to `this.deleteSnackbar`
+   */
+  setDeleteRequest = () => {
+    const { language } = this.props;
+
+    this.deleteSnackbar
+      .setText(translations[language].snackbar.delete)
+      .setRequest(user => axios.delete('/api/users/' + user._id + '/delete'))
+      .then((_, user) => {
+        // delete the user from the state
+        this.deleteUserById(user._id);
+      })
+      .catch(err => {
         console.error(err);
       });
+  }
+
+  /**
+   * call the get request
+   * @param {{_id: String}} user
+   */
+  callDeleteRequest = user => () => {
+    this.deleteSnackbar.call(user);
   }
 
   /**
@@ -80,7 +111,7 @@ class UsersGetAllContainer extends React.PureComponent {
     // if the bottom of the user's scroll is less than 400 pixels
     // to the end of the list we perform a request to get more entries
     if (thresold < 400) {
-      this.request(++this.page);
+      this.callGetRequest();
     }
   }
 
@@ -97,36 +128,6 @@ class UsersGetAllContainer extends React.PureComponent {
     });
   }
 
-  /**
-   * @param {Object} user
-   * @param {String} user._id
-   */
-  deleteAction = user => () => {
-    const { language } = this.props;
-
-    // start a new snackbar
-    this.deleteSnackbar.new(translations[language].snackbar.delete);
-
-    // delete the user from the DB
-    axios.delete('/api/users/' + user._id + '/delete')
-      .then(() => {
-        // change the snackbar to success
-        this.deleteSnackbar.status('success');
-        // delete the user from the state
-        this.deleteUserById(user._id);
-      })
-      .catch(this.error);
-  }
-
-  /**
-   * @param {String} err
-   */
-  error = err => {
-    console.error(err);
-    // change the snackbar to error
-    this.deleteSnackbar.status('error');
-  }
-
   render() {
     const { users } = this.state;
 
@@ -134,7 +135,7 @@ class UsersGetAllContainer extends React.PureComponent {
       users={users}
       DeleteSnackbar={this.deleteSnackbar.Snackbar}
       GetSnackbar={this.getSnackbar.Snackbar}
-      deleteAction={this.deleteAction}
+      callDeleteRequest={this.callDeleteRequest}
     />;
   }
 }
