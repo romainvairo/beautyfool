@@ -1,16 +1,14 @@
 .Header {
   display: flex;
-  justify-content: space-between;
-  padding: 0.5%;
-  border-bottom: 0.2rem solid rgb(70, 66, 66);
-  height: 6rem;
+  padding: 1rem;
   background-color: #F5F5F5;
-  font-size: 2rem;
-  text-shadow: 0 0.2rem 0.2rem rgb(70, 66, 66);
+  border-bottom: 0.2rem solid rgb(70, 66, 66);
+  height: 7rem;
+  text-shadow: 0 0.2em 0.2em rgb(70, 66, 66);
+
 
   &-Logo {
     width: 5rem;
-    text-align: center;
   }
 
   &-SocialNetworkLinks {
@@ -23,21 +21,12 @@
   }
 
   &-Login {
-
     font-size: 1rem;
-    margin: auto 0;
-
-    &-Link {
-      font-weight: bold;
-    }
+    font-weight: bold;
   }
 
   &-Slogan {
-    font-size: 2.5rem;
-    margin: auto 0 auto 2rem;
-    color: rgb(202, 25, 78);
-    font-family: Baskerville;
-    text-shadow: 0 0.2rem 0.2rem rgb(202, 25, 78);
+    display: none
   }
 }
 
@@ -49,4 +38,32 @@
   display: block;
   font-size: 2rem;
   text-align: center;
+}
+
+@media (min-width: 1025) {
+  .Header {
+    // justify-content: space-between;
+
+    &-Logo {
+      // text-align: center;
+    }
+
+    &-Login {
+      // margin: auto 0;
+
+    }
+
+    &-Slogan {
+      display: block;
+      font-size: 2.5rem;
+      margin: auto 0 auto 2rem;
+      color: rgb(202, 25, 78);
+      font-family: Baskerville;
+      text-shadow: 0 0.2em 0.2em rgb(202, 25, 78);
+    }
+  }
+
+  .fab, .fa-share-alt {
+    font-size: 2rem;
+  }
 }

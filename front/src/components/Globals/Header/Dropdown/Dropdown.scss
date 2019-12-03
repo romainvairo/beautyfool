@@ -1,0 +1,9 @@
+.drop {
+  font-size: 50px;
+}
+
+@media (min-width: 1025px) {
+  .drop {
+    display: none;
+  }
+}
