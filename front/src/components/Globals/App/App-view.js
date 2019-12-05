@@ -13,7 +13,7 @@ const AppView = () => (
       <Header />
       <Navbar />
       <Router />
-      <Chatbox />
+      {/* <Chatbox /> */}
       <Footer />
     </>
   </BrowserRouter>

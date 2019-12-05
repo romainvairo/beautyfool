@@ -1,8 +1,22 @@
-.Home-ContactInformation-Subsections {
+.Home-MostRecentNews {
+  position: relative;
+  margin: auto auto 2rem auto;
+  width: 70vw;
 
+}
+
+.Home-Map {
+  margin: auto;
+  width: 70%;
+}
+
+.Home-ContactInformation {
+  margin-top: 1rem;;
+}
+
+.Home-ContactInformation-Subsections {
   text-align: center;
   font-size: 1.5rem;
-
 }
 
 @media (max-width: 1025px) {
