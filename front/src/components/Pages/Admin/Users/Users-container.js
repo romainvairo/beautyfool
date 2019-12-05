@@ -11,12 +11,6 @@ const mapStateToProps = state => ({
 
 class UsersContainer extends React.PureComponent {
 
-  componentDidMount() {
-    const { history, location } = this.props;
-    console.log(location)
-  }
-
-
   onPageChange = newPage => {
     const { history, location } = this.props;
 
