@@ -1,1 +1,1 @@
-export { default } from './BeautyTip-container';
+export { default } from './BeautyTips-container';
