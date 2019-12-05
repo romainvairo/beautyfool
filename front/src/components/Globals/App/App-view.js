@@ -5,6 +5,7 @@ import Router from '../Router';
 import Header from '../Header';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
+import Chatbox from '../Chatbox';
 
 const AppView = () => (
   <BrowserRouter>
@@ -12,6 +13,7 @@ const AppView = () => (
       <Header />
       <Navbar />
       <Router />
+      <Chatbox />
       <Footer />
     </>
   </BrowserRouter>

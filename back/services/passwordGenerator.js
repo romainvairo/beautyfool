@@ -6,10 +6,10 @@ const characters = 'abcdefghijklmnopqrstuvwxyz';
  * generate a password
  * @returns {String}
  */
-module.exports = function passwordGenerator() {
+module.exports = function passwordGenerator(minLength = 8, maxLength = 15) {
   let password = '';
   // define the length of the password
-  const length = random(8, 15);
+  const length = random(minLength, maxLength);
 
   for (let i = 0; i < length; i++) {
     const j = random(0, 2);
