@@ -8,7 +8,7 @@ import './Navbar.scss';
 
 const NavbarView = ({ translations }) => (
   <AppBar  className="toolbar hidden md:block" position="static">
-    <Toolbar className="bg-red-800 pl-20">
+    <Toolbar className="bg-red-800 pl-20" component="div">
       <Grid container justify="space-around">
         <Grid item>
           <Link className="link">{translations.Home}</Link>

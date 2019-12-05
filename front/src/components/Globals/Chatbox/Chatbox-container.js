@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 
 import DropdownContainer from './Dropdown/Dropdown-container';
 import ChatboxView from './Chatbox-view';
+import ChatboxButtonView from './ChatboxButton/ChatboxButton-view';
 import translations from './translations';
 import socket from '../../../socket';
 import { onChange } from '../../../utils';
 import { Auth } from '../../../services';
+import './Chatbox.scss';
 
 const mapStateToProps = state => ({
   language: state.clientReducer.language,
@@ -130,7 +132,8 @@ class ChatboxContainer extends React.PureComponent {
 
     console.log(this.getRightMessages())
 
-    return <ChatboxView
+    return <>
+    <ChatboxView
       users={users}
       translations={translations[language]}
       currentUser={currentUser}
@@ -139,8 +142,9 @@ class ChatboxContainer extends React.PureComponent {
       onChange={this.onChange}
       messageValue={messageValue}
       onSubmit={this.onSubmit}
-    />;
+    />
+    </>
+    }
   }
-}
 
 export default connect(mapStateToProps)(ChatboxContainer);

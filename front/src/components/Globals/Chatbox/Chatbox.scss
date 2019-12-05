@@ -1,0 +1,21 @@
+.round {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+
+.chatbox {
+  position: fixed;
+  top: 415px;
+  right: 0;
+  display: none;
+
+  .inputChatbox{
+    position: fixed;
+    top: 640px;
+    right: 30px;
+  }
+}
+
+
+
