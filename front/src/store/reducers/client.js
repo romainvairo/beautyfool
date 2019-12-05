@@ -11,6 +11,10 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USER:
+      console.log({
+        ...state,
+        user: action.payload,
+      })
       return {
         ...state,
         user: action.payload,

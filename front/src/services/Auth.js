@@ -46,7 +46,13 @@ export class Auth {
    * @returns {Boolean}
    */
   static hasRole = role => {
-    return Auth.getUser().roles.includes(role);
+    if (!Auth.isLogged()) {
+      return;
+    }
+
+    const roles = Auth.getUser().roles || [];
+
+    return roles.map(r => r.name).includes(role);
   }
 
   /**
