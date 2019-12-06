@@ -21,141 +21,6 @@ let i = 0;
 
 class ChatboxInterfaceContainer extends React.PureComponent {
 
-  messages = {
-    'rgthghr': [
-      {
-        id: i++,
-        text: 'text',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: 'something',
-        socketId: 'thhtththth'
-      },
-      {
-        id: i++,
-        text: 'thj',
-        socketId: 'thhtththth'
-      },
-      {
-        id: i++,
-        text: 'rhtth',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-      {
-        id: i++,
-        text: '-juyjjy',
-        socketId: 'rgthghr'
-      },
-    ]
-  };
-
   state = {
     users: [],
     messages: {},
@@ -198,7 +63,7 @@ class ChatboxInterfaceContainer extends React.PureComponent {
   }
 
   getMySocketSuccess = id => {
-    //this.setState({ mySocketId: id });
+    this.setState({ mySocketId: id });
   }
 
   setMessages = data => {
@@ -240,8 +105,6 @@ class ChatboxInterfaceContainer extends React.PureComponent {
       message.target = currentUser.id;
     }
 
-    console.log(message);
-
     socket.emit('newMessage', message);
     this.setState({ messageValue: '' });
   }
@@ -258,7 +121,7 @@ class ChatboxInterfaceContainer extends React.PureComponent {
 
     console.log('isAdmin', Auth.isAdmin(), currentUser.id);
 
-    return this.messages[
+    return messages[
       Auth.isAdmin()
         ? currentUser.id
         : mySocketId
