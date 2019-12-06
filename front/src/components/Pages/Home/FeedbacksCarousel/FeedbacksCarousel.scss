@@ -3,51 +3,13 @@
   margin-bottom: 2rem;
   padding-bottom: 2rem;
   border-bottom:solid 0.05rem #b4b4b4;
-
-  &-Paragraph {
-    position: absolute;
-    top: 85%;
-    left: 3%;
-    font-style: italic;
-    color: #fff;
-    text-shadow:
-    0 0 1px #000,
-    1px 0 1px #000,
-    0 1px 1px #000,
-    1px 1px 1px #000;
-  }
+  font-size: 2rem;
 
   &-Feedback {
     text-align: center;
   }
-}
 
-@media (min-width: 1700px) {
-  .FeedbacksCarousel-Paragraph {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 1699px) {
-  .FeedbacksCarousel-Paragraph {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 1449px) {
-  .FeedbacksCarousel-Paragraph {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 1129px) {
-  .FeedbacksCarousel-Paragraph {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 849px) {
-  .FeedbacksCarousel-Paragraph {
-    font-size: 0.7rem;
+  &-UserName, &-ServiceName {
+    font-weight: bolder;
   }
 }

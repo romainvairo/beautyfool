@@ -1,6 +1,6 @@
-.Home-MostRecentNews {
+.Home-News, .Home-Benefits, .Home-Presentation, .Home-Galery, .Home-BeautyTips {
   position: relative;
-  margin: auto auto 2rem auto;
+  margin: auto auto 1rem auto;
   width: 70vw;
 
 }
@@ -19,8 +19,46 @@
   font-size: 1.5rem;
 }
 
+.Divs-Row_1 {
+  width: 95%;
+  margin: auto;
+}
+
 @media (max-width: 1025px) {
   .Home-ContactInformation-Subsections {
     font-size: 1rem;
+  }
+}
+
+@media (min-width: 1287px) {
+  .Row_1 {
+    width: 49%;
+    display: inline-block;
+  }
+
+  .Divs-Row_1, .Divs-Row_2 {
+    width: 95%;
+    margin: auto;
+  }
+
+  .Home-News {
+    margin-right: 1%;
+  }
+
+  .Home-Benefits {
+    margin-left: 1%;
+  }
+
+  .Row_2 {
+    width: 32%;
+    display: inline-block;
+  }
+
+  .Home-Galery {
+    margin: auto 2% auto 2%;
+  }
+
+  .Home-Presentation, .Home-BeautyTips {
+    margin: 1% 0 0 0;
   }
 }

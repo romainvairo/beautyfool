@@ -10,8 +10,26 @@ const HomeView = ({ translations })  => (
 
   <section className="Home">
     <GalleryCarousel />
-    <div className="Home-MostRecentNews">
-      <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
+    <div className="Home-Divs">
+      <div className="Divs-Row_1">
+        <div className="Home-News Row_1">
+          <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
+        </div>
+        <div className="Home-Benefits Row_1">
+          <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
+        </div>
+      </div>
+      <div className="Divs-Row_2">
+        <div className="Home-Presentation Row_2">
+          <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
+        </div>
+        <div className="Home-Galery Row_2">
+          <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
+        </div>
+        <div className="Home-BeautyTips Row_2">
+          <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
+        </div>
+      </div>
     </div>
     <FeedbacksCarousel />
     {/* <AccessMap /> */}
