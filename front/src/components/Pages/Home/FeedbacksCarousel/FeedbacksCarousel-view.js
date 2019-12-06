@@ -11,13 +11,13 @@ const FeedbacksCarouselView = ({ translations, feedbacks })  => (
     <AliceCarousel autoPlay={true} autoPlayInterval={5000} buttonsDisabled={true}>
       {feedbacks.map(( feedback ) => (
         <div key={feedback._id} className="FeedbacksCarousel-Feedback">
-          <p key={feedback.user}>{feedback.user}</p>
-          <p key={feedback.service}>{feedback.service}</p>
+          <p>{feedback.user.username}</p>
+          <p>{feedback.service.name}</p>
           <div className="stars">
           <Stars rate={feedback.rate} />
           </div>
-          <p key={feedback.rate}>{feedback.rate}</p>
-          <p key={feedback.text}>{feedback.text}</p>
+          <p>{feedback.rate}</p>
+          <p>{feedback.text}</p>
         </div>
       ))}
     </AliceCarousel>
