@@ -67,3 +67,4 @@ User
 - XML (site map)
 
 `populate` get a foreign key (jointure in mysql)
+`Module not found: Can't resolve` => faire : `npm i`
