@@ -31,6 +31,16 @@ class UsersGetAllContainer extends React.PureComponent {
     window.addEventListener('scroll', throttle(this.scroll, 100));
   }
 
+  componentDidUpdate(prevProps) {
+    const { page } = this.props;
+
+    if (page !== prevProps.page) {
+      this.page = page;
+      this.setState({ users: [] });
+      this.callGetRequest();
+    }
+  }
+
   componentWillUnmount() {
     window.removeEventListener('scroll', throttle(this.scroll, 100));
   }

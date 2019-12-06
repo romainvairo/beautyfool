@@ -1,17 +1,17 @@
 module.exports = [
   {
-    text: 'Your feedback is wrong, you piece of shit',
-    user: 'blablana',
+    text: 'Votre avis est faux!',
+    user: 'heluin',
     feedback: 5
   },
   {
-    text: 'Hey lil boy! come to my car :)',
+    text: 'Merci pour votre avis, je suis totalement d\'accord avec vous.',
     user: 'leicko',
     feedback: 4,
   },
   {
-    text: 'rthhrtthhthtthhtegergergr',
+    text: 'je ne suis pas convaincu par votre avis.',
     user: 'rokxis',
-    feedback: 4,
+    feedback: 3,
   }
 ];

@@ -1,0 +1,11 @@
+.messages {
+  &::-webkit-scrollbar {
+    width: 7px;
+    background-color: transparent !important;
+
+    &-thumb {
+      background-color: #aaa;
+      border-radius: 10px;
+    }
+  }
+}

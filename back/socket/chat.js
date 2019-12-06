@@ -4,6 +4,7 @@ let messages = {};
 let users = {};
 let id = 0;
 let adminSocket;
+let sockets = {};
 
 /**
  * add a message for the corresponsing `socketId`
@@ -40,17 +41,23 @@ exports.newMessage = socket => {
     debug.socket.on('newMessage');
     message.id = id++;
 
+    const targetId = message.target || socket.id;
+
+    sockets[socket.id] = socket;
     message.socketId = socket.id;
     message.username = message.username || 'guest-' + socket.id;
-    users[socket.id] = message.username;
+
+    if (!message.admin) {
+      users[socket.id] = message.username;
+    }
 
     setTimeout(() => {
-      messages[socket.id] = (messages[socket.id] || []).filter(m => m.id !== message.id);
+      messages[targetId] = (messages[targetId] || []).filter(m => m.id !== message.id);
 
-      if (!messages[socket.id].length) {
+      if (!messages[targetId].length) {
 
         // delete property from an object
-        delete messages[socket.id];
+        delete messages[targetId];
         delete users[socket.id];
 
         if (adminSocket) {
@@ -59,7 +66,7 @@ exports.newMessage = socket => {
       }
     }, 1000 * 60 * 60);
 
-    addMessage(socket.id, message);
+    addMessage(targetId, message);
     getNewMessageSuccess(socket, message);
   });
 }
@@ -92,7 +99,13 @@ const getMessagesSuccess = socket => {
 const getNewMessageSuccess = (socket, message) => {
   debug.socket.emit('getNewMessageSuccess');
 
-  socket.emit('getNewMessageSuccess', { message });
+  if (!adminSocket || socket.id !== adminSocket.id) {
+    socket.emit('getNewMessageSuccess', { message });
+  }
+
+  if (message.target && sockets[message.target]) {
+    sockets[message.target].emit('getNewMessageSuccess', { message });
+  }
 
   if (adminSocket) {
     adminSocket.emit('getNewMessageSuccess', {

@@ -44,7 +44,9 @@ const FeedbackController = {
     return FeedbackModel
       .find()
       .skip((page - 1) * limitByPage)
-      .limit(limitByPage);
+      .limit(limitByPage)
+      .populate('service')
+      .populate('user');
   },
 
   /**

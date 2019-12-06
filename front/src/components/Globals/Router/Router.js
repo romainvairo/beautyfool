@@ -6,10 +6,11 @@ import Home from '../../Pages/Home';
 import PageNotFound from '../../Pages/PageNotFound';
 import Gallery from '../../Pages/Gallery';
 import Benefits from '../../Pages/Benefits';
+import BeautyTips from '../../Pages/BeautyTips';
+import News from '../../Pages/News';
 // user routes
 import Login from '../../Pages/Login';
 import Signup from '../../Pages/Signup';
-import News from '../../Pages/News';
 // admin routes
 import Admin from '../../Pages/Admin';
 import AdminActualities from '../../Pages/Admin/Actualities';
@@ -59,6 +60,8 @@ const Router = () => (
     {/* guest routes */}
     <Route exact path={['/gallery', '/galerie']} component={Gallery} />
     <Route exact path={['/benefits', '/prestations']} component={Benefits} />
+    <Route exact path={['/news', '/actualités']} component={News} />
+    <Route exact path={['/beauty-tips', '/astuces-beaute']} component={BeautyTips} />
 
     {/* If the path in the browser matches one of the pathes it will render the component Home */}
     <Route exact path={['/', '/home', '/accueil']} component={Home} />
@@ -66,7 +69,7 @@ const Router = () => (
     {/* user routes */}
     <Route exact path={['/login', '/connexion']} component={Login} />
     <Route exact path={['/signup', '/inscription']} component={Signup} />
-    <Route exact path={['/news', '/actualités']} component={News} />
+
 
 
     {/* admin routes */}
