@@ -65,3 +65,5 @@ User
 - JSON
 - RSS
 - XML (site map)
+
+`populate` get a foreign key (jointure in mysql)
