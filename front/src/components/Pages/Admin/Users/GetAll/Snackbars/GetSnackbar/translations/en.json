@@ -1,0 +1,5 @@
+{
+  "start": "Getting users...",
+  "success": "Users has been retrieved",
+  "error": "Users couldn't be retrieved"
+}

@@ -10,17 +10,19 @@ const ChatboxInterfaceView = ({ currentUser, mySocketId, translations, isAdmin, 
   <Grid container className="chatbox-interface">
     <Grid container item className="w-64 h-64 bg-gray-400">
       <Grid xs={12} container item justify="space-between" className="h-12">
-        <Grid item>
+        <Grid xs={3} item>
           <Tooltip title={translations.dropdownTooltip}>
             <div>
               { isAdmin && <Dropdown onItemClick={onItemClick} users={users} /> }
             </div>
           </Tooltip>
         </Grid>
-        <Grid item>
-          {currentUser.name}
+        <Grid xs={6} item className="truncate py-3">
+          <span>
+            {currentUser.name}
+          </span>
         </Grid>
-        <Grid item>
+        <Grid xs={3} item className="text-right">
           <Tooltip title={translations.closeButton}>
             <IconButton onClick={onClose}>
               <CloseIcon />
@@ -29,21 +31,20 @@ const ChatboxInterfaceView = ({ currentUser, mySocketId, translations, isAdmin, 
         </Grid>
       </Grid>
 
-      <Grid xs={12} container item className="overflow-auto h-40 messages">
+      <Grid xs={12} container item id="chat-messages" className="overflow-auto h-40 messages px-2">
         {messages.map(message => (
           <Grid
             key={message.id}
             container
-            justify={mySocketId !== message.socketId ? 'flex-end' : 'flex-start'}
+            direction="column"
+            alignItems={mySocketId !== message.socketId ? 'flex-end' : 'flex-start'}
           >
-            <Grid item className="mt-4">
+            <Grid item className={classNames(
+              (mySocketId !== message.socketId ? 'bg-blue-400' : 'bg-white'),
+              'mb-4 py-2 px-4 message-container inline-block'
+            )}>
               <span
-                className={
-                  classNames(
-                    (mySocketId !== message.socketId ? 'bg-blue-400 mr-2' : 'bg-white ml-2'),
-                    'rounded-full py-2 px-4'
-                  )
-                }
+                className="message break-words"
               >
                 {message.text}
               </span>

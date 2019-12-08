@@ -1,11 +1,10 @@
 import React from 'react';
+import _ from 'lodash';
 import { connect } from 'react-redux';
-import { throttle } from 'lodash';
 
-import axios from '../../../../../axios';
 import UsersGetAllView from './UsersGetAll-view';
 import { RequestSnackbar } from '../../../../../services';
-import translations from './translations';
+import { GetSnackbar, DeleteSnackbar } from './Snackbars';
 
 const mapStateToProps = state => ({
   language: state.clientReducer.language,
@@ -13,116 +12,36 @@ const mapStateToProps = state => ({
 
 class UsersGetAllContainer extends React.PureComponent {
 
-  deleteSnackbar = new RequestSnackbar(this);
-  getSnackbar = new RequestSnackbar(this);
+  deleteSnackbar = new DeleteSnackbar(this);
+  getSnackbar = new GetSnackbar(this);
   getting = false;
-  page = this.props.page;
-  maxY = 0;
 
   state = {
     users: [],
   };
 
   componentDidMount() {
-    this.setGetRequest();
-    this.callGetRequest();
-    this.setDeleteRequest();
-
-    window.addEventListener('scroll', throttle(this.scroll, 100));
+    this.getSnackbar.caller(this.props.page, 'bottom');
   }
 
   componentDidUpdate(prevProps) {
     const { page } = this.props;
 
     if (page !== prevProps.page) {
-      this.page = page;
       this.setState({ users: [] });
-      this.callGetRequest();
+      this.getSnackbar.caller(page);
     }
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', throttle(this.scroll, 100));
-  }
-
-  /**
-   * set the request to `this.getSnackbar`
-   */
-  setGetRequest = () => {
-    const { language } = this.props;
-
-    this.getSnackbar
-      .setText(translations[language].snackbar.get)
-      .setRequest(() => axios.get('/api/users/page/' + this.page++))
-      .then(({ data }) => {
-        // update the list
-        this.setState(state => ({ users: state.users.concat(data.data) }));
-      })
-      .catch(err => {
-        console.error(err);
-      })
-      .finally(() => {
-        this.getting = false;
-      });
-  }
-
-  /**
-   * call the get request
-   */
-  callGetRequest = () => {
-    this.getting = true;
-    this.getSnackbar.call();
-  }
-
-  /**
-   * set the request to `this.deleteSnackbar`
-   */
-  setDeleteRequest = () => {
-    const { language } = this.props;
-
-    this.deleteSnackbar
-      .setText(translations[language].snackbar.delete)
-      .setRequest(user => axios.delete('/api/users/' + user._id + '/delete'))
-      .then((_, user) => {
-        // delete the user from the state
-        this.deleteUserById(user._id);
-      })
-      .catch(err => {
-        console.error(err);
-      });
-  }
-
-  /**
-   * call the get request
-   * @param {{_id: String}} user
-   */
-  callDeleteRequest = user => () => {
-    this.deleteSnackbar.call(user);
   }
 
   /**
    * called when the user scrolls
    */
-  scroll = () => {
-    // avoid useless processing
-    if (this.getting || window.scrollY <= this.maxY) {
-      return;
+  onScroll = (page, type) => {
+    if (this.getting) {
+      return true;
     }
 
-    this.maxY = window.scrollY;
-
-    // get the element that contains the list
-    const infiniteScrollContainer = document.getElementById('infinite-scroll');
-    // get its height and top position
-    const bounding = infiniteScrollContainer.getBoundingClientRect();
-    // calculate the user's scroll position
-    const thresold = (bounding.height + bounding.top) - window.innerHeight;
-
-    // if the bottom of the user's scroll is less than 400 pixels
-    // to the end of the list we perform a request to get more entries
-    if (thresold < 400) {
-      this.callGetRequest();
-    }
+    this.getSnackbar.caller(page, type);
   }
 
   /**
@@ -140,12 +59,16 @@ class UsersGetAllContainer extends React.PureComponent {
 
   render() {
     const { users } = this.state;
+    const { lastPage, page } = this.props;
 
     return <UsersGetAllView
       users={users}
       DeleteSnackbar={this.deleteSnackbar.Snackbar}
       GetSnackbar={this.getSnackbar.Snackbar}
-      callDeleteRequest={this.callDeleteRequest}
+      callDeleteRequest={this.deleteSnackbar.caller}
+      onScroll={this.onScroll}
+      page={page}
+      lastPage={lastPage}
     />;
   }
 }

@@ -17,8 +17,6 @@ const mapStateToProps = state => ({
   language: state.clientReducer.language,
 });
 
-let i = 0;
-
 class ChatboxInterfaceContainer extends React.PureComponent {
 
   state = {
@@ -53,6 +51,16 @@ class ChatboxInterfaceContainer extends React.PureComponent {
     socket.on('getNewMessageSuccess', this.addMessage);
     socket.on('getMySocketSuccess', this.getMySocketSuccess);
     socket.emit('getMySocket');
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // if there is another message
+    if (this.getRightMessages().length !== this.getRightMessages(prevState).length) {
+      // get the element that contains all images
+      const messageContainer = document.getElementById('chat-messages');
+      // scroll the message container to its bottom
+      messageContainer.scrollTo({ top: messageContainer.scrollHeight });
+    }
   }
 
   componentWillUnmount() {
@@ -92,6 +100,10 @@ class ChatboxInterfaceContainer extends React.PureComponent {
     e.preventDefault();
     const { messageValue, currentUser } = this.state;
 
+    if (!messageValue.trim()) {
+      return;
+    }
+
     const message = {
       text: messageValue,
     };
@@ -116,10 +128,8 @@ class ChatboxInterfaceContainer extends React.PureComponent {
     socket.emit('getMessages');
   }
 
-  getRightMessages = () => {
-    const { messages, mySocketId, currentUser } = this.state;
-
-    console.log('isAdmin', Auth.isAdmin(), currentUser.id);
+  getRightMessages = state => {
+    const { messages, mySocketId, currentUser } = (state || this.state);
 
     return messages[
       Auth.isAdmin()

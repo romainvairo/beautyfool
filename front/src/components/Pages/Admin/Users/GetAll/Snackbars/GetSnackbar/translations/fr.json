@@ -1,0 +1,5 @@
+{
+  "start": "Récupération des utilisateurs...",
+  "success": "Les utilisateurs ont été récupéré",
+  "error": "Les utilisateurs n'ont pas pu être récupéré"
+}

@@ -23,7 +23,7 @@ class UsersContainer extends React.PureComponent {
     const { match, language } = this.props;
 
     return <UsersView
-      page={getPage(match)}
+      page={+getPage(match)}
       translations={translations[language]}
       onPageChange={this.onPageChange}
     />;
