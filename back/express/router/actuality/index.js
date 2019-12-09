@@ -4,7 +4,9 @@ const addActuality = require('./addActuality');
 const getActualityById = require('./getActualityById');
 const editActualityById = require('./editActualityById');
 const deleteActualityById = require('./deleteActualityById');
+const getNewestActuality = require('./getNewestActuality');
 
+app.get('/api/actualities/newest', getNewestActuality)
 app.get('/api/actualities/page/:page', getActualities);
 app.post('/api/actualities/add', addActuality);
 app.get('/api/actualities/:id', getActualityById);

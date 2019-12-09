@@ -23,6 +23,13 @@ const ActualityController = {
   },
 
   /**
+   * find newest actuality
+   */
+  findNewestActuality: () => {
+    return ActualityModel.findOne().sort({ _id: -1 });
+  },
+
+  /**
    * find all acutalities
    * @param {Number} page
    */

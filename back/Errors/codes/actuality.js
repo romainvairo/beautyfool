@@ -30,4 +30,9 @@ module.exports = {
     message: "An error occured and your informations couldn't be edited",
     status: 500,
   },
+  findNewest: {
+    code: i++,
+    message: "An error occured and your informations couldn't be retrieved",
+    status: 500,
+  }
 };

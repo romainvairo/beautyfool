@@ -16,7 +16,7 @@ class HomeContainer extends React.PureComponent {
   }
 
   componentDidMount() {
-    axios.get('/api/actualities/1')
+    axios.get('/api/actualities/newest')
       .then(({ data }) => {
         this.setState({ actuality: data.data });
       })

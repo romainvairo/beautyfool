@@ -14,7 +14,8 @@ const HomeView = ({ translations, actuality })  => (
       <div className="Divs-Row_1">
         <div className="Home-News Row_1">
           <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
-          <p>{actuality}</p>
+          <h1>{actuality.title}</h1>
+          <p>{actuality.content}</p>
         </div>
         <div className="Home-Benefits Row_1">
           <img src={require('../../../assets/images/makeup_2.jpg')} alt=""/>
