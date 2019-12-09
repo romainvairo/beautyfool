@@ -8,6 +8,9 @@ import Gallery from '../../Pages/Gallery';
 import Benefits from '../../Pages/Benefits';
 import BeautyTips from '../../Pages/BeautyTips';
 import News from '../../Pages/News';
+import TermsOfSales from '../../Pages/TermsOfSales';
+import TermsOfServices from '../../Pages/TermsOfServices';
+import LegalNotices from '../../Pages/LegalNotices';
 // user routes
 import Login from '../../Pages/Login';
 import Signup from '../../Pages/Signup';
@@ -62,6 +65,9 @@ const Router = () => (
     <Route exact path={['/benefits', '/prestations']} component={Benefits} />
     <Route exact path={['/news', '/actualités']} component={News} />
     <Route exact path={['/beauty-tips', '/astuces-beaute']} component={BeautyTips} />
+    <Route exact path={['/legal-notices', '/mentions-legales']} component={LegalNotices} />
+    <Route exact path={['/terms-of-sales', '/conditions-generales-de-vente']} component={TermsOfSales} />
+    <Route exact path={['/terms-of-services', '/conditions-generales-utilisation']} component={TermsOfServices} />
 
     {/* If the path in the browser matches one of the pathes it will render the component Home */}
     <Route exact path={['/', '/home', '/accueil']} component={Home} />

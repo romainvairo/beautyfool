@@ -6,7 +6,7 @@ import FeedbacksCarousel from './FeedbacksCarousel';
 
 import './Home.scss';
 
-const HomeView = ({ translations })  => (
+const HomeView = ({ translations, actuality })  => (
 
   <section className="Home">
     <GalleryCarousel />
@@ -14,20 +14,21 @@ const HomeView = ({ translations })  => (
       <div className="Divs-Row_1">
         <div className="Home-News Row_1">
           <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
+          <p>{actuality}</p>
         </div>
         <div className="Home-Benefits Row_1">
-          <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
+          <img src={require('../../../assets/images/makeup_2.jpg')} alt=""/>
         </div>
       </div>
       <div className="Divs-Row_2">
         <div className="Home-Presentation Row_2">
-          <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
+          <img src={require('../../../assets/images/makeup_3.jpg')} alt=""/>
         </div>
         <div className="Home-Galery Row_2">
-          <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
+          <img src={require('../../../assets/images/makeup_4.jpg')} alt=""/>
         </div>
         <div className="Home-BeautyTips Row_2">
-          <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
+          <img src={require('../../../assets/images/makeup_5.jpg')} alt=""/>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 module.exports = [
   {
     title: 'La 1ère actualité',
-    content: 'L\'actualité avec du du texte pourquoi pas.',
+    content: 'Une actualité avec du texte pourquoi pas.',
   },
   {
     title: 'La 2ème actualité - Apparemment quelque chose de nouveau',
@@ -9,7 +9,7 @@ module.exports = [
   },
   {
     title: 'La 3ème actualité',
-    content: 'L\'actualité avec du du texte pourquoi pas.',
+    content: 'Un nouveau paragraphe d\'actualité avec du du texte.',
   },
   {
     title: 'La 4ème actualité',
