@@ -11,25 +11,25 @@ const NavbarView = ({ translations }) => (
     <Toolbar className="bg-red-800 pl-20" component="div">
       <Grid container justify="space-around">
         <Grid item>
-          <Link className="link">{translations.Home}</Link>
+          <Link to="/" className="link">{translations.Home}</Link>
         </Grid>
         <Grid item>
-          <Link className="link">{translations.Actualities}</Link>
+          <Link to="/news" className="link">{translations.Actualities}</Link>
         </Grid>
         <Grid item>
-          <Link className="link">{translations.Services}</Link>
+          <Link to="#" className="link">{translations.Services}</Link>
         </Grid>
         <Grid item>
-          <Link className="link">{translations.BeautyTips}</Link>
+          <Link to="#" className="link">{translations.BeautyTips}</Link>
         </Grid>
         <Grid item>
-          <Link className="link">{translations.Gallery}</Link>
+          <Link to="#" className="link">{translations.Gallery}</Link>
         </Grid>
         <Grid item>
-          <Link className="link">{translations.Presentation}</Link>
+          <Link to="#" className="link">{translations.Presentation}</Link>
         </Grid>
         <Grid item>
-          <Link className="link">{translations.ContactUs}</Link>
+          <Link to="#" className="link">{translations.ContactUs}</Link>
         </Grid>
       </Grid>
     </Toolbar>

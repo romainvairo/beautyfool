@@ -8,6 +8,8 @@ import Gallery from '../../Pages/Gallery';
 import Benefits from '../../Pages/Benefits';
 import BeautyTips from '../../Pages/BeautyTips';
 import News from '../../Pages/News';
+import Profile from '../../Pages/Profile';
+import Contact from '../../Pages/Contact';
 // user routes
 import Login from '../../Pages/Login';
 import Signup from '../../Pages/Signup';
@@ -62,6 +64,8 @@ const Router = () => (
     <Route exact path={['/benefits', '/prestations']} component={Benefits} />
     <Route exact path={['/news', '/actualités']} component={News} />
     <Route exact path={['/beauty-tips', '/astuces-beaute']} component={BeautyTips} />
+    <Route exact path={['/profil', '/profile']} component={Profile} />
+    <Route exact path={['/contact', '/contact']} component={Contact} />
 
     {/* If the path in the browser matches one of the pathes it will render the component Home */}
     <Route exact path={['/', '/home', '/accueil']} component={Home} />

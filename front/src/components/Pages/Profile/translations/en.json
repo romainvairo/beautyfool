@@ -1,3 +1,16 @@
 {
-
+  "logout": "Deconnexion",
+  "updateAccount": "Update",
+  "firstname": "First name",
+  "lastName": "Last name",
+  "username": "Username",
+  "address": "Adress",
+  "zipCode": "Zip code",
+  "city": "City",
+  "birthdate": "Birthdate",
+  "email": "Email",
+  "fidelityPoints": "Fidelity point",
+  "appointments": "My appointments",
+  "newsletters": "Subscribe to the newsletter",
+  "deleteAccount": "Delete my account"
 }
