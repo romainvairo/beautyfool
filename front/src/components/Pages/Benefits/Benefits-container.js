@@ -8,7 +8,6 @@ const mapStateToProps = state => ({
   language: state.clientReducer.language,
 });
 
-const BenefitsContainer = ({ language }) =>
-  <BenefitsView translations={translations[language]} />;
+const BenefitsContainer = ({ language }) => <BenefitsView translations={translations[language]} />;
 
-export default connect(mapStateToProps)(BenefitsContainer);
+export default connect(mapStateToProps, null)(BenefitsContainer);
