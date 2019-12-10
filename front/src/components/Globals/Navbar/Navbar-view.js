@@ -8,29 +8,15 @@ import './Navbar.scss';
 
 const NavbarView = ({ translations }) => (
   <AppBar  className="toolbar hidden md:block" position="static">
-    <Toolbar className="bg-red-800 pl-20" component="div">
+    <Toolbar className="bg-pink-700 pl-20" component="div">
       <Grid container justify="space-around">
-        <Grid item>
-          <Link to="/" className="link">{translations.Home}</Link>
-        </Grid>
-        <Grid item>
-          <Link to="/news" className="link">{translations.Actualities}</Link>
-        </Grid>
-        <Grid item>
-          <Link to="#" className="link">{translations.Services}</Link>
-        </Grid>
-        <Grid item>
-          <Link to="#" className="link">{translations.BeautyTips}</Link>
-        </Grid>
-        <Grid item>
-          <Link to="#" className="link">{translations.Gallery}</Link>
-        </Grid>
-        <Grid item>
-          <Link to="#" className="link">{translations.Presentation}</Link>
-        </Grid>
-        <Grid item>
-          <Link to="#" className="link">{translations.ContactUs}</Link>
-        </Grid>
+        <Link to="/" className="link">{translations.Home}</Link>
+        <Link to="/news" className="link">{translations.Actualities}</Link>
+        <Link to="/benefits" className="link">{translations.Services}</Link>
+        <Link to="/beauty-tips" className="link">{translations.BeautyTips}</Link>
+        <Link to="/gallery" className="link">{translations.Gallery}</Link>
+        <Link to="/presentation" className="link">{translations.Presentation}</Link>
+        <Link to="/contact" className="link">{translations.ContactUs}</Link>
       </Grid>
     </Toolbar>
   </AppBar>
