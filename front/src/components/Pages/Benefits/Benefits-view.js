@@ -7,9 +7,6 @@ import './Benefits.scss';
 const BenefitsView = ({ translations }) => (
   <div className="Benefits">
     <div className="Benefits-HairRemoval">
-      <div className="Benefits-HairRemoval-Image">
-
-      </div>
       <div className="Benefits-HairRemoval-Form">
         <FormControlLabel
           control={
@@ -68,8 +65,11 @@ const BenefitsView = ({ translations }) => (
           label="Secondary"
         />
       </div>
+      <div className="Benefits-HairRemoval-Image">
+        <img src={require('../../../assets/images/legs_3.jpg')} alt=""/>
+      </div>
     </div>
-    <div className="Benefits-HairRemoval-Button">
+    <div className="Benefits-Button">
       <Button variant="contained" color="secondary" className="font-bold" href="/">
         { translations.button }
       </Button>
