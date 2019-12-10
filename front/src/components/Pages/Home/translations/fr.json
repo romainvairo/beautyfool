@@ -1,8 +1,28 @@
 {
-    "contactInformation": {
-        "phone": "Téléphone: 01 06 52 35 95",
-        "address": "Adresse: 58, avenue des Champs Elysées",
-        "zipcode": "Code postal: 75008",
-        "city": "Ville: Paris"
-    }
+  "news": {
+    "link": "Cliquez sur cette image pour accéder aux actualités"
+  },
+  "benefits": {
+    "title": "Prestations",
+    "text": "Venez découvrir les prestations de votre institut de beauté Beautyfool, nous avons une large gamme de soins à vous proposer.",
+    "link": "Cliquez sur cette image pour accéder aux prestations"
+  },
+  "contactInformation": {
+    "phone": "Téléphone: 01 06 52 35 95",
+    "address": "Adresse: 58, avenue des Champs Elysées",
+    "zipcode": "Code postal: 75008",
+    "city": "Ville: Paris"
+  },
+  "presentation": {
+    "title": "Présentation de l'institut",
+    "text": "Retrouvez tous nos renseignements sur la page présentation.",
+    "link": "Cliquez sur cette image pour accéder à la présentation"
+  },
+  "gallery": {
+    "title": "Galerie",
+    "link": "Cliquez sur cette image pour accéder à la galerie"
+  },
+  "beautyTips": {
+    "link": "Cliquez sur cette image pour accéder aux astuces beauté"
+  }
 }

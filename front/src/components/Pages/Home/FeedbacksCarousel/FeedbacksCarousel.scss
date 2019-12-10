@@ -13,3 +13,10 @@
     font-weight: bolder;
   }
 }
+
+@media (max-width: 1025px) {
+  .FeedbacksCarousel {
+    font-size: 1rem;
+    margin: 0.5rem;
+  }
+}

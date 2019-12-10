@@ -12,7 +12,8 @@ const mapStateToProps = (state) => ({
 class HomeContainer extends React.PureComponent {
 
   state = {
-    actuality: []
+    actuality: [],
+    beautyTip: []
   }
 
   componentDidMount() {
@@ -23,15 +24,25 @@ class HomeContainer extends React.PureComponent {
       .catch((error) => {
         console.error(error);
       });
+
+    axios.get('/api/beauty-tips/newest')
+      .then(({ data }) => {
+        this.setState({ beautyTip: data.data });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   render() {
     const { language } = this.props;
     const { actuality } = this.state;
+    const {beautyTip} = this.state;
 
     return <HomeView
       translations={translations[language]}
       actuality={actuality}
+      beautyTip={beautyTip}
     />;
 
   }
