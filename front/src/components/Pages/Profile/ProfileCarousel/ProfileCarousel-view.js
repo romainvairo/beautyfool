@@ -8,7 +8,7 @@ import './ProfileCarousel.scss';
 const ProfileCarouselView = ({ images, translations })  => (
 
   <section className="ProfileCarousel carousel">
-    <AliceCarousel>
+    <AliceCarousel autoPlay={true} autoPlayInterval={5000} buttonsDisabled={true}>
       {images.map((image, i) => (
 
         <section className="ProfileCarousel-Subsection">
