@@ -33,7 +33,7 @@ const NewsView = ({ translations }) => (
   </Grid>
   <Grid xs={12} lg={12} container item spacing={2} className="mt-10 mb-10">
   <Grid xs={6} md={4} item>
-    <img className="pa" src={require("../../../assets/images/makeup_1.jpg")}/>
+    <img src={require("../../../assets/images/makeup_1.jpg")}/>
   </Grid>
   <Grid xs={6} md={4} item>
     <img src={require("../../../assets/images/makeup_1.jpg")}/>

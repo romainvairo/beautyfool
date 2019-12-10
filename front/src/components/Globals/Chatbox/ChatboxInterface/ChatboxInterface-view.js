@@ -8,7 +8,7 @@ import './ChatboxInterface.scss';
 
 const ChatboxInterfaceView = ({ currentUser, mySocketId, translations, isAdmin, onClose, onItemClick, messages, onChange, messageValue, onSubmit, users }) => (
   <Grid container className="chatbox-interface">
-    <Grid container item className="w-64 h-64 bg-gray-400">
+    <Grid container item className="w-64 h-64 bg-gray-400 rounded-lg">
       <Grid xs={12} container item justify="space-between" className="h-12">
         <Grid item>
           <Tooltip title={translations.dropdownTooltip}>
@@ -53,10 +53,10 @@ const ChatboxInterfaceView = ({ currentUser, mySocketId, translations, isAdmin, 
       </Grid>
 
       <Grid xs={12} item className="h-6">
-        <form onSubmit={onSubmit} className="text-center mb-1">
+        <form onSubmit={onSubmit} className="text-center mb-1 pl-2 pr-2">
           <input
             type="text"
-            className="input-chatbox w-full pl-2"
+            className="input-chatbox w-full pl-2 rounded-lg"
             placeholder={translations.placeholder}
             onChange={onChange('messageValue')}
             value={messageValue}

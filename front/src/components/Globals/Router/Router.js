@@ -8,6 +8,8 @@ import Gallery from '../../Pages/Gallery';
 import Benefits from '../../Pages/Benefits';
 import BeautyTips from '../../Pages/BeautyTips';
 import News from '../../Pages/News';
+import Profile from '../../Pages/Profile';
+import Contact from '../../Pages/Contact';
 import TermsOfSales from '../../Pages/TermsOfSales';
 import TermsOfServices from '../../Pages/TermsOfServices';
 import LegalNotices from '../../Pages/LegalNotices';
@@ -67,6 +69,8 @@ const Router = () => (
     <Route exact path={['/benefits', '/prestations']} component={Benefits} />
     <Route exact path={['/news', '/actualités']} component={News} />
     <Route exact path={['/beauty-tips', '/astuces-beaute']} component={BeautyTips} />
+    <Route exact path={['/contact']} component={Contact} />
+    <Route exact path={['/profil', '/profile']} component={Profile} />
     <Route exact path={['/legal-notices', '/mentions-legales']} component={LegalNotices} />
     <Route exact path={['/terms-of-sales', '/conditions-generales-de-vente']} component={TermsOfSales} />
     <Route exact path={['/terms-of-services', '/conditions-generales-utilisation']} component={TermsOfServices} />

@@ -1,0 +1,62 @@
+.carousel{
+  height: 10rem;
+  width: 40rem;
+  margin-left: 0rem;
+  margin-top: 1rem;
+}
+
+
+.ProfileCarousel {
+
+  &-Paragraph {
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    font-style: italic;
+    color: #fff;
+    text-shadow: 0 0 10px #000, 2px 2px 2px #000;
+  }
+}
+
+@media (min-width: 500px) {
+  .ProfileCarousel-Paragraph {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .ProfileCarousel-Paragraph{
+   font-size: 2.5em;
+  }
+  .carousel{
+    height: 17rem;
+    width: 22rem;
+    margin-left: 0rem;
+    margin-top: 0rem;
+  }
+  .ProfileCarousel-Images{
+    height: 20rem;
+    width: 22rem;
+  }
+}
+
+@media (min-width: 40px) {
+  .ProfileCarousel-Paragraph{
+   font-size: 2.5em;
+  }
+  .carousel{
+    height: 17rem;
+    width: 30rem;
+    margin-left: 0rem;
+    margin-top: 0rem;
+  }
+  .ProfileCarousel-Images{
+    height: 20rem;
+    width: 30rem;
+  }
+}
+
+
+
+
+
