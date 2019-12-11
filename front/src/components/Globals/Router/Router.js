@@ -14,6 +14,9 @@ import TermsOfSales from '../../Pages/TermsOfSales';
 import TermsOfServices from '../../Pages/TermsOfServices';
 import LegalNotices from '../../Pages/LegalNotices';
 import Presentation from '../../Pages/Presentation';
+import Sitemap from '../../Pages/Sitemap';
+import FAQ from '../../Pages/FAQ';
+
 
 // user routes
 import Login from '../../Pages/Login';
@@ -75,6 +78,8 @@ const Router = () => (
     <Route exact path={['/terms-of-sales', '/conditions-generales-de-vente']} component={TermsOfSales} />
     <Route exact path={['/terms-of-services', '/conditions-generales-utilisation']} component={TermsOfServices} />
     <Route exact path={['/presentation']} component={Presentation} />
+    <Route exact path={['/sitemap', '/plan-du-site']} component={Sitemap} />
+    <Route exact path={['/faq']} component={FAQ} />
 
 
     {/* If the path in the browser matches one of the pathes it will render the component Home */}

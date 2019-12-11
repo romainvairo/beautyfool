@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 
 import './Benefits.scss';
 
-const BenefitsView = ({ translations }) => (
+const BenefitsView = ({ translations, benefits }) => (
   <div className="Benefits">
     <div className="Benefits-Nails">
       <div className="Benefits-Nails-Form">

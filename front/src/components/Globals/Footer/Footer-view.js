@@ -15,19 +15,19 @@ const FooterView = ({ translations }) => (
     </Grid>
     <Grid container justify="space-between" className="Footer text-center">
       <Grid xs={12} sm={6} md="auto" item>
-        <Link className="p" to="#">{ translations.LegalsMentions }</Link>
+        <Link className="p" to="/legal-notices">{ translations.LegalsMentions }</Link>
       </Grid>
       <Grid xs={12} sm={6} md="auto" item>
-        <Link className="p" to="#">{ translations.TermsOfService }</Link>
+        <Link className="p" to="/terms-of-services">{ translations.TermsOfService }</Link>
       </Grid>
       <Grid xs={12} sm={6} md="auto" item>
-        <Link className="p" to="#">{ translations.TermsOfSalse }</Link>
+        <Link className="p" to="/terms-of-sales">{ translations.TermsOfSalse }</Link>
       </Grid>
       <Grid xs={12} sm={6} md="auto" item>
-        <Link className="p" to="#">{ translations.SiteMap }</Link>
+        <Link className="p" to="/sitemap">{ translations.SiteMap }</Link>
       </Grid>
       <Grid xs={12} sm={6} md="auto" item>
-        <Link className="p" to="#">{ translations.FAQ }</Link>
+        <Link className="p" to="/faq">{ translations.FAQ }</Link>
       </Grid>
       <Grid xs={12} item>
         <Link className="p" to="#">{ translations.Copyright }</Link>
