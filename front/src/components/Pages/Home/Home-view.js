@@ -39,7 +39,7 @@ const HomeView = ({ translations, actuality, beautyTip })  => (
           </a>
         </div>
         <div className="Home-Gallery Row_2">
-          <a href="/gallerie">
+          <a href="/galerie">
             <img src={require('../../../assets/images/makeup_4.jpg')} alt=""/>
             <h1>{translations.gallery.title}</h1>
             <p className="Home-Gallery-Link">{translations.gallery.link}</p>

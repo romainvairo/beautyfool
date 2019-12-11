@@ -4,17 +4,15 @@ import './Gallery.scss';
 
 const GalleryView = ({ images, translations })  => (
 
-  <section className="GalleryCarousel">
-      {images.map((image, i) => (
+  <section className="Gallery">
+    {images.map(( image ) => (
 
-        <section className="Gallery-Subsection">
-          <img className="Gallery-Images" key={image} src={image} alt="" />
-          <p className="Gallery-Paragraph">{translations[i]}</p>
-        </section>
+      <section className="Gallery-Subsection">
+        <img className="Gallery-Images" key={image} src={image} alt="" />
+      </section>
 
-      ))}
+    ))}
   </section>
-
 );
 
 export default GalleryView;

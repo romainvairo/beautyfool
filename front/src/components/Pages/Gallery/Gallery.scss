@@ -1,0 +1,22 @@
+.Gallery {
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.Gallery-Subsection {
+  width: 98%;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+@media (min-width: 1025px) {
+  .Gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    &-Subsection {
+      width: 31vw;
+    }
+  }
+}

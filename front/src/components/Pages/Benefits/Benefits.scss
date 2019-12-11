@@ -1,16 +1,22 @@
+.Benefits {
+  margin: 2rem;
+  &-Nails, &-HairRemoval, &-Makeup, &-Face, &-Body, &-HandsAndFeet {
+    display: flex;
+    justify-content: space-between;
+
+    &-Image {
+      width: 50%;
+      justify-content: flex-end;
+    }
+
+    &-Form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
 .Benefits-Button {
   text-align: center;
-}
-
-.Benefits-HairRemoval {
-  display: flex;
-  justify-content: space-between;
-}
-
-.Benefits-HairRemoval-Image {
-  width: 50%;
-  justify-content: flex-end;
-}
-
-.Benefits-HairRemoval-Form {
+  margin-top: 2rem;
 }
