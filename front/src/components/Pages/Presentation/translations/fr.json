@@ -1,3 +1,18 @@
 {
-
+  "titlePage": "Presentation du salon de beauté",
+  "titleSite": "Presentation du site",
+  "titleActualities": "Actualités de l'institut",
+  "titleBeautyTips": "Nos astuces beauté",
+  "titlePrestations": "Des prestations",
+  "titleGallery": "Une gallery",
+  "titleAccount": "Votre Compte",
+  "infoTips": "Informations pratique",
+  "schedule": "Nos horaires",
+  "monday": "Lundi: Fermé",
+  "tuesday": "Mardi: 9h - 19h",
+  "wednesday": "Mercredi: 9h - 19h",
+  "thursday": "Jeudi: 9h - 19h",
+  "friday": "Vendredi: 9h - 19h",
+  "saturday": "Samedi: 9h - 19h",
+  "sunday": "Dimanche: Fermé"
 }

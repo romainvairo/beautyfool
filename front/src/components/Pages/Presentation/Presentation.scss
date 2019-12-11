@@ -1,0 +1,56 @@
+@media Screen and (min-width: 960px) and (max-width: 1215px) {
+
+  h5 {
+    font-size : 5px;
+  }
+
+  .text-presentation{
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1215px) {
+
+  .text-presentation{
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .address{
+    border: 2px solid black;
+  }
+
+  .appointment {
+    color: #d1d1d1;
+    background-color:black;
+  }
+}
+
+@media (min-width: 600px) {
+
+  .appointment {
+    color: white;
+    background-color:black;
+  }
+
+  .address{
+    border: 2px solid black;
+  }
+}
+
+@media (min-width: 1215px) {
+
+  .address{
+    color: black;
+    font-size: 1.5rem;
+  }
+  .appointment {
+    color: white;
+    background-color:black;
+    font-size: 1.5rem;
+  }
+}
+
