@@ -1,3 +1,16 @@
 {
-
-}
+  "logout": "Deconnexion",
+  "updateAccount": "Modifier",
+  "firstname": "Prenom",
+  "lastname": "Nom",
+  "username": "Pseudo",
+  "address": "Adresse postale",
+  "zipCode": "Code postale",
+  "city": "Ville",
+  "birthdate": "Date de naissance",
+  "email": "Adresse mail",
+  "fidelityPoints": "Points de fidélité",
+  "appointments": "Mes rendez-vous",
+  "newsletters": "Abonnement a la newsletters",
+  "deleteAccount": "Supprimez mon compte"
+  }

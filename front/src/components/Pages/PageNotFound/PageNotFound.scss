@@ -1,0 +1,45 @@
+.PageNotFound {
+  background-image: url("../../../assets/images/Error_404.jpg");
+  height: 69vh;
+  background-size: cover;
+}
+
+.PageNotFound-Messsage {
+  text-align: center;
+  font-size: 3rem;
+  color: #FFF;
+  font-weight: bold;
+  text-shadow:
+    0 0 1px #000,
+    2px 0 1px #000,
+    0 2px 1px #000,
+    2px 2px 1px #000;
+}
+
+.PageNotFound-Title {
+  text-align: center;
+  font-size: 20rem;
+  font-weight: bold;
+  color: #FFF;
+  text-shadow:
+    0 0 1px #000,
+    2px 0 1px #000,
+    0 2px 1px #000,
+    2px 2px 1px #000;
+  line-height: 20rem;
+}
+
+.PageNotFound-Button {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1025px) {
+  .PageNotFound-Title {
+    font-size: 10rem;
+  }
+
+  .PageNotFound-Messsage {
+    font-size: 2rem;
+  }
+}

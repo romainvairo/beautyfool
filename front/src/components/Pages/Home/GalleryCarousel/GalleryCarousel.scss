@@ -1,7 +1,8 @@
 .GalleryCarousel {
   position: relative;
-  margin: auto;
-  width: 70vw;
+  margin-bottom: 1.5rem;
+  padding-bottom: 2rem;
+  border-bottom:solid 0.05rem #b4b4b4;
 
   &-Paragraph {
     position: absolute;
@@ -9,7 +10,15 @@
     left: 3%;
     font-style: italic;
     color: #fff;
-    text-shadow: 0 0 10px #000, 2px 2px 2px #000;
+    text-shadow:
+    0 0 1px #000,
+    1px 0 1px #000,
+    0 1px 1px #000,
+    1px 1px 1px #000;
+  }
+
+  &-Images {
+    width: 100%;
   }
 }
 

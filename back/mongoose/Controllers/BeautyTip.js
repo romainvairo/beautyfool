@@ -23,6 +23,13 @@ const BeautyTipController = {
   },
 
   /**
+   * find newest beauty tip
+   */
+  findNewestBeautyTip: () => {
+    return BeautyTipModel.findOne().sort({ _id: -1 });
+  },
+
+  /**
    * find all beautyTips
    * @param {Number} page
    */

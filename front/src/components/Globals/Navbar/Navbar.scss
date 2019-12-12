@@ -1,4 +1,13 @@
 .link {
-  padding: 5px;
+
   font-size: 20px;
+  padding: 18px;
+}
+
+.link:hover {
+  color: black;
+  background-color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 18px;
 }

@@ -1,3 +1,8 @@
 {
-
+  "name": "Name",
+  "email": "Adress e-mail",
+  "subject": "Subject",
+  "message": "Message",
+  "send": "Send",
+  "title": "Need more informations? contact us!"
 }

@@ -1,12 +1,170 @@
-.Home-ContactInformation-Subsections {
+.Home-News, .Home-Benefits {
+  position: relative;
+  margin: auto auto 1rem auto;
+  width: 70vw;
 
+  & h1 {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #fff;
+    font-weight: bold;
+    font-size: 3rem;
+    text-shadow:
+      0 0 1px #000,
+      1px 0 1px #000,
+      0 1px 1px #000,
+      1px 1px 1px #000;
+  }
+
+  &-Paragraph {
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 5rem;
+    text-shadow:
+      0 0 1px #000,
+      1px 0 1px #000,
+      0 1px 1px #000,
+      1px 1px 1px #000;
+  }
+
+  &-Link {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    text-shadow:
+      0 0 1px #000,
+      1px 0 1px #000,
+      0 1px 1px #000,
+      1px 1px 1px #000;
+  }
+}
+
+.Home-Presentation, .Home-Gallery, .Home-BeautyTips {
+  position: relative;
+  margin: auto auto 1rem auto;
+  width: 29vw;
+
+  & h1 {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #fff;
+    font-weight: bold;
+    font-size: 2rem;
+    text-shadow:
+      0 0 1px #000,
+      1px 0 1px #000,
+      0 1px 1px #000,
+      1px 1px 1px #000;
+  }
+
+  &-Paragraph {
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    text-shadow:
+      0 0 1px #000,
+      1px 0 1px #000,
+      0 1px 1px #000,
+      1px 1px 1px #000;
+  }
+
+  &-Link {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 5rem;
+    text-shadow:
+      0 0 1px #000,
+      1px 0 1px #000,
+      0 1px 1px #000,
+      1px 1px 1px #000;
+  }
+}
+
+.Row_1, .Row_2 {
+  width: 95%;
+  display: block;
+}
+
+.Home-Map {
+  margin: auto;
+  width: 70%;
+}
+
+.Home-ContactInformation {
+  margin-top: 1rem;;
+}
+
+.Home-ContactInformation-Subsections {
   text-align: center;
   font-size: 1.5rem;
-
 }
 
 @media (max-width: 1025px) {
   .Home-ContactInformation-Subsections {
     font-size: 1rem;
+  }
+
+  .Home-News, .Home-Benefits, .Home-Presentation, .Home-Gallery, .Home-BeautyTips {
+    & h1 {
+      font-size: 1.3rem;
+      top: 0.5rem;
+    }
+
+    & p {
+      font-size: 0.7rem;
+      margin-top: 0.02rem;
+    }
+
+    &-Link {
+      font-size: 0.5rem;
+      bottom: 0.5rem;
+    }
+  }
+}
+
+@media (min-width: 1287px) {
+  .Row_1 {
+    width: 49%;
+    display: inline-block;
+  }
+
+  .Divs-Row_1, .Divs-Row_2 {
+    width: 95%;
+    margin: auto;
+  }
+
+  .Home-News {
+    margin-right: 1%;
+  }
+
+  .Home-Benefits {
+    margin-left: 1%;
+  }
+
+  .Row_2 {
+    width: 32%;
+    display: inline-block;
+  }
+
+  .Home-Gallery {
+    margin: auto 2% auto 2%;
+  }
+
+  .Home-Presentation, .Home-BeautyTips {
+    margin: 1% 0 0 0;
   }
 }

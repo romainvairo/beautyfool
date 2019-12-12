@@ -23,7 +23,7 @@ const HeaderView = ({ translations }) => (
       </Grid>
       <Grid xs={3} sm={2} container item justify="flex-end">
         <Grid item className="pr-2">
-          <Link className="Header-Login-Link" to="/profile">
+          <Link to="#" className="Header-Login-Link" to="/profile">
             <i className="fas fa-user block text-center"></i>
             <span className="block text-center text-xs">
               Mon compte
