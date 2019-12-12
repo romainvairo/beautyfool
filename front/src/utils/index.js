@@ -5,3 +5,4 @@ export * from './baseGetItem';
 export * from './getFunction';
 export * from './getSafeInteger';
 export * from './overloadMethod';
+export * from './singularify';

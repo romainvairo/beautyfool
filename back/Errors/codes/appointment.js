@@ -7,17 +7,17 @@ let i = 300;
 module.exports = {
   findAll: {
     code: i++,
-    message: "An error occured and the users couldn't be retrieved",
+    message: "An error occured and the appointments couldn't be retrieved",
     status: 500,
   },
   add: {
     code: i++,
-    message: "An error occured and your informations couldn't be edited",
+    message: "An error occured and your informations couldn't be added",
     status: 500,
   },
   findById: {
     code: i++,
-    message: "An error occured and the user couldn't be retrieved",
+    message: "An error occured and the appointment couldn't be retrieved",
     status: 500,
   },
   editById: {
@@ -27,7 +27,7 @@ module.exports = {
   },
   deleteById: {
     code: i++,
-    message: "An error occured and your informations couldn't be edited",
+    message: "An error occured and your informations couldn't be deleted",
     status: 500,
   },
 };

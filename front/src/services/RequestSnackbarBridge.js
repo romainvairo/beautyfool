@@ -1,7 +1,7 @@
-import { isFunction } from 'lodash';
+import { isFunction, upperFirst } from 'lodash';
 
 import { RequestSnackbar } from './RequestSnackbar';
-import { overloadMethod } from '../utils';
+import { overloadMethod, stringFormatter } from '../utils';
 
 /**
  * @typedef {import('./MultiSnackbar').SnackbarText} SnackbarText
@@ -124,6 +124,60 @@ export class RequestSnackbarBridge {
     const { language } = this.context.props;
 
     this.snackbar.setText(translations[language]);
+    return this;
+  }
+
+  /**
+   * format a text with the `args`
+   * @param {String} textType
+   * @param {Array} args
+   * @returns {this}
+   */
+  formatter = (textType, ...args) => {
+    this.snackbar['edit' + upperFirst(textType)](stringFormatter(this.snackbar.originalText[textType], ...args));
+    return this;
+  }
+
+  /**
+   * format the start text with the `args`
+   * @param {Array} args
+   * @returns {this}
+   */
+  formatStart = (...args) => {
+    this.formatter('start', ...args);
+    return this;
+  }
+
+  /**
+   * format the success text with the `args`
+   * @param {Array} args
+   * @returns {this}
+   */
+  formatSuccess = (...args) => {
+    this.formatter('success', ...args);
+    return this;
+  }
+
+  /**
+   * format the error text with the `args`
+   * @param {Array} args
+   * @returns {this}
+   */
+  formatError = (...args) => {
+    this.formatter('error', ...args);
+    return this;
+  }
+
+  /**
+   * format all the text with the `args`
+   * @param {Array} args
+   * @returns {this}
+   */
+  formatAll = (...args) => {
+    this
+      .formatStart(...args)
+      .formatSuccess(...args)
+      .formatError(...args);
     return this;
   }
 }

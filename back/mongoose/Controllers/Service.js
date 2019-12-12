@@ -1,5 +1,5 @@
+const CategoryController = require('./Category');
 const { ServiceModel } = require('../Models/Service');
-const { hash } = require('../../utils');
 const { BaseError, errorCodes } = require('../../Errors');
 
 const limitByPage = 20;
@@ -20,6 +20,15 @@ const ServiceController = {
    */
   findByName: serviceName => {
     return ServiceModel.findOne({ name: serviceName });
+  },
+
+  /**
+   * find a service by the name of its category
+   * @param {String} categoryName
+   */
+  findByCategoryName: async categoryName => {
+    const category = await CategoryController.findByName(categoryName);
+    return await ServiceModel.find({ 'category.name': category._id });
   },
 
   /**
@@ -58,5 +67,7 @@ const ServiceController = {
     return ServiceModel.findByIdAndDelete(id);
   },
 };
+
+ServiceController.findByCategoryName('Maquillage');
 
 module.exports = ServiceController;

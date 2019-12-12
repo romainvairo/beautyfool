@@ -20,8 +20,7 @@ const FoolistListView = ({
       topThresold={topThresold}
       page={page}
       lastPage={lastPage}
-      >
-        {console.log(children)}
+    >
       {children}
     </SuperList>
   </Grid>

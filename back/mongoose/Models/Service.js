@@ -18,10 +18,6 @@ const service = new mongoose.Schema({
     maxlength: 50,
     trim: true,
   },
-  description: {
-    type: String,
-    maxlength: 2000,
-  },
   duration: {
     type: Date,
     required: true,
@@ -31,8 +27,9 @@ const service = new mongoose.Schema({
     default: 0,
     min: 0,
   },
-  image: {
-    type: String,
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Category',
   },
   feedbacks: {
     type: [{

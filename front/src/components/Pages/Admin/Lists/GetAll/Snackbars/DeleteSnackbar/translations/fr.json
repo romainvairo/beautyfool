@@ -1,0 +1,15 @@
+{
+  "start": "Suppression {0}...",
+  "success": "{0} a été supprimé",
+  "error": "{0} n'a pas pu être supprimé",
+  "user": "de l'utilisateur",
+  "users": "des utilisateurs",
+  "actuality": "de l'actualité",
+  "appointment": "du rendez-vous",
+  "beauty-tip": "de l'astuce beauté",
+  "comment": "du commentaire",
+  "feedback": "de l'avis",
+  "image": "de l'image",
+  "question": "de la question",
+  "service": "de la prestation"
+}

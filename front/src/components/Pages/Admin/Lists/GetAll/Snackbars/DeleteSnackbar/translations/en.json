@@ -1,0 +1,15 @@
+{
+  "start": "Deleting the {0}...",
+  "success": "The {0} has been deleted",
+  "error": "The {0} couldn't be deleted",
+  "user": "user",
+  "users": "users",
+  "actuality": "actuality",
+  "appointment": "appointment",
+  "beauty-tip": "beauty tip",
+  "comment": "comment",
+  "feedback": "feedback",
+  "image": "image",
+  "question": "question",
+  "service": "service"
+}

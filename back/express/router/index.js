@@ -1,4 +1,5 @@
 require('./staticFiles');
+require('./category');
 require('./actuality');
 require('./appointment');
 require('./beautyTip');
