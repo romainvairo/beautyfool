@@ -12,17 +12,62 @@ const mapStateToProps = state => ({
 class BenefitsContainer extends React.PureComponent {
 
   state = {
-    benefits: []
+    nails: [],
+    hairRemoval: [],
+    makeup: [],
+    faceCare: [],
+    bodyCare: [],
+    handsAndFeetCare: []
   }
 
   componentDidMount() {
-    axios.get('/api/services/page/1')
+    axios.get('/api/services/category/Ongles')
       .then(({ data }) => {
-        this.setState({ benefits: data.data });
+        this.setState({ nails: data.data });
       })
       .catch((error) => {
         console.error(error);
       });
+
+    axios.get('/api/services/category/Épilation')
+    .then(({ data }) => {
+      this.setState({ hairRemoval: data.data });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+    axios.get('/api/services/category/Maquillage')
+    .then(({ data }) => {
+      this.setState({ makeup: data.data });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+    axios.get('/api/services/category/Soins du visage')
+    .then(({ data }) => {
+      this.setState({ faceCare: data.data });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+    axios.get('/api/services/category/Soins du corps')
+    .then(({ data }) => {
+      this.setState({ bodyCare: data.data });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+    axios.get('/api/services/category/Soins des mains et des pieds')
+    .then(({ data }) => {
+      this.setState({ handsAndFeetCare: data.data });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
   }
 
   render() {
