@@ -72,11 +72,22 @@ class BenefitsContainer extends React.PureComponent {
 
   render() {
     const { language } = this.props;
-    const { benefits } = this.state;
+    const { nails } = this.state;
+    const { hairRemoval } = this.state;
+    const { makeup } = this.state;
+    const { faceCare } = this.state;
+    const { bodyCare } = this.state;
+    const { handsAndFeetCare } = this.state;
+
 
     return <BenefitsView
       translations={translations[language]}
-      benefits={benefits}
+      nails={nails}
+      hairRemoval={hairRemoval}
+      makeup={makeup}
+      faceCare={faceCare}
+      bodyCare={bodyCare}
+      handsAndFeetCare={handsAndFeetCare}
     />;
 
   }
