@@ -14,6 +14,7 @@ import TermsOfSales from '../../Pages/TermsOfSales';
 import TermsOfServices from '../../Pages/TermsOfServices';
 import LegalNotices from '../../Pages/LegalNotices';
 import Presentation from '../../Pages/Presentation';
+import EditProfile from '../../Pages/Profile/EditProfile';
 import Sitemap from '../../Pages/Sitemap';
 import FAQ from '../../Pages/FAQ';
 
@@ -78,6 +79,7 @@ const Router = () => (
     <Route exact path={['/terms-of-sales', '/conditions-generales-de-vente']} component={TermsOfSales} />
     <Route exact path={['/terms-of-services', '/conditions-generales-utilisation']} component={TermsOfServices} />
     <Route exact path={['/presentation']} component={Presentation} />
+    <Route exact path={['/profile/edit-profile', '/profile/modification-profile']} component={EditProfile} />
     <Route exact path={['/sitemap', '/plan-du-site']} component={Sitemap} />
     <Route exact path={['/faq']} component={FAQ} />
 
