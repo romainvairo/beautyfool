@@ -1,0 +1,33 @@
+.Sitemap-Title {
+  text-align: center;
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow:
+    0 0 1px #B4B4B4,
+    2px 0 1px #B4B4B4,
+    0 2px 1px #B4B4B4,
+    2px 2px 1px #B4B4B4;
+}
+
+.Sitemap {
+  margin: 2rem;
+
+  &-Title-Category_1, &-Title-Category_2 {
+    margin: 2rem;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #b83280;
+    margin-top: 2.68rem;
+  }
+
+  &-Link {
+    margin: 3rem;
+    font-size: 1.5rem;
+  }
+
+  &-Link:hover {
+    color: #b83280;
+    text-decoration: underline;
+  }
+}

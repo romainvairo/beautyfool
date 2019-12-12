@@ -1,3 +1,20 @@
 {
-
+  "title": "Plan du Site",
+  "navigation": {
+    "title": "Navigation",
+    "actualities": "Actualités",
+    "benefits": "Prestations",
+    "beautyTips": "Astuces Beauté",
+    "gallery": "Galerie",
+    "presentation": "Présentation",
+    "contact": "Contactez-nous"
+  },
+  "other": {
+    "title": "Autres",
+    "legalNotices": "Mentions Légales",
+    "termsOfServices": "Conditions Générales d'Utilisation",
+    "termsOfSales": "Conditions Générales de Vente",
+    "sitemap": "Plan du Site",
+    "faq": "FAQ"
+  }
 }

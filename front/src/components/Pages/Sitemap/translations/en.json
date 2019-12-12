@@ -1,3 +1,20 @@
 {
-
+  "title": "Sitemap",
+  "navigation": {
+    "title": "Navigation",
+    "actualities": "News",
+    "benefits": "Services",
+    "beauty-tips": "Beauty-Tips",
+    "gallery": "Gallery",
+    "presentation": "Presentation",
+    "contact": "Contact Us"
+  },
+  "other": {
+    "title": "Other",
+    "legalNotices": "Legal Notices",
+    "termsOfServices": "Terms of Services",
+    "termsOfSales": "Terms of Sales",
+    "sitemap": "Sitemap",
+    "faq": "FAQ"
+  }
 }
