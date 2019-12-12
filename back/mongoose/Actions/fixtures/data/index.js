@@ -8,3 +8,4 @@ exports.beautyTips = require('./beautyTips');
 exports.feedbacks = require('./feedbacks');
 exports.images = require('./images');
 exports.comments = require('./comments');
+exports.categories = require('./categories');

@@ -1,0 +1,13 @@
+{
+  "start": "Getting the {0}...",
+  "success": "The {0} has been retrieved",
+  "error": "The {0} couldn't be retrieved",
+  "actualities": "actualities",
+  "appointments": "appointments",
+  "beauty-tips": "beauty tips",
+  "comments": "comments",
+  "feedbacks": "feedbacks",
+  "images": "images",
+  "questions": "questions",
+  "services": "services"
+}

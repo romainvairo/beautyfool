@@ -9,3 +9,4 @@ exports.feedback = require('./feedback');
 exports.beautyTip = require('./beautyTip');
 exports.appointment = require('./appointment');
 exports.comment = require('./comment');
+exports.category = require('./category');

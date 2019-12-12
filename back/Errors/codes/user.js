@@ -39,7 +39,7 @@ module.exports = {
   },
   deleteById: {
     code: i++,
-    message: "An error occured and your informations couldn't be edited",
+    message: "An error occured and your informations couldn't be deleted",
     status: 500,
   },
 };

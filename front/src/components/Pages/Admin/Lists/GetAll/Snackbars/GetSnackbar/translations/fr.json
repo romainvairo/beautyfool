@@ -1,0 +1,13 @@
+{
+  "start": "Récupération des {0}...",
+  "success": "Les {0} ont été récupéré",
+  "error": "Les {0} n'ont pas pu être récupéré",
+  "actualities": "actualités",
+  "appointments": "rendez-vous",
+  "beauty-tips": "astuces beauté",
+  "comments": "commentaires",
+  "feedbacks": "avis",
+  "images": "images",
+  "questions": "questions",
+  "services": "prestations"
+}

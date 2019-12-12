@@ -27,6 +27,10 @@ export class RequestSnackbar extends MultiSnackbar {
    * @type {Function}
    */
   finallyHandler;
+  /**
+   * @type {Object}
+   */
+  originalText;
 
   /**
    * set the request to call with the text associated to
@@ -46,9 +50,55 @@ export class RequestSnackbar extends MultiSnackbar {
    * @returns {this}
    */
   setText = text => {
+    this.originalText = { ...text };
     text.error = <ErrorElement message={text.error} onClick={this.call} />;
     this.text = text;
     return this;
+  }
+
+  /**
+   * edit the start text
+   * @param {String} text
+   */
+  editStart = text => {
+    this.originalText.start = text;
+    this.text.start = text;
+  }
+
+  /**
+   * edit the success text
+   * @param {String} text
+   */
+  editSuccess = text => {
+    this.originalText.success = text;
+    this.text.success = text;
+  }
+
+  /**
+   * edit the error text
+   * @param {String} text
+   */
+  editError = text => {
+    this.originalText.error = text;
+    this.text.error = <ErrorElement message={text} onClick={this.call} />;
+  }
+
+  /**
+   * edit the text
+   * @param {Object} text
+   */
+  editText = (text) => {
+    if (text.start) {
+      this.editStart(text.start);
+    }
+
+    if (text.success) {
+      this.editSuccess(text.success);
+    }
+
+    if (text.error) {
+      this.editError(text.error);
+    }
   }
 
   /**

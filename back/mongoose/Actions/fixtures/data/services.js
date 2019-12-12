@@ -2,182 +2,183 @@ const moment = require('moment');
 
 module.exports = [
   {
-    name: 'Ongles',
-    description: 'Pose Vernis Couleur',
+    category: 'Ongles',
+    name: 'Pose Vernis Couleur',
     // @ts-ignore
     duration: new Date(moment.duration(30, 'minutes')),
     price: 28.00,
   },
   {
-    name: 'Ongles',
-    description: 'Pose Vernis Finition French',
+    category: 'Ongles',
+    name: 'Pose Vernis Finition French',
     // @ts-ignore
     duration: new Date(moment.duration(15, 'minutes')),
     price: 30.00,
   },
   {
-    name: 'Ongles',
-    description: 'Dépose seule',
+    category: 'Ongles',
+    name: 'Dépose seule',
     // @ts-ignore
     duration: new Date(moment.duration(20, 'minutes')),
     price: 8.00,
-  },{
-    name: 'Ongles',
-    description: 'Dépose avec Repose à la suite',
+  },
+  {
+    category: 'Ongles',
+    name: 'Dépose avec Repose à la suite',
     // @ts-ignore
     duration: new Date(moment.duration(30, 'minutes')),
     price: 10.00,
   },
   {
-    name: 'Soins du visage',
-    description: 'Soin Saisonnier',
+    category: 'Soins du visage',
+    name: 'Soin Saisonnier',
     // @ts-ignore
     duration: new Date(moment.duration(45, 'minutes')),
     price: 52.00,
   },
   {
-    name: 'Soins du visage',
-    description: 'Soin Intensif Hydratant',
+    category: 'Soins du visage',
+    name: 'Soin Intensif Hydratant',
     // @ts-ignore
     duration: new Date(moment.duration(75, 'minutes')),
     price: 73.00,
   },
   {
-    name: 'Soins du visage',
-    description: 'Soin Intensif Jeunesse',
+    category: 'Soins du visage',
+    name: 'Soin Intensif Jeunesse',
     // @ts-ignore
     duration: new Date(moment.duration(90, 'minutes')),
     price: 90.00,
   },
   {
-    name: 'Soins du corps',
-    description: 'Gommage au Sel',
+    category: 'Soins du corps',
+    name: 'Gommage au Sel',
     // @ts-ignore
     duration: new Date(moment.duration(30, 'minutes')),
     price: 29.00,
   },
   {
-    name: 'Soins du corps',
-    description: 'Gommage au Savons Noir',
+    category: 'Soins du corps',
+    name: 'Gommage au Savons Noir',
     // @ts-ignore
     duration: new Date(moment.duration(30, 'minutes')),
     price: 56.00,
   },
   {
-    name: 'Soins du corps',
-    description: 'Soin au Chocolat',
+    category: 'Soins du corps',
+    name: 'Soin au Chocolat',
     // @ts-ignore
     duration: new Date(moment.duration(90, 'minutes')),
     price: 75.00,
   },
   {
-    name: 'Soins du corps',
-    description: 'Soin au Thé Vert',
+    category: 'Soins du corps',
+    name: 'Soin au Thé Vert',
     // @ts-ignore
     duration: new Date(moment.duration(90, 'minutes')),
     price: 80.00,
   },
   {
-    name: 'Épilation',
-    description: 'Jambes complètes',
+    category: 'Épilation',
+    name: 'Jambes complètes',
     // @ts-ignore
     duration: new Date(moment.duration(30, 'minutes')),
     price: 14.00,
   },
   {
-    name: 'Épilation',
-    description: 'Aisselles',
+    category: 'Épilation',
+    name: 'Aisselles',
     // @ts-ignore
     duration: new Date(moment.duration(15, 'minutes')),
     price: 5.40,
   },
   {
-    name: 'Épilation',
-    description: 'Mains et Doigts',
+    category: 'Épilation',
+    name: 'Mains et Doigts',
     // @ts-ignore
     duration: new Date(moment.duration(20, 'minutes')),
     price: 8.00,
   },
   {
-    name: 'Épilation',
-    description: 'Maillot Brésilien',
+    category: 'Épilation',
+    name: 'Maillot Brésilien',
     // @ts-ignore
     duration: new Date(moment.duration(30, 'minutes')),
     price: 11.00,
   },
   {
-    name: 'Épilation',
-    description: 'Maillot Intégral',
+    category: 'Épilation',
+    name: 'Maillot Intégral',
     // @ts-ignore
     duration: new Date(moment.duration(40, 'minutes')),
     price: 20.00,
   },
   {
-    name: 'Épilation',
-    description: 'Sourcils',
+    category: 'Épilation',
+    name: 'Sourcils',
     // @ts-ignore
     duration: new Date(moment.duration(15, 'minutes')),
     price: 10.00,
   },
   {
-    name: 'Épilation',
-    description: 'Dos',
+    category: 'Épilation',
+    name: 'Dos',
     // @ts-ignore
     duration: new Date(moment.duration(30, 'minutes')),
     price: 20.00,
   },
   {
-    name: 'Maquillage',
-    description: 'Maquillage de Jour',
+    category: 'Maquillage',
+    name: 'Maquillage de Jour',
     // @ts-ignore
     duration: new Date(moment.duration(45, 'minutes')),
     price: 30.00,
   },
   {
-    name: 'Maquillage',
-    description: 'Maquillage du Soir',
+    category: 'Maquillage',
+    name: 'Maquillage du Soir',
     // @ts-ignore
     duration: new Date(moment.duration(45, 'minutes')),
     price: 40.00,
   },
   {
-    name: 'Maquillage',
-    description: 'Teinture des Sourcils',
+    category: 'Maquillage',
+    name: 'Teinture des Sourcils',
     // @ts-ignore
     duration: new Date(moment.duration(20, 'minutes')),
     price: 20.00,
   },
   {
-    name: 'Maquillage',
-    description: 'Teinture des Cils',
+    category: 'Maquillage',
+    name: 'Teinture des Cils',
     // @ts-ignore
     duration: new Date(moment.duration(15, 'minutes')),
     price: 15.00,
   },
   {
-    name: 'Soins des mains et des pieds',
-    description: 'Beauté des pieds complète',
+    category: 'Soins des mains et des pieds',
+    name: 'Beauté des pieds complète',
     // @ts-ignore
     duration: new Date(moment.duration(45, 'minutes')),
     price: 40.00,
   },
   {
-    name: 'Soins des mains et des pieds',
-    description: 'Beauté des pieds simple',
+    category: 'Soins des mains et des pieds',
+    name: 'Beauté des pieds simple',
     // @ts-ignore
     duration: new Date(moment.duration(30, 'minutes')),
     price: 25.00,
   },
   {
-    name: 'Soins des mains et des pieds',
-    description: 'Beauté des mains complète',
+    category: 'Soins des mains et des pieds',
+    name: 'Beauté des mains complète',
     // @ts-ignore
     duration: new Date(moment.duration(45, 'minutes')),
     price: 40.00,
   },
   {
-    name: 'Soins des mains et des pieds',
-    description: 'Beauté des mains simple',
+    category: 'Soins des mains et des pieds',
+    name: 'Beauté des mains simple',
     // @ts-ignore
     duration: new Date(moment.duration(30, 'minutes')),
     price: 25.00,

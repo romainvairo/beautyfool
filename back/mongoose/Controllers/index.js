@@ -9,3 +9,4 @@ exports.BeautyTipController = require('./BeautyTip');
 exports.ActualityController = require('./Actuality');
 exports.AppointmentController = require('./Appointment');
 exports.ServiceController = require('./Service');
+exports.CategoryController = require('./Category');

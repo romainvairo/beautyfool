@@ -10,6 +10,11 @@ module.exports = {
     message: "An error occured and the services couldn't be retrieved",
     status: 500,
   },
+  find: {
+    code: i++,
+    message: "An error occured and the service couldn't be retrieved",
+    status: 500,
+  },
   add: {
     code: i++,
     message: "An error occured and the service couldn't be added",
