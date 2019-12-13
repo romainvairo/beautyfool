@@ -6,10 +6,11 @@ module.exports = async (req, res) => {
   let services;
 
   try {
-    services = await ServiceController.findByCategoryName(req.params.category_name);
+    services = await ServiceController.findByCategorySlug(req.params.category_slug);
   } catch (error){
     return end(res, { error: errorCodes.service.find });
   }
+  console.log(services);
 
   end(res, { data: services }, true);
 }

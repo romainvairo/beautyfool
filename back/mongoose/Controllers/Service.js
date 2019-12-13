@@ -28,7 +28,16 @@ const ServiceController = {
    */
   findByCategoryName: async categoryName => {
     const category = await CategoryController.findByName(categoryName);
-    return await ServiceModel.find({ 'category.name': category._id });
+    return await ServiceModel.find({ category: category._id });
+  },
+
+  /**
+   * find a service by the slug of its category
+   * @param {String} categorySlug
+   */
+  findByCategorySlug: async categorySlug => {
+    const category = await CategoryController.findBySlug(categorySlug);
+    return await ServiceModel.find({ category: category._id });
   },
 
   /**
