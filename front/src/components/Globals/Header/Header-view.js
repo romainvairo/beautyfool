@@ -17,9 +17,6 @@ const HeaderView = ({ translations }) => (
             <img src={require('../../../assets/images/logo.png')} alt="Logo" />
           </Link>
         </Grid>
-        <Grid item>
-          <p className="Header-Slogan">{translations.slogan}</p>
-        </Grid>
       </Grid>
       <Grid xs={3} sm={2} container item justify="flex-end">
         <Grid item className="pr-2">
