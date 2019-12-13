@@ -3,11 +3,23 @@
     display: flex;
     justify-content: space-between;
     margin: 2rem 2rem 0 2rem;
-    &:nth-child(even) &-section-form {
-      order: 1;
+
+    &:nth-child(even) {
+      .benefits-section-image {
+        order: 0;
+      }
+      .benefits-section-form {
+        order: 1;
+      }
     }
-    &:nth-child(odd) &-section-form {
-      order: -1;
+
+    &:nth-child(odd) {
+      .benefits-section-image {
+        order: 1;
+      }
+      .benefits-section-form {
+        order: 0;
+      }
     }
 
     &-image {

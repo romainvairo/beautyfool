@@ -9,11 +9,11 @@ import './Benefits.scss';
 const BenefitsView = ({ translations, categories }) => (
   <div className="benefits">
     {categories.map((category) => (
-      <div className="benefits-section">
+      <div key={category._id} className="benefits-section">
         <div className="benefits-section-form">
           <h1 className="benefits-section-title">{category.name}</h1>
           {category.services.map((service) => (
-            <div>
+            <div key={service._id}>
               <FormControlLabel
                 control={
                   <Checkbox
