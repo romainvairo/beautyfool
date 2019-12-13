@@ -46,6 +46,11 @@ const CategoryController = {
 
   slugify: uniqueSlug(CategoryModel),
 
+  /**
+   * add a service to a category using their id
+   * @param {String} categoryId
+   * @param {String} serviceId
+   */
   addServiceById: (categoryId, serviceId) => {
     return CategoryModel.findByIdAndUpdate(categoryId, { $push: { services: serviceId } });
   },
