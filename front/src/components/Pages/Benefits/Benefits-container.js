@@ -21,7 +21,7 @@ class BenefitsContainer extends React.PureComponent {
   }
 
   componentDidMount() {
-    axios.get('/api/services/category/Ongles')
+    axios.get('/api/services/category/ongles')
       .then(({ data }) => {
         this.setState({ nails: data.data });
       })
@@ -29,7 +29,7 @@ class BenefitsContainer extends React.PureComponent {
         console.error(error);
       });
 
-    axios.get('/api/services/category/Épilation')
+    axios.get('/api/services/category/epilation')
     .then(({ data }) => {
       this.setState({ hairRemoval: data.data });
     })
@@ -37,7 +37,7 @@ class BenefitsContainer extends React.PureComponent {
       console.error(error);
     });
 
-    axios.get('/api/services/category/Maquillage')
+    axios.get('/api/services/category/maquillage')
     .then(({ data }) => {
       this.setState({ makeup: data.data });
     })
@@ -45,7 +45,7 @@ class BenefitsContainer extends React.PureComponent {
       console.error(error);
     });
 
-    axios.get('/api/services/category/Soins du visage')
+    axios.get('/api/services/category/soins_du_visage')
     .then(({ data }) => {
       this.setState({ faceCare: data.data });
     })
@@ -53,7 +53,7 @@ class BenefitsContainer extends React.PureComponent {
       console.error(error);
     });
 
-    axios.get('/api/services/category/Soins du corps')
+    axios.get('/api/services/category/soins_du_corps')
     .then(({ data }) => {
       this.setState({ bodyCare: data.data });
     })
@@ -61,7 +61,7 @@ class BenefitsContainer extends React.PureComponent {
       console.error(error);
     });
 
-    axios.get('/api/services/category/Soins des mains et des pieds')
+    axios.get('/api/services/category/soins_des_mains_et_des_pieds')
     .then(({ data }) => {
       this.setState({ handsAndFeetCare: data.data });
     })

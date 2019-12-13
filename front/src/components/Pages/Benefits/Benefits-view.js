@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 
 import './Benefits.scss';
 
-const BenefitsView = ({ translations, nails, hairRemova, makeup, faceCare, bodyCare, handsAndFeetCare }) => (
+const BenefitsView = ({ translations, nails, hairRemoval, makeup, faceCare, bodyCare, handsAndFeetCare }) => (
   <div className="Benefits">
     <div className="Benefits-Nails">
       <div className="Benefits-Nails-Form">
