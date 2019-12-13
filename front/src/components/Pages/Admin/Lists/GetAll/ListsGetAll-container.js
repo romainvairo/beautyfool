@@ -1,5 +1,5 @@
 import React from 'react';
-import { upperFirst } from 'lodash';
+import { upperFirst, uniqBy } from 'lodash';
 import { connect } from 'react-redux';
 
 import ListsGetAllView from './ListsGetAll-view';
@@ -81,7 +81,6 @@ class ListsGetAllContainer extends React.PureComponent {
     const { language, match } = this.props;
     const { list, lastPage } = this.state;
 
-    console.log(upperFirst(singularify(match.params.category)))
     const ChildrenComponent = potientalChildrens[upperFirst(singularify(match.params.category))];
 
     if (!ChildrenComponent) {
@@ -90,7 +89,7 @@ class ListsGetAllContainer extends React.PureComponent {
 
     return <ListsGetAllView
       translations={translations[language]}
-      list={list}
+      list={uniqBy(list, v => v._id)}
       DeleteSnackbar={this.deleteSnackbar.Snackbar}
       GetSnackbar={this.getSnackbar.Snackbar}
       callDeleteRequest={this.deleteSnackbar.caller}

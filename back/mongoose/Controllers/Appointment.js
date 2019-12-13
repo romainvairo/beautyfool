@@ -19,7 +19,7 @@ const AppointmentController = {
    * @param {String} id
    */
   findById: (id) => {
-    return AppointmentModel.findById(id);
+    return AppointmentModel.findById(id).populate('customer');
   },
 
   /**
@@ -30,7 +30,8 @@ const AppointmentController = {
     return AppointmentModel
       .find()
       .skip((page - 1) * limitByPage)
-      .limit(limitByPage);
+      .limit(limitByPage)
+      .populate('customer');
   },
   /**
    * find appointment by its id

@@ -41,10 +41,14 @@ const CategoryController = {
    * find all categories
    */
   findCategories: () => {
-    return CategoryModel.find();
+    return CategoryModel.find().populate('services');
   },
 
-  slugify: uniqueSlug(CategoryModel.countDocuments),
+  slugify: uniqueSlug(CategoryModel),
+
+  addServiceById: (categoryId, serviceId) => {
+    return CategoryModel.findByIdAndUpdate(categoryId, { $push: { services: serviceId } });
+  },
 
   /**
    * find a category by its id and edit it
