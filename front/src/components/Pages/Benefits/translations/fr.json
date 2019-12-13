@@ -5,5 +5,7 @@
   "face": "Soins du Visage",
   "body": "Soins du Corps",
   "handsAndFeet": "Soins des Mains et des Pieds",
-  "button": "Réserver les prestations choisies"
+  "button": "Réserver les prestations choisies",
+  "price": "Prix",
+  "duration": "Durée"
 }
