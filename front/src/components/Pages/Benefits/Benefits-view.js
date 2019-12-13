@@ -7,12 +7,9 @@ import moment from 'moment';
 import './Benefits.scss';
 
 const BenefitsView = ({ translations, categories }) => (
-  <div className="Benefits">
+  <div className="benefits">
     {categories.map((category) => (
-      <div className="benefis-section">
-        <div className="benefits-section-image">
-          <img src={category.image} alt=""/>
-        </div>
+      <div className="benefits-section">
         <div className="benefits-section-form">
           <h1 className="benefits-section-title">{category.name}</h1>
           {category.services.map((service) => (
@@ -30,6 +27,9 @@ const BenefitsView = ({ translations, categories }) => (
               <h2 className="benefits-section-duration">{translations.duration}: {moment(service.duration).minute()} minutes</h2>
             </div>
           ))}
+        </div>
+        <div className="benefits-section-image">
+          <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
         </div>
       </div>
     ))}

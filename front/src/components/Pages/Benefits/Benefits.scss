@@ -3,10 +3,15 @@
     display: flex;
     justify-content: space-between;
     margin: 2rem 2rem 0 2rem;
+    &:nth-child(even) &-section-form {
+      order: 1;
+    }
+    &:nth-child(odd) &-section-form {
+      order: -1;
+    }
 
     &-image {
       width: 50%;
-      justify-content: flex-end;
     }
 
     &-form {
