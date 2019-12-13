@@ -25,7 +25,8 @@
     "nodemon": "^2.0.1",
     "npm": "^6.13.2",
     "pretty-error": "^2.1.1",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.3.0",
+    "url-slug": "^2.2.0"
   },
   "devDependencies": {
     "chalk": "^3.0.0",

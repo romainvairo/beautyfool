@@ -1,4 +1,5 @@
 const { CategoryModel } = require('../Models/Category');
+const uniqueSlug = require ('../../utils/uniqueSlug');
 
 const CategoryController = {
   /**
@@ -6,7 +7,9 @@ const CategoryController = {
    * @param {Object} category
    * @returns {Promise}
    */
-  add: category => {
+  add: async category => {
+    // @ts-ignore
+    category.slug = await CategoryController.slugify(category.name);
     return new CategoryModel(category).save();
   },
 
@@ -27,10 +30,24 @@ const CategoryController = {
   },
 
   /**
+   * find a category by its slug
+   * @param {String} categorySlug
+   */
+  findBySlug: categorySlug => {
+    return CategoryModel.findOne({ slug: categorySlug });
+  },
+
+  /**
    * find all categories
    */
   findCategories: () => {
-    return CategoryModel.find();
+    return CategoryModel.find().populate('services');
+  },
+
+  slugify: uniqueSlug(CategoryModel),
+
+  addServiceById: (categoryId, serviceId) => {
+    return CategoryModel.findByIdAndUpdate(categoryId, { $push: { services: serviceId } });
   },
 
   /**
@@ -38,7 +55,10 @@ const CategoryController = {
    * @param {String} id
    * @param {Object} category
    */
-  editById: (id, category) => {
+  editById: async (id, category) => {
+    if (category.name) {
+      category.slug = await CategoryController.slugify(category.name, id);
+    }
     return CategoryModel.findByIdAndUpdate(id, category);
   },
 

@@ -5,67 +5,25 @@ import Button from '@material-ui/core/Button';
 
 import './Benefits.scss';
 
-const BenefitsView = ({ translations, benefits }) => (
+const BenefitsView = ({ translations, nails, hairRemova, makeup, faceCare, bodyCare, handsAndFeetCare }) => (
   <div className="Benefits">
     <div className="Benefits-Nails">
       <div className="Benefits-Nails-Form">
         <h1 className="Benefits-Nails-Title">{translations.nails}</h1>
-        <FormControlLabel
-          control={
-            <Checkbox
-              value="checkedA" />
-          }
-          label="Secondary"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              value="checkedA" />
-          }
-          label="Secondary"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              value="checkedA" />
-          }
-          label="Secondary"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              value="checkedA" />
-          }
-          label="Secondary"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              value="checkedA" />
-          }
-          label="Secondary"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              value="checkedA" />
-          }
-          label="Secondary"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              value="checkedA" />
-          }
-          label="Secondary"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox
-              value="checkedA" />
-          }
-          label="Secondary"
-        />
+        {nails.map(( nail ) => (
+          <div>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  value="checked"
+                />
+              }
+              label={nail.name}
+            />
+            <h2>{nail.price}</h2>
+            <h2>{nail.duration}</h2>
+          </div>
+        ))}
       </div>
       <div className="Benefits-Nails-Image">
         <img src={require('../../../assets/images/nails_1.jpg')} alt=""/>

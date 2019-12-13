@@ -1,3 +1,11 @@
 export { default as User } from './User';
 export { default as Actuality } from './Actuality';
 export { default as Service } from './Service';
+export { default as Appointment } from './Appointment';
+export { default as BeautyTip } from './BeautyTip';
+export { default as Category } from './Category';
+export { default as Comment } from './Comment';
+export { default as Feedback } from './Feedback';
+export { default as Image } from './Image';
+export { default as Question } from './Question';
+export { default as Role } from './Role';

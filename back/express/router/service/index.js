@@ -4,9 +4,9 @@ const addService = require('./addService');
 const getServiceById = require('./getServiceById');
 const editServiceById = require('./editServiceById');
 const deleteServiceById = require('./deleteServiceById');
-const getServicesByCategoryName = require('./getServicesByCategoryName');
+const getServicesByCategorySlug = require('./getServicesByCategorySlug');
 
-app.get('/api/services/category/:category_name', getServicesByCategoryName);
+app.get('/api/services/category/:category_slug', getServicesByCategorySlug);
 app.get('/api/services/page/:page', getServices);
 app.post('/api/services/add', addService);
 app.get('/api/services/:id', getServiceById);

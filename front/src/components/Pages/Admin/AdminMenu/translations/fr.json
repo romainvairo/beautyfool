@@ -1,35 +1,35 @@
 {
   "calendar": {
     "content": "Calendrier des rendez-vous",
-    "link": "/admin/calendrier"
+    "link": "/admin/calendar"
   },
   "services": {
     "content": "Prestations",
-    "link": "/admin/prestations"
+    "link": "/admin/services"
   },
   "actualities": {
     "content": "Actualités",
-    "link": "/admin/actualites"
+    "link": "/admin/actualities"
   },
   "users": {
     "content": "Utilisateurs",
-    "link": "/admin/utilisateurs"
+    "link": "/admin/users"
   },
   "feedbacks": {
     "content": "Avis",
-    "link": "/admin/avis"
+    "link": "/admin/feedbacks"
   },
   "comments": {
     "content": "Commentaires",
-    "link": "/admin/commentaires"
+    "link": "/admin/comments"
   },
   "gallery": {
     "content": "Galerie",
-    "link": "/admin/galerie"
+    "link": "/admin/images"
   },
   "beautyTips": {
     "content": "Astuces beauté",
-    "link": "/admin/astuces-beaute"
+    "link": "/admin/beauty-tips"
   },
   "newsletter": {
     "content": "Newsletter",
