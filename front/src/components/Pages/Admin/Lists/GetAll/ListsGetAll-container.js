@@ -1,5 +1,5 @@
 import React from 'react';
-import { upperFirst, uniqBy } from 'lodash';
+import { upperFirst, camelCase, uniqBy } from 'lodash';
 import { connect } from 'react-redux';
 
 import ListsGetAllView from './ListsGetAll-view';
@@ -81,7 +81,7 @@ class ListsGetAllContainer extends React.PureComponent {
     const { language, match } = this.props;
     const { list, lastPage } = this.state;
 
-    const ChildrenComponent = potientalChildrens[upperFirst(singularify(match.params.category))];
+    const ChildrenComponent = potientalChildrens[upperFirst(camelCase(singularify(match.params.category)))];
 
     if (!ChildrenComponent) {
       return <PageNotFound />;
@@ -89,7 +89,7 @@ class ListsGetAllContainer extends React.PureComponent {
 
     return <ListsGetAllView
       translations={translations[language]}
-      list={uniqBy(list, v => v._id)}
+      list={uniqBy(list.filter(v => v), v => v._id)}
       DeleteSnackbar={this.deleteSnackbar.Snackbar}
       GetSnackbar={this.getSnackbar.Snackbar}
       callDeleteRequest={this.deleteSnackbar.caller}

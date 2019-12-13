@@ -58,10 +58,10 @@ const Router = () => (
 
     {/* admin routes */}
     <Route exact path="/admin" component={Admin} />
-    <Route exact path={['/admin/:category/:page?', '/admin/:category/:page?']} component={AdminListsGetAll} />
     <Route exact path={['/admin/:category/add', '/admin/:category/add']} component={AdminListsAdd} />
     <Route exact path={['/admin/:category/:id', '/admin/:category/:id']} component={AdminListsGetOne} />
     <Route exact path={['/admin/:category/:id/edit', '/admin/:category/:id/edit']} component={AdminListsEdit} />
+    <Route exact path={['/admin/:category/:page?', '/admin/:category/:page?']} component={AdminListsGetAll} />
 
     <Route exact path={['/admin/newsletter', '/admin/newsletter']} component={AdminNewsletter} />
 

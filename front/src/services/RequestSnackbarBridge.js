@@ -69,6 +69,16 @@ export class RequestSnackbarBridge {
   }
 
   /**
+   * call the request
+   * @param {Array} args
+   * @returns {this}
+   */
+  caller = (...args) => {
+    this.call(...args);
+    return this;
+  }
+
+  /**
    * set an handler automatically to the snackbar
    * @param {String} handlerName
    * @returns {this}
