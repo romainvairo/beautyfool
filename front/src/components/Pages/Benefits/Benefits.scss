@@ -13,15 +13,6 @@
       }
     }
 
-    &:nth-child(odd) {
-      .benefits-section-image {
-        order: 1;
-      }
-      .benefits-section-form {
-        order: 0;
-      }
-    }
-
     &-image {
       width: 50%;
     }
