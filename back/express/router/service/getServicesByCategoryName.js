@@ -7,7 +7,8 @@ module.exports = async (req, res) => {
 
   try {
     services = await ServiceController.findByCategoryName(req.params.category_name);
-  } catch (error){
+  } catch (error) {
+    // @ts-ignore
     return end(res, { error: errorCodes.service.find });
   }
 
