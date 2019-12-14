@@ -96,7 +96,7 @@ class BenefitsContainer extends React.PureComponent {
 
   render() {
     const { language } = this.props;
-    const { categories, choosenServices } = this.state;
+    const { categories } = this.state;
 
 
     return <BenefitsView
