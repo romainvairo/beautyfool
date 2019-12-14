@@ -6,6 +6,8 @@
   "body": "Soins du Corps",
   "handsAndFeet": "Soins des Mains et des Pieds",
   "button": "Réserver les prestations choisies",
-  "price": "Prix",
-  "duration": "Durée"
+  "price": "Prix: ",
+  "duration": "Durée: ",
+  "totalDuration": "Durée Total: ",
+  "totalPrice": "Prix Total: "
 }

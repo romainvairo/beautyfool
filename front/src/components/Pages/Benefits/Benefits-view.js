@@ -28,8 +28,8 @@ const BenefitsView = ({
                 name={service.name}
                 className="benefits-section-label"
               />
-              <h2 className="benefits-section-price">{translations.price}: {service.price} €</h2>
-              <h2 className="benefits-section-duration">{translations.duration}: {correctFormatDate(service.duration)}</h2>
+              <h2 className="benefits-section-price">{translations.price}{service.price} €</h2>
+              <h2 className="benefits-section-duration">{translations.duration}{correctFormatDate(service.duration)}</h2>
             </div>
           ))}
         </div>
@@ -38,15 +38,15 @@ const BenefitsView = ({
         </div>
       </div>
     ))}
+    <div className="benefits-total">
+      {translations.totalPrice}{totalPrice} €
+      <br/>
+      {translations.totalDuration}{totalDuration}
+    </div>
     <div className="benefits-button">
       <Button variant="contained" color="secondary" className="font-bold" href="/">
         {translations.button}
       </Button>
-    </div>
-    <div>
-      total price: {totalPrice} €
-      <br/>
-      total duration: {totalDuration}
     </div>
   </div>
 );

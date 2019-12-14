@@ -6,6 +6,8 @@
   "body": "Body Care",
   "handsAndFeet": "Care of Hands and Feet",
   "button": "Book the chosen services",
-  "price": "Price",
-  "duration": "Duration"
+  "price": "Price: ",
+  "duration": "Duration: ",
+  "totalDuration": "Total Duration: ",
+  "totalPrice": "Total Price: "
 }

@@ -1,4 +1,15 @@
 .benefits {
+  &-total {
+    margin: 2rem 43%;
+    padding: 1rem;
+    background-color: rgba(199, 184, 184, 0.781);
+    border-radius: 5px;
+    text-shadow:
+      0 0 1px #B4B4B4,
+      2px 0 1px #B4B4B4,
+      0 2px 1px #B4B4B4,
+      2px 2px 1px #B4B4B4;
+  }
   &-section {
     display: flex;
     justify-content: space-between;
@@ -54,6 +65,9 @@
 
 @media (max-width: 1025px) {
   .benefits {
+    &-total {
+      margin: 2rem 20%;
+    }
     &-section {
       &-form {
         width: 100%;
