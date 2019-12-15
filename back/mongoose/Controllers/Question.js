@@ -26,7 +26,7 @@ const QuestionController = {
    * find all questions
    * @param {Number} page
    */
-  findQuestions: (page) => {
+  findAll: (page) => {
     return QuestionModel
       .find()
       .skip((page -1) * limitByPage)

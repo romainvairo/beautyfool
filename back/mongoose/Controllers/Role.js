@@ -25,7 +25,7 @@ const RoleController = {
   /**
    * get all the roles
    */
-  findRoles: () => {
+  findAll: () => {
     return RoleModel.find();
   },
 };

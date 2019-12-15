@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
   let categories;
 
   try {
-    categories = await CategoryController.findCategories();
+    categories = await CategoryController.findAll();
   } catch (error){
     return end(res, { error: errorCodes.category.findAll });
   }

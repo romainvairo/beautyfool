@@ -11,11 +11,11 @@ const schedule = new mongoose.Schema({
     required: true,
     default: () => new Date,
   },
-  blockstart: {
+  blockStart: {
     type: Date,
     required: true,
   },
-  blockend: {
+  blockEnd: {
     type: Date,
     required: true,
   },

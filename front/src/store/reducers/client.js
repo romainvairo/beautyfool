@@ -4,7 +4,12 @@ import {
 } from '../actions-type/client'
 
 const initialState = {
-  user : {},
+  user: {
+    _id: 'rgf1hr4tf1h7tr1rtf',
+    logged: true,
+    username: 'Zougui',
+    roles: [{ name: 'admin' }]
+  },
   language: 'en',
 };
 

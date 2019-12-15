@@ -5,5 +5,5 @@ const { RequestHandler } = require('../../../services');
 module.exports = (req, res) => {
   new RequestHandler(res)
     .error(errorCodes.schedule.findAll)
-    .then(() => ScheduleController.findSchedules(req.params.page));
+    .then(() => ScheduleController.findAll(req.params.page));
 }

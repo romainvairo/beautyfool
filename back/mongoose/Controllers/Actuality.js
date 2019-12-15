@@ -33,7 +33,7 @@ const ActualityController = {
    * find all acutalities
    * @param {Number} page
    */
-  findActualities: (page) => {
+  findAll: (page) => {
     return ActualityModel
       .find()
       .skip((page - 1) * limitByPage)

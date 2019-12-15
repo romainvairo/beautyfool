@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
   let beautyTips;
 
   try {
-    beautyTips = await BeautyTipController.findActualities(req.params.page);
+    beautyTips = await BeautyTipController.findAll(req.params.page);
   } catch (error) {
     return end(res, { error: errorCodes.beautyTip.findAll });
   }

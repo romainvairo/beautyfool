@@ -37,10 +37,19 @@ const FeedbackController = {
   },
 
   /**
+   * add a comment to a feedback using their id
+   * @param {String} feedbackId
+   * @param {String} commentId
+   */
+  addCommentById: (feedbackId, commentId) => {
+    return FeedbackModel.findByIdAndUpdate(feedbackId, { $push: { comments: commentId } });
+  },
+
+  /**
    * find all feedbacks
    * @param {Number} page
    */
-  findFeedbacks: (page) => {
+  findAll: (page) => {
     return FeedbackModel
       .find()
       .skip((page - 1) * limitByPage)

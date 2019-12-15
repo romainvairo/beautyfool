@@ -6,3 +6,4 @@ export * from './getFunction';
 export * from './getSafeInteger';
 export * from './overloadMethod';
 export * from './singularify';
+export * from './differentiator';

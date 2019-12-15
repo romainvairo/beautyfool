@@ -1,9 +1,5 @@
 let i = 0;
 
-/**
- * @typedef {import('./types')} ControllerErrorCode
- * @type {ControllerErrorCode}
- */
 module.exports = {
   signup: {
     code: i++,

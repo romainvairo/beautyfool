@@ -38,13 +38,6 @@ const service = new mongoose.Schema({
     }],
     default: [],
   },
-  users: {
-    type: [{
-      ref: 'User',
-      type: mongoose.Schema.Types.ObjectId,
-    }],
-    default: [],
-  },
   appointments: {
     type:  [{
       ref: 'Appointment',

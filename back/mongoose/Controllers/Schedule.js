@@ -26,7 +26,7 @@ const ScheduleController = {
    * find all schedules in a page
    * @param {Number} page
    */
-  findSchedules: (page) => {
+  findAll: (page) => {
     return ScheduleModel
     .find()
     .skip((page - 1) * limitByPage)

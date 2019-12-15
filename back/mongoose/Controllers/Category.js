@@ -40,7 +40,7 @@ const CategoryController = {
   /**
    * find all categories
    */
-  findCategories: () => {
+  findAll: () => {
     return CategoryModel.find().populate('services');
   },
 

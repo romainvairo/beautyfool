@@ -1,4 +1,5 @@
 import React from 'react';
+import { composeDifference } from '../_composeDifference';
 
 const UserView = ({ formData, onChange }) => (
   <>
@@ -22,5 +23,19 @@ const UserView = ({ formData, onChange }) => (
     />
   </>
 );
+
+UserView.difference = composeDifference([
+  'username',
+  'firstname',
+  'lastname',
+  'email',
+  'picture',
+  'birthdate',
+  'fidelity',
+  'city',
+  'zipcode',
+  'address',
+  'phone',
+]);
 
 export default UserView;

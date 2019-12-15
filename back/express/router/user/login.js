@@ -10,9 +10,10 @@ module.exports = async (req, res) => {
     user = await UserController.login(req.body);
     // if there is an error we end the request and send an error
   } catch (error) {
+    console.error(error);
     // get the correct error to send to the client
-    // @ts-ignore
     error = BaseError.correctError(error, errorCodes.user.login.other);
+
 
     // return is to avoid from executing unecessary code
     // res is to call the end method

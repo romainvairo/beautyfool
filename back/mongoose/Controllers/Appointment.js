@@ -26,7 +26,7 @@ const AppointmentController = {
    * find all appointments
    * @param {Number} page
    */
-  findAppointments: (page) => {
+  findAll: (page) => {
     return AppointmentModel
       .find()
       .skip((page - 1) * limitByPage)

@@ -1,5 +1,5 @@
 import React from 'react';
-import { camelCase, upperFirst } from 'lodash';
+import { camelCase, upperFirst, isFunction } from 'lodash';
 import { connect } from 'react-redux';
 
 import ListsEditView from './ListsEdit-view';
@@ -28,6 +28,7 @@ class ListsEditContainer extends React.PureComponent {
 
   getSnackbar = new GetSnackbar(this);
   editSnackbar = new EditSnackbar(this);
+  ChildrenComponent;
 
   getCorrectDataName = () => {
     const { match } = this.props;
@@ -36,12 +37,20 @@ class ListsEditContainer extends React.PureComponent {
     return camelCase(singularify(category));
   }
 
+  getCorrectData = () => {
+    const correctData = this.props[this.getCorrectDataName()]
+    return correctData || {};
+  }
+
+  originalData = this.getCorrectData();
+
   state = {
-    ...(this.props[this.getCorrectDataName()] || {}),
+    ...this.getCorrectData(),
   };
 
   componentDidMount() {
     this.callGetRequest();
+    this.setChildrenComponent();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -50,6 +59,20 @@ class ListsEditContainer extends React.PureComponent {
     if (prevProps.match.params.id !== match.params.id) {
       this.callGetRequest();
     }
+
+    if (prevProps.match.params.category !== match.params.category) {
+      this.setChildrenComponent();
+    }
+  }
+
+  setChildrenComponent = () => {
+    this.ChildrenComponent = potientalChildrens[this.getChildrenName()];
+    this.forceUpdate();
+  }
+
+  getChildrenName = () => {
+    const { match } = this.props;
+    return upperFirst(camelCase(singularify(match.params.category)));
   }
 
   /**
@@ -65,25 +88,30 @@ class ListsEditContainer extends React.PureComponent {
 
   onSubmit = e => {
     e.preventDefault();
-    this.editSnackbar.caller(this.state);
-    console.log('edit form data', this.state);
+
+    if (!isFunction(this.ChildrenComponent.difference)) {
+      throw new Error(`No "difference" function on children "${this.getChildrenName()}"`);
+    }
+
+    const differences = this.ChildrenComponent.difference(this.state, this.originalData);
+
+    this.editSnackbar.caller(differences);
+    console.log('changes', this.ChildrenComponent.difference(this.state, this.originalData))
   }
 
   onChange = onChange(this);
 
   render() {
-    const { language, match } = this.props;
+    const { language } = this.props;
 
-    const ChildrenComponent = potientalChildrens[upperFirst(camelCase(singularify(match.params.category)))];
-
-    if (!ChildrenComponent) {
+    if (!this.ChildrenComponent) {
       return <PageNotFound />;
     }
 
     return <ListsEditView
       translations={translations[language]}
       formData={this.state}
-      ChildrenComponent={ChildrenComponent}
+      ChildrenComponent={this.ChildrenComponent}
       onSubmit={this.onSubmit}
       onChange={this.onChange}
       GetSnackbar={this.getSnackbar.Snackbar}

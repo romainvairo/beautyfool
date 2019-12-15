@@ -20,6 +20,8 @@ export class GetSnackbar extends RequestSnackbarBridge {
 
   then = ({ data }) => {
     this.context.setState(data.data);
+    // @ts-ignore
+    this.context.originalData = data.data;
   }
 
   catch = err => {

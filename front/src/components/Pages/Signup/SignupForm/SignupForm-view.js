@@ -2,6 +2,7 @@ import React from 'react';
 import { TextField, Button, Checkbox, FormControlLabel, Grid } from '@material-ui/core';
 
 import './SignupForm.scss';
+
 const SignupFormView = ({
   translations,
   firstName,
@@ -12,7 +13,6 @@ const SignupFormView = ({
   confirmedPassword,
   subscribeNewsLetter,
   onChange,
-
 }) => (
 <Grid container justify="center">
   <Grid xs={10} md={8} lg={6} item>
