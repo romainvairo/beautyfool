@@ -18,7 +18,7 @@ export const correctFormatDate = date => {
   const minutes = d.minutes();
 
   if (hours > 0) {
-    result += hours + ' hours ';
+    result += hours + ' heures ';
   }
 
   if (minutes > 0) {
