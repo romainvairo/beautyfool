@@ -35,17 +35,16 @@ const BeautyTipsView = ({ translations, beautyTips }) => (
           </FormControl>
         </Grid>
       </Grid>
-    </Grid>
-    <Grid xs={12} lg={12} container item spacing={2} className="mt-10 mb-10">
-      {beautyTips.map((beautyTip) => (
-        <div>
-          <Grid key={beautyTip} xs={6} md={4} item>
-            <img src={require("../../../assets/images/makeup_1.jpg")}/>
-            <h1>{beautyTip.title}</h1>
-            <p>{beautyTip.content}</p>
-          </Grid>
-        </div>
-      ))}
+      <Grid xs={12} lg={12} container item className="flex flex-row w-full mt-10 mb-10">
+        {beautyTips.map((beautyTip) => (
+        <Grid key={beautyTip.title} xs={12} lg={4} item className="beautyTips-section p-2">
+          <img src={require("../../../assets/images/makeup_1.jpg")} alt="makeup"/>
+          <h1 className="beautyTips-section-titles">{beautyTip.title}</h1>
+            <p className="beautyTips-section-contents">{beautyTip.content}</p>
+            <Link to="#" className="beautyTips-section-link">Lire la suite</Link>
+        </Grid>
+        ))}
+      </Grid>
     </Grid>
   </>
 );
