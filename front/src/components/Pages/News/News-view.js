@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Typography, FormControl, Select, InputLabel } from '@material-ui/core';
 
+import './News.scss';
+
 const NewsView = ({ translations, news }) => (
   <>
     <Grid container justify="center">
@@ -36,11 +38,12 @@ const NewsView = ({ translations, news }) => (
     </Grid>
     <Grid xs={12} lg={12} container item className="flex flex-row w-full mt-10 mb-10">
       {news.map((newA) => (
-          <Grid key={newA.title} lg={4} item className="pt-2 pr-4 pb-2">
-            <img src={require("../../../assets/images/makeup_1.jpg")} alt="makeup_1"/>
-            <h1>{newA.title}</h1>
-            <p>{newA.content}</p>
-          </Grid>
+        <Grid key={newA.title} lg={4} item className="news-section p-2">
+          <img src={require("../../../assets/images/makeup_1.jpg")} alt="makeup_1"/>
+            <h1 className="news-section-titles">{newA.title}</h1>
+            <p className="news-section-contents">{newA.content}</p>
+            <p className="news-section-link">Lire la suite</p>
+        </Grid>
       ))}
     </Grid>
   </>
