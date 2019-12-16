@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TextField, Button, Grid, Typography, FormControl, Select, InputLabel } from '@material-ui/core';
+import { Grid, Typography, FormControl, Select, InputLabel } from '@material-ui/core';
 
 const NewsView = ({ translations, news }) => (
   <>
@@ -34,15 +34,13 @@ const NewsView = ({ translations, news }) => (
         </Grid>
       </Grid>
     </Grid>
-    <Grid xs={12} lg={12} container item spacing={2} className="mt-10 mb-10">
+    <Grid xs={12} lg={12} container item className="flex flex-row w-full mt-10 mb-10">
       {news.map((newA) => (
-        <div key={newA}>
-          <Grid xs={6} md={4} item>
-            <img src={require("../../../assets/images/makeup_1.jpg")}/>
+          <Grid key={newA.title} lg={4} item className="pt-2 pr-4 pb-2">
+            <img src={require("../../../assets/images/makeup_1.jpg")} alt="makeup_1"/>
             <h1>{newA.title}</h1>
             <p>{newA.content}</p>
           </Grid>
-        </div>
       ))}
     </Grid>
   </>

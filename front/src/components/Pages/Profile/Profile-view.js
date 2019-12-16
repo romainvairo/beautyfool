@@ -1,7 +1,6 @@
 import React from 'react';
-import { Grid, Typography, Button, List, ListItem, ListItemText, Checkbox, ListItemIcon } from '@material-ui/core';
+import { Grid, Button, List, ListItem, ListItemText, Checkbox, ListItemIcon } from '@material-ui/core';
 import ProfileCarouselView from './ProfileCarousel';
-import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
 const ProfileView = ({ translations, images }) => (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Paper} from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 import './Header.scss';
 import Dropdown from './Dropdown';
@@ -23,7 +23,7 @@ const HeaderView = ({ translations }) => (
       </Grid>
       <Grid xs={3} sm={2} container item justify="flex-end">
         <Grid item className="pr-2">
-          <Link to="#" className="Header-Login-Link" to="/profile">
+          <Link className="Header-Login-Link" to="/profile">
             <i className="fas fa-user block text-center"></i>
             <span className="block text-center text-xs">
               Mon compte
