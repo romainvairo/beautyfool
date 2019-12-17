@@ -13,8 +13,6 @@
   display: flex;
   position: relative;
   left: 12rem;
-
-
 }
 .icons{
   padding-left: 30px;
@@ -22,16 +20,15 @@
 .list-icons:hover{
   background-color: red;
 }
-
 .link {
   transition: .2s;
 
-  &:hover{
-    background-color:white;
-      text-shadow:
-      0 0 1px #0007,
-      1px 0 1px #0007,
-      0 1px 1px #0007,
-      1px 1px 1px #0007;
-    }
+&:hover{
+  background-color:white;
+    text-shadow:
+    0 0 1px #0007,
+    1px 0 1px #0007,
+    0 1px 1px #0007,
+    1px 1px 1px #0007;
+  }
 }
