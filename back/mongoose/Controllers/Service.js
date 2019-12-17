@@ -28,7 +28,26 @@ const ServiceController = {
    */
   findByCategoryName: async categoryName => {
     const category = await CategoryController.findByName(categoryName);
-    return await ServiceModel.find({ 'category.name': category._id });
+
+    if (!category) {
+      return null;
+    }
+
+    return await ServiceModel.find({ category: category._id });
+  },
+
+  /**
+   * find a service by the slug of its category
+   * @param {String} categorySlug
+   */
+  findByCategorySlug: async categorySlug => {
+    const category = await CategoryController.findBySlug(categorySlug);
+
+    if (!category) {
+      return null;
+    }
+
+    return await ServiceModel.find({ category: category._id });
   },
 
   /**
@@ -47,7 +66,8 @@ const ServiceController = {
     return ServiceModel
       .find()
       .skip((page - 1) * limitByPage)
-      .limit(limitByPage);
+      .limit(limitByPage)
+      .populate('category');
   },
 
   /**
@@ -67,7 +87,5 @@ const ServiceController = {
     return ServiceModel.findByIdAndDelete(id);
   },
 };
-
-ServiceController.findByCategoryName('Maquillage');
 
 module.exports = ServiceController;

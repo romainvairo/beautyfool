@@ -1,5 +1,4 @@
 import React from 'react';
-import { isFunction } from 'lodash';
 
 import SwipeableListView from './SwipeableList-view';
 import { swipeLeft, swipeRight } from './actions';

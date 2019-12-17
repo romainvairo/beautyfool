@@ -22,7 +22,7 @@ class InfiniteScrollContainer extends React.PureComponent {
   prevY = window.scrollY;
 
   componentDidMount() {
-    window.addEventListener('scroll', throttle(this.onScroll, 100));
+    window.addEventListener('scroll', this.onScroll);
     console.log(this.topPage, this.bottomPage)
   }
 
@@ -44,7 +44,7 @@ class InfiniteScrollContainer extends React.PureComponent {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', throttle(this.onScroll, 100));
+    window.removeEventListener('scroll', this.onScroll);
   }
 
   scrollTopHandler = () => scrollTopHandler(this.props);
@@ -69,7 +69,7 @@ class InfiniteScrollContainer extends React.PureComponent {
     this.maxY = window.scrollY;
   }
 
-  onScroll = e => {
+  scroll = e => {
     const { preventHandling, lastPage } = this.props;
 
     if (preventHandling) {
@@ -92,6 +92,8 @@ class InfiniteScrollContainer extends React.PureComponent {
 
     this.prevY = window.scrollY;
   }
+
+  onScroll = throttle(this.scroll, 100);
 
   render() {
     const { children, className } = this.props;

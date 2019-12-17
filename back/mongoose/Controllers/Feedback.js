@@ -33,7 +33,7 @@ const FeedbackController = {
    * @param {String} id
    */
   findById: (id) => {
-    return FeedbackModel.findById(id);
+    return FeedbackModel.findById(id).populate('user');
   },
 
   /**

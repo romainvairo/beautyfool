@@ -19,7 +19,7 @@ const CommentController = {
    * @param {String} id
    */
   findById: (id) => {
-    return CommentModel.findById(id);
+    return CommentModel.findById(id).populate('user');
   },
 
   /**
@@ -30,7 +30,8 @@ const CommentController = {
     return CommentModel
       .find()
       .skip((page - 1) * limitByPage)
-      .limit(limitByPage);
+      .limit(limitByPage)
+      .populate('user');
   },
 
   /**

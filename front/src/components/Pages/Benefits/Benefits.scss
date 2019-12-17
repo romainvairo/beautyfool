@@ -1,53 +1,85 @@
-.Benefits {
-  &-Nails, &-HairRemoval, &-Makeup, &-Face, &-Body, &-HandsAndFeet {
+.benefits {
+  &-total {
+    margin: 2rem 43%;
+    padding: 1rem;
+    background-color: rgba(199, 184, 184, 0.781);
+    border-radius: 5px;
+    text-shadow:
+      0 0 1px #B4B4B4,
+      2px 0 1px #B4B4B4,
+      0 2px 1px #B4B4B4,
+      2px 2px 1px #B4B4B4;
+  }
+
+  &-section {
     display: flex;
     justify-content: space-between;
     margin: 2rem 2rem 0 2rem;
 
-    &-Image {
-      width: 50%;
-      justify-content: flex-end;
+    &:nth-child(even) {
+      .benefits-section-image {
+        order: 0;
+      }
+      .benefits-section-form {
+        order: 1;
+      }
     }
 
-    &-Form {
+    &-image {
+      width: 50%;
+    }
+
+    &-form {
       display: flex;
       flex-direction: column;
       width: 50%;
       margin: 0 0rem 0 2rem;
     }
 
-    &-Title {
+    &-title {
       text-align: center;
       font-size: 2.5rem;
       font-weight: 700;
-      margin-bottom: 2rem;
+      margin-bottom: 0.5rem;
       text-shadow:
         0 0 1px #B4B4B4,
         2px 0 1px #B4B4B4,
         0 2px 1px #B4B4B4,
         2px 2px 1px #B4B4B4;
     }
+
+    &-label {
+      margin-top: 1rem;
+      text-shadow:
+        0 0 1px #B4B4B480,
+        2px 0 1px #B4B4B480,
+        0 2px 1px #B4B4B480,
+        2px 2px 1px #B4B4B480;
+    }
   }
 }
 
-.Benefits-Button {
+.benefits-button {
   text-align: center;
   margin-top: 2rem;
 }
 
 @media (max-width: 1025px) {
-  .Benefits {
-    &-Nails, &-HairRemoval, &-Makeup, &-Face, &-Body, &-HandsAndFeet {
-      &-Form {
+  .benefits {
+    &-total {
+      margin: 2rem 20%;
+    }
+    &-section {
+      &-form {
         width: 100%;
         margin: 0;
       }
-      &-Image {
+      &-image {
         display: none;
       }
-      &-Title {
-        margin: auto 1rem 1rem 1rem;
-        width: 100px;
+      &-title {
+        margin: auto;
+        width: 100%;
         font-size: 1.5rem;
       }
     }

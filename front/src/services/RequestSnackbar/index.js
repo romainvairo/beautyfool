@@ -30,7 +30,7 @@ export class RequestSnackbar extends MultiSnackbar {
   /**
    * @type {Object}
    */
-  originalText;
+  originalText = {};
 
   /**
    * set the request to call with the text associated to
@@ -50,9 +50,7 @@ export class RequestSnackbar extends MultiSnackbar {
    * @returns {this}
    */
   setText = text => {
-    this.originalText = { ...text };
-    text.error = <ErrorElement message={text.error} onClick={this.call} />;
-    this.text = text;
+    this.editText(text);
     return this;
   }
 

@@ -1,0 +1,49 @@
+.news-section{
+  position: relative;
+  margin: auto auto 1rem auto;
+  width: 70vw;
+
+  &-titles{
+    position: absolute;
+    top: 4%;
+    left: 2rem;
+    right: 2rem;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-shadow:
+      0 0 1px #000,
+      1px 0 1px #000,
+      0 1px 1px #000,
+      1px 1px 1px #000;
+  }
+
+  &-contents{
+    position: absolute;
+    top: 30%;
+    left: 2rem;
+    right: 2rem;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow:
+      0 0 1px #000,
+      1px 0 1px #000,
+      0 1px 1px #000,
+      1px 1px 1px #000;
+  }
+
+  &-link{
+    position: absolute;
+    top: 85%;
+    right: 5%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    text-shadow:
+      0 0 1px #000,
+      1px 0 1px #000,
+      0 1px 1px #000,
+      1px 1px 1px #000;
+  }
+}

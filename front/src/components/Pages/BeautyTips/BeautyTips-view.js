@@ -11,8 +11,8 @@ const BeautyTipsView = ({ translations, beautyTips }) => (
         <Typography variant="h4">{ translations.title }</Typography>
       </Grid>
       <Grid container item justify="center">
-        <Grid xs={6} lg={9} item>
-          <FormControl fullWidth variant="filled">
+        <Grid xs={6} lg={9} item className="text-center">
+          <FormControl fullWidth variant="filled" className="w-64">
             <Grid item container>
               <InputLabel>Categorie</InputLabel>
               <Select
