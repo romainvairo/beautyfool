@@ -7,3 +7,4 @@ export * from './getSafeInteger';
 export * from './overloadMethod';
 export * from './singularify';
 export * from './differentiator';
+export * from './range';

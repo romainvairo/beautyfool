@@ -19,6 +19,7 @@ import Presentation from '../../Pages/Presentation';
 import EditProfile from '../../Pages/Profile/EditProfile';
 import Sitemap from '../../Pages/Sitemap';
 import FAQ from '../../Pages/FAQ';
+import Calendar from '../../Pages/Calendar';
 // user routes
 import Login from '../../Pages/Login';
 import Signup from '../../Pages/Signup';
@@ -48,6 +49,7 @@ const Router = () => (
     <ProtectedRoute role={roles.user} exact path={['/profile/edit-profile', '/profile/modification-profile']} component={EditProfile} />
     <Route exact path={['/sitemap', '/plan-du-site']} component={Sitemap} />
     <Route exact path={['/faq']} component={FAQ} />
+    <Route exact path={['/calendar', 'calendrier']} component={Calendar} />
 
     {/* user routes */}
     <Route exact path={['/login', '/connexion']} component={Login} />

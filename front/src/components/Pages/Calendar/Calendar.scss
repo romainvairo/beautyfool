@@ -1,0 +1,14 @@
+.calendar {
+  &-title {
+    font-size: 3em;
+    font-weight: bold;
+  }
+
+  &-content {
+    max-width: 95%;
+    }
+
+  &-button {
+    max-width: 16rem;
+  }
+}
