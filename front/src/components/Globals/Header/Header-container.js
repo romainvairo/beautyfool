@@ -8,7 +8,22 @@ const mapStateToProps = (state) => ({
   language: state.clientReducer.language,
 });
 
-// Create the function HeaderContainer that render the view
-const HeaderContainer = ({ language }) => <HeaderView translations={translations[language]} />;
+class HeaderContainer extends React.PureComponent {
+  state = {
+    isToggle: false,
+  }
+  setIsToggle = () => {
+     this.setState(state => ({ isToggle: !state.isToggle }));
+  }
+  render() {
+    const { language } = this.props;
+    const { isToggle } = this.state;
+  return <HeaderView
+    translations={translations[language]}
+    isToggle={isToggle}
+    setIsToggle={this.setIsToggle}
+  />;
+  }
+}
 
 export default connect(mapStateToProps, null)(HeaderContainer);

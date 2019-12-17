@@ -1,5 +1,108 @@
-.container-image {
-  width: 20rem;
-  height: 20rem;
-  border-radius: 50%;
+@media (min-width: 800px) {
+
+  .contain{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-content: center;
+  }
+
+  .pic{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5em;
+    color: white;
+    font-family: monospace;
+    height: 24rem;
+    flex-grow: 1;
+    margin-left: 1rem;
+    width: 25%;
+    }
+
+  .image-button{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 100px;
+  }
+
+  .list {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5rem;
+    flex-grow: 2;
+    flex: 2;
+    align-items: flex-end;
+    margin-right: 2rem;
+    width: 100%;
+    }
+
+  .image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-left: 100px;
+  }
+
+  .button-modification {
+    background-color: #939ba0 !important;
+  }
+
+  .input-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .items{
+    display: flex;
+    padding-bottom: 18px;
+    width: 60%;
+  }
 }
+
+@media (max-width: 800px) {
+
+
+  .pic{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    }
+
+  .list{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    }
+
+  .image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  .image-button {
+    margin-top: 20px;
+  }
+
+  .button-modification {
+    background-color: #939ba0 !important;
+  }
+
+  .input-item{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  .items{
+    display: flex;
+    margin-bottom: 1rem;
+  }
+}
+
