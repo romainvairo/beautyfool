@@ -1,40 +1,59 @@
 import React from 'react';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Button from '@material-ui/core/Button';
-import moment from 'moment';
+import QS from 'uqs';
+import { Link } from 'react-router-dom';
+import { Button } from '@material-ui/core';
 
 import './Benefits.scss';
+import Checkbox from '../../Shared/Checkbox/Checkbox-view';
+import { correctFormatDate } from '../../../utils';
 
-const BenefitsView = ({ translations, categories }) => (
-  <div className="Benefits">
+const BenefitsView = ({
+  translations,
+  categories,
+  onChange,
+  isServiceChoosen,
+  totalPrice,
+  totalDuration,
+}) => (
+  <div className="benefits">
     {categories.map((category) => (
-      <div className="benefis-section">
-        <div className="benefits-section-image">
-          <img src={category.image} alt=""/>
-        </div>
+      <div key={category._id} className="benefits-section">
         <div className="benefits-section-form">
           <h1 className="benefits-section-title">{category.name}</h1>
           {category.services.map((service) => (
-            <div>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    value=""
-                  />
-                }
+            <div key={service._id}>
+              <Checkbox
+                value=""
+                onChange={onChange(service)}
+                checked={isServiceChoosen(service)}
                 label={service.name}
+                name={service.name}
                 className="benefits-section-label"
               />
-              <h2 className="benefits-section-price">{translations.price}: {service.price} €</h2>
-              <h2 className="benefits-section-duration">{translations.duration}: {moment(service.duration).minute()} minutes</h2>
+              <h2 className="benefits-section-price">{translations.price}{service.price} €</h2>
+              <h2 className="benefits-section-duration">{translations.duration}{correctFormatDate(service.duration)}</h2>
             </div>
           ))}
         </div>
+        <div className="benefits-section-image">
+          <img src={require('../../../assets/images/makeup_1.jpg')} alt=""/>
+        </div>
       </div>
     ))}
+    <div className="benefits-total">
+      {translations.totalPrice}{totalPrice} €
+      <br/>
+      {translations.totalDuration}{totalDuration}
+    </div>
     <div className="benefits-button">
-      <Button variant="contained" color="secondary" className="font-bold" href="/">
+      <Button
+        component={Link}
+        variant="contained"
+        color="secondary"
+        className="font-bold"
+        // Add after calendar the parameters `totalPrice` and `totalDuration` into the URL
+        to={'/calendar?' + QS.stringify({ price: totalPrice + ' €', duration: totalDuration })}
+      >
         {translations.button}
       </Button>
     </div>

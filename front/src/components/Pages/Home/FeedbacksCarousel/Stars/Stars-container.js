@@ -16,8 +16,6 @@ class StarsContainer extends React.PureComponent {
   }
 
   render() {
-    const { skill } = this.props;
-
     return <StarsView
       getSingleValue={this.getSingleValue}
     />

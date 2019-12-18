@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import QS from 'uqs';
 import { connect } from 'react-redux';
 
 import translations from './translations';
@@ -26,15 +27,20 @@ class CalendarContainer extends React.PureComponent {
     this.setState({ date });
   }
 
-  render(){
+  render() {
     const { language } = this.props;
     const { date } = this.state
+
+    // parse the query string from `search` in `window.location` object
+    const params = QS.parse(window.location.search);
 
     return  <CalendarView
       translations={translations[language]}
       language={language}
       date={date}
       setDate={this.setDate}
+      duration={params.duration}
+      price={params.price}
     />
   }
 }

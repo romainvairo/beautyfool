@@ -1,3 +1,12 @@
 {
-
+  "editProfilePicture": "Modifier la photo de profil",
+  "lastName": "Nom de famille",
+  "firstName": "Prénom",
+  "userName": "Pseudo",
+  "address": "Addresse",
+  "zipcode": "Code postal",
+  "city": "Ville",
+  "birthdate": "Date de naissance",
+  "email": "Email",
+  "send": "Envoyer"
 }

@@ -15,7 +15,7 @@ import './Calendar.scss';
 /**
  * @param {Object} param0.translations
  */
-const CalendarView = ({ translations, date, language, setDate }) => (
+const CalendarView = ({ translations, date, language, setDate, price, duration }) => (
   <div className="flex flex-col calendar-container items-center">
     <h1 className="calendar-title">{translations.title}</h1>
 
@@ -40,6 +40,12 @@ const CalendarView = ({ translations, date, language, setDate }) => (
     >
       {translations.validButton}
     </Button>
+
+    <div>
+      {price}
+      <br />
+      {duration}
+    </div>
   </div>
 );
 

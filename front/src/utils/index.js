@@ -8,3 +8,5 @@ export * from './overloadMethod';
 export * from './singularify';
 export * from './differentiator';
 export * from './range';
+export * from './toggle';
+export * from './correctFormatDate';

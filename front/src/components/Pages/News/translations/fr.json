@@ -1,3 +1,9 @@
 {
-  "title": "Actualités"
+  "title": "Actualités",
+  "nails": "Ongles",
+  "hairRemoval": "Épilation",
+  "makeup": "Maquillage",
+  "face": "Soins du Visage",
+  "body": "Soins du Corps",
+  "handsAndFeet": "Soins des Mains et des Pieds"
 }

@@ -7,7 +7,8 @@ import './Navbar.scss';
 
 
 const NavbarView = ({ translations }) => (
-  <AppBar  className="toolbar hidden md:block" position="static">
+  <div className="hey">
+  <AppBar className="toolbar hidden md:block" position="static">
     <Toolbar className="bg-pink-700 pl-20" component="div">
       <Grid container justify="space-around">
         <Link to="/" className="link">{translations.Home}</Link>
@@ -20,6 +21,7 @@ const NavbarView = ({ translations }) => (
       </Grid>
     </Toolbar>
   </AppBar>
+  </div>
 );
 
 export default NavbarView;

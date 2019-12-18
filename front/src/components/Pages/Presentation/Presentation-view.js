@@ -20,12 +20,12 @@ const PresentationView = ({ translations }) => (
         </Grid>
       </Grid>
     <Grid xs={12} md={6} item className="">
-      <img src={require('../../../assets/images/body_1.jpg')}/>
+      <img src={require('../../../assets/images/body_1.jpg')} alt="body_1"/>
     </Grid>
     <Grid container className="flex flex-row-reverse">
     <Grid item xs={12} md={6} lg={6} className="flex justify-center">
       <Grid xs={12} lg={12} container item className="flex items-center">
-        <Grid xs={12} lg={12} item item className="mt-6">
+        <Grid xs={12} lg={12} item className="mt-6">
           <Typography variant="h5" className="text-center font-black">
             {translations.titleSite}
           </Typography>
@@ -38,12 +38,12 @@ const PresentationView = ({ translations }) => (
         </Grid>
       </Grid>
     <Grid xs={12} md={6} item className="">
-      <img src={require('../../../assets/images/body_2.jpg')}/>
+      <img src={require('../../../assets/images/body_2.jpg')} alt="body_2"/>
     </Grid>
     <Grid lg={12} container className="flex justify-around" >
     <Grid lg={2} container item className="flex mt-6">
       <Grid md={12} lg={12} item className="">
-        <img src={require('../../../assets/images/face_1.jpg')}/>
+        <img src={require('../../../assets/images/face_1.jpg')} alt="face_1"/>
         <Grid lg={12} item className="mt-6">
           <Typography variant="h5" className="text-center font-black">
             {translations.titleAccount}
@@ -58,7 +58,7 @@ const PresentationView = ({ translations }) => (
           </Grid>
             <Grid lg={2} container item className="mt-6">
       <Grid md={12} lg={12} item className="">
-        <img src={require('../../../assets/images/body_3.jpg')}/>
+        <img src={require('../../../assets/images/body_3.jpg')} alt="body_3"/>
         <Grid lg={12} item className="mt-6">
           <Typography variant="h5" className="text-center font-black">
             {translations.titleActualities}
@@ -74,7 +74,7 @@ const PresentationView = ({ translations }) => (
 
     <Grid lg={2} container item className="mt-6">
       <Grid md={12} lg={12} item className="">
-        <img src={require('../../../assets/images/face_2.jpg')}/>
+        <img src={require('../../../assets/images/face_2.jpg')} alt="face_2"/>
         <Grid lg={12} item className="mt-6">
           <Typography variant="h5" className="text-center font-black">
             {translations.titlePrestations}
@@ -90,7 +90,7 @@ const PresentationView = ({ translations }) => (
 
     <Grid lg={2} container item className="mt-6">
       <Grid md={12} lg={12} item className="">
-        <img src={require('../../../assets/images/face_3.jpg')}/>
+        <img src={require('../../../assets/images/face_3.jpg')} alt="face_3"/>
         <Grid lg={12} item className="mt-6">
           <Typography variant="h5" className="text-center font-black">
             {translations.titleGallery}
@@ -106,7 +106,7 @@ const PresentationView = ({ translations }) => (
 
     <Grid lg={2} container item className="mt-6">
       <Grid md={12} lg={12} item className="">
-        <img src={require('../../../assets/images/face_4.jpg')}/>
+        <img src={require('../../../assets/images/face_4.jpg')} alt="face_4"/>
         <Grid lg={12} item className="mt-6">
           <Typography variant="h5" className="text-center font-black">
             {translations.titleBeautyTips}
@@ -147,7 +147,7 @@ const PresentationView = ({ translations }) => (
           </Grid>
           </Grid>
           <Grid xs={12} item className="mt-12">
-          <img src={require('../../../assets/images/map.jpg')}/>
+          <img src={require('../../../assets/images/map.jpg')} alt="map"/>
 
           </Grid>
         </Grid>
