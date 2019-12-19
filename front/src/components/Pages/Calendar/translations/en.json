@@ -1,4 +1,8 @@
 {
   "title": "Appointment planning",
-  "validButton": "Valid appointment"
+  "validButton": "Valid appointment",
+  "errors": {
+    "invalid": "Your appointment is overflowing into unavailable time",
+    "unchoosen": "You must choose when you want your appointment"
+  }
 }

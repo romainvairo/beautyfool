@@ -1,6 +1,4 @@
 import React from 'react';
-import QS from 'uqs';
-import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 
 import './Benefits.scss';
@@ -14,6 +12,7 @@ const BenefitsView = ({
   isServiceChoosen,
   totalPrice,
   totalDuration,
+  onButtonClick,
 }) => (
   <div className="benefits">
     {categories.map((category) => (
@@ -47,12 +46,11 @@ const BenefitsView = ({
     </div>
     <div className="benefits-button">
       <Button
-        component={Link}
+        onClick={onButtonClick}
         variant="contained"
         color="secondary"
         className="font-bold"
         // Add after calendar the parameters `totalPrice` and `totalDuration` into the URL
-        to={'/calendar?' + QS.stringify({ price: totalPrice + ' €', duration: totalDuration })}
       >
         {translations.button}
       </Button>

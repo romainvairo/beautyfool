@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-import { range } from '../../../../../utils';
+import { range } from '../../../utils';
 
 /**
  * @typedef {import('moment').Moment} Moment
@@ -59,7 +59,11 @@ export class IsTimeOccupied {
     return this;
   }
 
-  results = () => {
+  /**
+   * @param {Boolean} [withDefaults]
+   * @returns {Boolean}
+   */
+  results = withDefaults => {
     if (!this.appointments) {
       throw new Error('The appointments must be defined');
     }
@@ -76,7 +80,7 @@ export class IsTimeOccupied {
       throw new Error('The hour must be defined');
     }
 
-    return this.appointments.find(a => {
+    return !!this.appointments.find(a => {
       // create the hour where we will recover both the hour and the minutes
       const mHour = moment({ hour: 8, minute: 30 });
       // add 30 minutes for each hour interval
@@ -98,7 +102,15 @@ export class IsTimeOccupied {
       }
 
       // test if the date of the block is the same as the date of the appointment
-      return found || mHour.isBetween({ hour: 11, minute: 30}, { hour: 13 }) || dateToTest.weekday() === 0;
+      if (found) {
+        return found;
+      }
+
+      if (withDefaults) {
+        return mHour.isBetween({ hour: 11, minute: 30 }, { hour: 13 }) || dateToTest.weekday() === 0;
+      }
+
+      return false;
     });
   }
 }

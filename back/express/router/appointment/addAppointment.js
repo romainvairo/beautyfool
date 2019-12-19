@@ -6,6 +6,7 @@ module.exports = async (req, res) => {
   try {
     await AppointmentController.add(req.body);
   } catch (error) {
+    console.error(error);
     return end(res, { error: errorCodes.appointment.add });
   }
 

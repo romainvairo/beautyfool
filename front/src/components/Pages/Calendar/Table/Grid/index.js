@@ -1,1 +1,1 @@
-export { default } from './Grid-view';
+export { default } from './Grid-container';
