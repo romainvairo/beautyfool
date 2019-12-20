@@ -9,6 +9,9 @@ const mapStateToProps = (state) => ({
 });
 
 // Create the function HomeContainer that render the view
-const SignupContainer = ({ language }) => <SignupView translations={translations[language]} />;
+const SignupContainer = ({ language, history }) => <SignupView
+  translations={translations[language]}
+  history={history}
+/>;
 
 export default connect(mapStateToProps, null)(SignupContainer);

@@ -6,23 +6,28 @@ import translations from './translations';
 
 const mapStateToProps = (state) => ({
   language: state.clientReducer.language,
+  user: state.clientReducer.user,
 });
 
 class HeaderContainer extends React.PureComponent {
+
   state = {
     isToggle: false,
   }
+
   setIsToggle = () => {
      this.setState(state => ({ isToggle: !state.isToggle }));
   }
+
   render() {
     const { language } = this.props;
     const { isToggle } = this.state;
-  return <HeaderView
-    translations={translations[language]}
-    isToggle={isToggle}
-    setIsToggle={this.setIsToggle}
-  />;
+
+    return <HeaderView
+      translations={translations[language]}
+      isToggle={isToggle}
+      setIsToggle={this.setIsToggle}
+    />;
   }
 }
 

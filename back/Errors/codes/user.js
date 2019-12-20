@@ -38,4 +38,9 @@ module.exports = {
     message: "An error occured and your informations couldn't be deleted",
     status: 500,
   },
+  confirmEmail: {
+    code: i++,
+    message: "An error occured and your email could not be confirmed",
+    status: 500,
+  },
 };

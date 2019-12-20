@@ -50,7 +50,7 @@ module.exports = [
     lastname: 'Test',
     password: 'user',
     email: 'user@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'leicko',
@@ -58,7 +58,7 @@ module.exports = [
     lastname: 'Bidocrak',
     password: 'menola',
     email: 'kalamita@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'zujaduda',
@@ -66,7 +66,7 @@ module.exports = [
     lastname: 'Banality',
     password: 'mokado',
     email: 'mirola@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'riberadi',
@@ -74,7 +74,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'anamah@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'bahihuzo',
@@ -82,7 +82,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'ankamh@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'jixovir',
@@ -90,7 +90,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'ankama@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'lodoconu',
@@ -98,7 +98,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'nkamah@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'rusutal',
@@ -106,7 +106,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'ankhghamah@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'fablahy',
@@ -114,7 +114,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'anjfkamah@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'ghecanu',
@@ -122,7 +122,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'ankamghjh@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'bexumod',
@@ -130,7 +130,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'ankafghmah@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'tesoobi',
@@ -138,7 +138,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'ankjghkamah@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'quridus',
@@ -146,7 +146,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'afghnkamah@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'boklutu',
@@ -154,7 +154,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'ankamjkhjah@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'honnor',
@@ -162,7 +162,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'ankahkgkmah@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'heluin',
@@ -170,7 +170,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'ankautrsmah@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'centira',
@@ -178,7 +178,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'ankdfgdfamah@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   {
     username: 'dortas',
@@ -186,7 +186,7 @@ module.exports = [
     lastname: 'Kaniglou',
     password: 'dofus',
     email: 'ankamsdfgah@gmail.com',
-    roles: ['user', 'user'],
+    roles: ['user'],
   },
   ...moreUsers,
 ];

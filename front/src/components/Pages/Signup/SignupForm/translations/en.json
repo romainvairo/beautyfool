@@ -1,12 +1,14 @@
 {
-
-    "firstName": "First Name",
-    "lastName": "Last Name",
-    "userName": "User Name",
+    "firstname": "Firstname",
+    "lastname": "Lastname",
+    "username": "Username",
     "email": "Address Email",
     "password": "Password",
     "confirmedPassword": "Confirmed password",
     "submitButton": "Signup",
-    "subscribeNewsLetter": "Subscribe at the NewsLetter"
-
+    "subscribeNewsLetter": "Subscribe at the NewsLetter",
+    "signup": "You have succesfully been signup",
+    "errors": {
+        "0": "Your account couldn't be created"
+    }
 }

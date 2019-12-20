@@ -145,6 +145,14 @@ const UserController = {
   deleteById: id => {
     return UserModel.findByIdAndDelete(id).select('-password');
   },
+
+  /**
+   * confirm an e-mail from is id
+   * @param {String} id
+   */
+  confirmEmail: id => {
+    return UserModel.findByIdAndUpdate(id, { isEmailValid: true });
+  }
 };
 
 module.exports = UserController;
