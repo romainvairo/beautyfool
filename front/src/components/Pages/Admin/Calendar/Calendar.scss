@@ -1,0 +1,32 @@
+.calendar {
+  &-title {
+    font-size: 3em;
+    font-weight: bold;
+  }
+
+  &-content {
+    max-width: 95%;
+
+    &-table-wrapper {
+      max-width: 90%;
+    }
+
+    &-table-container {
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        height: 7px;
+        background-color: transparent !important;
+
+        &-thumb {
+          background-color: #aaa;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  &-button {
+    max-width: 16rem;
+  }
+}

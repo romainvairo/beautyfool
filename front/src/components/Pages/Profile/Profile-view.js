@@ -1,16 +1,25 @@
 import React from 'react';
-import { Grid, Button, List, ListItem, ListItemText, Checkbox, ListItemIcon } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { Grid, Button, List, ListItem, ListItemText } from '@material-ui/core';
+
 import ProfileCarouselView from './ProfileCarousel';
+import Checkbox from '../../Shared/Checkbox';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
-const ProfileView = ({ translations, images }) => (
+const ProfileView = ({ translations, isNewsletterChecked, onToggle, user }) => (
   <Grid container>
-    <Grid container lg={12} >
-      <Grid container xs={12} className="justify-center">
+    <Grid container lg={12} item>
+      <Grid container xs={12} item className="justify-center">
         <Grid item lg={4} className="mt-12">
           <Grid xs={12} container item className="flex justify-center">
             <Grid xs={12} item className="flex justify-center">
-              <div><img className="rounded-full h-32 w-32" src={require('../../../assets/images/body_1.jpg')} /></div>
+              <div>
+                <img
+                  className="rounded-full h-32 w-32"
+                  src={user.picture || require('../../../assets/images/makeup_1.jpg')}
+                  alt="makeup_1"
+                />
+              </div>
             </Grid>
             <Grid xs={12} item className="flex justify-center mt-6">
               <Button variant="contained" color="secondary">
@@ -18,13 +27,13 @@ const ProfileView = ({ translations, images }) => (
               </Button>
             </Grid>
             <Grid xs={12} item className="flex justify-center mt-2">
-              <Button variant="contained">
+              <Button component={Link} to="/profile/edit" variant="contained">
                 {translations.updateAccount}
               </Button>
             </Grid>
           </Grid>
         </Grid>
-          <Grid lg={6} className="flex mt-12">
+          <Grid lg={6} item className="flex mt-12">
             <Grid xs={12} item className="flex justify-center">
             <List>
               <ListItem>
@@ -55,35 +64,33 @@ const ProfileView = ({ translations, images }) => (
                 <ListItemText primary={translations.fidelityPoints} secondary="22 points"/>
               </ListItem>
               <ListItem>
-              <ListItemText primary={translations.appointments}/>
+                <ListItemText primary={translations.appointments}/>
               </ListItem>
               <ListItem>
-              <ProfileCarouselView />
+                <ProfileCarouselView />
               </ListItem>
-              <Grid lg={12} container className="flex justify-start mt-40 mb-6">
-              <Grid xs={12} container item className="flex justify-center">
-              <Grid item className="flex">
-              <ListItem >
-                    <ListItemIcon>
+              <Grid lg={12} item container className="flex justify-start mt-40 mb-6">
+                <Grid xs={12} container item className="flex justify-center">
+                  <Grid item className="flex">
+                    <ListItem>
                       <Checkbox
-
+                        onChange={onToggle}
+                        label={translations.newsletters}
+                        checked={isNewsletterChecked}
                       />
-                    </ListItemIcon>
-                    <ListItemText primary={translations.newsletters} />
-                  </ListItem>
+                    </ListItem>
                   </Grid>
                   <Grid className="flex">
-                  <Grid xs={12} item className="flex">
-            <Button variant="contained" color="secondary">
-              {translations.deleteAccount}
-            </Button>
-            </Grid>
-            </Grid>
-            </Grid>
-            </Grid>
+                    <Grid xs={12} item className="flex">
+                      <Button variant="contained" color="secondary">
+                        {translations.deleteAccount}
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
             </List>
-            </Grid>
-
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

@@ -50,6 +50,10 @@ const UserController = {
     return UserModel.find({ newsletterSubscribed: true }).select('-password');
   },
 
+  setNewsletterSubscritionById: (id, isSubscribed) => {
+    return UserModel.findByIdAndUpdate(id, { newsletterSubscribed: isSubscribed });
+  },
+
   /**
    * log a user using its email and password
    * @param {Object} user
@@ -59,7 +63,7 @@ const UserController = {
    */
   login: async user => {
     // get the user depending on the given email
-    const userInDb = await UserController.findFullUserByEmail(user.email);
+    const userInDb = await UserController.findFullUserByEmail(user.email).populate('roles');
 
     if (!userInDb) {
       throw new BaseError(errorCodes.user.login.noUser);

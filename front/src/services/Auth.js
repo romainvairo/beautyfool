@@ -51,7 +51,6 @@ export class Auth {
       return;
     }
 
-    console.log(Auth.getUserRoles())
     return Auth.getUserRoles().includes(role);
   }
 

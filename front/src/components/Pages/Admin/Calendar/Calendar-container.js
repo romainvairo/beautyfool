@@ -3,12 +3,12 @@ import moment from 'moment';
 import QS from 'uqs';
 import { connect } from 'react-redux';
 
-import axios from '../../../axios';
+import axios from '../../../../axios';
 import translations from './translations';
 import CalendarView from './Calendar-view';
-import { Cacher } from '../../../services/Cacher';
+import { Cacher } from '../../../../services/Cacher';
 import { IsTimeOccupied } from './actions';
-import { range } from '../../../utils';
+import { range } from '../../../../utils';
 import { appointments } from './data';
 
 const mapStateToProps = state => ({

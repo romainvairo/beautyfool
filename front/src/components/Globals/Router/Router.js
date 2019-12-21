@@ -30,6 +30,7 @@ import AdminListsAdd from '../../Pages/Admin/Lists/Add';
 import AdminListsEdit from '../../Pages/Admin/Lists/Edit';
 import AdminListsGetOne from '../../Pages/Admin/Lists/GetOne';
 import AdminNewsletter from '../../Pages/Admin/Newsletter';
+import AdminCalendar from '../../Pages/Admin/Calendar';
 
 const Router = () => (
   <Switch>
@@ -46,7 +47,7 @@ const Router = () => (
     <Route exact path={['/terms-of-sales', '/conditions-generales-de-vente']} component={TermsOfSales} />
     <Route exact path={['/terms-of-services', '/conditions-generales-utilisation']} component={TermsOfServices} />
     <Route exact path={['/presentation']} component={Presentation} />
-    <ProtectedRoute role={roles.user} exact path={['/profile/edit-profile', '/profile/modification-profile']} component={EditProfile} />
+    <ProtectedRoute role={roles.user} exact path={['/profile/edit', '/profil/edition']} component={EditProfile} />
     <Route exact path={['/sitemap', '/plan-du-site']} component={Sitemap} />
     <Route exact path={['/faq']} component={FAQ} />
     <Route exact path={['/calendar', 'calendrier']} component={Calendar} />
@@ -57,12 +58,14 @@ const Router = () => (
 
     {/* admin routes */}
     <ProtectedRoute role={roles.admin} exact path="/admin" component={Admin} />
+
+    <ProtectedRoute role={roles.admin} exact path={['/admin/newsletter', '/admin/newsletter']} component={AdminNewsletter} />
+    <ProtectedRoute role={roles.admin} exact path={['/admin/calendar', '/admin/calendrier']} component={AdminCalendar} />
+
     <ProtectedRoute role={roles.admin} exact path={['/admin/:category/add', '/admin/:category/add']} component={AdminListsAdd} />
     <ProtectedRoute role={roles.admin} exact path={['/admin/:category/:id', '/admin/:category/:id']} component={AdminListsGetOne} />
     <ProtectedRoute role={roles.admin} exact path={['/admin/:category/:id/edit', '/admin/:category/:id/edit']} component={AdminListsEdit} />
     <ProtectedRoute role={roles.admin} exact path={['/admin/:category/:page?', '/admin/:category/:page?']} component={AdminListsGetAll} />
-
-    <ProtectedRoute role={roles.admin} exact path={['/admin/newsletter', '/admin/newsletter']} component={AdminNewsletter} />
 
     {/* This route must stay the last to handle the cases of page not found */}
     <Route component={PageNotFound} />

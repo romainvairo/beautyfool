@@ -5,7 +5,11 @@ import {
 } from '../actions-type/client'
 
 const initialState = {
-  user: {},
+  user: {
+    username: 'Zougui',
+    roles: [{ name: 'user', permission: 'ROLE_USER' }, { name: 'admin', permission: 'ROLE_ADMIN' }],
+    logged: true,
+  },
   language: 'en',
   appointment: {
     services: [],

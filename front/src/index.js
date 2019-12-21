@@ -7,6 +7,4 @@ import './index.scss';
 import './assets/styles/index.scss';
 import App from './components/Globals/App';
 
-console.warn = () => {}
-
 ReactDOM.render(<App />, document.getElementById('root'));

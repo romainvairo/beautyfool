@@ -43,4 +43,9 @@ module.exports = {
     message: "An error occured and your email could not be confirmed",
     status: 500,
   },
+  setNewsletterSubscritionById: {
+    code: i++,
+    message: 'An error occured and the subscription couldn\'t be changed',
+    status: 500,
+  }
 };

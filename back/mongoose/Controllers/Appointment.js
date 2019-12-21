@@ -1,4 +1,5 @@
 const { AppointmentModel } = require('../Models/Appointment');
+const { ServiceController, UserController } = require('./');
 const { hash } = require('../../utils');
 const { BaseError, errorCodes } = require('../../Errors');
 
@@ -10,15 +11,21 @@ const AppointmentController = {
    * @param {Object} appointment
    * @returns {Promise}
    */
-  add: appointment => {
-    return new AppointmentModel(appointment).save();
+  add: async appointment => {
+    const appointmentDoc = await new AppointmentModel(appointment).save();
+    const requests = appointment.services.map(s => ServiceController.addAppointmentById(s._id, appointmentDoc._id));
+
+    await Promise.all(requests);
+    await UserController.addAppointmentById(appointment.customer, appointmentDoc._id);
+
+    return appointmentDoc;
   },
 
   /**
    * find an actuality by its id
    * @param {String} id
    */
-  findById: (id) => {
+  findById: async (id) => {
     return AppointmentModel.findById(id).populate('customer');
   },
 
@@ -29,9 +36,8 @@ const AppointmentController = {
   findAll: (page) => {
     return AppointmentModel
       .find()
-      .skip((page - 1) * limitByPage)
-      .limit(limitByPage)
-      .populate('customer');
+      .populate('customer')
+      .populate('services');
   },
   /**
    * find appointment by its id
