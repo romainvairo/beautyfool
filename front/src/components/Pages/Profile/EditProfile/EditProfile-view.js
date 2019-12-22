@@ -7,10 +7,19 @@ const EditProfileView = ({ translations, user, onChange, messageName }) => (
   <div className="contain">
     <div className="pic">
       <img src={user.picture || require('../../../../assets/images/makeup_1.jpg')} alt="user's pfp" className="className"/>
+      <input
+        type="file"
+        accept="image/*"
+        id="input-file"
+        onChange={onChange('picture', 'files')}
+      />
       <div className="image-button">
-        <Button className="button-modification" variant="contained">
-          {translations.editProfilePicture}
-        </Button>
+         {/** htmlFor will targets an input that have the id of its given value */}
+        <label htmlFor="input-file">
+          <Button className="button-modification" variant="contained">
+            {translations.editProfilePicture}
+          </Button>
+        </label>
       </div>
     </div>
 
@@ -97,7 +106,7 @@ const EditProfileView = ({ translations, user, onChange, messageName }) => (
           />
         </div>
 
-        <Button type="submit" variant="contained" color="secondary" className="item">
+        <Button type="submit" variant="contained" color="secondary" className="item mt-4">
           {translations.send}
         </Button>
         {translations.messages[messageName]}

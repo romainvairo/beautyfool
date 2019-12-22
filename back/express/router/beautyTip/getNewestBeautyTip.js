@@ -9,7 +9,7 @@ module.exports = async (req, res) => {
     beautyTip = await BeautyTipController.findNewestBeautyTip();
   } catch (error) {
     // @ts-ignore
-    return end(res, { error: errorCodes.actuality.findNewest });
+    return end(res, { error: errorCodes.beautyTip.findNewest });
   }
 
   end(res, { data: beautyTip } , true);

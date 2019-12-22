@@ -39,7 +39,7 @@ const Router = () => (
     <Route exact path={['/', '/home', '/accueil']} component={Home} />
     <Route exact path={['/gallery', '/galerie']} component={Gallery} />
     <Route exact path={['/benefits', '/prestations']} component={Benefits} />
-    <Route exact path={['/news', '/actualités']} component={News} />
+    <Route exact path={['/news/:page?', '/actualités/:page?']} component={News} />
     <Route exact path={['/beauty-tips', '/astuces-beaute']} component={BeautyTips} />
     <Route exact path={['/contact']} component={Contact} />
     <ProtectedRoute role={roles.user} exact path={['/profil', '/profile']} component={Profile} />

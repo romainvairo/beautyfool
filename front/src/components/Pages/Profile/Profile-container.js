@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { Auth } from '../../../services';
 import ProfileView from './Profile-view';
 import translations from './translations';
 import axios from '../../../axios';
@@ -38,6 +39,16 @@ class ProfileContainer extends React.PureComponent {
     });
   }
 
+  onDelete = () => {
+    axios.delete(`/api/users/${Auth.getUser()._id}/delete`)
+      .then(() => {
+        Auth.logout();
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
   render() {
     const { language, user } = this.props;
     const { isNewsletterChecked } = this.state;
@@ -47,6 +58,7 @@ class ProfileContainer extends React.PureComponent {
       isNewsletterChecked={isNewsletterChecked}
       onToggle={this.onToggle}
       user={user}
+      onDelete={this.onDelete}
     />;
   }
 }

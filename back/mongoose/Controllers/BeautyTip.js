@@ -50,6 +50,13 @@ const BeautyTipController = {
   },
 
   /**
+   * get the count of all actualities
+   */
+  count: () => {
+    return BeautyTipModel.countDocuments();
+  },
+
+  /**
    * delete beautyTip by its id
    * @param {String} id
    */

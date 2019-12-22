@@ -3,10 +3,21 @@ import { Link } from 'react-router-dom';
 import { TextField, Button, Grid } from '@material-ui/core';
 
 import './LoginForm.scss';
+import ForgottenPasswordDialog from './ForgottenPasswordDialog';
 
-
-const LoginFormView = ({ translations, onChange, password, email, onSubmit, error}) => (
+const LoginFormView = ({
+  translations,
+  onChange,
+  password,
+  email,
+  onSubmit,
+  error,
+  openDialog,
+  onOpen,
+  onClose,
+}) => (
   <Grid container justify="center">
+    <ForgottenPasswordDialog open={openDialog} onClose={onClose} />
     <Grid xs={10} md={8} lg={6} item>
       <form onSubmit={onSubmit} className="loginForm">
         <Grid container spacing={2} direction="column" >
@@ -34,9 +45,9 @@ const LoginFormView = ({ translations, onChange, password, email, onSubmit, erro
             />
           </Grid>
           <Grid container item justify="center">
-            <Link to="/forgotten-password" className="forgottenPassword">
+            <span onClick={onOpen} className="forgottenPassword">
               {translations.forgottenPassword}
-            </Link>
+            </span>
           </Grid>
           <p className="text-center">{error}</p>
           <Grid container item justify="center">

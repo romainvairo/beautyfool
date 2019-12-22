@@ -4,7 +4,7 @@ import {Grid, Typography, FormControl, Select, InputLabel } from '@material-ui/c
 
 import './BeautyTips.scss';
 
-const BeautyTipsView = ({ translations, beautyTips }) => (
+const BeautyTipsView = ({ translations, beautyTips, lastPage, page}) => (
   <>
     <Grid container justify="center">
       <Grid item className="mt-6 mb-6">
@@ -45,6 +45,23 @@ const BeautyTipsView = ({ translations, beautyTips }) => (
         </Grid>
         ))}
       </Grid>
+      <div>
+        <Link to={`/beauty-tips/${page-2}`} className="mx-1">
+          {(page - 2) > 0 ? page - 2 : null}
+        </Link>
+        <Link to={`/beauty-tips/${page - 1}`} className="mx-1">
+          {(page - 1) > 0 ? page - 1 : null}
+        </Link>
+        <span className="mx-1">
+          {page}
+        </span>
+        <Link to={`/beauty-tips/${page + 1}`} className="mx-1">
+          {(page + 1) <= lastPage ? page +1 : null}
+        </Link>
+        <Link to={`/beauty-tips/${page + 2}`} className="mx-1">
+          {(page + 2) <= lastPage ? page +2 : null}
+        </Link>
+      </div>
     </Grid>
   </>
 );

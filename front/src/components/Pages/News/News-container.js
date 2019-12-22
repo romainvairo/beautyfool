@@ -12,11 +12,43 @@ const mapStateToProps = state => ({
 class NewsContainer extends React.PureComponent {
 
   state = {
-    news: []
+    news: [],
+    count: 0,
   }
 
   componentDidMount() {
-    axios.get('/api/actualities/page/1')
+    this.getCount();
+    this.getNews();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.getPage() !== this.getPage(prevProps)) {
+      this.getCount();
+      this.getNews();
+    }
+  }
+
+
+  getPage(prop) {
+    const { match } = prop || this.props;
+
+    return +match.params.page || 1;
+  }
+
+  getCount = () => {
+    axios.get('/api/actualities/count')
+      .then(({ data }) => {
+        if (data.success) {
+          this.setState({ count: data.data });
+        }
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
+  getNews = () => {
+    axios.get(`/api/actualities/page/${this.getPage()}`)
       .then(({ data }) => {
         this.setState({ news: data.data });
       })
@@ -27,15 +59,15 @@ class NewsContainer extends React.PureComponent {
 
   render() {
     const { language } = this.props;
-    const { news } = this.state;
+    const { news, count } = this.state;
 
     return <NewsView
       translations={translations[language]}
       news={news}
+      lastPage={Math.ceil(count / 10)}
+      page={this.getPage()}
     />;
-
   }
 }
 
 export default connect(mapStateToProps)(NewsContainer);
-

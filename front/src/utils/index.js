@@ -10,3 +10,4 @@ export * from './differentiator';
 export * from './range';
 export * from './toggle';
 export * from './correctFormatDate';
+export * from './bufferize';

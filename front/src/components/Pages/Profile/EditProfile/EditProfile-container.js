@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import EditProfileView from './EditProfile-view';
 import AdminUserEdit from '../../Admin/Lists/Edit/Childrens/User';
 import translations from './translations';
-import { onChange } from '../../../../utils';
+import { onChange, bufferize } from '../../../../utils';
 import axios from '../../../../axios';
 
 const mapStateToProps = state => ({
@@ -17,27 +17,56 @@ class EditProfileContainer extends React.PureComponent{
   state = {
     user: this.props.user,
     messageName: '',
+    picture: null,
   }
 
   setUser = data => {
+    let picture = null;
+
+    if (data.picture) {
+      picture = data.picture[0];
+      delete data.picture;
+    }
+
     this.setState(state => ({
       user: {
         ...state.user,
         ...data,
-      }
+      },
+      picture: picture,
     }));
   }
 
   onChange = onChange(this, 'setUser');
 
   submit = e => {
-    const { user } = this.state;
+    const { user, picture } = this.state;
     const { user: propsUser, history } = this.props;
     e.preventDefault();
 
     // compare the data of the user in the state and props.
     // send only the different data and avoid to send data that doesn't change
     const userData = AdminUserEdit.difference(user, propsUser);
+
+    if (picture) {
+      bufferize(picture)
+        .then(arrayBuffer => {
+          userData.picture = arrayBuffer;
+          userData.pictureName = picture.name;
+
+          this.editUser(userData);
+        })
+        .catch(err => {
+          this.setState({ messageName: 'error' });
+          console.error(err);
+        });
+    } else {
+      this.editUser(userData);
+    }
+  }
+
+  editUser = userData => {
+    const { user: propsUser, history } = this.props;
 
     axios.post(`/api/users/${propsUser._id}/edit`, userData)
       .then(({ data }) => {

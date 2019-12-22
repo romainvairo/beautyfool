@@ -16,6 +16,7 @@ class LoginFormContainer extends React.PureComponent {
     email: '',
     password: '',
     error: '',
+    openDialog: false,
   }
 
   onChange = fieldName => event => {
@@ -50,8 +51,11 @@ class LoginFormContainer extends React.PureComponent {
       });
   }
 
+  onOpen = () => this.setState({ openDialog: true });
+  onClose = () => this.setState({ openDialog: false });
+
   render() {
-    const { password, email, error } = this.state;
+    const { password, email, error, openDialog } = this.state;
     const { language } = this.props;
 
     return <LoginFormView
@@ -61,6 +65,9 @@ class LoginFormContainer extends React.PureComponent {
       password={password}
       email={email}
       error={error}
+      openDialog={openDialog}
+      onOpen={this.onOpen}
+      onClose={this.onClose}
     />;
   }
 }

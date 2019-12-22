@@ -6,7 +6,7 @@ import ProfileCarouselView from './ProfileCarousel';
 import Checkbox from '../../Shared/Checkbox';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
-const ProfileView = ({ translations, isNewsletterChecked, onToggle, user }) => (
+const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDelete }) => (
   <Grid container>
     <Grid container lg={12} item>
       <Grid container xs={12} item className="justify-center">
@@ -82,7 +82,7 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user }) => (
                   </Grid>
                   <Grid className="flex">
                     <Grid xs={12} item className="flex">
-                      <Button variant="contained" color="secondary">
+                      <Button onClick={onDelete} variant="contained" color="secondary">
                         {translations.deleteAccount}
                       </Button>
                     </Grid>

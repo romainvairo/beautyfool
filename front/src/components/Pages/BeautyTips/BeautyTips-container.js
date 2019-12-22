@@ -11,26 +11,61 @@ const mapStateToProps = state => ({
 
 class BeautyTipsContainer extends React.PureComponent {
   state = {
-    beautyTips: []
+    beautyTips: [],
+    count: 0,
   }
 
   componentDidMount(){
-    axios.get('/api/beauty-tips/page/1')
+   this.getCount();
+   this.getBeautyTips();
+  }
+
+  componentDidUpdate(prevProps) {
+    // faut tester que la page courrante est differente de la page precedante
+    if(this.getPage() !== this.getPage(prevProps)) {
+      this.getBeautyTips();
+    }
+  }
+
+  getBeautyTips() {
+    axios.get(`/api/beauty-tips/page/${this.getPage()}`)
       .then(({ data }) => {
-      this.setState({ beautyTips: data.data });
-    })
-    .catch((error) => {
-      console.log(error);
-    })
+        this.setState({ beautyTips: data.data });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  /**
+   * @param {Object} [props]
+   * @returns {Number}
+   */
+  getPage(props) {
+    // the end parameter is always defined and will be used as a default value
+    const { match } = props || this.props;
+    return +match.params.page || 1;
+  }
+
+  getCount = () => {
+    axios.get(`/api/beauty-tips/count`)
+      .then(({ data }) => {
+        this.setState({ count: data.data });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   render() {
     const { language } = this.props;
-    const { beautyTips } = this.state;
+    const { beautyTips, count } = this.state;
 
     return <BeautyTipsView
       translations={translations[language]}
       beautyTips={beautyTips}
+      lastPage={Math.ceil(count / 10)}
+      page={this.getPage()}
     />;
   }
 }

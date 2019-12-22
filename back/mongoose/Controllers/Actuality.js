@@ -50,6 +50,13 @@ const ActualityController = {
   },
 
   /**
+   * get the count of all actualities
+   */
+  count: () => {
+    return ActualityModel.countDocuments();
+  },
+
+  /**
    * delete an actuality by its id
    * @param {string} id
    */

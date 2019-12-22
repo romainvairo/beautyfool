@@ -79,6 +79,10 @@ const UserController = {
     throw new BaseError(errorCodes.user.login.noUser);
   },
 
+  editPasswordByEmail: (email, password) => {
+    return UserModel.findOneAndUpdate({ email }, { password });
+  },
+
   /**
    * add a appointment to a user
    * @param {String} userId
