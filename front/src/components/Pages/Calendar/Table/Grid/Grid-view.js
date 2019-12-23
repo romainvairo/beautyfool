@@ -1,18 +1,19 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { range } from '../../../../../utils';
+import { rangeDate } from '../../../../../utils';
 import './Grid.scss';
 
 // Parentheses into the GridView's function == return
 // Acollade into the GridView's function == return nothing
 const GridView = ({ date, isTimeOccupied, isCellSelected, onClick }) => (
   <tbody>
-    {range(1, 20).map(hour => (
-      <tr key={hour}>
-        {range(1, date.daysInMonth()).map(day => (
+    {console.log(date.daysInMonth())}
+    {rangeDate().map(hour => (
+      <tr key={hour.toString()}>
+        {rangeDate({ day: 4 }, { day: date.daysInMonth() }, { day: 5 }).map(day => (
           <td
-            key={day}
+            key={day.toString()}
             onClick={onClick(hour, day)}
             // dataset == put a value from the HTML element
             data-is-occupied={isTimeOccupied(hour, day)}
