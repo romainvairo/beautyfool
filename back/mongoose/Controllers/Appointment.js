@@ -1,5 +1,6 @@
 const { AppointmentModel } = require('../Models/Appointment');
-const { ServiceController, UserController } = require('./');
+const UserController = require('./User');
+const ServiceController = require('./Service');
 const { hash } = require('../../utils');
 const { BaseError, errorCodes } = require('../../Errors');
 

@@ -1,3 +1,20 @@
+.calendar_default_corner_inner + div {
+  display: none;
+}
+
+.calendar_default_cell_inner {
+  cursor: pointer;
+}
+
+.calendar_default_event {
+  cursor: default !important;
+  width: 105% !important;
+}
+
+.table-head {
+  border: solid 1px #c0c0c0;
+}
+
 .calendar {
   &-title {
     font-size: 3em;

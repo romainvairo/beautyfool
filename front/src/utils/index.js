@@ -13,3 +13,4 @@ export * from './correctFormatDate';
 export * from './bufferize';
 export * from './rangeDate';
 export * from './minExpectedDate';
+export * from './getDates';

@@ -1,4 +1,5 @@
 import moment from 'moment';
+import { DayPilot } from 'daypilot-pro-react';
 
 import { range } from '../../../utils';
 
@@ -113,4 +114,16 @@ export class IsTimeOccupied {
       return false;
     });
   }
+}
+
+export const setDate = thisArg => callback => {
+  thisArg.setState(state => ({ startDate: new DayPilot.Date(callback(state).toDate()) }));
+}
+
+export const onBackward = thisArg => () => {
+  thisArg.setDate(state => moment(state.startDate.toDate()).subtract(1, 'month'));
+}
+
+export const onForward = thisArg => () => {
+  thisArg.setDate(state => moment(state.startDate.toDate()).add(1, 'month'));
 }
