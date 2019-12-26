@@ -63,7 +63,7 @@ const UserController = {
    */
   login: async user => {
     // get the user depending on the given email
-    const userInDb = await UserController.findFullUserByEmail(user.email).populate('roles');
+    const userInDb = await UserController.findFullUserByEmail(user.email).populate('roles').populate('appointments');
 
     if (!userInDb) {
       throw new BaseError(errorCodes.user.login.noUser);
@@ -115,7 +115,7 @@ const UserController = {
    * @param {String} id
    */
   findById: (id) => {
-    return UserModel.findById(id).select('-password');
+    return UserModel.findById(id).select('-password').populate('appointments');
   },
 
   /**

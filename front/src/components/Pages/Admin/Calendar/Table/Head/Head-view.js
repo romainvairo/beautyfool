@@ -1,7 +1,7 @@
 import React from 'react';
-import { range } from '../../../../../../utils';
 import moment from 'moment';
 
+import { range } from '../../../../../../utils';
 import Day from './Day';
 
 const HeadView = ({ date, language }) => (

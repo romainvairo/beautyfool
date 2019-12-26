@@ -27,6 +27,7 @@ module.exports = [
     password: 'mypassword',
     email: 'zouguidu91@gmail.com',
     roles: ['user', 'admin'],
+    newsletterSubscribed: true,
   },
   {
     username: 'rokxis',

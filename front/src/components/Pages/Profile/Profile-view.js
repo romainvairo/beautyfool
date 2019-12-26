@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Button, List, ListItem, ListItemText } from '@material-ui/core';
 
-import ProfileCarouselView from './ProfileCarousel';
+import ProfileCarousel from './ProfileCarousel';
 import Checkbox from '../../Shared/Checkbox';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
@@ -67,7 +67,7 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDele
                 <ListItemText primary={translations.appointments}/>
               </ListItem>
               <ListItem>
-                <ProfileCarouselView />
+                <ProfileCarousel appointments={user.appointments}/>
               </ListItem>
               <Grid lg={12} item container className="flex justify-start mt-40 mb-6">
                 <Grid xs={12} container item className="flex justify-center">

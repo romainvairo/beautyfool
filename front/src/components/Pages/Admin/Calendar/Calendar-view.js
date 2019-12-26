@@ -1,63 +1,53 @@
 import React from 'react';
-import moment from 'moment';
-import { Button } from '@material-ui/core';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { DayPilotCalendar } from 'daypilot-pro-react';
+import { Grid, IconButton, Button } from '@material-ui/core';
 
-import DisplayHours from './DisplayHours';
-import Table from './Table';
-import CalendarHead from './Head';
-import './Calendar.scss';
-
-/**
- * @typedef {import('moment').Moment} Moment
- */
-
-/**
- * @param {Object} param0.translations
- */
-const CalendarView = ({
-  translations,
-  date,
-  language,
-  setDate,
-  getIsClosed,
-  getIsAppointment,
-  onCellClick,
-  onButtonClick,
-  error,
-  getAppointment,
-}) => (
-  <div className="flex flex-col calendar-container items-center">
-    <h1 className="calendar-title">{translations.title}</h1>
-
-    <div className="calendar-content flex justify-center my-4">
-      <div className="calendar-content-hours mt-24">
-        <DisplayHours start={moment({ hour: 9 })} end={moment({ hour: 19 })} />
-      </div>
-      <div className="calendar-content-table-wrapper flex flex-col items-center border-gray-500 border-l-2 border-r-2 border-t-2 w-full">
-        <CalendarHead setDate={setDate} date={date} language={language} />
-        <div className="calendar-content-table-container w-full pb-1">
-          <Table
-            date={date}
-            getIsClosed={getIsClosed}
-            getIsAppointment={getIsAppointment}
-            getAppointment={getAppointment}
-            onCellClick={onCellClick}
+const CalendarView = ({ onButtonClick, error, onEventClick, state, setRef, date, language, onBackward, onForward }) => (
+  <Grid container justify="center" className="mt-5">
+    <Grid xs={12} sm={11} md={10} item>
+      <Grid container direction="column">
+        <Grid xs={12} item>
+          <div className="table-head border-b-0 h-12">
+            <Grid container justify="space-around" className="px-4">
+              <Grid xs={6} container item className="mt-3">
+                <Grid xs={1} item>
+                  <span className="mr-2 bg-red-500 inline-block w-8 h-6"></span>
+                </Grid>
+                <Grid xs={11} item>
+                  <span className="inline-block">Unavailable time slots</span>
+                </Grid>
+              </Grid>
+              <Grid xs={6} container item justify="flex-end" className="font-bold">
+                <Grid item>
+                  <IconButton onClick={onBackward}>
+                    <ArrowBackIosIcon />
+                  </IconButton>
+                  <span className="align-middle">
+                    {date.locale(language).format('MMMM YYYY')}
+                  </span>
+                  <IconButton onClick={onForward}>
+                    <ArrowForwardIosIcon />
+                  </IconButton>
+                </Grid>
+              </Grid>
+            </Grid>
+          </div>
+        </Grid>
+        <Grid item>
+          <DayPilotCalendar
+            {...state}
+            onEventClick={onEventClick}
+            ref={setRef}
           />
-        </div>
-      </div>
-    </div>
-
-    <Button
-      onClick={onButtonClick}
-      variant="contained"
-      color="secondary"
-      className="font-bold calendar-button"
-    >
-      {translations.validButton}
-    </Button>
-
-    {translations.errors[error]}
-  </div>
+        </Grid>
+        <Grid item>
+          {error}
+        </Grid>
+      </Grid>
+    </Grid>
+  </Grid>
 );
 
 export default CalendarView;

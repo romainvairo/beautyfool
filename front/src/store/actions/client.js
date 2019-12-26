@@ -2,6 +2,7 @@ import {
   SET_USER,
   SET_LANGUAGE,
   SET_APPOINTMENT,
+  SET_USER_APPOINTMENTS,
 } from '../actions-type/client';
 
 export const setUser = (value) => ({
@@ -17,5 +18,11 @@ export const setLanguage = (value) => ({
 
 export const setAppointment = (value) => ({
   type: SET_APPOINTMENT,
+  payload: value,
+});
+
+
+export const setUserAppointments = (value) => ({
+  type: SET_USER_APPOINTMENTS,
   payload: value,
 });

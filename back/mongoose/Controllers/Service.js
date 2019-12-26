@@ -76,6 +76,10 @@ const ServiceController = {
     return ServiceModel.findById(id);
   },
 
+  findAllById: (ids) => {
+    return ServiceModel.find({ _id: { $in: ids } }).populate('category');
+  },
+
   /**
    * find all services in a page
    * @param {Number} page

@@ -38,7 +38,10 @@ const AppointmentController = {
     return AppointmentModel
       .find()
       .populate('customer')
-      .populate('services');
+      .populate({
+        path: 'services',
+        populate: 'category'
+      });
   },
   /**
    * find appointment by its id
@@ -55,6 +58,18 @@ const AppointmentController = {
    */
   deleteById: id => {
     return AppointmentModel.findByIdAndDelete(id);
+  },
+
+  /**
+   * find appointments by the id of the customer
+   * @param {String} userId
+   */
+  findByUserId: (userId) => {
+    return AppointmentModel.find({customer: userId})
+      .populate({
+        path: 'services',
+        populate: 'category'
+      });
   }
 };
 

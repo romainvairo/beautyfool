@@ -6,7 +6,9 @@ const { debug } = require('./debug');
 // ': string' is the type of the constant, since `mongoose.connect` only takes a string
 // as first parameter and the environment variables are of type `string | undefined` we need a default string in case
 // the environment variable `MONGO_URI` is undefined
-const mongoUri = 'MONGO_URI=mongodb://admin:admin91@ds031329.mlab.com:31329/beautyfool';
+const mongoUri = (true)
+  ? 'mongodb://admin:admin91@ds031329.mlab.com:31329/beautyfool'
+  : 'mongodb+srv://max51guitare:admin@cluster0-df75d.mongodb.net/test?retryWrites=true&w=majority';
 
 // make the connection to the DB
 mongoose.connect(mongoUri,

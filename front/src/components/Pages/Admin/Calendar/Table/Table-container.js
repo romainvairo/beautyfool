@@ -7,12 +7,11 @@ const mapStateToProps = state => ({
   language: state.clientReducer.language
 });
 
-const TableContainer = ({ language, date, getIsClosed, getIsAppointment, getAppointment, onCellClick }) => <TableView
+const TableContainer = ({ language, date, isCellSelected, isTimeOccupied, onCellClick }) => <TableView
   language={language}
   date={date}
-  getIsClosed={getIsClosed}
-  getIsAppointment={getIsAppointment}
-  getAppointment={getAppointment}
+  isCellSelected={isCellSelected}
+  isTimeOccupied={isTimeOccupied}
   onCellClick={onCellClick}
 />
 

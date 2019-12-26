@@ -13,13 +13,12 @@ class GridContainer extends React.PureComponent {
   }
 
   render() {
-    const { date, getIsAppointment, getAppointment, getIsClosed } = this.props;
+    const { date, isTimeOccupied, isCellSelected } = this.props;
 
     return <GridView
       date={date}
-      getIsAppointment={getIsAppointment}
-      getAppointment={getAppointment}
-      getIsClosed={getIsClosed}
+      isTimeOccupied={isTimeOccupied}
+      isCellSelected={isCellSelected}
       onClick={this.onClick}
     />;
   }

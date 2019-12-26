@@ -5,10 +5,15 @@ import { Auth } from '../../../services';
 import ProfileView from './Profile-view';
 import translations from './translations';
 import axios from '../../../axios';
+import { setUserAppointments } from '../../../store/actions/client';
 
 const mapStateToProps = state => ({
   language: state.clientReducer.language,
-  user: state.clientReducer.user,
+  user: state.clientReducer.user
+});
+
+const mapDispatchToProps = dispatch => ({
+  setUserAppointments: value => dispatch(setUserAppointments(value)),
 });
 
 class ProfileContainer extends React.PureComponent {
@@ -49,6 +54,18 @@ class ProfileContainer extends React.PureComponent {
       });
   }
 
+  findAppointmentsByUserId = () => {
+    axios.get(`/api/appointments/user/${Auth.getUser()._id}`)
+      .then(({ data }) => {
+        const { setUserAppointment } = this.props;
+
+        setUserAppointment(data.data);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
   render() {
     const { language, user } = this.props;
     const { isNewsletterChecked } = this.state;
@@ -63,4 +80,4 @@ class ProfileContainer extends React.PureComponent {
   }
 }
 
-export default connect(mapStateToProps)(ProfileContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);

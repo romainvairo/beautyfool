@@ -2,14 +2,11 @@ import {
   SET_USER,
   SET_LANGUAGE,
   SET_APPOINTMENT,
+  SET_USER_APPOINTMENTS,
 } from '../actions-type/client'
 
 const initialState = {
-  user: {
-    username: 'Zougui',
-    roles: [{ name: 'user', permission: 'ROLE_USER' }, { name: 'admin', permission: 'ROLE_ADMIN' }],
-    logged: true,
-  },
+  user: {},
   language: 'en',
   appointment: {
     services: [],
@@ -35,6 +32,14 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         appointment: action.payload,
+      };
+    case SET_USER_APPOINTMENTS:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          appointments: action.payload,
+        }
       };
 
     default:

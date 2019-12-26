@@ -1,15 +1,14 @@
 import React from 'react';
 import moment from 'moment';
-import QS from 'uqs';
+import { DayPilot } from 'daypilot-pro-react';
 import { connect } from 'react-redux';
 
-import axios from '../../../../axios';
-import translations from './translations';
+import './Calendar.scss';
 import CalendarView from './Calendar-view';
-import { Cacher } from '../../../../services/Cacher';
-import { IsTimeOccupied } from './actions';
-import { range } from '../../../../utils';
-import { appointments } from './data';
+import axios from '../../../../axios';
+import { getDates, correctFormatDate } from '../../../../utils';
+import { Auth } from '../../../../services';
+import { onForward, onBackward, setDate } from './actions';
 
 const mapStateToProps = state => ({
   language: state.clientReducer.language,
@@ -17,183 +16,217 @@ const mapStateToProps = state => ({
   appointment: state.clientReducer.appointment,
 });
 
-/**
- * @typedef {import('moment').Moment} Moment
- */
+class CalendarContainer extends React.Component {
 
-class CalendarContainer extends React.PureComponent {
-
-  isTimeOccupiedCache = new Cacher({ date: null, hour: null, day: null })
-    .setCalculateValue(({ hour, day, date }) =>
-      new IsTimeOccupied(appointments)
-        .setDate(moment(date))
-        .setHour(hour)
-        .setDay(day)
-        .results(true)
-    );
-  isCellSelectedCache = new Cacher({
-    cellDate: null,
-    cellHour: null,
-    cellDay: null,
-    choosenDate: null,
-    duration: null,
-  })
-    .setCalculateValue(({ cellDate, cellHour, cellDay, choosenDate, duration }) =>
-      new IsTimeOccupied([{ date: choosenDate, duration }])
-        .setDate(moment(cellDate))
-        .setHour(cellHour)
-        .setDay(cellDay)
-        .results()
-    );
+  event = null;
+  scheduler;
+  duration;
+  appointments = [];
 
   state = {
-    date: moment({ year: 2019, month: 11 }),
-    selectedCell: {
-      date: null,
-      hour: null,
-      day: null,
-      target: null,
-    },
-    // parse the query string from `search` in `window.location` object
-    params: {},
-    error: '',
+    startDate: DayPilot.Date.today(),
+    days: 31,
+    scale: "Day",
+    headerDateFormat: 'dddd d',
+    columnWidthSpec: "Fixed",
+    columnWidth: 100,
+    cellHeight: 25,
+    eventResizeHandling: false,
+    eventMoveHandling: false,
   }
 
   componentDidMount() {
-    const { appointment } = this.props;
+    process.nextTick(() => console.log(this.scheduler));
+    this.getAppointments();
+    this.closeForBreaks();
 
-    this.setState({ params: QS.parse(appointment.queryString) });
-  }
+    this.scheduler.bubble = new DayPilot.Bubble({
+      onLoad: args => {
+        const e = args.source;
+        const { _id } = e.data;
 
-  componentDidUpdate(prevProps) {
-    const { appointment } = this.props;
+        const appointment = this.appointments.find(a => a._id === _id);
 
-    if (appointment.queryString !== prevProps.appointment.queryString) {
-      this.setState({ params: QS.parse(appointment.queryString) });
-    }
-  }
+        if (!appointment) {
+          return;
+        }
 
-  /**
-   * calculate if the time is occupied only once and put it in a "cache"
-   * to return it if the values with which we calculate it are the same
-   * @param {Number} hour
-   * @param {Number} day
-   * @returns {Boolean}
-   */
-  getIsTimeOccupied = (hour, day) => {
-    const { date } = this.state;
-    return this.isTimeOccupiedCache.getValue({ hour, day, date });
-  }
+        let totalDuration = 0;
+        let totalPrice = 0;
+        let servicesHtml = '<div>services:</div>';
 
-  onCellClick = (hour, day) => e => {
-    const { date } = this.state;
+        appointment.services.forEach(s => {
+          totalDuration += new Date(s.duration).getTime();
+          totalPrice += s.price;
 
-    this.setState({
-      selectedCell: {
-        date: date.toString(),
-        hour,
-        day,
-        target: e.target,
+          servicesHtml += (
+            '<div class="ml-2 border-b border-black">' +
+            'name: ' + s.name +
+            '<br/>' +
+            'category: ' + s.category.name +
+            '</div>'
+          );
+        });
+
+        args.html = (
+          '<div>customer: ' + appointment.customer.username + '</div>' +
+          '<div>duration: ' + correctFormatDate(totalDuration) + '</div>' +
+          '<div>price: ' + totalPrice + ' €</div>' +
+          '<br/>' +
+          servicesHtml
+        );
       }
+    })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { startDate } = this.state;
+
+    if (startDate.toString() !== prevState.startDate.toString()) {
+      this.closeForBreaks();
+    }
+  }
+
+  onBackward = onBackward(this);
+  onForward = onForward(this);
+  setDate = setDate(this);
+
+  getAppointments = () => {
+    axios.get('/api/appointments')
+      .then(({ data }) => {
+        this.appointments = data.data;
+
+        data.data.forEach(appointment => {
+          const event = {};
+
+          // starting datetime
+          event.start = new DayPilot.Date(new Date(appointment.date));
+
+          // ending datetime
+          let end = moment(appointment.date);
+
+          // calculate the ending datetime based on the duration of the services
+          appointment.services.forEach(service => {
+            const duration = moment(service.duration);
+
+            end.add(duration.minute(), 'minute');
+          });
+
+          end.add(1, 'hour')
+
+          event._id = appointment._id;
+          // set ending datetime
+          event.end = new DayPilot.Date(end.toDate());
+
+          event.text = 'Click to cancel appointment';
+
+          // add the appointment into the events list
+          this.addClosure(event);
+        });
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
+  onEventClick = args => {
+    DayPilot.Modal.confirm('Confirm cancelation').then(modal => {
+      if (modal.result.toLowerCase() === 'ok') {
+        axios.delete('/api/appointments/' + args.e.data._id + '/delete')
+          .then(() => {
+            console.log('appointment has been delete');
+            this.scheduler.events.list = [];
+            this.closeForBreaks();
+            this.getAppointments();
+          })
+          .catch(err => {
+            console.error(err);
+          });
+      }
+    })
+  }
+
+  addClosure = args => {
+    // set the color of the entire cell
+    args.barColor = args.backColor = args.barBackColor = '#de310a';
+    args.isClosure = true;
+
+    this.addEvent(args);
+  }
+
+  addEvent = args => {
+    this.scheduler.events.add({
+      ...args,
+      id: DayPilot.guid(),
+      text: args.text || '',
+      barColor: args.barColor || '#12ab34',
     });
   }
 
-  isCellSelected = (hour, day) => {
-    const { selectedCell, date, params } = this.state;
+  closeForBreaks = () => {
+    const { startDate } = this.state;
+    const date = moment(startDate.toDate());
+    const minDate = date.date();
+    const maxDate = minDate + 31;
 
-    if (!selectedCell.date) {
-      return false;
+    for (let i = minDate; i <= maxDate; i++) {
+
+      const cloneDate = date.clone();
+
+      if (!date.day()) {
+        this.addClosure({
+          start: new DayPilot.Date(cloneDate.hour(1).minute(0).toDate()),
+          end: new DayPilot.Date(cloneDate.hour(25).minute(0).toDate()),
+        });
+      } else {
+        this.addClosure({
+          start: new DayPilot.Date(cloneDate.hour(13).minute(0).toDate()),
+          end: new DayPilot.Date(cloneDate.hour(15).minute(0).toDate()),
+        });
+      }
+
+      date.add(1, 'day');
     }
-
-    // dataset == recover a value from the HTML element
-    const isTargetOccupied = selectedCell.target.dataset.isOccupied;
-
-    if (isTargetOccupied === 'true') {
-      return;
-    }
-
-    const minuteMatches = params.duration.match(/[0-9]+ ?minutes?/);
-    const minutes = minuteMatches
-      ? minuteMatches[0].match(/[0-9]+/)[0]
-      : 0;
-    const hourMatches = params.duration.match(/[0-9]+ ?(hour|heure)s?/);
-    const hours = hourMatches
-      ? hourMatches[0].match(/[0-9]+/)[0]
-      : 0;
-
-    // create the hour where we will recover both the hour and the minutes
-    const mHour = moment({ hour: 8, minute: 30 });
-    // add 30 minutes for each hour interval
-    range(1, selectedCell.hour).forEach(() => mHour.add({ minute: 30 }));
-
-    const choosenDate = moment(selectedCell.date)
-      .date(selectedCell.day)
-      .hour(mHour.hour())
-      .minute(mHour.minute());
-
-    return this.isCellSelectedCache.getValue({
-      cellDate: date,
-      cellHour: hour,
-      cellDay: day,
-      choosenDate: choosenDate,
-      duration: moment({ minute: +minutes, hour: +hours }),
-    });
   }
 
-  /**
-   * @param {Moment} date
-   */
-  setDate = date => {
-    this.setState({ date });
+  setRef = component => {
+    this.scheduler = component && component.control;
   }
 
   onButtonClick = () => {
-    const { selectedCell, date } = this.state;
-    const { history, appointment, user } = this.props;
+    const { appointment, user, history } = this.props;
 
-    const invalidCells = document.querySelectorAll('[data-is-occupied="true"][data-is-selected="true"]');
-
-
-    // create the hour where we will recover both the hour and the minutes
-    const mHour = moment({ hour: 8, minute: 30 });
-    // add 30 minutes for each hour interval
-    range(1, selectedCell.hour).forEach(() => mHour.add({ minute: 30 }));
-
-
-    if (invalidCells.length) {
-      this.setState({ error: 'invalid' });
-    } else if(!selectedCell.date) {
-      this.setState({ error: 'unchoosen' });
-    } else {
-      this.setState({ error: '' });
-      axios.post('/api/appointments/add', {
-        date: date.clone().hour(mHour.hour()).date(selectedCell.day).minute(mHour.minute()),
-        services: appointment.services.map(s => s._id),
-        customer: user._id,
-      })
-        .then(() => {
-          history.push('/');
-        })
-        .catch((error) =>{
-          console.error(error);
-        })
+    if(!this.event){
+      this.setState({ error: 'You must place your appointment' });
+      return;
     }
+
+    this.setState({ error: '' });
+    axios.post('/api/appointments/add', {
+      date: this.event.start,
+      services: appointment.services.map(s => s._id),
+      customer: user._id,
+    })
+      .then(() => {
+        history.push('/');
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
 
   render() {
     const { language } = this.props;
-    const { date, params, error } = this.state;
+    const { startDate, error } = this.state;
 
     return <CalendarView
-      translations={translations[language]}
+      setRef={this.setRef}
+      state={this.state}
+      onEventClick={this.onEventClick}
+      onBackward={this.onBackward}
+      onForward={this.onForward}
+      date={moment(startDate.toDate())}
       language={language}
-      date={date}
-      setDate={this.setDate}
-      duration={params.duration}
-      price={params.price}
-      isCellSelected={this.isCellSelected}
-      isTimeOccupied={this.getIsTimeOccupied}
-      onCellClick={this.onCellClick}
       onButtonClick={this.onButtonClick}
       error={error}
     />;
