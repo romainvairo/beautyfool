@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import { roles } from '../../../data';
 import ProtectedRoute from '../../Shared/ProtectedRoute';
+
 // guest routes
 import Home from '../../Pages/Home';
 import PageNotFound from '../../Pages/PageNotFound';
@@ -20,9 +21,12 @@ import EditProfile from '../../Pages/Profile/EditProfile';
 import Sitemap from '../../Pages/Sitemap';
 import FAQ from '../../Pages/FAQ';
 import Calendar from '../../Pages/Calendar';
+
 // user routes
 import Login from '../../Pages/Login';
 import Signup from '../../Pages/Signup';
+import ConfirmationEmail from '../../Pages/ConfirmationEmail';
+
 // admin routes
 import Admin from '../../Pages/Admin';
 import AdminListsGetAll from '../../Pages/Admin/Lists/GetAll';
@@ -55,6 +59,7 @@ const Router = () => (
     {/* user routes */}
     <Route exact path={['/login', '/connexion']} component={Login} />
     <Route exact path={['/signup', '/inscription']} component={Signup} />
+    <Route exact path={['/email/confirm/:id']} component={ConfirmationEmail} />
 
     {/* admin routes */}
     <ProtectedRoute role={roles.admin} exact path="/admin" component={Admin} />
