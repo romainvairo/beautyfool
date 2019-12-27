@@ -44,6 +44,13 @@ class ProfileContainer extends React.PureComponent {
     });
   }
 
+  onLogout = () => {
+    const { history } = this.props;
+
+    Auth.logout();
+    history.push('/');
+  }
+
   onDelete = () => {
     axios.delete(`/api/users/${Auth.getUser()._id}/delete`)
       .then(() => {
@@ -76,6 +83,7 @@ class ProfileContainer extends React.PureComponent {
       onToggle={this.onToggle}
       user={user}
       onDelete={this.onDelete}
+      onLogout={this.onLogout}
     />;
   }
 }
