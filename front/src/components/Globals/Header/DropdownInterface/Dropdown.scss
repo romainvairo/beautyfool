@@ -1,6 +1,6 @@
 .dropdown {
   display: flex;
-  background-color: palevioletred;
+  background-color: lightgrey;
   position: sticky;
   padding-bottom: 1.5rem;
   padding-right: 15rem;
@@ -8,27 +8,22 @@
   border-radius: 5px;
   opacity: 0.92;
   font-size: 1.5em;
-}
-.closeButton{
-  display: flex;
-  position: relative;
-  left: 12rem;
-}
-.icons{
-  padding-left: 30px;
-}
-.list-icons:hover{
-  background-color: red;
-}
-.link {
-  transition: .2s;
 
-&:hover{
-  background-color:white;
-    text-shadow:
-    0 0 1px #0007,
-    1px 0 1px #0007,
-    0 1px 1px #0007,
-    1px 1px 1px #0007;
+  &-closeButton{
+    display: flex;
+    position: relative;
+    left: 12rem;
+  }
+
+  &-link {
+    display: flex;
+    &:hover{
+      background-color: white;
+      text-shadow:
+        0 0 1px #0007,
+        1px 0 1px #0007,
+        0 1px 1px #0007,
+        1px 1px 1px #0007;
+    }
   }
 }
