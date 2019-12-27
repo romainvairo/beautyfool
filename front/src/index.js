@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './momentLocales';
 import './axios';
 import './index.scss';
 import './assets/styles/index.scss';

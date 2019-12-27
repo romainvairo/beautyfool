@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { Auth } from '../../../../services';
+import axios from '../../../../axios';
 import SignupFormView from './SignupForm-view';
 import translations from './translations';
 
@@ -11,37 +13,47 @@ const mapStateToProps = (state) => ({
 class SignupFormContainer extends React.PureComponent {
 
   state = {
-
-    firstName:'',
-    lastName:'',
-    userName:'',
+    firstname:'',
+    lastname:'',
+    username:'',
     email: '',
     password: '',
     confirmedPassword: '',
     subscribeNewsLetter: false,
-
+    error: '',
   }
 
   onChange = (fieldName, prop = 'value') => event => {
     this.setState({ [fieldName]: event.target[prop] })
   }
 
-  /*sendRequest = (event) => {
-    event.preventDefault();
+  submit = e => {
+    const { history, language } = this.props;
+    e.preventDefault();
 
-    axios.post('http://localhost:3000/login', {
-      email: this.state.email,
-      password: this.state.password
-    })
-      .then(this.handleResponse)
-      .catch();
-  }*/
+    axios.post('/api/signup', this.state)
+      .then(({ data }) => {
+        if (data.success) {
+          Auth.signup(data.data);
+          this.setState({ error: translations[language].signup });
+
+          setTimeout(() => {
+            history.push('/');
+          }, 1500);
+        } else {
+          this.setState({ error: translations[language].errors[data.error.code] });
+        }
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
 
   render() {
     const {
-      firstName,
-      lastName,
-      userName,
+      firstname,
+      lastname,
+      username,
       email,
       password,
       confirmedPassword,
@@ -52,10 +64,11 @@ class SignupFormContainer extends React.PureComponent {
 
     return <SignupFormView
       onChange={this.onChange}
+      onSubmit={this.submit}
       translations={translations[language]}
-      firstName={firstName}
-      lastName={lastName}
-      userName={userName}
+      firstname={firstname}
+      lastname={lastname}
+      username={username}
       email={email}
       password={password}
       confirmedPassword={confirmedPassword}

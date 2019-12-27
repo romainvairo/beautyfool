@@ -1,0 +1,5 @@
+{
+  "start": "Récupération des données...",
+  "success": "Les données ont été récupéré",
+  "error": "Les données n'ont pas pu être récupéré"
+}

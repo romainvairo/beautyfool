@@ -1,13 +1,20 @@
 import React from 'react';
+import moment from 'moment';
+import QS from 'uqs';
 import { connect } from 'react-redux';
 import axios from '../../../axios';
 
 import BenefitsView from './Benefits-view';
 import translations from './translations';
 import { correctFormatDate } from '../../../utils';
+import { setAppointment } from '../../../store/actions/client';
 
 const mapStateToProps = state => ({
   language: state.clientReducer.language,
+});
+
+const mapDispatchToProps = dispatch => ({
+  setAppointment: value => dispatch(setAppointment(value)),
 });
 
 class BenefitsContainer extends React.PureComponent {
@@ -94,6 +101,26 @@ class BenefitsContainer extends React.PureComponent {
     });
   }
 
+  onButtonClick = () => {
+    const { setAppointment, history } = this.props;
+    const { choosenServices } = this.state;
+
+    const totalPrice = this.getTotalPrice();
+    const totalDuration = this.getTotalDuration();
+
+    setAppointment({
+      services: choosenServices,
+      totalPrice: totalPrice,
+      totalDuration: moment(totalDuration),
+      queryString: '?' + QS.stringify({
+        duration: correctFormatDate(totalDuration) || '0 minute',
+        price: totalPrice + ' €',
+      }),
+    });
+
+    history.push('/calendar');
+  }
+
   render() {
     const { language } = this.props;
     const { categories } = this.state;
@@ -105,9 +132,10 @@ class BenefitsContainer extends React.PureComponent {
       onChange={this.onChange}
       isServiceChoosen={this.isServiceChoosen}
       totalPrice={this.getTotalPrice()}
-      totalDuration={correctFormatDate(this.getTotalDuration())}
+      totalDuration={correctFormatDate(this.getTotalDuration()) || '0 minute'}
+      onButtonClick={this.onButtonClick}
     />;
   }
 }
 
-export default connect(mapStateToProps, null)(BenefitsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(BenefitsContainer);

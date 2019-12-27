@@ -4,5 +4,10 @@
   "forgottenPassword": "Forgotten password",
   "submitButton": "Login",
   "signup": "Signup to the newsletter",
-  "signupButton": "Signup"
+  "signupButton": "Signup",
+  "logged": "You have succesfully been logged",
+  "errors": {
+    "1": "Email or password incorrect",
+    "2": "An error occured and you couldn't be logged in"
+  }
 }

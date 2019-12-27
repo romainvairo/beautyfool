@@ -1,0 +1,5 @@
+{
+  "start": "Edition des données...",
+  "success": "Les données ont été édité",
+  "error": "Les données n'ont pas pu être édité"
+}

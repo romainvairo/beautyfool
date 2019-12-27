@@ -26,14 +26,14 @@ class UserActionsContainer extends React.PureComponent {
   }
 
   render() {
-    const { language, user, callDeleteRequest } = this.props;
+    const { language, item, callDeleteRequest } = this.props;
     const { redirection } = this.state;
 
     return <UserActionsView
       translations={translations[language]}
       callDeleteRequest={callDeleteRequest}
       editAction={this.editAction}
-      user={user}
+      user={item}
       redirection={redirection}
     />;
   }

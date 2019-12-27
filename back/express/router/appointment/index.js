@@ -5,8 +5,10 @@ const addAppointment = require('./addAppointment');
 const getAppointmentById = require('./getAppointmentById');
 const editAppointmentById = require('./editAppointmentById');
 const deleteAppointmentById = require('./deleteAppointmentById');
+const getAppointmentsByUserId = require('./getAppointmentsByUserId');
 
-app.get('/api/appointments/page/:page', getAppointments);
+app.get('api/appointments/user/:user_id', getAppointmentsByUserId);
+app.get('/api/appointments', getAppointments);
 app.post('/api/appointments/add', addAppointment);
 app.get('/api/appointments/:id', getAppointmentById);
 app.put('/api/appointments/:id/edit', editAppointmentById);

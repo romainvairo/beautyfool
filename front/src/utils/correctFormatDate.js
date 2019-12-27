@@ -7,7 +7,7 @@ import moment from 'moment';
  */
 export const correctFormatDate = date => {
   if (!date) {
-    return '0 minutes';
+    return '0 minute';
   }
 
   let result = '';

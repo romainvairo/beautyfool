@@ -26,7 +26,7 @@ const CommentController = {
    * find all comments
    * @param {Number} page
    */
-  findComments: (page) => {
+  findAll: (page) => {
     return CommentModel
       .find()
       .skip((page - 1) * limitByPage)

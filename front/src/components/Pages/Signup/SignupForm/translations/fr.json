@@ -1,12 +1,14 @@
 {
-
-    "firstName": "Prénom",
-    "lastName": "Nom",
-    "userName": "Pseudo",
+    "firstname": "Prénom",
+    "lastname": "Nom",
+    "username": "Pseudo",
     "email": "Adresse Email",
     "password": "Mot de Passe",
     "confirmedPassword": "Comfirmer le mot de passe",
     "submitButton": "S'inscrire",
-    "subscribeNewsLetter": "Souscrire à la newsletter"
-
+    "subscribeNewsLetter": "Souscrire à la newsletter",
+    "signup": "Votre compte a bien été créer",
+    "errors": {
+        "0": "Votre compte ne peux pas être créer"
+    }
 }

@@ -47,8 +47,11 @@ const UserController = {
    * get all users that are subscribed to the newsletter
    */
   findForNewsletter: () => {
-    return UserModel.find({ newsletterSubscribed: true });
-    //return UserModel.find({ newsletterSubscribed: true });
+    return UserModel.find({ newsletterSubscribed: true }).select('-password');
+  },
+
+  setNewsletterSubscritionById: (id, isSubscribed) => {
+    return UserModel.findByIdAndUpdate(id, { newsletterSubscribed: isSubscribed });
   },
 
   /**
@@ -60,7 +63,7 @@ const UserController = {
    */
   login: async user => {
     // get the user depending on the given email
-    const userInDb = await UserController.findFullUserByEmail(user.email);
+    const userInDb = await UserController.findFullUserByEmail(user.email).populate('roles').populate('appointments');
 
     if (!userInDb) {
       throw new BaseError(errorCodes.user.login.noUser);
@@ -73,9 +76,38 @@ const UserController = {
       return userInDb;
     }
 
-
-
     throw new BaseError(errorCodes.user.login.noUser);
+  },
+
+  editPasswordByEmail: (email, password) => {
+    return UserModel.findOneAndUpdate({ email }, { password });
+  },
+
+  /**
+   * add a appointment to a user
+   * @param {String} userId
+   * @param {String} appointmentId
+   */
+  addAppointmentById: (userId, appointmentId) => {
+    return UserModel.findByIdAndUpdate(userId, { $push: { appointments: appointmentId } });
+  },
+
+  /**
+   * add a feedback to a user
+   * @param {String} userId
+   * @param {String} feedbackId
+   */
+  addFeedbackById: (userId, feedbackId) => {
+    return UserModel.findByIdAndUpdate(userId, { $push: { feedbacks: feedbackId } });
+  },
+
+  /**
+   * add a comment to a user
+   * @param {String} userId
+   * @param {String} commentId
+   */
+  addCommentById: (userId, commentId) => {
+    return UserModel.findByIdAndUpdate(userId, { $push: { comments: commentId } });
   },
 
   /**
@@ -83,16 +115,17 @@ const UserController = {
    * @param {String} id
    */
   findById: (id) => {
-    return UserModel.findById(id);
+    return UserModel.findById(id).select('-password').populate('appointments');
   },
 
   /**
    * find all users skipping `(page - 1) * limitByPage` and limiting to `limitByPage`
    * @param {Number} page
    */
-  findUsers: (page) => {
+  findAll: (page) => {
     return UserModel
       .find()
+      .select('-password')
       // if you do : .skip(page * limitByPage) you don't find the first 20 users
       .skip((page - 1) * limitByPage)
       .limit(limitByPage);
@@ -103,23 +136,31 @@ const UserController = {
    * @param {String} id
    * @param {Object} user
    * @param {String} user.password
-   * @param {Promise<Object>}
+   * @returns {Promise<Object>}
    */
-  editUserById: async (id, user) => {
+  editById: async (id, user) => {
     if (user.password) {
       user.password = await hash(user.password);
     }
 
-    return await UserModel.findByIdAndUpdate(id, user);
+    return await UserModel.findByIdAndUpdate(id, user).select('-password');
   },
 
   /**
    * delete a user from its id
    * @param {String} id
    */
-  deleteUserById: id => {
-    return UserModel.findByIdAndDelete(id);
+  deleteById: id => {
+    return UserModel.findByIdAndDelete(id).select('-password');
   },
+
+  /**
+   * confirm an e-mail from is id
+   * @param {String} id
+   */
+  confirmEmail: id => {
+    return UserModel.findByIdAndUpdate(id, { isEmailValid: true });
+  }
 };
 
 module.exports = UserController;

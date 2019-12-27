@@ -4,14 +4,15 @@ import { Grid } from '@material-ui/core';
 
 import './Footer.scss';
 
-const FooterView = ({ translations }) => (
+const FooterView = ({ translations, onCopy }) => (
 
   <footer>
-    <Grid className="socialNetwork" align="center">
-      <Link className="Header-SocialNetworkLinks-Link" target="_blank" to=""><i className="fab fa-facebook"></i></Link>
-      <Link className="Header-SocialNetworkLinks-Link" target="_blank" to=""><i className="fab fa-twitter"></i></Link>
-      <Link className="Header-SocialNetworkLinks-Link" target="_blank" to=""><i className="fab fa-instagram"></i></Link>
-      <Link className="Header-SocialNetworkLinks-Link" target="_blank" to=""><i className="fas fa-share-alt"></i></Link>
+    <Grid className="socialNetwork text-center">
+      <a className="Header-SocialNetworkLinks-Link" rel="noopener noreferrer" target="_blank" href="https://facebook.com"><i className="fab fa-facebook"></i></a>
+      <a className="Header-SocialNetworkLinks-Link" rel="noopener noreferrer" target="_blank" href="https://twitter.com"><i className="fab fa-twitter"></i></a>
+      <a className="Header-SocialNetworkLinks-Link" rel="noopener noreferrer" target="_blank" href="https://instagram.com"><i className="fab fa-instagram"></i></a>
+      <a className="Header-SocialNetworkLinks-Link" rel="noopener noreferrer" onClick={onCopy} href="http://localhost"><i className="fas fa-share-alt"></i></a>
+      <input id="empty-input" type="text" />
     </Grid>
     <Grid container justify="space-between" className="Footer text-center">
       <Grid xs={12} sm={6} md="auto" item>

@@ -30,12 +30,13 @@ export class Auth {
 
   /**
    * get the roles from the user
-   * @param {Object} user
+   * @param {Object} [user]
    * @param {Object[]} user.roles
    * @param {String} user.roles[].name
    * @returns {String[]}
    */
   static getUserRoles = user => {
+    user = user || Auth.getUser();
     user.roles = user.roles || [];
     return user.roles.map(role => role.name);
   }
@@ -50,9 +51,7 @@ export class Auth {
       return;
     }
 
-    const roles = Auth.getUser().roles || [];
-
-    return roles.map(r => r.name).includes(role);
+    return Auth.getUserRoles().includes(role);
   }
 
   /**

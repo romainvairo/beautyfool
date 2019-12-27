@@ -21,6 +21,7 @@ module.exports = function passwordGenerator(minLength = 8, maxLength = 15) {
      */
     if (j <= 1) {
       let character;
+
       while (!character) {
         character = randomArr(characters);
       }

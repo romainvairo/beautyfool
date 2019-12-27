@@ -1,0 +1,5 @@
+{
+  "start": "Getting the data...",
+  "success": "The data has been retrieved",
+  "error": "The data couldn't be retrieved"
+}

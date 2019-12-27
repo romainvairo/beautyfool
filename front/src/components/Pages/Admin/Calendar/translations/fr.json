@@ -1,0 +1,8 @@
+{
+  "title": "Planning des Rendez-vous",
+  "validButton": "Valider le rendez-vous",
+  "errors": {
+    "invalid": "Vous avez choisis une plage horaire indisponible pour votre rendez-vous",
+    "unchoosen": "Vous n'avez pas choisis de plage horaire pour votre rendez-vous"
+  }
+}

@@ -1,9 +1,5 @@
 let i = 0;
 
-/**
- * @typedef {import('./types')} ControllerErrorCode
- * @type {ControllerErrorCode}
- */
 module.exports = {
   signup: {
     code: i++,
@@ -42,4 +38,14 @@ module.exports = {
     message: "An error occured and your informations couldn't be deleted",
     status: 500,
   },
+  confirmEmail: {
+    code: i++,
+    message: "An error occured and your email could not be confirmed",
+    status: 500,
+  },
+  setNewsletterSubscritionById: {
+    code: i++,
+    message: 'An error occured and the subscription couldn\'t be changed',
+    status: 500,
+  }
 };

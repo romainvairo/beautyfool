@@ -1,1 +1,1 @@
-export { default } from './ProfileCarousel-container';
+export { default } from './ProfileCarousel-view';

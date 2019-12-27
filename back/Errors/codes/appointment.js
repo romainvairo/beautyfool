@@ -30,4 +30,9 @@ module.exports = {
     message: "An error occured and your informations couldn't be deleted",
     status: 500,
   },
+  findByUserId: {
+    code: i++,
+    message: "An error occured and the appointments couldn't be retrieved",
+    status: 500,
+  }
 };

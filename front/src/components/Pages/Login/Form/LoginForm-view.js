@@ -2,14 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TextField, Button, Grid } from '@material-ui/core';
 
-import Divider from "../../../Shared/Divider"
 import './LoginForm.scss';
+import ForgottenPasswordDialog from './ForgottenPasswordDialog';
 
-
-const LoginFormView = ({ translations, onChange, password, email }) => (
+const LoginFormView = ({
+  translations,
+  onChange,
+  password,
+  email,
+  onSubmit,
+  error,
+  openDialog,
+  onOpen,
+  onClose,
+}) => (
   <Grid container justify="center">
+    <ForgottenPasswordDialog open={openDialog} onClose={onClose} />
     <Grid xs={10} md={8} lg={6} item>
-      <form className="loginForm">
+      <form onSubmit={onSubmit} className="loginForm">
         <Grid container spacing={2} direction="column" >
           <Grid container item>
             <TextField
@@ -24,6 +34,7 @@ const LoginFormView = ({ translations, onChange, password, email }) => (
           </Grid>
           <Grid container item>
             <TextField
+              type="password"
               fullWidth
               className="password"
               label={translations.password}
@@ -31,16 +42,16 @@ const LoginFormView = ({ translations, onChange, password, email }) => (
               value={password}
               variant="outlined"
               onChange={onChange('password')}
-              type='password'
             />
           </Grid>
           <Grid container item justify="center">
-            <Link to="sqds" className="forgottenPassword">
+            <span onClick={onOpen} className="forgottenPassword">
               {translations.forgottenPassword}
-            </Link>
+            </span>
           </Grid>
+          <p className="text-center">{error}</p>
           <Grid container item justify="center">
-            <Button className="submitButton" color="primary" variant="contained">{translations.submitButton}</Button>
+            <Button type="submit" className="submitButton" color="primary" variant="contained">{translations.submitButton}</Button>
           </Grid>
           <Grid container item justify="center" className="mt-3">
             <Link className="signup" to="/signup" >

@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
   let comments;
 
   try {
-    comments = await CommentController.findComments(req.params.page);
+    comments = await CommentController.findAll(req.params.page);
   } catch (error) {
     return end(res, { error: errorCodes.comment.findAll });
   }

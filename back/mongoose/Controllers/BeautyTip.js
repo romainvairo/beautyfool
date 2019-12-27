@@ -33,7 +33,7 @@ const BeautyTipController = {
    * find all beautyTips
    * @param {Number} page
    */
-  findBeautyTips: (page) => {
+  findAll: (page) => {
     return BeautyTipModel
       .find()
       .skip((page - 1) * limitByPage)
@@ -47,6 +47,13 @@ const BeautyTipController = {
    */
   editById: (id, beautyTip) => {
     return BeautyTipModel.findByIdAndUpdate(id, beautyTip);
+  },
+
+  /**
+   * get the count of all actualities
+   */
+  count: () => {
+    return BeautyTipModel.countDocuments();
   },
 
   /**

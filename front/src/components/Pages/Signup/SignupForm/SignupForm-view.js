@@ -2,31 +2,32 @@ import React from 'react';
 import { TextField, Button, Checkbox, FormControlLabel, Grid } from '@material-ui/core';
 
 import './SignupForm.scss';
+
 const SignupFormView = ({
   translations,
-  firstName,
-  lastName,
-  userName,
+  firstname,
+  lastname,
+  username,
   email,
   password,
   confirmedPassword,
   subscribeNewsLetter,
   onChange,
-
+  onSubmit,
 }) => (
 <Grid container justify="center">
   <Grid xs={10} md={8} lg={6} item>
-    <form className="SignupFormForm">
+    <form onSubmit={onSubmit} className="SignupFormForm">
       <Grid container spacing={2} direction="column">
         <Grid container item>
           <TextField
             fullWidth
             required
             variant="outlined"
-            label={translations.firstName}
+            label={translations.firstname}
             margin="normal"
-            value={firstName}
-            onChange={onChange('firstName')}
+            value={firstname}
+            onChange={onChange('firstname')}
           />
         </Grid>
         <Grid container item>
@@ -34,10 +35,10 @@ const SignupFormView = ({
             fullWidth
             required
             variant="outlined"
-            label={translations.lastName}
+            label={translations.lastname}
             margin="normal"
-            value={lastName}
-            onChange={onChange('lastName')}
+            value={lastname}
+            onChange={onChange('lastname')}
           />
         </Grid>
         <Grid container item>
@@ -45,10 +46,10 @@ const SignupFormView = ({
             fullWidth
             required
             variant="outlined"
-            label={translations.userName}
+            label={translations.username}
             margin="normal"
-            value={userName}
-            onChange={onChange('userName')}
+            value={username}
+            onChange={onChange('username')}
           />
         </Grid>
         <Grid container item>
@@ -64,6 +65,7 @@ const SignupFormView = ({
         </Grid>
         <Grid container item>
           <TextField
+            type="password"
             fullWidth
             required
             variant="outlined"
@@ -75,6 +77,7 @@ const SignupFormView = ({
         </Grid>
         <Grid container item>
           <TextField
+            type="password"
             fullWidth
             required
             variant="outlined"
@@ -85,7 +88,7 @@ const SignupFormView = ({
           />
         </Grid>
         <Grid container item justify="center">
-          <Button variant="contained" color="primary">
+          <Button type="submit" variant="contained" color="primary">
             {translations.submitButton}
           </Button>
         </Grid>
@@ -97,7 +100,6 @@ const SignupFormView = ({
                 onChange={onChange('subscribeNewsLetter', 'checked')}
                 value={subscribeNewsLetter}
               />
-
             }
             label={translations.subscribeNewsLetter}
           />

@@ -1,15 +1,11 @@
 import React from 'react';
-import classNames from 'classnames';
-import { Grid, Tooltip, IconButton, List, ListItem, Divider, ListItemText } from '@material-ui/core';
+import { Grid, IconButton } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import { makeStyles } from '@material-ui/core/styles';
-import SvgIcon from '@material-ui/core/SvgIcon';
 import { Link } from 'react-router-dom';
 
-import translations from './translations';
-import Dropdown from './Dropdown.scss';
+import './Dropdown.scss';
 
-const DropdownInterfaceView = ({ translations, onClose, onClick }) => (
+const DropdownInterfaceView = ({ onClose }) => (
   <Grid container className="dropdown">
     <Grid xs={12} item className="dropdown-closeButton text-right">
       <IconButton onClick={onClose}>

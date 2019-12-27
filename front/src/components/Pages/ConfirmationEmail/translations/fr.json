@@ -1,0 +1,8 @@
+{
+  "message": {
+    "succes": "Votre E-mail a été confirmé et votre compte a bien été créé !",
+    "error": "Votre E-mail n'a pas pu être confirmé"
+  },
+  "returnProfile": "Mon Profil",
+  "returnHome": "Accueil"
+}

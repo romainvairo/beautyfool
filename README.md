@@ -71,3 +71,7 @@ User
 `Module not found: Can't resolve` => faire : `npm i`
 
 `Boiler plate` == Remplissage
+
+`Mongoose` == librairie == odm
+
+`Object Document Management` == ODM

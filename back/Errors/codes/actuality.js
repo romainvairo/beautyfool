@@ -34,5 +34,10 @@ module.exports = {
     code: i++,
     message: "An error occured and your informations couldn't be retrieved",
     status: 500,
+  },
+  getCount: {
+    code: i++,
+    message: "An error occured and the informations couldn't be retrieved",
+    status: 500,
   }
 };

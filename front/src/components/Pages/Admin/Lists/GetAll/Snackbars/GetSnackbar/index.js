@@ -29,6 +29,7 @@ export class GetSnackbar extends RequestSnackbarBridge {
   }
 
   catch = err => {
+    this.formatError()
     console.error(err);
   }
 

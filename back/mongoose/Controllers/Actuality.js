@@ -33,7 +33,7 @@ const ActualityController = {
    * find all acutalities
    * @param {Number} page
    */
-  findActualities: (page) => {
+  findAll: (page) => {
     return ActualityModel
       .find()
       .skip((page - 1) * limitByPage)
@@ -47,6 +47,13 @@ const ActualityController = {
    */
   editById: (id, actuality) => {
     return ActualityModel.findByIdAndUpdate(id, actuality);
+  },
+
+  /**
+   * get the count of all actualities
+   */
+  count: () => {
+    return ActualityModel.countDocuments();
   },
 
   /**

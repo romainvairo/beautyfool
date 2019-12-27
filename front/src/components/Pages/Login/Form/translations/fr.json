@@ -4,5 +4,10 @@
   "forgottenPassword": "Mot de passe oublié",
   "submitButton": "Se connecter",
   "signup": "S'inscrire à la newsletter",
-  "signupButton": "S'inscrire"
+  "signupButton": "S'inscrire",
+  "logged": "Vous avez été connecté avec succès",
+  "errors": {
+    "1": "L'email ou le password est incorrect",
+    "2": "Une erreur est survenue et vous n'avez pas pu être connecté"
+  }
 }

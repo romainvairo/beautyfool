@@ -23,6 +23,24 @@ const ServiceController = {
   },
 
   /**
+   * add a feedback to a service
+   * @param {String} serviceId
+   * @param {String} feedbackId
+   */
+  addFeedbackById: (serviceId, feedbackId) => {
+    return ServiceModel.findByIdAndUpdate(serviceId, { $push: { feedbacks: feedbackId } });
+  },
+
+  /**
+   * add a appointment to a service
+   * @param {String} serviceId
+   * @param {String} appointmentId
+   */
+  addAppointmentById: (serviceId, appointmentId) => {
+    return ServiceModel.findByIdAndUpdate(serviceId, { $push: { appointments: appointmentId } });
+  },
+
+  /**
    * find a service by the name of its category
    * @param {String} categoryName
    */
@@ -58,11 +76,15 @@ const ServiceController = {
     return ServiceModel.findById(id);
   },
 
+  findAllById: (ids) => {
+    return ServiceModel.find({ _id: { $in: ids } }).populate('category');
+  },
+
   /**
    * find all services in a page
    * @param {Number} page
    */
-  findServices: (page) => {
+  findAll: (page) => {
     return ServiceModel
       .find()
       .skip((page - 1) * limitByPage)

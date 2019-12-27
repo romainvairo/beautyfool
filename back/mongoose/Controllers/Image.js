@@ -26,7 +26,7 @@ const ImageController = {
    * find all images by its id
    * @param {Number} page
    */
-  findImages: (page) => {
+  findAll: (page) => {
     return ImageModel
       .find()
       .skip((page - 1) * limitByPage)

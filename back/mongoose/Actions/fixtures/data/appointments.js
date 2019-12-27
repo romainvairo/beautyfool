@@ -2,26 +2,26 @@ const moment = require('moment');
 
 module.exports = [
   {
-    date: moment({ hour: 14, day: 27, month: 10, year: 2019 }).toDate(),
+    date: moment({ hour: 14, day: 27, month: 11, year: 2019 }).toDate(),
     customer: 'zougui',
     services: [
-      'Makeup',
-      'Body',
+      'Pose Vernis Couleur',
+      'Dépose seule',
     ]
   },
   {
-    date: moment({ hour: 10, day: 29, month: 10, year: 2019 }).toDate(),
+    date: moment({ hour: 10, day: 29, month: 11, year: 2019 }).toDate(),
     customer: 'rokxis',
     services: [
-      'Nails',
+      'Soin Saisonnier',
     ]
   },
   {
     date: moment({ hour: 18, day: 25, month: 11, year: 2019 }).toDate(),
     customer: 'centira',
     services: [
-      'Nails',
-      'Makeup',
+      'Gommage au Savons Noir',
+      'Maillot Brésilien',
     ]
   },
 ];

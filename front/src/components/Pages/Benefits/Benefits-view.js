@@ -12,6 +12,7 @@ const BenefitsView = ({
   isServiceChoosen,
   totalPrice,
   totalDuration,
+  onButtonClick,
 }) => (
   <div className="benefits">
     {categories.map((category) => (
@@ -44,7 +45,13 @@ const BenefitsView = ({
       {translations.totalDuration}{totalDuration}
     </div>
     <div className="benefits-button">
-      <Button variant="contained" color="secondary" className="font-bold" href="/">
+      <Button
+        onClick={onButtonClick}
+        variant="contained"
+        color="secondary"
+        className="font-bold"
+        // Add after calendar the parameters `totalPrice` and `totalDuration` into the URL
+      >
         {translations.button}
       </Button>
     </div>

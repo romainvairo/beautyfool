@@ -8,7 +8,27 @@ const mapStateToProps = (state) => ({
   language: state.clientReducer.language,
 });
 
-// Create the function FooterContainer that render the view
-const FooterContainer = ({ language }) => <FooterView translations={translations[language]} />;
+class FooterContainer extends React.PureComponent {
 
+  onCopy = e => {
+    e.preventDefault();
+
+    const input = document.getElementById('empty-input');
+    console.log(input.value);
+    input.value = window.location.href;
+    console.log(input.value);
+
+    input.select();
+    document.execCommand('copy');
+  }
+
+  render() {
+    const { language } = this.props;
+
+    return <FooterView
+      onCopy={this.onCopy}
+      translations={translations[language]}
+    />;
+  }
+}
 export default connect(mapStateToProps, null)(FooterContainer);

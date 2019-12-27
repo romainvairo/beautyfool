@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
   let actualities;
 
   try {
-    actualities = await ActualityController.findActualities(req.params.page);
+    actualities = await ActualityController.findAll(req.params.page);
   } catch (error) {
     return end(res, { error: errorCodes.actuality.findAll });
   }
