@@ -105,9 +105,8 @@ const EditProfileView = ({ translations, user, onChange, messageName }) => (
             placeholder={user.email}
           />
         </div>
-
         <Button type="submit" variant="contained" color="secondary" className="item mt-4">
-          {translations.send}
+        {translations.send}
         </Button>
         {translations.messages[messageName]}
       </div>
