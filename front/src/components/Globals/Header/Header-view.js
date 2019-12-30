@@ -22,7 +22,7 @@ const HeaderView = ({ translations, isToggle, setIsToggle }) => (
       <Grid xs={6} sm={8} container item alignItems="center" direction="column" className="Header-Logo">
         <Grid item>
           <Link to="/">
-            <img src={require('../../../assets/images/logo.png')} alt="Logo" />
+            <img className="header-logo-image" src={require('../../../assets/images/Logo_2.png')} alt="Logo_2" />
           </Link>
         </Grid>
       </Grid>

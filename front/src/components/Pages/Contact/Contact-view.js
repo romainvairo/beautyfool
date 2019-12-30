@@ -4,7 +4,7 @@ import { Grid, Button, TextField, Typography } from '@material-ui/core';
 import './'
 
 const ContactView = ({ translations, name, email, subject, message, onChange, onSubmit, feedbackMessage }) => (
-  <Grid container item xs={12} lg={12} className="flex">
+  <Grid container item xs={12} lg={12} className="flex contact">
     <Grid xs={12} item className="flex pl-4 pt-8 font-black">
       <Grid lg={12} item className="flex justify-center pt-8 font-black">
         <Typography variant="h4" className="flex text-center text-base lg:text-3xl font-black">

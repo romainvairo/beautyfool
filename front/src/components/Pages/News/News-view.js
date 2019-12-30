@@ -38,11 +38,10 @@ const NewsView = ({ translations, news, lastPage, page }) => (
     </Grid>
     <Grid xs={12} lg={12} container item className="flex flex-row w-full mt-10 mb-10">
       {news.map((newA) => (
-        <Grid key={newA.title} xs={12} lg={4} item className="news-section p-2">
+        <Grid key={newA.title} xs={12} lg={6} item className="news-section p-2">
           <img src={require("../../../assets/images/makeup_1.jpg")} alt="makeup_1"/>
             <h1 className="news-section-titles">{newA.title}</h1>
             <p className="news-section-contents">{newA.content}</p>
-            <Link to="#" className="news-section-link">Lire la suite</Link>
         </Grid>
       ))}
     </Grid>
