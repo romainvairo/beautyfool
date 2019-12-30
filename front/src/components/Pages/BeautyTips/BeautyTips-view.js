@@ -37,11 +37,11 @@ const BeautyTipsView = ({ translations, beautyTips, lastPage, page}) => (
       </Grid>
       <Grid xs={12} lg={12} container item className="flex flex-row w-full mt-10 mb-10">
         {beautyTips.map((beautyTip) => (
-        <Grid key={beautyTip.title} xs={12} lg={6} item className="beautyTips-section p-2">
-          <img src={require("../../../assets/images/makeup_1.jpg")} alt="makeup"/>
-          <h1 className="beautyTips-section-titles">{beautyTip.title}</h1>
+          <Grid key={beautyTip.title} xs={12} lg={6} item className="beautyTips-section p-2">
+            <img src={require("../../../assets/images/makeup_1.jpg")} alt="makeup"/>
+            <h1 className="beautyTips-section-titles">{beautyTip.title}</h1>
             <p className="beautyTips-section-contents">{beautyTip.content}</p>
-        </Grid>
+          </Grid>
         ))}
       </Grid>
       <div>
