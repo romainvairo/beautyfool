@@ -7,14 +7,15 @@ import './ProfileCarousel.scss';
 
 const ProfileCarouselView = ({ appointments })  => (
   <section className="ProfileCarousel carousel">
-    <AliceCarousel autoPlay={true} autoPlayInterval={5000} buttonsDisabled={true}>
+    <AliceCarousel buttonsDisabled={true}>
       {appointments.map((appointment) => (
-        <section key={appointment} className="ProfileCarousel-Subsection">
-          <img className="ProfileCarousel-Images" src={appointment.services[0].category.name} alt="carousel" />
+        <section key={appointment} className="ProfileCarousel-Subsection bg-gray-300 h-64">
+          {console.log(appointment)}
+          {/* <img className="ProfileCarousel-Images" src={appointment.services[0].category.name} alt="carousel" /> */}
           <p className="ProfileCarousel-Paragraph">
-            Start at: {moment(appointment.date).format('LLLL')}
-            <br />
-            Price: {appointment.services.map(s => s.price).reduce((val, acc) => val + acc)} €
+            {moment(appointment.date).format('LLLL')}
+            {/* <br />
+            Prix: {appointment.services.map(s => s.price).reduce((val, acc) => val + acc)} € */}
           </p>
         </section>
       ))}

@@ -7,10 +7,7 @@ import './BeautyTips.scss';
 const BeautyTipsView = ({ translations, beautyTips, lastPage, page}) => (
   <>
     <Grid container justify="center">
-      <Grid item className="mt-6 mb-6">
-        <Typography variant="h4">{ translations.title }</Typography>
-      </Grid>
-      <Grid container item justify="center">
+      {/* <Grid container item justify="center">
         <Grid xs={6} lg={9} item className="text-center">
           <FormControl fullWidth variant="filled" className="w-64">
             <Grid item container>
@@ -34,7 +31,7 @@ const BeautyTipsView = ({ translations, beautyTips, lastPage, page}) => (
             </Grid>
           </FormControl>
         </Grid>
-      </Grid>
+      </Grid> */}
       <Grid xs={12} lg={12} container item className="flex flex-row w-full mt-10 mb-10">
         {beautyTips.map((beautyTip) => (
           <Grid key={beautyTip.title} xs={12} lg={6} item className="beautyTips-section p-2">
