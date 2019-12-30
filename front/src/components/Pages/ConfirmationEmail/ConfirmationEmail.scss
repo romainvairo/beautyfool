@@ -1,0 +1,21 @@
+.container-fluid{
+  height: 39.5rem;
+  padding-top: 12rem;
+}
+
+.profileButton{
+  align-self: center;
+  width: 140px;
+}
+
+.homeButton{
+    align-self: center;
+    width: 140px;
+  }
+
+  @media (max-width: 1025px) {
+    .container-fluid{
+      height: 20.55rem;
+      padding-top: 5rem;
+    }
+  }
