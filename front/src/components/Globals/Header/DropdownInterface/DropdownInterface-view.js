@@ -12,23 +12,23 @@ const DropdownInterfaceView = ({ onClose }) => (
         <CloseIcon />
       </IconButton>
     </Grid>
-    <div className="dropdown-link">
-      <i className="fas fa-home text-4xl"></i><Link className="dropdown-icons" to="/">Accueil</Link>
+    <div className="dropdown-link pt-4">
+      <i className="fas fa-home text-4xl pr-4"></i><Link className="dropdown-icons" to="/">Accueil</Link>
     </div>
-    <div className="dropdown-link">
-      <i className="far fa-newspaper text-4xl"></i><Link className="dropdown-icons" to ="/news">Actualités</Link>
+    <div className="dropdown-link pt-4">
+      <i className="far fa-newspaper text-4xl pr-4"></i><Link className="dropdown-icons" to ="/news">Actualités</Link>
     </div>
-    <div className="dropdown-link">
-      <i className="fas fa-clipboard-list ml-2 text-4xl"></i><Link className="dropdown-icons ml-1" to ="/benefits">Prestations</Link>
+    <div className="dropdown-link pt-4">
+      <i className="fas fa-clipboard-list ml-2 text-4xl pr-4"></i><Link className="dropdown-icons ml-1" to ="/benefits">Prestations</Link>
     </div>
-    <div className="dropdown-link">
-      <i className="fas fa-paint-brush text-4xl"></i><Link className="dropdown-icons" to ="/beauty-tips">Astuces beauté</Link>
+    <div className="dropdown-link flex-none pt-4">
+      <i className="fas fa-paint-brush text-4xl pr-4"></i><Link className="dropdown-icons flex-none" to ="/beauty-tips">Astuces beauté</Link>
     </div>
-    <div className="dropdown-link">
-      <i className="fas fa-image pl-2 text-4xl"></i><Link className="dropdown-icons" to ="/gallery">Galerie</Link>
+    <div className="dropdown-link pt-4">
+      <i className="fas fa-image pl-2 text-4xl pr-4"></i><Link className="dropdown-icons" to ="/gallery">Galerie</Link>
     </div>
-    <div className="dropdown-link">
-      <i className="fas fa-chalkboard-teacher text-4xl"></i><Link className="dropdown-icons" to ="/presentation">Présentation</Link>
+    <div className="dropdown-link  pt-4">
+      <i className="fas fa-chalkboard-teacher text-4xl pr-4"></i><Link className="dropdown-icons" to ="/presentation">Présentation</Link>
     </div>
   </Grid>
 );
