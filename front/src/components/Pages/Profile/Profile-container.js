@@ -52,9 +52,12 @@ class ProfileContainer extends React.PureComponent {
   }
 
   onDelete = () => {
+    const { history } = this.props;
+
     axios.delete(`/api/users/${Auth.getUser()._id}/delete`)
       .then(() => {
         Auth.logout();
+        history.push('/');
       })
       .catch(err => {
         console.error(err);
