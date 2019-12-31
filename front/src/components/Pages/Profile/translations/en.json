@@ -6,6 +6,7 @@
   "username": "Username",
   "address": "Adress",
   "zipCode": "Zip code",
+  "phone": "Phone",
   "city": "City",
   "birthdate": "Birthdate",
   "email": "Email",

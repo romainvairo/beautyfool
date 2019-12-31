@@ -7,6 +7,7 @@
   "address": "Adresse postale",
   "zipCode": "Code postale",
   "city": "Ville",
+  "phone": "Téléphone",
   "birthdate": "Date de naissance",
   "email": "Adresse mail",
   "fidelityPoints": "Points de fidélité",

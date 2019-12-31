@@ -15,7 +15,7 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDele
             <Grid xs={12} item className="flex justify-center">
               <div>
                 <img
-                  className="rounded-full h-32 w-32"
+                  className="w-auto"
                   src={user.picture || require('../../../assets/images/makeup_1.jpg')}
                   alt="makeup_1"
                 />
@@ -33,35 +33,38 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDele
             </Grid>
           </Grid>
         </Grid>
-          <Grid lg={6} item className="flex mt-12">
+          <Grid lg={6} item className="flex">
             <Grid xs={12} item className="flex justify-center">
             <List>
               <ListItem>
-                <ListItemText primary={translations.lastname} secondary="Dupont" />
+                <ListItemText primary={translations.lastname} secondary={user.lastname} />
               </ListItem>
               <ListItem>
-                <ListItemText primary={translations.firstname} secondary="Henri" />
+                <ListItemText primary={translations.firstname} secondary={user.firstname} />
               </ListItem>
               <ListItem>
-                <ListItemText primary={translations.username} secondary="Henri IV"/>
+                <ListItemText primary={translations.username} secondary={user.username}/>
               </ListItem>
               <ListItem>
-                <ListItemText primary={translations.address} secondary="56 av des champs élysées"/>
+                <ListItemText primary={translations.address} secondary={user.address}/>
               </ListItem>
               <ListItem>
-                <ListItemText primary={translations.zipCode} secondary="75000"/>
+                <ListItemText primary={translations.zipCode} secondary={user.zipcode}/>
               </ListItem>
               <ListItem>
-                <ListItemText primary={translations.city} secondary="Paris"/>
+                <ListItemText primary={translations.city} secondary={user.city}/>
               </ListItem>
               <ListItem>
-                <ListItemText primary={translations.birthdate} secondary="15/06/1957"/>
+                <ListItemText primary={translations.birthdate} secondary={user.birthdate}/>
               </ListItem>
               <ListItem>
-                <ListItemText primary={translations.email} secondary="dupont.henri@free.fr"/>
+                <ListItemText primary={translations.phone} secondary={user.phone}/>
               </ListItem>
               <ListItem>
-                <ListItemText primary={translations.fidelityPoints} secondary="22 points"/>
+                <ListItemText primary={translations.email} secondary={user.email}/>
+              </ListItem>
+              <ListItem>
+                <ListItemText primary={translations.fidelityPoints} secondary={user.fidelity}/>
               </ListItem>
               <ListItem>
                 <ListItemText primary={translations.appointments}/>
@@ -69,7 +72,7 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDele
               <ListItem>
                 <ProfileCarousel appointments={user.appointments}/>
               </ListItem>
-              <Grid lg={12} item container className="flex justify-start mt-40 mb-6">
+              <Grid lg={12} item container className="flex justify-start mt-10 mb-6">
                 <Grid xs={12} container item className="flex justify-center">
                   <Grid item className="flex">
                     <ListItem>
@@ -81,7 +84,7 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDele
                     </ListItem>
                   </Grid>
                   <Grid className="flex">
-                    <Grid xs={12} item className="flex">
+                    <Grid xs={12} item className="flex mt-4">
                       <Button onClick={onDelete} variant="contained" color="secondary">
                         {translations.deleteAccount}
                       </Button>

@@ -29,19 +29,19 @@ const EditProfileView = ({ translations, user, onChange, messageName }) => (
         <div className="input-items">
           <TextField
             fullWidth
-            onChange={onChange('firstname')}
-            label={translations.firstname}
+            onChange={onChange('lastname')}
+            label={translations.lastname}
             InputLabelProps={{ shrink: true }}
-            placeholder={user.firstname}
+            placeholder={user.lastname}
           />
         </div>
         <div className="input-items">
           <TextField
             fullWidth
-            onChange={onChange('lastname')}
-            label={translations.lastname}
+            onChange={onChange('firstname')}
+            label={translations.firstname}
             InputLabelProps={{ shrink: true }}
-            placeholder={user.lastname}
+            placeholder={user.firstname}
           />
         </div>
         <div className="input-items">
