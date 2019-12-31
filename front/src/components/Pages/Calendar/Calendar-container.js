@@ -154,19 +154,19 @@ class CalendarContainer extends React.Component {
   }
 
   onTimeRangeSelected = args => {
-    const { appointment } = this.props;
+    const { appointment, language } = this.props;
 
     this.scheduler.clearSelection();
 
     const canTakeAppointment = this.canTakeAppointment();
 
     if (!canTakeAppointment.isLogged) {
-      this.scheduler.message('You must be logged to place an appointment');
+      this.scheduler.message(translations[language].messages.one);
       return;
     }
 
     if (!canTakeAppointment.hasServices) {
-      this.scheduler.message('You must choose at least one service to place an appointment');
+      this.scheduler.message(translations[language].messages.two);
       return;
     }
 
@@ -193,7 +193,7 @@ class CalendarContainer extends React.Component {
     }
 
     if (!canAddEvent) {
-      this.scheduler.message('You cannot take an appointment');
+      this.scheduler.message(translations[language].messages.three);
       return;
     }
 
@@ -210,10 +210,9 @@ class CalendarContainer extends React.Component {
   }
 
   onButtonClick = () => {
-    const { appointment, user, history } = this.props;
-
+    const { appointment, user, history, language } = this.props;
     if(!this.event){
-      this.setState({ error: 'You must place your appointment' });
+      this.setState({ error: translations[language].errors.unchoosen });
       return;
     }
 

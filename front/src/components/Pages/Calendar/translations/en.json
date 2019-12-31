@@ -9,5 +9,10 @@
   "duration": "Duration: ",
   "totalDuration": "Total Duration: ",
   "totalPrice": "Total Price: ",
-  "unavailableTimeSlots": "Unavailable time slots"
+  "unavailableTimeSlots": "Unavailable time slots",
+  "messages": {
+    "one": "You must be logged to place an appointment",
+    "two": "You must choose at least one service to place an appointment",
+    "three": "You cannot take an appointment"
+  }
 }

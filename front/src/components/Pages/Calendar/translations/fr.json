@@ -9,5 +9,10 @@
   "duration": "Durée: ",
   "totalDuration": "Durée Total: ",
   "totalPrice": "Prix Total: ",
-  "unavailableTimeSlots": "Plages horaires non disponibles"
+  "unavailableTimeSlots": "Plages horaires non disponibles",
+  "messages": {
+    "one": "Vous devez être connecté pour prendre un rendez-vous",
+    "two": "Vous devez choisir au moins une prestation pour prendre rendez-vous",
+    "three": "Vous ne pouvez pas prendre rendez-vous"
+  }
 }
