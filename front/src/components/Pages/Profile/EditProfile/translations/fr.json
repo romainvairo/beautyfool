@@ -1,15 +1,16 @@
 {
   "editProfilePicture": "Modifier la photo de profil",
-  "lastname": "Nom de famille",
+  "lastname": "Nom",
   "firstname": "Prénom",
   "username": "Pseudo",
-  "address": "Addresse",
+  "address": "Adresse",
   "zipcode": "Code postal",
   "city": "Ville",
   "birthdate": "Date de naissance",
   "email": "Email",
   "send": "Envoyer",
-  "message": {
+  "phone": "Téléphone",
+  "messages": {
     "success": "Votre profil a bien été mis à jour",
     "error": "Une erreur est survenue et votre profil n'a pas pu être édité"
   }

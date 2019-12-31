@@ -9,6 +9,7 @@
   "birthdate": "Birthdate",
   "email": "Email",
   "send": "Send",
+  "phone": "Phone",
   "messages": {
     "error": "An error has occured and your profile couldn't be edited",
     "success": "Your profile has been successfully edited"

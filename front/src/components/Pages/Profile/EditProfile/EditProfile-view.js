@@ -6,12 +6,13 @@ import './EditProfile.scss';
 const EditProfileView = ({ translations, user, onChange, messageName }) => (
   <div className="contain">
     <div className="pic">
-      <img src={user.picture || require('../../../../assets/images/makeup_1.jpg')} alt="user's pfp" className="className"/>
+      <img src={user.picture || require('../../../../assets/images/makeup_1.jpg')} alt="user's pfp" className="editProfile-picture"/>
       <input
         type="file"
         accept="image/*"
         id="input-file"
         onChange={onChange('picture', 'files')}
+        className="editProfile-fileSelect"
       />
       <div className="image-button">
          {/** htmlFor will targets an input that have the id of its given value */}
@@ -24,22 +25,14 @@ const EditProfileView = ({ translations, user, onChange, messageName }) => (
     </div>
 
     <div className="list">
-      <div className="input-items">
-        <div className="items">
+      <div className="items">
+        <div className="input-items">
           <TextField
             fullWidth
             onChange={onChange('firstname')}
             label={translations.firstname}
             InputLabelProps={{ shrink: true }}
             placeholder={user.firstname}
-          />
-        </div>
-        <div className="input-items">
-          <TextField
-            fullWidth
-            onChange={onChange('firstname')}
-            label={translations.firstname}
-            InputLabelProps={{ shrink: true }} placeholder={user.firstname}
           />
         </div>
         <div className="input-items">
@@ -99,13 +92,22 @@ const EditProfileView = ({ translations, user, onChange, messageName }) => (
         <div className="input-items">
           <TextField
             fullWidth
+            onChange={onChange('phone')}
+            label={translations.phone}
+            InputLabelProps={{ shrink: true }}
+            placeholder={user.phone}
+          />
+        </div>
+        <div className="input-items">
+          <TextField
+            fullWidth
             onChange={onChange('email')}
             label={translations.email}
             InputLabelProps={{ shrink: true }}
             placeholder={user.email}
           />
         </div>
-        <Button type="submit" variant="contained" color="secondary" className="item mt-4">
+        <Button type="submit" variant="contained" color="secondary" className="item mt-6">
         {translations.send}
         </Button>
         {translations.messages[messageName]}

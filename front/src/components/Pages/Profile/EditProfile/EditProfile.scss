@@ -1,13 +1,20 @@
 @media (min-width: 800px) {
-
-  .contain{
+  .contain {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
     align-content: center;
+    height: 37.3rem;
   }
 
-  .pic{
+  .editProfile-fileSelect {
+    font-size: 1rem;
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+    background-color: red;
+  }
+
+  .pic {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -17,25 +24,24 @@
     font-family: monospace;
     height: 24rem;
     flex-grow: 1;
-    margin-left: 1rem;
-    width: 25%;
+    margin: 2rem;
+    width: 15%;
+    padding: 5rem;
     }
 
-  .image-button{
+  .image-button {
     display: flex;
-    margin-top: 20px;
+    margin-top: 1rem;;
     justify-content: center;
-    margin-left: 100px;
+    margin-left: 12rem;
   }
 
   .list {
     display: flex;
     justify-content: flex-start;
-    margin-top: 5rem;
     flex-grow: 2;
     flex: 2;
     align-items: flex-end;
-    margin-right: 2rem;
     width: 100%;
     }
 
@@ -47,20 +53,19 @@
   }
 
   .button-modification {
-    background-color: #939ba0 !important;
+    background-color: rgb(83, 127, 247) !important;
+    color: #fff !important;
+    text-transform: none !important;
   }
 
-  .input-item {
+  .items {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    margin-bottom: 30px;
+    width: 20rem;
   }
 
-  .items{
-    display: flex;
-    padding-bottom: 18px;
-    width: 60%;
+  .input-items {
+    margin-top: 0.5rem;;
   }
 }
 
