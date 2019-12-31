@@ -4,7 +4,9 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import { DayPilotCalendar } from 'daypilot-pro-react';
 import { Grid, IconButton, Button } from '@material-ui/core';
 
-const CalendarView = ({ onButtonClick, error, price, duration, onTimeRangeSelected, state, setRef, date, language, onBackward, onForward }) => (
+import './Calendar.scss';
+
+const CalendarView = ({ onButtonClick, error, price, duration, onTimeRangeSelected, state, setRef, date, language, onBackward, onForward, translations }) => (
   <Grid container justify="center" className="mt-5">
     <Grid xs={12} sm={11} md={10} item>
       <Grid container direction="column">
@@ -16,7 +18,7 @@ const CalendarView = ({ onButtonClick, error, price, duration, onTimeRangeSelect
                   <span className="mr-2 bg-red-500 inline-block w-8 h-6"></span>
                 </Grid>
                 <Grid xs={11}>
-                  <span className="inline-block">Unavailable time slots</span>
+                  <span className="inline-block">{translations.unavailableTimeSlots}</span>
                 </Grid>
               </Grid>
               <Grid xs={6} container item justify="flex-end" className="font-bold">
@@ -42,25 +44,23 @@ const CalendarView = ({ onButtonClick, error, price, duration, onTimeRangeSelect
             ref={setRef}
           />
         </Grid>
-        <Grid item>
+        <div className="calendar-total-error">
+          {error}
+        </div>
+        <div className="calendar-total">
+          {translations.totalPrice}{price} {price !== null && '€'}
+          <br />
+          {translations.totalDuration}{duration}
+        </div>
+        <Grid xs={12} className="text-center">
           <Button
             onClick={onButtonClick}
             variant="contained"
             color="secondary"
-            className="font-bold calendar-button"
+            className="font-bold calendar-button text-center"
           >
-            Valid appointment
+            {translations.validButton}
           </Button>
-        </Grid>
-        <Grid item>
-          {error}
-        </Grid>
-        <Grid item>
-          <div>
-            {price} {price !== null && '€'}
-            <br />
-            {duration}
-          </div>
         </Grid>
       </Grid>
     </Grid>

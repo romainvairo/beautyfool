@@ -4,5 +4,10 @@
   "errors": {
     "invalid": "Your appointment is overflowing into unavailable time",
     "unchoosen": "You must choose when you want your appointment"
-  }
+  },
+  "price": "Price: ",
+  "duration": "Duration: ",
+  "totalDuration": "Total Duration: ",
+  "totalPrice": "Total Price: ",
+  "unavailableTimeSlots": "Unavailable time slots"
 }

@@ -1,49 +1,77 @@
-.calendar_default_corner_inner + div {
-  display: none;
+.calendar-button {
+  text-align: center;
 }
 
-.calendar_default_cell_inner {
-  cursor: pointer;
+.calendar-total-error {
+  margin: 0.5rem 32%;
+  text-align: center;
+  background-color: rgb(255, 166, 0);
+  border-radius: 5px;
+  text-shadow:
+    0 0 1px #B4B4B4,
+    2px 0 1px #B4B4B4,
+    0 2px 1px #B4B4B4,
+    2px 2px 1px #B4B4B4;
 }
 
-.calendar_default_event {
-  cursor: default !important;
-  width: 105% !important;
+.calendar-total {
+  margin: 1rem 43%;
+  padding: 1rem;
+  background-color: rgba(199, 184, 184, 0.781);
+  border-radius: 5px;
+  text-shadow:
+    0 0 1px #B4B4B4,
+    2px 0 1px #B4B4B4,
+    0 2px 1px #B4B4B4,
+    2px 2px 1px #B4B4B4;
 }
 
-.table-head {
-  border: solid 1px #c0c0c0;
-}
 
-.calendar {
-  &-title {
-    font-size: 3em;
-    font-weight: bold;
-  }
+// .calendar_default_corner_inner + div {
+//   display: none;
+// }
 
-  &-content {
-    max-width: 95%;
+// .calendar_default_cell_inner {
+//   cursor: pointer;
+// }
 
-    &-table-wrapper {
-      max-width: 90%;
-    }
+// .calendar_default_event {
+//   cursor: default !important;
+//   width: 105% !important;
+// }
 
-    &-table-container {
-      overflow: auto;
+// .table-head {
+//   border: solid 1px #c0c0c0;
+// }
 
-      &::-webkit-scrollbar {
-        height: 7px;
-        background-color: transparent !important;
+// .calendar {
+//   &-title {
+//     font-size: 3em;
+//     font-weight: bold;
+//   }
 
-        &-thumb {
-          background-color: #aaa;
-          border-radius: 10px;
-        }
-      }
-    }
-  }
+//   &-content {
+//     max-width: 95%;
 
-  &-button {
-    max-width: 16rem;
-  }
-}
+//     &-table-wrapper {
+//       max-width: 90%;
+//     }
+
+//     &-table-container {
+//       overflow: auto;
+
+//       &::-webkit-scrollbar {
+//         height: 7px;
+//         background-color: transparent !important;
+
+//         &-thumb {
+//           background-color: #aaa;
+//           border-radius: 10px;
+//         }
+//       }
+//     }
+//   }
+//   &-button {
+//    max-width: 16rem;
+//   }
+// }

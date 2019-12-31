@@ -10,6 +10,8 @@ import { getDates, correctFormatDate } from '../../../utils';
 import { Auth } from '../../../services';
 import { onForward, onBackward, setDate } from './actions';
 
+import translations from './translations';
+
 const mapStateToProps = state => ({
   language: state.clientReducer.language,
   user: state.clientReducer.user,
@@ -247,6 +249,7 @@ class CalendarContainer extends React.Component {
       error={error}
       price={canTakeAppointment.value ? appointment.totalPrice : null}
       duration={canTakeAppointment.value ? correctFormatDate(appointment.totalDuration) : null}
+      translations={translations[language]}
     />;
   }
 }

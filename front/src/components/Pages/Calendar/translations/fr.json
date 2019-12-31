@@ -4,5 +4,10 @@
   "errors": {
     "invalid": "Vous avez choisis une plage horaire indisponible pour votre rendez-vous",
     "unchoosen": "Vous n'avez pas choisis de plage horaire pour votre rendez-vous"
-  }
+  },
+  "price": "Prix: ",
+  "duration": "Durée: ",
+  "totalDuration": "Durée Total: ",
+  "totalPrice": "Prix Total: ",
+  "unavailableTimeSlots": "Plages horaires non disponibles"
 }
