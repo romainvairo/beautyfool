@@ -6,6 +6,7 @@ import './Header.scss';
 import DropdownButton from './DropdownButton';
 import DropdownInterface from './DropdownInterface';
 import ProfileButton from './ProfileButton';
+import AdminButton from './AdminButton';
 
 const HeaderView = ({ translations, isToggle, setIsToggle }) => (
   <header className="Header">
@@ -27,7 +28,10 @@ const HeaderView = ({ translations, isToggle, setIsToggle }) => (
         </Grid>
       </Grid>
       <Grid xs={3} sm={2} container item justify="flex-end">
-        <Grid item className="pr-2">
+        <Grid item>
+          <AdminButton />
+        </Grid>
+        <Grid item className="m-6 font-bold">
           <ProfileButton />
         </Grid>
       </Grid>
