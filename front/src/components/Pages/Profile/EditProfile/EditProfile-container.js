@@ -17,6 +17,15 @@ class EditProfileContainer extends React.PureComponent{
   state = {
     user: this.props.user,
     messageName: '',
+    lastname: '',
+    firstname: '',
+    username: '',
+    address: '',
+    zipcode: '',
+    city: '',
+    birthdate: '',
+    phone: '',
+    email: '',
     picture: null,
   }
 
@@ -88,13 +97,37 @@ class EditProfileContainer extends React.PureComponent{
 
   render() {
     const { language } = this.props;
-    const { user, messageName } = this.state;
+    const {
+      user,
+      messageName,
+      lastname,
+      firstname,
+      username,
+      address,
+      zipcode,
+      city,
+      birthdate,
+      phone,
+      email,
+      picture,
+     } = this.state;
 
     return <EditProfileView
       user={user}
       translations={translations[language]}
       onChange={this.onChange}
+      onSubmit={this.submit}
       messageName={messageName}
+      lastname={lastname}
+      firstname={firstname}
+      username={username}
+      address={address}
+      zipcode={zipcode}
+      city={city}
+      birthdate={birthdate}
+      phone={phone}
+      email={email}
+      picture={picture}
     />;
   }
 }
