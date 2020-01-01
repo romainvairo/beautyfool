@@ -107,6 +107,7 @@ const EditProfileView = ({
           <div className="input-items">
             <TextField
               fullWidth
+              type="date"
               onChange={onChange('birthdate')}
               label={translations.birthdate}
               InputLabelProps={{ shrink: true }}
