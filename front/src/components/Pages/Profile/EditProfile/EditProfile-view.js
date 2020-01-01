@@ -9,16 +9,6 @@ const EditProfileView = ({
   onChange,
   onSubmit,
   messageName,
-  lastname,
-  firstname,
-  username,
-  address,
-  zipcode,
-  city,
-  birthdate,
-  phone,
-  email,
-  picture
   }) => (
   <div className="contain">
     <form onSubmit={onSubmit} className="EditProfileFormForm">
@@ -28,8 +18,8 @@ const EditProfileView = ({
           type="file"
           accept="image/*"
           id="input-file"
+          value={user.picture}
           onChange={onChange('picture', 'files')}
-          value={picture}
           className="editProfile-fileSelect"
         />
         <div className="image-button">
@@ -50,7 +40,7 @@ const EditProfileView = ({
               onChange={onChange('lastname')}
               label={translations.lastname}
               InputLabelProps={{ shrink: true }}
-              value={lastname}
+              value={user.lastname}
               placeholder={user.lastname}
             />
           </div>
@@ -60,7 +50,7 @@ const EditProfileView = ({
               onChange={onChange('firstname')}
               label={translations.firstname}
               InputLabelProps={{ shrink: true }}
-              value={firstname}
+              value={user.firstname}
               placeholder={user.firstname}
             />
           </div>
@@ -70,7 +60,7 @@ const EditProfileView = ({
               onChange={onChange('username')}
               label={translations.username}
               InputLabelProps={{ shrink: true }}
-              value={username}
+              value={user.username}
               placeholder={user.username}
             />
           </div>
@@ -80,7 +70,7 @@ const EditProfileView = ({
               onChange={onChange('address')}
               label={translations.address}
               InputLabelProps={{ shrink: true }}
-              value={address}
+              value={user.address}
               placeholder={user.address}
             />
           </div>
@@ -90,7 +80,7 @@ const EditProfileView = ({
               onChange={onChange('zipcode')}
               label={translations.zipcode}
               InputLabelProps={{ shrink: true }}
-              value={zipcode}
+              value={user.zipcode}
               placeholder={user.zipcode}
             />
           </div>
@@ -100,7 +90,7 @@ const EditProfileView = ({
               onChange={onChange('city')}
               label={translations.city}
               InputLabelProps={{ shrink: true }}
-              value={city}
+              value={user.city}
               placeholder={user.city}
             />
           </div>
@@ -111,7 +101,7 @@ const EditProfileView = ({
               onChange={onChange('birthdate')}
               label={translations.birthdate}
               InputLabelProps={{ shrink: true }}
-              value={birthdate}
+              value={user.birthdate}
               placeholder={user.birthdate}
             />
           </div>
@@ -121,7 +111,7 @@ const EditProfileView = ({
               onChange={onChange('phone')}
               label={translations.phone}
               InputLabelProps={{ shrink: true }}
-              value={phone}
+              value={user.phone}
               placeholder={user.phone}
             />
           </div>
@@ -131,14 +121,16 @@ const EditProfileView = ({
               onChange={onChange('email')}
               label={translations.email}
               InputLabelProps={{ shrink: true }}
-              value={email}
+              value={user.email}
               placeholder={user.email}
             />
           </div>
-          <Button type="submit" variant="contained" color="secondary" className="item mt-6">
+          <Button type="submit" variant="contained" color="secondary" className="item mt-2">
           {translations.send}
           </Button>
+          <p className="text-red-600 font-bold">
           {translations.messages[messageName]}
+          </p>
         </div>
       </div>
     </form>
