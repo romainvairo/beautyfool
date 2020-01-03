@@ -1,7 +1,6 @@
-import passwordGenerator from './passwordGenerator';
-
 const path = require('path');
 
+const passwordGenerator = require('./passwordGenerator');
 const { createFile } = require('../FileSystem');
 const { unifyFileName } = require('../utils');
 
