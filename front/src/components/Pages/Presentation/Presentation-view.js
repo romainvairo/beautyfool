@@ -40,7 +40,7 @@ const PresentationView = ({ translations }) => (
     <Grid xs={12} md={6} item className="">
       <img src={require('../../../assets/images/body_2.jpg')} alt="body_2"/>
     </Grid>
-    <Grid lg={12} container className="flex justify-around" >
+    <Grid lg={12} container item className="flex justify-around" >
     <Grid lg={2} container item className="flex mt-6">
       <Grid md={12} lg={12} item className="">
         <img src={require('../../../assets/images/face_1.jpg')} alt="face_1"/>
@@ -120,22 +120,22 @@ const PresentationView = ({ translations }) => (
           </Grid>
           </Grid>
         </Grid>
-        <Grid xs={12} container className="flex justify-center">
-        <Grid xs={12}container item className="flex justify-center mb-6">
+        <Grid xs={12} item container className="flex justify-center">
+        <Grid xs={12} container item className="flex justify-center mb-6">
           <Typography variant="h5" className="title text-center font-black mt-6">
             {translations.title}
           </Typography>
         </Grid>
           <Grid xs={12} container item className="flex">
           <Grid  xs={12} lg={6} item className="p-6 pb-24 text-center address">
-          <i class="fas fa-info-circle text-5xl mb-6"></i>
+          <i className="fas fa-info-circle text-5xl mb-6"></i>
             <h1 className="font-bold mb-6 uppercase">{translations.infoTips}</h1>
               <p></p>
               <p>58 avenue des champs élysées 75008 Paris</p>
               <p>Tel : 04.01.02.03.04  / 06.01.02.03.04</p>
               </Grid>
               <Grid xs={12} lg={6} item className="text-center p-6 appointment">
-              <i class="fas fa-clock text-5xl mb-6"></i>
+              <i className="fas fa-clock text-5xl mb-6"></i>
               <h1 className="font-bold mb-6 uppercase">{translations.schedule}</h1>
               <p>{translations.monday}</p>
               <p>{translations.tuesday}</p>
