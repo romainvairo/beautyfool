@@ -1,3 +1,5 @@
+import passwordGenerator from './passwordGenerator';
+
 const path = require('path');
 
 const { createFile } = require('../FileSystem');
@@ -12,8 +14,12 @@ const { unifyFileName } = require('../utils');
  * @returns {Promise<{ filePath: String, fileUri: String }>}
  */
 module.exports = async function fileWriter(fileData) {
-  // make the file name unique
-  const fileName = unifyFileName(fileData.fileName);
+  // separate the extension from the file name
+  const fileNameParts = fileData.fileName.split('.');
+  // get the extension
+  const ext = fileNameParts.pop();
+  //re-assemblate the original file name with a ramdom string in its name
+  const fileName = `${fileNameParts.join('.')}.${passwordGenerator()}.${ext}`;
 
   // make an URI for the file to create
   const fileUri = path.join('/api/files', fileData.type, fileName);

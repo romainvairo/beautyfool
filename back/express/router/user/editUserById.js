@@ -7,15 +7,17 @@ module.exports = async (req, res) => {
   const { picture, pictureName, ...userData } = req.body;
 
   try {
-    const pictureObject = {
-      type: 'picture',
-      buffer: picture,
-      fileName: pictureName,
+    if (picture) {
+      const pictureObject = {
+        type: 'picture',
+        buffer: picture,
+        fileName: pictureName,
+      };
+
+      const fileData = await fileWriter(pictureObject);
+
+      userData.picture = fileData.fileUri.replace(/\\+/, '/');
     };
-
-    const fileData = await fileWriter(pictureObject);
-
-    userData.picture = fileData.fileUri.replace(/\\+/, '/');
 
     await UserController.editById(req.params.id, userData);
   } catch (error) {
