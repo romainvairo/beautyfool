@@ -100,6 +100,7 @@ class EditProfileContainer extends React.PureComponent{
       birthdate,
       phone,
       email,
+      picture,
     } = this.state;
 
     return <EditProfileView
@@ -117,6 +118,7 @@ class EditProfileContainer extends React.PureComponent{
       birthdate={birthdate}
       phone={phone}
       email={email}
+      picture={picture}
     />;
   }
 }
