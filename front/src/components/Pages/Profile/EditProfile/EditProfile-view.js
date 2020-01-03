@@ -9,10 +9,18 @@ const EditProfileView = ({
   onChange,
   onSubmit,
   messageName,
+  lastname,
+  firstname,
+  username,
+  address,
+  zipcode,
+  city,
+  birthdate,
+  phone,
+  email,
   }) => (
   <div className="contain">
-    <form onSubmit={onSubmit} className="EditProfileFormForm">
-      <div className="pic">
+      {/* <div className="pic">
         <img src={user.picture || require('../../../../assets/images/makeup_1.jpg')} alt="user's pfp" className="editProfile-picture"/>
         <input
           type="file"
@@ -23,15 +31,16 @@ const EditProfileView = ({
           className="editProfile-fileSelect"
         />
         <div className="image-button">
-          {/** htmlFor will targets an input that have the id of its given value */}
+          htmlFor will targets an input that have the id of its given value
           <label htmlFor="input-file">
             <Button className="button-modification" variant="contained">
               {translations.editProfilePicture}
             </Button>
           </label>
         </div>
-      </div>
+      </div> */}
 
+    <form onSubmit={onSubmit} className="EditProfileFormForm">
       <div className="list">
         <div className="items">
           <div className="input-items">
@@ -40,7 +49,7 @@ const EditProfileView = ({
               onChange={onChange('lastname')}
               label={translations.lastname}
               InputLabelProps={{ shrink: true }}
-              value={user.lastname}
+              value={lastname}
               placeholder={user.lastname}
             />
           </div>
@@ -50,7 +59,7 @@ const EditProfileView = ({
               onChange={onChange('firstname')}
               label={translations.firstname}
               InputLabelProps={{ shrink: true }}
-              value={user.firstname}
+              value={firstname}
               placeholder={user.firstname}
             />
           </div>
@@ -60,7 +69,7 @@ const EditProfileView = ({
               onChange={onChange('username')}
               label={translations.username}
               InputLabelProps={{ shrink: true }}
-              value={user.username}
+              value={username}
               placeholder={user.username}
             />
           </div>
@@ -70,7 +79,7 @@ const EditProfileView = ({
               onChange={onChange('address')}
               label={translations.address}
               InputLabelProps={{ shrink: true }}
-              value={user.address}
+              value={address}
               placeholder={user.address}
             />
           </div>
@@ -80,7 +89,7 @@ const EditProfileView = ({
               onChange={onChange('zipcode')}
               label={translations.zipcode}
               InputLabelProps={{ shrink: true }}
-              value={user.zipcode}
+              value={zipcode}
               placeholder={user.zipcode}
             />
           </div>
@@ -90,7 +99,7 @@ const EditProfileView = ({
               onChange={onChange('city')}
               label={translations.city}
               InputLabelProps={{ shrink: true }}
-              value={user.city}
+              value={city}
               placeholder={user.city}
             />
           </div>
@@ -101,7 +110,7 @@ const EditProfileView = ({
               onChange={onChange('birthdate')}
               label={translations.birthdate}
               InputLabelProps={{ shrink: true }}
-              value={user.birthdate}
+              value={birthdate}
               placeholder={user.birthdate}
             />
           </div>
@@ -111,7 +120,7 @@ const EditProfileView = ({
               onChange={onChange('phone')}
               label={translations.phone}
               InputLabelProps={{ shrink: true }}
-              value={user.phone}
+              value={phone}
               placeholder={user.phone}
             />
           </div>
@@ -121,7 +130,7 @@ const EditProfileView = ({
               onChange={onChange('email')}
               label={translations.email}
               InputLabelProps={{ shrink: true }}
-              value={user.email}
+              value={email}
               placeholder={user.email}
             />
           </div>
