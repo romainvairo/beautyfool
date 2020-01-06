@@ -28,7 +28,7 @@ class ProfileContainer extends React.PureComponent {
     this.setState(state => {
       const { isNewsletterChecked } = state;
 
-      axios.post(`/api/users/${user._id}/newsletter-subscription/set`, {
+      axios.post(`/api/users/${user._id}/newsletter-subscription/set`,{
         isSubscribed: !isNewsletterChecked,
       })
         .then(({ data }) => {
@@ -39,7 +39,6 @@ class ProfileContainer extends React.PureComponent {
         .catch(err => {
           console.error(err);
         });
-
       return { [name]: !isNewsletterChecked };
     });
   }

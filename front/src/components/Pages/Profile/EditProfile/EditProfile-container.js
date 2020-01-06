@@ -37,11 +37,20 @@ class EditProfileContainer extends React.PureComponent{
     }));
   }
 
-  onChange = onChange(this);
+  onChange = prop => event => {
+    this.setState(prevState => ({
+      user: {
+        ...prevState.user,
+        [prop]: event.target.value,
+      }
+    }));
+  }
 
   submit = e => {
     const { user, picture } = this.state;
+    console.log(user);
     const { user: propsUser, history } = this.props;
+    console.log(propsUser);
     e.preventDefault();
 
     // compare the data of the user in the state and props.
@@ -61,6 +70,7 @@ class EditProfileContainer extends React.PureComponent{
           console.error(err);
         });
     } else {
+      console.log("userData: ", userData);
       this.editUser(userData);
     }
   }
@@ -91,16 +101,16 @@ class EditProfileContainer extends React.PureComponent{
     const {
       user,
       messageName,
-      lastname,
-      firstname,
-      username,
-      address,
-      zipcode,
-      city,
-      birthdate,
-      phone,
-      email,
-      picture,
+      // lastname,
+      // firstname,
+      // username,
+      // address,
+      // zipcode,
+      // city,
+      // birthdate,
+      // phone,
+      // email,
+      // picture,
     } = this.state;
 
     return <EditProfileView
@@ -109,16 +119,17 @@ class EditProfileContainer extends React.PureComponent{
       onChange={this.onChange}
       onSubmit={this.submit}
       messageName={messageName}
-      lastname={lastname}
-      firstname={firstname}
-      username={username}
-      address={address}
-      zipcode={zipcode}
-      city={city}
-      birthdate={birthdate}
-      phone={phone}
-      email={email}
-      picture={picture}
+      {...user}
+      // lastname={lastname}
+      // firstname={firstname}
+      // username={username}
+      // address={address}
+      // zipcode={zipcode}
+      // city={city}
+      // birthdate={birthdate}
+      // phone={phone}
+      // email={email}
+      // picture={picture}
     />;
   }
 }

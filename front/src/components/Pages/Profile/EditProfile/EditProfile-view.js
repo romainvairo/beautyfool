@@ -45,7 +45,7 @@ const EditProfileView = ({
       <div className="list">
         <div className="items">
           <div className="input-items">
-            <TextField
+            <input type="text"
               fullWidth
               onChange={onChange('lastname')}
               label={translations.lastname}

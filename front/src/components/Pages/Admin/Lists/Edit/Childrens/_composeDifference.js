@@ -5,10 +5,20 @@ import { differentiator } from '../../../../../../utils';
  * @returns {(newData: Object, originalData: Object) => Object}
  */
 export const composeDifference = propList => (newData, originalData) => {
-  const differences = {};
-  const getDifference = differentiator(differences, newData, originalData);
+  const mergedData = {...newData, ...originalData};
+  const keys = [];
 
-  propList.forEach(getDifference);
+  for (let key in mergedData) {
+    if (newData[key] !== originalData[key]) {
+      keys.push(key);
+    }
+  }
 
-  return differences;
+  const result = {};
+
+  for (let key in keys) {
+    result[key] = newData[key];
+  }
+
+  return result;
 }
