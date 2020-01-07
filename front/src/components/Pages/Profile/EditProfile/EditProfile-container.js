@@ -39,6 +39,7 @@ class EditProfileContainer extends React.PureComponent{
 
   onChange = prop => event => {
     console.log('event :', event);
+    event.persist()
     this.setState(prevState => ({
       user: {
         ...prevState.user,
@@ -49,9 +50,9 @@ class EditProfileContainer extends React.PureComponent{
 
   submit = e => {
     const { user, picture } = this.state;
-    console.log(user);
+    console.log('user :', user);
     const { user: propsUser, history } = this.props;
-    console.log(propsUser);
+    console.log('propsUser :', propsUser);
     e.preventDefault();
 
     // compare the data of the user in the state and props.
