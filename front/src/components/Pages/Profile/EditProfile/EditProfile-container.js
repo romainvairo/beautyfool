@@ -38,6 +38,7 @@ class EditProfileContainer extends React.PureComponent{
   }
 
   onChange = prop => event => {
+    console.log('event :', event);
     this.setState(prevState => ({
       user: {
         ...prevState.user,
