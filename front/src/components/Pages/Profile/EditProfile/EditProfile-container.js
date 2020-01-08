@@ -6,21 +6,28 @@ import AdminUserEdit from '../../Admin/Lists/Edit/Childrens/User';
 import translations from './translations';
 import { onChange, bufferize } from '../../../../utils';
 import axios from '../../../../axios';
+import { setUser } from '../../../../store/actions/client';
 
 const mapStateToProps = state => ({
   language: state.clientReducer.language,
   user: state.clientReducer.user,
 });
 
+const mapDispatchToProps = dispatch => ({
+  setUser: value => {
+    dispatch(setUser(value));
+  }
+});
+
 class EditProfileContainer extends React.PureComponent{
 
   state = {
-    user: this.props.user,
+    ...this.props.user,
     messageName: '',
     picture: null,
   }
 
-  setUser = data => {
+  /* setUser = data => {
     let picture = null;
 
     if (data.picture) {
@@ -29,21 +36,23 @@ class EditProfileContainer extends React.PureComponent{
     }
 
     this.setState(state => ({
-      user: {
-        ...state.user,
-        ...data,
-      },
+      ...state.user,
+      ...data,
       picture: picture,
     }));
-  }
+  } */
 
   onChange = onChange(this);
 
   submit = e => {
-    const { user, picture } = this.state;
+    const { picture } = this.state;
+    // Prépare un objet user avec les nouvelles données
+    const user = {...this.state};
+    delete user.picture;
+    delete user.messageName;
+
     const { user: propsUser, history } = this.props;
     e.preventDefault();
-
     // compare the data of the user in the state and props.
     // send only the different data and avoid to send data that doesn't change
     const userData = AdminUserEdit.difference(user, propsUser);
@@ -67,11 +76,13 @@ class EditProfileContainer extends React.PureComponent{
 
   editUser = userData => {
     const { user: propsUser, history } = this.props;
-
     axios.post(`/api/users/${propsUser._id}/edit`, userData)
       .then(({ data }) => {
         if (data.success) {
-          this.setState({ messageName: 'success' });
+          // Met a jours le state du reducer client
+          this.props.setUser(userData);
+
+          this.setState({ messageName: 'success' });;
 
           setTimeout(() => {
             history.push('/profile');
@@ -88,8 +99,8 @@ class EditProfileContainer extends React.PureComponent{
 
   render() {
     const { language } = this.props;
+    const { user } = this.props;
     const {
-      user,
       messageName,
       lastname,
       firstname,
@@ -123,4 +134,4 @@ class EditProfileContainer extends React.PureComponent{
   }
 }
 
-export default connect(mapStateToProps)(EditProfileContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(EditProfileContainer);
