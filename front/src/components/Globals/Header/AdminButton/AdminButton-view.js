@@ -1,14 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Auth } from '../../../../services';
 
-import classNames from 'classnames';
-
-const AdminButtonView = (isAdmin) => (
+const AdminButtonView = () => (
   <div>
-    { isAdmin && <Link to="/admin" className={classNames(
-              (isAdmin ? 'adminButton-link m-8 text-lg px-4 text-white bg-red-600 font-bold rounded border-black border-solid border' : 'adminButton-link hidden'), )}>Menu Admin
-    </Link>
-    }
+ <Link className="adminButton-link m-8 text-lg px-4 text-white bg-red-600 font-bold rounded border-black border-solid border" to="/admin">Menu Admin</Link>
   </div>
 );
 
