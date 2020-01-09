@@ -138,6 +138,7 @@ export class Auth {
    * logout the user and remove its cookie session
    */
   static logout = () => {
+    Auth.getUser().logged = false;
     Cookies.remove(Auth.cookieName);
     actions.setUser({});
   }
