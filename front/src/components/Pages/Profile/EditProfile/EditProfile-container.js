@@ -54,17 +54,12 @@ class EditProfileContainer extends React.PureComponent{
   }
 
   submit = e => {
-<<<<<<< HEAD
-    const { user, picture } = this.state;
-    console.log('user :', user);
-=======
     const { picture } = this.state;
     // Prépare un objet user avec les nouvelles données
     const user = {...this.state};
     delete user.picture;
     delete user.messageName;
 
->>>>>>> master
     const { user: propsUser, history } = this.props;
     console.log('propsUser :', propsUser);
     e.preventDefault();
