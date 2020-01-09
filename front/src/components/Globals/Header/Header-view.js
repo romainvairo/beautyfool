@@ -8,7 +8,7 @@ import DropdownInterface from './DropdownInterface';
 import ProfileButton from './ProfileButton';
 import AdminButton from './AdminButton';
 
-const HeaderView = ({ translations, isToggle, setIsToggle }) => (
+const HeaderView = ({ translations, isToggle, setIsToggle, isAdmin }) => (
   <header className="Header">
     <Grid container justify="space-between">
       <Grid xs={3} sm={2} item>
@@ -29,7 +29,10 @@ const HeaderView = ({ translations, isToggle, setIsToggle }) => (
       </Grid>
       <Grid xs={3} sm={2} container item justify="flex-end">
         <Grid item>
-          <AdminButton />
+          {
+            isAdmin ? <AdminButton /> : null
+          }
+          
         </Grid>
         <Grid item className="m-6 font-bold">
           <ProfileButton />

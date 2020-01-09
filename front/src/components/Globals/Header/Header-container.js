@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { Auth } from '../../../services';
 import HeaderView from './Header-view';
 import translations from './translations';
 
@@ -27,6 +28,7 @@ class HeaderContainer extends React.PureComponent {
       translations={translations[language]}
       isToggle={isToggle}
       setIsToggle={this.setIsToggle}
+      isAdmin={Auth.isAdmin()}
     />;
   }
 }
