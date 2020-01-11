@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, TextField } from '@material-ui/core';
+import { bufferizeRevert } from '../../../../utils/bufferize';
 
 import './EditProfile.scss';
 
@@ -28,8 +29,6 @@ const EditProfileView = ({
           type="file"
           accept="image/*"
           id="input-file"
-          value={picture}
-          onChange={onChange('picture', 'files')}
           className="editProfile-fileSelect"
         />
         <div className="image-button">

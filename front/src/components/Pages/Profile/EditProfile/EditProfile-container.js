@@ -24,7 +24,6 @@ class EditProfileContainer extends React.PureComponent{
   state = {
     ...this.props.user,
     messageName: '',
-    picture: null,
   }
 
   /* setUser = data => {
@@ -45,11 +44,14 @@ class EditProfileContainer extends React.PureComponent{
   onChange = onChange(this);
 
   submit = e => {
-    const { picture } = this.state;
+    // Récupère l'image en mode js normal, l'input controllé de react marche pas avec le type file
+    const inputFile  = document.getElementById('input-file');
+    const picture = inputFile.files[0];
+
     // Prépare un objet user avec les nouvelles données
     const user = {...this.state};
-    delete user.picture;
     delete user.messageName;
+
 
     const { user: propsUser, history } = this.props;
     e.preventDefault();
@@ -62,7 +64,7 @@ class EditProfileContainer extends React.PureComponent{
         .then(arrayBuffer => {
           userData.picture = arrayBuffer;
           userData.pictureName = picture.name;
-
+          console.log(userData);
           this.editUser(userData);
         })
         .catch(err => {
@@ -80,7 +82,8 @@ class EditProfileContainer extends React.PureComponent{
       .then(({ data }) => {
         if (data.success) {
           // Met a jours le state du reducer client
-          this.props.setUser(userData);
+          delete data.success;
+          this.props.setUser(data);
 
           this.setState({ messageName: 'success' });;
 

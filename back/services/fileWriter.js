@@ -25,7 +25,9 @@ module.exports = async function fileWriter(fileData) {
   // make a path where to create the file
   const filePath = path.join(__dirname, '../../files', fileData.type, fileName);
 
-  await createFile(filePath, fileData.buffer);
+  // Utilisation du buffer de node pour préparer les données sous un format correct
+  const buffer = Buffer.from(Object.values(fileData.buffer));
+  await createFile(filePath, buffer);
 
   return { filePath, fileUri };
 }
