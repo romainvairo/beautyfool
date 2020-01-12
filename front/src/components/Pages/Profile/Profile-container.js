@@ -6,6 +6,7 @@ import ProfileView from './Profile-view';
 import translations from './translations';
 import axios from '../../../axios';
 import { setUserAppointments } from '../../../store/actions/client';
+import { setUser } from '../../../store/actions/client';
 
 const mapStateToProps = state => ({
   language: state.clientReducer.language,
@@ -14,34 +15,26 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setUserAppointments: value => dispatch(setUserAppointments(value)),
+  setUser: value => dispatch(setUser(value)),
 });
 
-class ProfileContainer extends React.PureComponent {
+class ProfileContainer extends React.Component {
+  onToggle = () => {
+    const { user, setUser } = this.props;
 
-  state = {
-    isNewsletterChecked: this.props.user.newsletterSubscribed,
-  }
-
-  onToggle = name => {
-    const { user } = this.props;
-
-    this.setState(state => {
-      const { isNewsletterChecked } = state;
-
-      axios.post(`/api/users/${user._id}/newsletter-subscription/set`, {
-        isSubscribed: !isNewsletterChecked,
+    axios.post(`/api/users/${user._id}/newsletter-subscription/set`, {
+      isSubscribed: !user.newsletterSubscribed,
+    })
+      .then(({ data }) => {
+        if (!data.success) {
+          console.error(data.error);
+        } else {
+          setUser({newsletterSubscribed: !user.newsletterSubscribed});
+        }
       })
-        .then(({ data }) => {
-          if (!data.success) {
-            console.error(data.error);
-          }
-        })
-        .catch(err => {
-          console.error(err);
-        });
-
-      return { [name]: !isNewsletterChecked };
-    });
+      .catch(err => {
+        console.error(err);
+      });
   }
 
   onLogout = () => {
@@ -78,11 +71,10 @@ class ProfileContainer extends React.PureComponent {
 
   render() {
     const { language, user } = this.props;
-    const { isNewsletterChecked } = this.state;
 
     return <ProfileView
       translations={translations[language]}
-      isNewsletterChecked={isNewsletterChecked}
+      isNewsletterChecked={user.newsletterSubscribed}
       onToggle={this.onToggle}
       user={user}
       onDelete={this.onDelete}
