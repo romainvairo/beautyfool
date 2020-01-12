@@ -79,7 +79,7 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDele
                       <Checkbox
                         onChange={onToggle}
                         label={translations.newsletters}
-                        onClick={isNewsletterChecked}
+                        checked={isNewsletterChecked}
                       />
                     </ListItem>
                   </Grid>

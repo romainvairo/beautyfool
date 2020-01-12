@@ -30,10 +30,13 @@ class FeedbacksCarouselContainer extends React.PureComponent {
     const { language } = this.props;
     const { feedbacks } = this.state;
 
-    return <FeedbacksCarouselView
-      translations={translations[language]}
-      feedbacks={feedbacks}
-    />;
+    return (
+      <>
+        {feedbacks.length > 0 &&
+          <FeedbacksCarouselView translations={translations[language]} feedbacks={feedbacks} />
+        }
+      </>
+    );
   }
 }
 

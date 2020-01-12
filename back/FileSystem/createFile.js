@@ -1,6 +1,7 @@
 const { writeFile } = require('./fsPromise');
 const { getPreviousDir } = require('../utils');
-const { accessFolder } = require('.');
+const accessFolder = require('./accessFolder');
+
 
 /**
  * create a file and all folders that doesn't already exist

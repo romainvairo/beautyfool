@@ -16,7 +16,9 @@ module.exports = async (req, res) => {
 
       const fileData = await fileWriter(pictureObject);
 
-      userData.picture = fileData.fileUri.replace(/\\+/, '/');
+      // Petit correction sur l'url sauvegarder dans l'utilisateur, ajout du nom de domaine
+      // A changer une fois en prod
+      userData.picture = 'http://localhost:8000' + fileData.fileUri.replace(/\\+/, '/');
     };
 
     await UserController.editById(req.params.id, userData);
@@ -25,5 +27,6 @@ module.exports = async (req, res) => {
     return end(res, { error: errorCodes.user.editById });
   }
 
-  end(res, null, true);
+  // Ajout des données modifiés au retour pour pouvoir set le state de reducer client
+  end(res, userData, true);
 }

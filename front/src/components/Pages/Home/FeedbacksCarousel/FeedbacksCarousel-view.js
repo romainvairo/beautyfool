@@ -11,7 +11,7 @@ const FeedbacksCarouselView = ({ translations, feedbacks })  => (
     <AliceCarousel autoPlay={true} autoPlayInterval={5000} buttonsDisabled={true}>
       {feedbacks.map(( feedback ) => (
         <div key={feedback._id} className="FeedbacksCarousel-Feedback">
-          <p className="FeedbacksCarousel-UserName">{feedback.user.username || 'Utilisateur supprimé'}</p>
+          <p className="FeedbacksCarousel-UserName">{feedback.user ? feedback.user.username || 'Utilisateur supprimé' : 'Utilisateur supprimé'}</p>
           <p className="FeedbacksCarousel-ServiceName">{feedback.service.name}</p>
           <div className="stars">
           <Stars rate={feedback.rate} />

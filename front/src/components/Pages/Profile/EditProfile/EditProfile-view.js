@@ -28,8 +28,6 @@ const EditProfileView = ({
           type="file"
           accept="image/*"
           id="input-file"
-          value={picture}
-          onChange={onChange('picture', 'files')}
           className="editProfile-fileSelect"
         />
         <div className="image-button">
