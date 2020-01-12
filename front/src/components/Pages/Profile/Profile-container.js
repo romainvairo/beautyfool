@@ -22,31 +22,6 @@ class ProfileContainer extends React.Component {
   onToggle = () => {
     const { user, setUser } = this.props;
 
-<<<<<<< HEAD
-  state = {
-    isNewsletterChecked: this.props.user.newsletterSubscribed,
-  }
-
-  onToggle = name => {
-    const { user } = this.props;
-
-    this.setState(state => {
-      const { isNewsletterChecked } = state;
-
-      axios.post(`/api/users/${user._id}/newsletter-subscription/set`,{
-        isSubscribed: !isNewsletterChecked,
-      })
-        .then(({ data }) => {
-          if (!data.success) {
-            console.error(data.error);
-          }
-        })
-        .catch(err => {
-          console.error(err);
-        });
-      return { [name]: !isNewsletterChecked };
-    });
-=======
     axios.post(`/api/users/${user._id}/newsletter-subscription/set`, {
       isSubscribed: !user.newsletterSubscribed,
     })
@@ -60,7 +35,6 @@ class ProfileContainer extends React.Component {
       .catch(err => {
         console.error(err);
       });
->>>>>>> master
   }
 
   onLogout = () => {
