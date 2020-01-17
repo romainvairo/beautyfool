@@ -9,6 +9,7 @@ import axios from '../../../../axios';
 import { getDates, correctFormatDate } from '../../../../utils';
 import { Auth } from '../../../../services';
 import { onForward, onBackward, setDate } from './actions';
+import translations from './translations';
 
 const mapStateToProps = state => ({
   language: state.clientReducer.language,
@@ -229,6 +230,7 @@ class CalendarContainer extends React.Component {
       language={language}
       onButtonClick={this.onButtonClick}
       error={error}
+      translations={translations[language]}
     />;
   }
 }

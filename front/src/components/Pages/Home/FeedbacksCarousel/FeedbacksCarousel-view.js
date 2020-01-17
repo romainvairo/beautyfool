@@ -8,9 +8,9 @@ import Stars from './Stars';
 const FeedbacksCarouselView = ({ translations, feedbacks })  => (
 
   <section className="FeedbacksCarousel">
-    <AliceCarousel autoPlay={true} autoPlayInterval={5000} buttonsDisabled={true}>
+    <AliceCarousel autoPlay={true} autoPlayInterval={5000} buttonsDisabled={true} dotsDisabled={true}>
       {feedbacks.map(( feedback ) => (
-        <div key={feedback._id} className="FeedbacksCarousel-Feedback">
+        <div key={feedback._id} className="FeedbacksCarousel-Feedback mt-12 mb-12">
           <p className="FeedbacksCarousel-UserName">{feedback.user ? feedback.user.username || 'Utilisateur supprimé' : 'Utilisateur supprimé'}</p>
           <p className="FeedbacksCarousel-ServiceName">{feedback.service.name}</p>
           <div className="stars">

@@ -7,7 +7,7 @@ import './GalleryCarousel.scss';
 const GalleryCarouselView = ({ images, translations })  => (
 
   <section className="GalleryCarousel">
-    <AliceCarousel autoPlay={true} autoPlayInterval={5000} buttonsDisabled={true}>
+    <AliceCarousel autoPlay={true} autoPlayInterval={5000} dotsDisabled={true} buttonsDisabled={true}>
       {images.map((image, i) => (
 
         <section key={image} className="GalleryCarousel-Subsection">

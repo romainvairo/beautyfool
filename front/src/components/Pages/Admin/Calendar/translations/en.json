@@ -1,4 +1,5 @@
 {
+  "unavailableSchedule": "Unavailable time slots",
   "title": "Appointment planning",
   "validButton": "Valid appointment",
   "errors": {

@@ -33,12 +33,14 @@ class NewsletterContainer extends React.PureComponent {
 
   render() {
     const { subject, message, locale } = this.state;
+    const { language } = this.props;
 
     return <NewsletterView
       onChange={this.onChange}
       onSubmit={this.onSubmit}
       subject={subject}
       message={message}
+      translations={translations[language]}
     />;
   }
 }

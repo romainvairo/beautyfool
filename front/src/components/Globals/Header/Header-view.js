@@ -32,7 +32,7 @@ const HeaderView = ({ translations, isToggle, setIsToggle, isAdmin }) => (
           {
             isAdmin ? <AdminButton /> : null
           }
-          
+
         </Grid>
         <Grid item className="m-6 font-bold">
           <ProfileButton />

@@ -51,7 +51,7 @@ const LoginFormView = ({
           </Grid>
           <p className="text-center">{error}</p>
           <Grid container item justify="center">
-            <Button type="submit" className="submitButton" color="primary" variant="contained">{translations.submitButton}</Button>
+            <Button type="submit" className="submitButton" variant="contained">{translations.submitButton}</Button>
           </Grid>
           <Grid container item justify="center" className="mt-3">
             <Link className="signup" to="/signup" >

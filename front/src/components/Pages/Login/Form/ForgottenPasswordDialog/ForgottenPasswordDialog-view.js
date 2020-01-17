@@ -20,7 +20,7 @@ const ForgottenPasswordDialogView = ({ open, onClose, email, onChange, onSubmit,
         onChange={onChange('email')}
       />
 
-      <Button type="submit" color="primary" variant="contained">
+      <Button type="submit" variant="contained" className="ml-48 mt-6 mb-6">
         Reset my password
       </Button>
       {message}

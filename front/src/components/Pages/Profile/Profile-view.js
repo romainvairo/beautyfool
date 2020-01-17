@@ -15,7 +15,7 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDele
             <Grid xs={12} item className="flex justify-center">
               <div>
                 <img
-                  className="w-auto"
+                  className="w-64 h-64 rounded-full"
                   src={user.picture || require('../../../assets/images/makeup_1.jpg')}
                   alt="makeup_1"
                 />
@@ -33,7 +33,7 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDele
             </Grid>
           </Grid>
         </Grid>
-          <Grid lg={6} item className="flex">
+          <Grid lg={6} item className="flex mt-12">
             <Grid xs={12} item className="flex justify-center">
             <List>
               <ListItem>
