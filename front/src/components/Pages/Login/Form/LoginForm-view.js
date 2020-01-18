@@ -16,10 +16,10 @@ const LoginFormView = ({
   onOpen,
   onClose,
 }) => (
-  <Grid container justify="center">
+  <Grid container justify="center" className="mt-16">
     <ForgottenPasswordDialog open={openDialog} onClose={onClose} />
     <Grid xs={10} md={8} lg={6} item>
-      <form onSubmit={onSubmit} className="loginForm">
+      <form onSubmit={onSubmit} className="loginForm mt-3">
         <Grid container spacing={2} direction="column" >
           <Grid container item>
             <TextField
@@ -50,10 +50,10 @@ const LoginFormView = ({
             </span>
           </Grid>
           <p className="text-center">{error}</p>
-          <Grid container item justify="center">
+          <Grid container item justify="center" className="mt-6">
             <Button type="submit" className="submitButton" variant="contained">{translations.submitButton}</Button>
           </Grid>
-          <Grid container item justify="center" className="mt-3">
+          <Grid container item justify="center" className="mt-6">
             <Link className="signup" to="/signup" >
               {translations.signupButton}
             </Link>

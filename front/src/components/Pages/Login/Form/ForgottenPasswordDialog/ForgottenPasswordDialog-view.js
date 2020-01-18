@@ -7,12 +7,13 @@ const ForgottenPasswordDialogView = ({ open, onClose, email, onChange, onSubmit,
     aria-labelledby="forgotten-password-dialog-title"
     open={open}
   >
-    <DialogTitle id="forgotten-password-dialog-title">
-      Send an email to reset my password
+    <DialogTitle id="forgotten-password-dialog-title" className="text-center">
+      Entrer votre E-mail pour réinitialiser votre nouveau mot de passe
     </DialogTitle>
 
     <form onSubmit={onSubmit}>
       <TextField
+        text-center
         fullWidth
         label="email"
         value={email}
@@ -21,7 +22,7 @@ const ForgottenPasswordDialogView = ({ open, onClose, email, onChange, onSubmit,
       />
 
       <Button type="submit" variant="contained" className="ml-48 mt-6 mb-6">
-        Reset my password
+        Reinitialiser mon mot de passe
       </Button>
       {message}
     </form>

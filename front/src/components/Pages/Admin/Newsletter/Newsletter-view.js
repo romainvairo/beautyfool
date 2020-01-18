@@ -1,12 +1,12 @@
 import React from 'react';
-import { Grid, TextField, Button } from '@material-ui/core';
+import { Grid, TextField, Button, Typography } from '@material-ui/core';
 
 import './Newsletter.scss';
 
 const NewsletterView = ({ subject, message, onChange, onSubmit, translations }) => (
   <Grid container justify="center" className="flex">
     <Grid xs={12} sm={11} md={10} item>
-      <form className="w-full text-center mt-48 mb-48" onSubmit={onSubmit}>
+      <form className="w-full text-center newsletter" onSubmit={onSubmit}>
         <TextField
           className="mt-4"
           fullWidth

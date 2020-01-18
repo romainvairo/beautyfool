@@ -20,7 +20,7 @@ const EditProfileView = ({
   email,
   picture,
   }) => (
-  <div className="contain">
+  <div className="contain mt-3">
     <form onSubmit={onSubmit} className="EditProfileFormForm">
       <div className="pic">
         <img src={user.picture || require('../../../../assets/images/makeup_1.jpg')} alt="user's pfp" className="editProfile-picture  w-64 h-64 rounded-full"/>

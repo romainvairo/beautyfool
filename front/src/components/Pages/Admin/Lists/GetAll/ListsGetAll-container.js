@@ -8,6 +8,7 @@ import { GetSnackbar, DeleteSnackbar } from './Snackbars';
 import * as potientalChildrens from './Childrens';
 import PageNotFound from '../../../PageNotFound';
 import { getPage, singularify } from '../../../../../utils';
+import { menuData } from '../../AdminMenu/data';
 
 const mapStateToProps = state => ({
   language: state.clientReducer.language,
@@ -98,6 +99,7 @@ class ListsGetAllContainer extends React.PureComponent {
       page={+getPage(match)}
       lastPage={lastPage}
       ChildrenComponent={ChildrenComponent}
+      menuData={menuData}
     />;
   }
 }

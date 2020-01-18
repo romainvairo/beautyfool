@@ -13,9 +13,9 @@ const PresentationView = ({ translations }) => (
           </Typography>
         </Grid>
           <Grid xs={12} md={12} lg={12} item className="pr-6 mb-6 text-presentation">
-            <p>Mon institut Le Petit Salon, je l’ai voulu chaleureux, cosy mais aussi toujours avant gardiste. En recherche permanente de marques qui se démarquent vous trouverez au Petit Salon les emblématiques et luxueux soins Matis, le très confidentiel maquillage PAUL & JOE, mais aussi les jolies petites marques de bijoux Grizzly Cheri et Margote Ceramiste.               Pour estomper les effets du temps, j’ai décidé de faire confiance à la technologie innovante et performante de l’Electrolift Plus classique , je fais confiance à LPG pour affiner votre silhouette et vous sculpter un corps de déesse.
-            Vous souhaitez en savoir plus sur les différentes prestations de l’institut, n’hésitez pas à venir à notre rencontre, Jessica et moi seront ravies de vous conseiller et de vous faire partager notre passion et notre expertise beauté.
-            Magalie</p>
+            <p>Mon institut Beautyfool, est un endroit chaleureux, cosy mais aussi toujours avant gardiste. En recherche permanente de marques qui se démarquent vous trouverez au Petit Salon les emblématiques et luxueux soins Matis, le très confidentiel maquillage PAUL & JOE, mais aussi les jolies petites marques de bijoux Grizzly Cheri et Margote Ceramiste.               Pour estomper les effets du temps, nous avons décidé de faire confiance à la technologie innovante et performante de l’Electrolift Plus classique , nous fesons confiance à LPG pour affiner votre silhouette et vous sculpter un corps de déesse.
+            Vous souhaitez en savoir plus sur les différentes prestations de l’institut, n’hésitez pas à venir à notre rencontre, Carine et lydia seront ravies de vous conseiller et de vous faire partager notre passion et notre expertise beauté.
+            Cynthia</p>
           </Grid>
         </Grid>
       </Grid>
@@ -31,9 +31,7 @@ const PresentationView = ({ translations }) => (
           </Typography>
         </Grid>
           <Grid xs={12} md={12} lg={12} item className="text-presentation mt-12 mb-12 pl-6">
-            <p>Mon institut Le Petit Salon, je l’ai voulu chaleureux, cosy mais aussi toujours avant gardiste. En recherche permanente de marques qui se démarquent vous trouverez au Petit Salon les emblématiques et luxueux soins Matis, le très confidentiel maquillage PAUL & JOE, mais aussi les jolies petites marques de bijoux Grizzly Cheri et Margote Ceramiste.               Pour estomper les effets du temps, j’ai décidé de faire confiance à la technologie innovante et performante de l’Electrolift Plus classique , je fais confiance à LPG pour affiner votre silhouette et vous sculpter un corps de déesse.
-            Vous souhaitez en savoir plus sur les différentes prestations de l’institut, n’hésitez pas à venir à notre rencontre, Jessica et moi seront ravies de vous conseiller et de vous faire partager notre passion et notre expertise beauté.
-            Magalie</p>
+            <p>Notre site web a était créer pour éviter le déplacement de notre chère clientelle pour prendre des rendez-vous, pour parler a une experte en esthetique via la chatbox et de vous informez sur tous ce qui se passe dans votre lieu de bien être tous nos soins sont réservable directement en vous connectant sur votre profile et en cliquant sur les prestations que vous désirez réserver. Votre profile peux contenir des points fidélité qui vous seront attribué aprés chaque prestations qui sera réaliser, plus le soin est long, plus vous gagnerez de point de fidélité. Le site sera en constante évolutions, nous allons rajouter pleins de nouvelles fonctionnalitées pour arranger les beautyfooler (Fan de l'institut beautyfool). Nous espérons que celui-ci vous plaira. Bonne naviguation !</p>
           </Grid>
         </Grid>
       </Grid>

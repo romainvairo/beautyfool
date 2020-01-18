@@ -1,3 +1,15 @@
-.menu-item {
-  padding: 5px 8px !important;
+@media (min-width: 800px) {
+  .menu-item {
+    padding: 15px 8px !important;
+  }
+
+  .menu-button {
+    height: 7.82rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .menu-item{
+    padding: 10px 8px !important;
+  }
 }

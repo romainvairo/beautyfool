@@ -6,7 +6,7 @@ import './Login.scss';
 
 const LoginView = ({ translations, history }) => (
   <section className="login">
-    <Grid container justify="center" className="mt-6">
+    <Grid container justify="center" className="mt-8">
       <Typography variant="h4">{ translations.title }</Typography>
     </Grid>
     <LoginForm history={history} />
