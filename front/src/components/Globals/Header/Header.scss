@@ -26,10 +26,6 @@
     font-size: 1rem;
     font-weight: bold;
   }
-
-  &-Slogan {
-    display: none
-  }
 }
 
 .fab, .fa-share-alt {
@@ -68,4 +64,8 @@
   .fab, .fa-share-alt {
     font-size: 2rem;
   }
+}
+
+@media (max-width: 800px) {
+
 }

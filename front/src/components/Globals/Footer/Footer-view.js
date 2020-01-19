@@ -30,7 +30,7 @@ const FooterView = ({ translations, onCopy }) => (
       <Grid xs={12} sm={6} md="auto" item>
         <Link className="p" to="/faq">{ translations.FAQ }</Link>
       </Grid>
-      <Grid xs={12} item>
+      <Grid xs={12} sm={12} lg={2} item>
         <Link className="p" to="#">{ translations.Copyright }</Link>
       </Grid>
     </Grid>
