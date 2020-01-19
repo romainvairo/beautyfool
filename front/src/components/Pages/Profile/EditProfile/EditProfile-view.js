@@ -32,7 +32,7 @@ const EditProfileView = ({
         />
       </div>
 
-      <div className="list">
+      <div className="list text-center">
         <div className="items">
           <div className="input-items">
             <TextField
@@ -125,7 +125,7 @@ const EditProfileView = ({
               placeholder={user.email}
             />
           </div>
-          <Button type="submit" variant="contained" color="secondary" className="item mt-2">
+          <Button type="submit" variant="contained" color="secondary" className="item mt-8 mb-8">
           {translations.send}
           </Button>
           <p className="text-red-600 font-bold">

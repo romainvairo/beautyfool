@@ -40,6 +40,7 @@
   }
 
   .list {
+    margin-top: 2rem;
     display: flex;
     justify-content: flex-start;
     flex-grow: 2;
@@ -80,19 +81,14 @@
     }
 
   .list{
-    display: flex;
-    justify-content: center;
     margin-top: 2rem;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-right: 2rem;
     }
 
-  .input-item{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-  }
-  .items{
-    display: flex;
-    margin-bottom: 1rem;
+  .input-items {
+    margin-top: 2rem;
   }
 }
 
