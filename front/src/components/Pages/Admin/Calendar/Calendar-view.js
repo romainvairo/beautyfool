@@ -16,7 +16,7 @@ const CalendarView = ({ onButtonClick, error, onEventClick, state, setRef, date,
                   <span className="mr-2 bg-red-500 inline-block w-8 h-6"></span>
                 </Grid>
                 <Grid xs={11} item>
-                  <span className="inline-block">{translations.unavailableSchedule}</span>
+                  <span className="inline-block ml-6">{translations.unavailableSchedule}</span>
                 </Grid>
               </Grid>
               <Grid xs={6} container item justify="flex-end" className="font-bold">
