@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Button, List, ListItem, ListItemText } from '@material-ui/core';
+import moment from 'moment';
 
 import ProfileCarousel from './ProfileCarousel';
 import Checkbox from '../../Shared/Checkbox';
@@ -55,7 +56,7 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDele
                 <ListItemText primary={translations.city} secondary={user.city}/>
               </ListItem>
               <ListItem>
-                <ListItemText primary={translations.birthdate} secondary={user.birthdate}/>
+                <ListItemText primary={translations.birthdate} secondary={moment(user.birthdate).format('DD-MM-YYYY')}/>
               </ListItem>
               <ListItem>
                 <ListItemText primary={translations.phone} secondary={user.phone}/>
