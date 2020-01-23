@@ -132,7 +132,7 @@ class CalendarContainer extends React.Component {
 
   onEventClick = args => {
     DayPilot.Modal.confirm('Confirmer l\'annulation ?').then(modal => {
-      if (modal.result === 'ok') {
+      if (modal.result == 'OK') {
         axios.delete('/api/appointments/' + args.e.data._id + '/delete')
           .then(() => {
             console.log('appointment has been delete');
