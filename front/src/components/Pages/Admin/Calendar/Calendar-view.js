@@ -39,6 +39,7 @@ const CalendarView = ({ onButtonClick, error, onEventClick, state, setRef, date,
           <DayPilotCalendar
             {...state}
             onEventClick={onEventClick}
+            locale="FR-fr"
             ref={setRef}
           />
         </Grid>
