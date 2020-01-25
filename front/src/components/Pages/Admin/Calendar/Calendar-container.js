@@ -34,6 +34,9 @@ class CalendarContainer extends React.Component {
     cellHeight: 25,
     eventResizeHandling: false,
     eventMoveHandling: false,
+    dayBeginsHour: 9,
+    dayEndsHour: 20,
+    locale: "FR-fr"
   }
 
   componentDidMount() {
@@ -100,8 +103,10 @@ class CalendarContainer extends React.Component {
         data.data.forEach(appointment => {
           const event = {};
 
+          let startDate = new Date(appointment.date);
+          startDate.setHours(startDate.getHours() + 1);
           // starting datetime
-          event.start = new DayPilot.Date(new Date(appointment.date));
+          event.start = new DayPilot.Date(startDate);
 
           // ending datetime
           let end = moment(appointment.date);
