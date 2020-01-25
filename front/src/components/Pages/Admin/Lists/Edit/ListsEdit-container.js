@@ -5,7 +5,17 @@ import { connect } from 'react-redux';
 import ListsEditView from './ListsEdit-view';
 import translations from './translations';
 import PageNotFound from '../../../PageNotFound';
-import * as potientalChildrens from './Childrens';
+import User from './Childrens/User';
+import Feedback from './Childrens/Feedback';
+import Actuality from './Childrens/Actuality';
+import Appointment from './Childrens/Appointment';
+import BeautyTip from './Childrens/BeautyTip';
+import Category from './Childrens/Category';
+import Comment from './Childrens/Comment';
+import Image from './Childrens/Image';
+import Question from './Childrens/Question';
+import Schedule from './Childrens/Schedule';
+import Service from './Childrens/Service';
 import { singularify, onChange } from '../../../../../utils';
 import { GetSnackbar, EditSnackbar } from './Snackbars';
 
@@ -22,6 +32,7 @@ const mapStateToProps = state => ({
   question: state.adminReducer.question,
   role: state.adminReducer.role,
   service: state.adminReducer.service,
+  data: state.adminReducer.data,
 });
 
 class ListsEditContainer extends React.PureComponent {
@@ -29,6 +40,19 @@ class ListsEditContainer extends React.PureComponent {
   getSnackbar = new GetSnackbar(this);
   editSnackbar = new EditSnackbar(this);
   ChildrenComponent;
+  potientalChildrens = {
+    User,
+    Feedback,
+    Actuality,
+    Appointment,
+    BeautyTip,
+    Category,
+    Comment,
+    Image,
+    Question,
+    Schedule,
+    Service,
+  }
 
   getCorrectDataName = () => {
     const { match } = this.props;
@@ -38,11 +62,14 @@ class ListsEditContainer extends React.PureComponent {
   }
 
   getCorrectData = () => {
-    const correctData = this.props[this.getCorrectDataName()]
+    /* const correctData = this.props[this.getCorrectDataName()] */
+    const correctData = this.props.data;
     return correctData || {};
   }
 
-  originalData = this.getCorrectData();
+  /* originalData = {
+    ...this.getCorrectData()
+  }; */
 
   state = {
     ...this.getCorrectData(),
@@ -66,7 +93,7 @@ class ListsEditContainer extends React.PureComponent {
   }
 
   setChildrenComponent = () => {
-    this.ChildrenComponent = potientalChildrens[this.getChildrenName()];
+    this.ChildrenComponent = this.potientalChildrens[this.getChildrenName()];
     this.forceUpdate();
   }
 
@@ -93,17 +120,16 @@ class ListsEditContainer extends React.PureComponent {
       throw new Error(`No "difference" function on children "${this.getChildrenName()}"`);
     }
 
-    const differences = this.ChildrenComponent.difference(this.state, this.originalData);
+    const differences = this.ChildrenComponent.difference(this.state, this.props.data);
 
     this.editSnackbar.caller(differences);
-    console.log('changes', this.ChildrenComponent.difference(this.state, this.originalData))
+    console.log('changes', this.ChildrenComponent.difference(this.state, this.props.data));
   }
 
   onChange = onChange(this);
 
   render() {
     const { language } = this.props;
-
     if (!this.ChildrenComponent) {
       return <PageNotFound />;
     }

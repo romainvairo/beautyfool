@@ -10,6 +10,7 @@ import {
   SET_ADMIN_QUESTION,
   SET_ADMIN_ROLE,
   SET_ADMIN_SERVICE,
+  SET_ADMIN_DATA,
 } from '../actions-type/admin';
 
 export const setAdminUser = (value) => ({ type: SET_ADMIN_USER, payload: value, });
@@ -23,3 +24,4 @@ export const setAdminImage = (value) => ({ type: SET_ADMIN_IMAGE, payload: value
 export const setAdminQuestion = (value) => ({ type: SET_ADMIN_QUESTION, payload: value, });
 export const setAdminRole = (value) => ({ type: SET_ADMIN_ROLE, payload: value, });
 export const setAdminService = (value) => ({ type: SET_ADMIN_SERVICE, payload: value, });
+export const setAdminData = (value) => ({ type: SET_ADMIN_DATA, payload: value });

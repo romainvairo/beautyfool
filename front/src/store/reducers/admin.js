@@ -10,6 +10,7 @@ import {
   SET_ADMIN_QUESTION,
   SET_ADMIN_ROLE,
   SET_ADMIN_SERVICE,
+  SET_ADMIN_DATA,
 } from '../actions-type/admin'
 
 const initialState = {
@@ -24,6 +25,7 @@ const initialState = {
   role : {},
   service : {},
   user : {},
+  data : {},
 };
 
 const reducer = (state = initialState, action) => {
@@ -83,6 +85,12 @@ const reducer = (state = initialState, action) => {
         ...state,
         service: action.payload,
       };
+      case SET_ADMIN_DATA:
+      return {
+        ...state,
+        data: action.payload,
+      };
+
 
     default:
       return state;
