@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Button, List, ListItem, ListItemText } from '@material-ui/core';
+import moment from 'moment';
 
 import ProfileCarousel from './ProfileCarousel';
 import Checkbox from '../../Shared/Checkbox';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
-const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDelete, onLogout }) => (
+const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDelete, onLogout, appointments }) => (
   <Grid container>
     <Grid container lg={12} item>
       <Grid container xs={12} item className="justify-center">
@@ -15,7 +16,7 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDele
             <Grid xs={12} item className="flex justify-center">
               <div>
                 <img
-                  className="w-auto"
+                  className="w-64 h-64 rounded-full"
                   src={user.picture || require('../../../assets/images/makeup_1.jpg')}
                   alt="makeup_1"
                 />
@@ -33,7 +34,7 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDele
             </Grid>
           </Grid>
         </Grid>
-          <Grid lg={6} item className="flex">
+          <Grid lg={6} item className="flex mt-12">
             <Grid xs={12} item className="flex justify-center">
             <List>
               <ListItem>
@@ -55,7 +56,7 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDele
                 <ListItemText primary={translations.city} secondary={user.city}/>
               </ListItem>
               <ListItem>
-                <ListItemText primary={translations.birthdate} secondary={user.birthdate}/>
+                <ListItemText primary={translations.birthdate} secondary={moment(user.birthdate).format('DD-MM-YYYY')}/>
               </ListItem>
               <ListItem>
                 <ListItemText primary={translations.phone} secondary={user.phone}/>
@@ -70,7 +71,7 @@ const ProfileView = ({ translations, isNewsletterChecked, onToggle, user, onDele
                 <ListItemText primary={translations.appointments}/>
               </ListItem>
               <ListItem>
-                <ProfileCarousel appointments={user.appointments}/>
+                <ProfileCarousel appointments={appointments}/>
               </ListItem>
               <Grid lg={12} item container className="flex justify-start mt-10 mb-6">
                 <Grid xs={12} container item className="flex justify-center">

@@ -9,6 +9,7 @@ import axios from '../../../../axios';
 import { getDates, correctFormatDate } from '../../../../utils';
 import { Auth } from '../../../../services';
 import { onForward, onBackward, setDate } from './actions';
+import translations from './translations';
 
 const mapStateToProps = state => ({
   language: state.clientReducer.language,
@@ -118,7 +119,7 @@ class CalendarContainer extends React.Component {
           // set ending datetime
           event.end = new DayPilot.Date(end.toDate());
 
-          event.text = 'Click to cancel appointment';
+          event.text = 'Clicker pour annuler un rendez-vous';
 
           // add the appointment into the events list
           this.addClosure(event);
@@ -130,8 +131,8 @@ class CalendarContainer extends React.Component {
   }
 
   onEventClick = args => {
-    DayPilot.Modal.confirm('Confirm cancelation').then(modal => {
-      if (modal.result.toLowerCase() === 'ok') {
+    DayPilot.Modal.confirm('Confirmer l\'annulation ?').then(modal => {
+      if (modal.result == 'OK') {
         axios.delete('/api/appointments/' + args.e.data._id + '/delete')
           .then(() => {
             console.log('appointment has been delete');
@@ -229,6 +230,7 @@ class CalendarContainer extends React.Component {
       language={language}
       onButtonClick={this.onButtonClick}
       error={error}
+      translations={translations[language]}
     />;
   }
 }

@@ -1,8 +1,8 @@
 .GalleryCarousel {
-  position: relative;
   margin-bottom: 1.5rem;
   padding-bottom: 2rem;
   border-bottom:solid 0.05rem #b4b4b4;
+
 
   &-Paragraph {
     position: absolute;
@@ -49,6 +49,13 @@
 @media (max-width: 849px) {
   .GalleryCarousel-Paragraph {
     font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .GalleryCarousel-Subsection {
+    width: 100%;
+    height: 35rem;
   }
 }
 

@@ -151,6 +151,7 @@ class ChatboxInterfaceContainer extends React.PureComponent {
       onChange={this.onChange}
       messageValue={messageValue}
       onSubmit={this.onSubmit}
+      sendMessage={this.sendMessage}
       onClose={onClose}
       isAdmin={Auth.isAdmin()}
       mySocketId={mySocketId}

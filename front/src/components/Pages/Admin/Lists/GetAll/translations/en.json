@@ -1,3 +1,29 @@
 {
-
+  "calendar": {
+    "content": "Calendar of appointments"
+  },
+  "services": {
+    "content": "Services"
+  },
+  "actualities": {
+    "content": "Actualities"
+  },
+  "users": {
+    "content": "Users"
+  },
+  "feedbacks": {
+    "content": "Feedbacks"
+  },
+  "comments": {
+    "content": "Comments"
+  },
+  "gallery": {
+    "content": "Gallery"
+  },
+  "beautyTips": {
+    "content": "Beauty tips"
+  },
+  "newsletter": {
+    "content": "Newsletter"
+  }
 }

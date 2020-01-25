@@ -13,9 +13,9 @@ const PresentationView = ({ translations }) => (
           </Typography>
         </Grid>
           <Grid xs={12} md={12} lg={12} item className="pr-6 mb-6 text-presentation">
-            <p>Mon institut Le Petit Salon, je l’ai voulu chaleureux, cosy mais aussi toujours avant gardiste. En recherche permanente de marques qui se démarquent vous trouverez au Petit Salon les emblématiques et luxueux soins Matis, le très confidentiel maquillage PAUL & JOE, mais aussi les jolies petites marques de bijoux Grizzly Cheri et Margote Ceramiste.               Pour estomper les effets du temps, j’ai décidé de faire confiance à la technologie innovante et performante de l’Electrolift Plus classique , je fais confiance à LPG pour affiner votre silhouette et vous sculpter un corps de déesse.
-            Vous souhaitez en savoir plus sur les différentes prestations de l’institut, n’hésitez pas à venir à notre rencontre, Jessica et moi seront ravies de vous conseiller et de vous faire partager notre passion et notre expertise beauté.
-            Magalie</p>
+            <p>Mon institut Beautyfool, est un endroit chaleureux, cosy mais aussi toujours avant gardiste. En recherche permanente de marques qui se démarquent vous trouverez au Petit Salon les emblématiques et luxueux soins Matis, le très confidentiel maquillage PAUL & JOE, mais aussi les jolies petites marques de bijoux Grizzly Cheri et Margote Ceramiste.               Pour estomper les effets du temps, nous avons décidé de faire confiance à la technologie innovante et performante de l’Electrolift Plus classique , nous fesons confiance à LPG pour affiner votre silhouette et vous sculpter un corps de déesse.
+            Vous souhaitez en savoir plus sur les différentes prestations de l’institut, n’hésitez pas à venir à notre rencontre, Carine et lydia seront ravies de vous conseiller et de vous faire partager notre passion et notre expertise beauté.
+            Cynthia</p>
           </Grid>
         </Grid>
       </Grid>
@@ -31,9 +31,7 @@ const PresentationView = ({ translations }) => (
           </Typography>
         </Grid>
           <Grid xs={12} md={12} lg={12} item className="text-presentation mt-12 mb-12 pl-6">
-            <p>Mon institut Le Petit Salon, je l’ai voulu chaleureux, cosy mais aussi toujours avant gardiste. En recherche permanente de marques qui se démarquent vous trouverez au Petit Salon les emblématiques et luxueux soins Matis, le très confidentiel maquillage PAUL & JOE, mais aussi les jolies petites marques de bijoux Grizzly Cheri et Margote Ceramiste.               Pour estomper les effets du temps, j’ai décidé de faire confiance à la technologie innovante et performante de l’Electrolift Plus classique , je fais confiance à LPG pour affiner votre silhouette et vous sculpter un corps de déesse.
-            Vous souhaitez en savoir plus sur les différentes prestations de l’institut, n’hésitez pas à venir à notre rencontre, Jessica et moi seront ravies de vous conseiller et de vous faire partager notre passion et notre expertise beauté.
-            Magalie</p>
+            <p>Notre site web a était créer pour éviter le déplacement de notre chère clientelle pour prendre des rendez-vous, pour parler a une experte en esthetique via la chatbox et de vous informez sur tous ce qui se passe dans votre lieu de bien être tous nos soins sont réservable directement en vous connectant sur votre profile et en cliquant sur les prestations que vous désirez réserver. Votre profile peux contenir des points fidélité qui vous seront attribué aprés chaque prestations qui sera réaliser, plus le soin est long, plus vous gagnerez de point de fidélité. Le site sera en constante évolutions, nous allons rajouter pleins de nouvelles fonctionnalitées pour arranger les beautyfooler (Fan de l'institut beautyfool). Nous espérons que celui-ci vous plaira. Bonne naviguation !</p>
           </Grid>
         </Grid>
       </Grid>
@@ -50,9 +48,7 @@ const PresentationView = ({ translations }) => (
           </Typography>
         </Grid>
           <Grid  md={12} lg={12} item className="mt-12 mb-12">
-            <p>on institut Le Petit Salon, je l’ai voulu chaleureux, cosy mais aussi toujours avant gardiste. En recherche permanente de marques qui se démarquent vous trouverez au Petit Salon les emblématiques et luxueux soins Matis, le très confidentiel maquillage PAUL & JOE, mais aussi les jolies petites marques de bijoux Grizzly Cheri et Margote Ceramiste.               Pour estomper les effets du temps, j’ai décidé de faire confiance à la technologie innovante et performante de l’Electrolift Plus classique , je fais confiance à LPG pour affiner votre silhouette et vous sculpter un corps de déesse.
-            Vous souhaitez en savoir plus sur les différentes prestations de l’institut, n’hésitez pas à venir à notre rencontre, Jessica et moi seront ravies de vous conseiller et de vous faire partager notre passion et notre expertise beauté.
-            Magalie</p>
+            <p>Votre compte est votre espace personnel ou vous retrouverez toutes les informations vous concernant et même vos points fidélité, vos rendez-vous et le bouton pour pouvoir modifier celles-ci</p>
           </Grid>
           </Grid>
           </Grid>
@@ -65,9 +61,7 @@ const PresentationView = ({ translations }) => (
           </Typography>
         </Grid>
           <Grid  md={12} lg={12} item className="mt-12 mb-12 ">
-            <p>on institut Le Petit Salon, je l’ai voulu chaleureux, cosy mais aussi toujours avant gardiste. En recherche permanente de marques qui se démarquent vous trouverez au Petit Salon les emblématiques et luxueux soins Matis, le très confidentiel maquillage PAUL & JOE, mais aussi les jolies petites marques de bijoux Grizzly Cheri et Margote Ceramiste.               Pour estomper les effets du temps, j’ai décidé de faire confiance à la technologie innovante et performante de l’Electrolift Plus classique , je fais confiance à LPG pour affiner votre silhouette et vous sculpter un corps de déesse.
-            Vous souhaitez en savoir plus sur les différentes prestations de l’institut, n’hésitez pas à venir à notre rencontre, Jessica et moi seront ravies de vous conseiller et de vous faire partager notre passion et notre expertise beauté.
-            Magalie</p>
+            <p>Vous pouvez accéder aux actualités de votre institut pour savoir ce qu'il se passe dans celui-ci il peut y avoir des ateliers pour prendez soin de vous, des réductions, des promotions et même être au courrant s'il y'a un problème et que le salon n'est pas ouvert</p>
           </Grid>
           </Grid>
           </Grid>
@@ -81,9 +75,7 @@ const PresentationView = ({ translations }) => (
           </Typography>
         </Grid>
           <Grid  md={12} lg={12} item className="mt-12 mb-12 pl-6">
-            <p>on institut Le Petit Salon, je l’ai voulu chaleureux, cosy mais aussi toujours avant gardiste. En recherche permanente de marques qui se démarquent vous trouverez au Petit Salon les emblématiques et luxueux soins Matis, le très confidentiel maquillage PAUL & JOE, mais aussi les jolies petites marques de bijoux Grizzly Cheri et Margote Ceramiste.               Pour estomper les effets du temps, j’ai décidé de faire confiance à la technologie innovante et performante de l’Electrolift Plus classique , je fais confiance à LPG pour affiner votre silhouette et vous sculpter un corps de déesse.
-            Vous souhaitez en savoir plus sur les différentes prestations de l’institut, n’hésitez pas à venir à notre rencontre, Jessica et moi seront ravies de vous conseiller et de vous faire partager notre passion et notre expertise beauté.
-            Magalie</p>
+            <p>Un moment de bien être cela vous interesserez ? venez dans la page prestations pour toutes les voirs puis faire votre choix et venir nous rendre visite ! de la tête au pied, nous saurrons répondre a toutes vos attentes en terme de beauté, on vous attend !</p>
           </Grid>
           </Grid>
           </Grid>
@@ -97,9 +89,7 @@ const PresentationView = ({ translations }) => (
           </Typography>
         </Grid>
           <Grid  md={12} lg={12} item className="mt-12 mb-12 pl-6">
-            <p>on institut Le Petit Salon, je l’ai voulu chaleureux, cosy mais aussi toujours avant gardiste. En recherche permanente de marques qui se démarquent vous trouverez au Petit Salon les emblématiques et luxueux soins Matis, le très confidentiel maquillage PAUL & JOE, mais aussi les jolies petites marques de bijoux Grizzly Cheri et Margote Ceramiste.               Pour estomper les effets du temps, j’ai décidé de faire confiance à la technologie innovante et performante de l’Electrolift Plus classique , je fais confiance à LPG pour affiner votre silhouette et vous sculpter un corps de déesse.
-            Vous souhaitez en savoir plus sur les différentes prestations de l’institut, n’hésitez pas à venir à notre rencontre, Jessica et moi seront ravies de vous conseiller et de vous faire partager notre passion et notre expertise beauté.
-            Magalie</p>
+            <p>Vous désirez voir l'institut, quelques prestations et photo de beauté ? c'est par ici ! Une galerie avec beaucoup d'image qui vous donneront surement envie de vous faire une petite beauté ou pourquoi pas plusieurs ? </p>
           </Grid>
           </Grid>
           </Grid>
@@ -113,9 +103,7 @@ const PresentationView = ({ translations }) => (
           </Typography>
         </Grid>
           <Grid  md={12} lg={12} item className="mt-12 mb-12 pl-6">
-            <p>on institut Le Petit Salon, je l’ai voulu chaleureux, cosy mais aussi toujours avant gardiste. En recherche permanente de marques qui se démarquent vous trouverez au Petit Salon les emblématiques et luxueux soins Matis, le très confidentiel maquillage PAUL & JOE, mais aussi les jolies petites marques de bijoux Grizzly Cheri et Margote Ceramiste.               Pour estomper les effets du temps, j’ai décidé de faire confiance à la technologie innovante et performante de l’Electrolift Plus classique , je fais confiance à LPG pour affiner votre silhouette et vous sculpter un corps de déesse.
-            Vous souhaitez en savoir plus sur les différentes prestations de l’institut, n’hésitez pas à venir à notre rencontre, Jessica et moi seront ravies de vous conseiller et de vous faire partager notre passion et notre expertise beauté.
-            Magalie</p>
+            <p>Allez Allez ! on sort la trousse à maquillage ! ici c'est toutes vos astuces beauté pour faire de vous des femmes fatal. Nous ne vendons rien sur cette page nous voulons juste montrer a nos clients comment se servir des soins pour pouvoir en profiter pleinement. A vos Rimmel !</p>
           </Grid>
           </Grid>
           </Grid>

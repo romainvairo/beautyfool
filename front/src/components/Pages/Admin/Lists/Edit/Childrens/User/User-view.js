@@ -1,68 +1,106 @@
 import React from 'react';
 import { composeDifference } from '../_composeDifference';
 
+import './User-view.scss';
+
 const UserView = ({ formData, onChange }) => (
   <>
-    <input
-      type="text"
-      className="bg-gray-500"
-      value={formData.username}
-      onChange={onChange('username')}
-    />
-    <input
-      type="text"
-      className="bg-gray-500"
-      value={formData.firstname}
-      onChange={onChange('firstname')}
-    />
-    <input
-      type="text"
-      className="bg-gray-500"
-      value={formData.lastname}
-      onChange={onChange('lastname')}
-    />
-    <input
-      type="text"
-      className="bg-gray-500"
-      value={formData.email}
-      onChange={onChange('email')}
-    />
-    <input
-      type="date"
-      className="bg-gray-500"
-      value={formData.birthdate}
-      onChange={onChange('birthdate')}
-    />
-    <input
-      type="number"
-      className="bg-gray-500"
-      value={formData.fidelity}
-      onChange={onChange('fidelity')}
-    />
-    <input
-      type="text"
-      className="bg-gray-500"
-      value={formData.city}
-      onChange={onChange('city')}
-    />
-    <input
-      type="text"
-      className="bg-gray-500"
-      value={formData.zipcode}
-      onChange={onChange('zipcode')}
-    />
-    <input
-      type="text"
-      className="bg-gray-500"
-      value={formData.address}
-      onChange={onChange('address')}
-    />
-    <input
-      type="text"
-      className="bg-gray-500"
-      value={formData.phone}
-      onChange={onChange('phone')}
-    />
+  <div className="flex mb-12 mt-10">
+    <div className="flex flex-col block mr-6">
+      <label className="labelName">Pseudo</label>
+      <label className="labelName">Prenom</label>
+      <label className="labelName">Nom</label>
+      <label className="labelName">Email</label>
+      <label className="labelName">Date de naissance</label>
+      <label className="labelName">Point de fidelité</label>
+      <label className="labelName">Ville</label>
+      <label className="labelName">Code postal</label>
+      <label className="labelName">Adresse</label>
+      <label className="labelName">Telephone</label>
+    </div>
+      <div className="flex flex-col">
+      <div className="block">
+        <input
+          type="text"
+          className="inputResult"
+          value={formData.username}
+          onChange={onChange('username')}
+        />
+      </div>
+      <div className="block">
+        <input
+          type="text"
+          className="inputResult"
+          value={formData.firstname}
+          onChange={onChange('firstname')}
+        />
+      </div>
+      <div className="block">
+        <input
+          type="text"
+          className="inputResult"
+          value={formData.lastname}
+          onChange={onChange('lastname')}
+        />
+      </div>
+      <div className="block">
+        <input
+          type="text"
+          className="inputResult"
+          value={formData.email}
+          onChange={onChange('email')}
+        />
+      </div>
+      <div className="block">
+        <input
+          type="date"
+          className="inputResult"
+          value={formData.birthdate}
+          onChange={onChange('birthdate')}
+        />
+      </div>
+      <div className="block ">
+          <input
+            type="number"
+            className="inputResult"
+            value={formData.fidelity}
+            onChange={onChange('fidelity')}
+          />
+        </div>
+        <div className="block">
+          <input
+            type="text"
+            className="inputResult"
+            value={formData.city}
+            onChange={onChange('city')}
+          />
+        </div>
+        <div className="block">
+          <input
+            type="text"
+            className="inputResult"
+            value={formData.zipcode}
+            onChange={onChange('zipcode')}
+          />
+        </div>
+        <div className="block">
+          <input
+            type="text"
+            className="inputResult"
+            value={formData.address}
+            onChange={onChange('address')}
+          />
+        </div>
+        <div className="block">
+          <input
+            type="text"
+            className="inputResult"
+            value={formData.phone}
+            onChange={onChange('phone')}
+          />
+        </div>
+      </div>
+    </div>
   </>
 );
 

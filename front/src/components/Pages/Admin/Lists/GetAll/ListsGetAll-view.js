@@ -1,10 +1,11 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 
 import './ListsGetAll.scss';
 import SearchOptionsPanel from '../../SearchOptionsPanel';
 import Foolist from '../../../../Shared/Foolist';
 import ComposerItemGetAll from './ComposerItemGetAll';
+
 
 const ListsGetAllView = ({
   translations,
@@ -16,7 +17,8 @@ const ListsGetAllView = ({
   DeleteSnackbar,
   callDeleteRequest,
   GetSnackbar,
-  ChildrenComponent
+  ChildrenComponent,
+  menuData
 }) => (
   <Grid container justify="space-around" className="list-container">
     <DeleteSnackbar />

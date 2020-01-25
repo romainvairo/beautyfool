@@ -20,27 +20,19 @@ const EditProfileView = ({
   email,
   picture,
   }) => (
-  <div className="contain">
+  <div className="contain mt-3">
     <form onSubmit={onSubmit} className="EditProfileFormForm">
       <div className="pic">
-        <img src={user.picture || require('../../../../assets/images/makeup_1.jpg')} alt="user's pfp" className="editProfile-picture"/>
+        <img src={user.picture || require('../../../../assets/images/makeup_1.jpg')} alt="user's pfp" className="editProfile-picture  w-64 h-64 rounded-full"/>
         <input
           type="file"
           accept="image/*"
           id="input-file"
           className="editProfile-fileSelect"
         />
-        <div className="image-button">
-         {/*htmlFor will targets an input that have the id of its given value */}
-          <label htmlFor="input-file">
-            <Button className="button-modification" variant="contained">
-              {translations.editProfilePicture}
-            </Button>
-          </label>
-        </div>
       </div>
 
-      <div className="list">
+      <div className="list text-center">
         <div className="items">
           <div className="input-items">
             <TextField type="text"
@@ -133,7 +125,7 @@ const EditProfileView = ({
               placeholder={user.email}
             />
           </div>
-          <Button type="submit" variant="contained" color="secondary" className="item mt-2">
+          <Button type="submit" variant="contained" color="secondary" className="item mt-8 mb-8">
           {translations.send}
           </Button>
           <p className="text-red-600 font-bold">

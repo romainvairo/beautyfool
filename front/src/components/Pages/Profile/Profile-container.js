@@ -5,8 +5,7 @@ import { Auth } from '../../../services';
 import ProfileView from './Profile-view';
 import translations from './translations';
 import axios from '../../../axios';
-import { setUserAppointments } from '../../../store/actions/client';
-import { setUser } from '../../../store/actions/client';
+import { setUser, setUserAppointments } from '../../../store/actions/client';
 
 const mapStateToProps = state => ({
   language: state.clientReducer.language,
@@ -19,6 +18,11 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class ProfileContainer extends React.Component {
+  componentDidMount = () => {
+    // On récupèere tout les rdv au montage du composant
+    this.findAppointmentsByUserId();
+  }
+
   onToggle = () => {
     const { user, setUser } = this.props;
 
@@ -58,11 +62,11 @@ class ProfileContainer extends React.Component {
   }
 
   findAppointmentsByUserId = () => {
+    const { setUserAppointments } = this.props;
     axios.get(`/api/appointments/user/${Auth.getUser()._id}`)
       .then(({ data }) => {
-        const { setUserAppointment } = this.props;
 
-        setUserAppointment(data.data);
+        setUserAppointments(data.data);
       })
       .catch(err => {
         console.error(err);
@@ -77,6 +81,7 @@ class ProfileContainer extends React.Component {
       isNewsletterChecked={user.newsletterSubscribed}
       onToggle={this.onToggle}
       user={user}
+      appointments={user.appointments}
       onDelete={this.onDelete}
       onLogout={this.onLogout}
     />;

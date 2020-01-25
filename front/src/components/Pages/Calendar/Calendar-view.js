@@ -41,6 +41,7 @@ const CalendarView = ({ onButtonClick, error, price, duration, onTimeRangeSelect
           <DayPilotCalendar
             {...state}
             onTimeRangeSelect={onTimeRangeSelected}
+            locale="FR-fr"
             ref={setRef}
           />
         </Grid>

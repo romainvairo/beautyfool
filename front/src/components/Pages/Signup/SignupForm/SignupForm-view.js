@@ -88,7 +88,7 @@ const SignupFormView = ({
           />
         </Grid>
         <Grid container item justify="center">
-          <Button type="submit" variant="contained" color="primary">
+          <Button type="submit" variant="contained">
             {translations.submitButton}
           </Button>
         </Grid>

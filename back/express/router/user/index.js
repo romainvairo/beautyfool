@@ -18,4 +18,5 @@ app.get('/api/users/:id/email/confirm', confirmationEmail);
 app.get('/api/users/page/:page', getUsers);
 app.get('/api/users/:id', getUserById);
 app.post('/api/users/:id/edit', editUserById);
+app.put('/api/users/:id/edit', editUserById);
 app.delete('/api/users/:id/delete', deleteUserById);

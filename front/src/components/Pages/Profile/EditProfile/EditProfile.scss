@@ -7,11 +7,15 @@
     height: 37.3rem;
   }
 
+  .editProfile-picture {
+    margin-left : 5rem;
+    margin-bottom: 2rem;
+  }
   .editProfile-fileSelect {
     font-size: 1rem;
     font-family: Raleway, sans-serif;
     font-weight: bold;
-    background-color: red;
+    background-color: lightgray;
     cursor: pointer;
   }
 
@@ -23,10 +27,8 @@
     padding: 0.5em;
     color: white;
     font-family: monospace;
-    height: 24rem;
     flex-grow: 1;
     margin: 2rem;
-    width: 15%;
     padding: 5rem;
     }
 
@@ -38,6 +40,7 @@
   }
 
   .list {
+    margin-top: 2rem;
     display: flex;
     justify-content: flex-start;
     flex-grow: 2;
@@ -53,13 +56,6 @@
     margin-left: 100px;
   }
 
-  .button-modification {
-    background-color: rgb(83, 127, 247) !important;
-    color: #fff !important;
-    text-transform: none !important;
-    margin-top: 1.5rem !important;
-  }
-
   .items {
     display: flex;
     flex-direction: column;
@@ -72,7 +68,9 @@
 }
 
 @media (max-width: 800px) {
-
+  .editProfile-picture {
+    margin-bottom: 2rem;
+  }
 
   .pic{
     margin-top: 20px;
@@ -83,33 +81,14 @@
     }
 
   .list{
-    display: flex;
-    justify-content: center;
     margin-top: 2rem;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-right: 2rem;
     }
 
-  .image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-  }
-
-  .image-button {
-    margin-top: 20px;
-  }
-
-  .button-modification {
-    background-color: #939ba0 !important;
-  }
-
-  .input-item{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
-  }
-  .items{
-    display: flex;
-    margin-bottom: 1rem;
+  .input-items {
+    margin-top: 2rem;
   }
 }
 

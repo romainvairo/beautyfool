@@ -26,6 +26,27 @@
     font-size: 1.5rem;
   }
 
+
+  @media (max-width: 800px) {
+    .Sitemap {
+      margin: 0rem;
+    }
+      &-Title-Category_1, &-Title-Category_2 {
+        margin: 0rem;
+        font-weight: bold;
+        font-size: 2rem;
+        color: #b83280;
+        margin-top: 2.68rem;
+      }
+
+      &-Link {
+        margin: 0rem;
+        font-size: 1.1rem;
+      }
+
+  }
+
+
   &-Link:hover {
     color: #b83280;
     text-decoration: underline;

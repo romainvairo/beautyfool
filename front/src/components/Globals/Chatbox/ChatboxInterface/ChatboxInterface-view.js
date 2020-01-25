@@ -6,9 +6,9 @@ import CloseIcon from '@material-ui/icons/Close';
 import Dropdown from '../Dropdown';
 import './ChatboxInterface.scss';
 
-const ChatboxInterfaceView = ({ currentUser, mySocketId, translations, isAdmin, onClose, onItemClick, messages, onChange, messageValue, onSubmit, users }) => (
+const ChatboxInterfaceView = ({ currentUser, mySocketId, translations, isAdmin, onClose, onItemClick, messages, onChange, messageValue, onSubmit, users, sendMessage }) => (
   <Grid container className="chatbox-interface">
-    <Grid container item className="w-64 h-64 bg-gray-400 rounded-lg">
+    <Grid container item className="chatbox-all w-64 h-64 rounded-lg">
       <Grid xs={12} container item justify="space-between" className="h-12">
         <Grid xs={3} item>
           <Tooltip title={translations.dropdownTooltip}>
@@ -31,7 +31,7 @@ const ChatboxInterfaceView = ({ currentUser, mySocketId, translations, isAdmin, 
         </Grid>
       </Grid>
 
-      <Grid xs={12} container item id="chat-messages" className="overflow-auto h-40 messages px-2">
+      <Grid xs={12} container item id="chat-messages" className="input-chatBox-send overflow-auto messages px-2">
         {messages.map(message => (
           <Grid
             key={message.id}
@@ -54,14 +54,15 @@ const ChatboxInterfaceView = ({ currentUser, mySocketId, translations, isAdmin, 
       </Grid>
 
       <Grid xs={12} item className="h-6">
-        <form onSubmit={onSubmit} className="text-center mb-1 pl-2 pr-2">
+        <form onSubmit={onSubmit} className="text-center pl-2 pr-2">
           <input
             type="text"
-            className="input-chatbox w-full pl-2 rounded-lg"
+            className="input-chatbox font-bold pl-2 mb-8 rounded-lg border-solid border border-black"
             placeholder={translations.placeholder}
             onChange={onChange('messageValue')}
             value={messageValue}
           />
+          <button className="text-xl pl-4" onClick={onSubmit}><i className="fas fa-arrow-circle-left"></i></button>
         </form>
       </Grid>
     </Grid>

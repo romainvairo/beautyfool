@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Auth } from '../../../../services';
 
+import './AdminButton.scss';
+
 const AdminButtonView = () => (
-  <div>
-    <Link className="adminButton-link m-8 text-lg px-4 text-white bg-red-600 font-bold rounded border-black border-solid border" to="/admin">Menu Admin</Link>
-  </div>
+    <Link className="adminButton-link font-bold" to="/admin"><i className="AdminIcon fas fa-user-shield block text-center"></i><span className="block text-center text-xs">
+          Admin
+        </span></Link>
 );
 
 export default AdminButtonView;

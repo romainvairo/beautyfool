@@ -16,7 +16,7 @@ const ContactView = ({ translations, name, email, subject, message, onChange, on
     <Grid xs={12} item className="flex justify-center">
       <Grid lg={12} item className="flex mt-20 justify-center">
         <Grid xs={12} item className="flex justify-center">
-          <Grid lg={6} item className="flex">
+          <Grid lg={4} item className="flex">
             <form onSubmit={onSubmit} className="w-full">
               <Grid item className="flex mt-4">
                 <TextField

@@ -1,16 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import UserActionsView from './UserActions-view';
 import translations from './translations';
-import { setAdminUser } from '../../../../../../../store/actions/admin';
+import { setAdminData } from '../../../../../../../store/actions/admin';
 
 const mapStateToProps = state => ({
   language: state.clientReducer.language
 });
 
 const mapDispatchToProps = dispatch => ({
-  setAdminUser: value => dispatch(setAdminUser(value)),
+  setAdminData: value => dispatch(setAdminData(value)),
 });
 
 class UserActionsContainer extends React.PureComponent {
@@ -19,24 +20,24 @@ class UserActionsContainer extends React.PureComponent {
     redirection: '',
   }
 
-  editAction = user => () => {
-    const { setAdminUser } = this.props;
-    setAdminUser(user);
-    this.setState({ redirection: `/admin/users/${user._id}/edit` });
+  editAction = item => () => {
+    const { setAdminData, match } = this.props;
+    const { category } = match.params;
+    setAdminData(item);
+    this.setState({ redirection: `/admin/${category}/${item._id}/edit` });
   }
 
   render() {
     const { language, item, callDeleteRequest } = this.props;
     const { redirection } = this.state;
-
     return <UserActionsView
       translations={translations[language]}
       callDeleteRequest={callDeleteRequest}
       editAction={this.editAction}
-      user={item}
+      item={item}
       redirection={redirection}
     />;
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserActionsContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserActionsContainer));

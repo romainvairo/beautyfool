@@ -8,11 +8,11 @@ export class DeleteSnackbar extends RequestSnackbarBridge {
   setter = () => {
     const { match } = this.context.props;
 
-    const category = singularify(match.params.category);
+    const { category } = match.params;
 
     this
       .setTranslations(translations)
-      .setRequest(user => axios.delete('/api/users/' + user._id + '/delete'))
+      .setRequest(item => axios.delete(`/api/${category}/${item._id}/delete`))
       .formatAll(category);
   }
 

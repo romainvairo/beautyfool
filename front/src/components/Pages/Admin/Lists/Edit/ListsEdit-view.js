@@ -26,8 +26,8 @@ const ListsEditView = ({
           <Grid xs={12} item>
             <ChildrenComponent formData={formData} onChange={onChange} />
           </Grid>
-          <Grid xs={12} item className="mt-4">
-            <Button variant="contained" color="primary" type="submit">
+          <Grid xs={12} item className="mt-4 mb-4">
+            <Button variant="contained" type="submit">
               {translations.editButton}
             </Button>
           </Grid>

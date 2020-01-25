@@ -9,8 +9,7 @@ const AdminMenuView = ({ translations, menuData }) => menuData.map(menuData => (
     <Button
       component={Link}
       variant="contained"
-      color="primary"
-      className="menu-button w-full"
+      className="menu-button w-full font-bold"
       to={translations[menuData].link}
     >
       {translations[menuData].content}
