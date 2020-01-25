@@ -14,7 +14,10 @@ export class EditSnackbar extends RequestSnackbarBridge {
 
     this
       .setTranslations(translations)
-      .setRequest(formData => axios.put(`/api/${category}/${id}/edit`, formData))
+      .setRequest(formData => {
+        formData.id = id;
+        return axios.put(`/api/${category}/${id}/edit`, formData)
+      })
       .formatAll(category);
   }
 
