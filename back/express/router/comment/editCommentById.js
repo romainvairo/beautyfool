@@ -11,5 +11,5 @@ module.exports = async (req, res) => {
     return end(res, { error: errorCodes.comment.editById });
   }
 
-  end(end, null, true);
+  end(res, null, true);
 }
