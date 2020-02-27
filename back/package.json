@@ -4,16 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development DEBUG=beautyfool:* nodemon .",
+    "start:dev": "cross-env NODE_ENV=development DEBUG=beautyfool:* nodemon .",
     "db:populate": "cross-env DEBUG=beautyfool:* node mongoose/Actions/populate",
     "db:clear": "cross-env DEBUG=beautyfool:* node mongoose/Actions/clear",
-    "db:reset": "cross-env DEBUG=beautyfool:* node mongoose/Actions/reset"
+    "db:reset": "cross-env DEBUG=beautyfool:* node mongoose/Actions/reset",
+    "start": "nodemon ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.7",
     "body-parser": "^1.19.0",
+    "chalk": "^3.0.0",
+    "cors": "^2.8.5",
     "debug": "^4.1.1",
     "express": "^4.17.1",
     "helmet": "^3.21.2",
@@ -30,7 +33,6 @@
     "url-slug": "^2.2.0"
   },
   "devDependencies": {
-    "chalk": "^3.0.0",
     "cross-env": "^6.0.3",
     "supports-color": "^7.1.0"
   }
