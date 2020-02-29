@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-import { Auth } from '../../../services';
+import { Auth } from '../../../services/Auth';
 
 const ProtectedRoute = ({ role, ...props }) => {
   return Auth.hasRole(role)

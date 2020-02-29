@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ChatboxInterfaceView from './ChatboxInterface-view';
 import socket from '../../../../socket';
 import { onChange } from '../../../../utils';
-import { Auth } from '../../../../services';
+import { Auth } from '../../../../services/Auth';
 import translations from './translations';
 import '../Chatbox.scss';
 

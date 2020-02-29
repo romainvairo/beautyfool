@@ -1,5 +1,5 @@
 import translations from './translations';
-import { RequestSnackbarBridge } from '../../../../../../../services';
+import { RequestSnackbarBridge } from '../../../../../../../services/RequestSnackbarBridge';
 import axios from '../../../../../../../axios';
 import { singularify } from '../../../../../../../utils';
 

@@ -7,7 +7,6 @@ import './Calendar.scss';
 import CalendarView from './Calendar-view';
 import axios from '../../../../axios';
 import { getDates, correctFormatDate } from '../../../../utils';
-import { Auth } from '../../../../services';
 import { onForward, onBackward, setDate } from './actions';
 import translations from './translations';
 

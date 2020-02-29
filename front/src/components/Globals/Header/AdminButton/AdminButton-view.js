@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Auth } from '../../../../services';
+import { Auth } from '../../../../services/Auth';
 
 import './AdminButton.scss';
 

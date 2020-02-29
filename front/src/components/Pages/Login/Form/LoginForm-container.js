@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import LoginFormView from './LoginForm-view';
 import translations from './translations';
 import axios from '../../../../axios';
-import { Auth } from '../../../../services';
+import { Auth } from '../../../../services/Auth';
 
 const mapStateToProps = (state) => ({
   language: state.clientReducer.language,

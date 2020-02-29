@@ -1,7 +1,7 @@
 import React from 'react';
 import { isFunction } from 'lodash';
 
-import { MultiSnackbar } from '..';
+import { MultiSnackbar } from '../MultiSnackbar';
 import ErrorElement from './ErrorElement';
 
 /**

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { Auth } from '../../../../services';
+import { Auth } from '../../../../services/Auth';
 import ProfileButtonView from './ProfileButton-view';
 import translations from './translations';
 
