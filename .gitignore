@@ -7,8 +7,6 @@ node_modules
 
 # testing
 /coverage
-/files/picture/*
-/files/*.*
 
 # misc
 .DS_Store
@@ -24,4 +22,4 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 /ignore
-!/files/picture/.gitkeep
+build

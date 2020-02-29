@@ -18,7 +18,8 @@ module.exports = async (req, res) => {
 
       // Petit correction sur l'url sauvegarder dans l'utilisateur, ajout du nom de domaine
       // A changer une fois en prod
-      userData.picture = 'http://localhost:8000' + fileData.fileUri.replace(/\\+/, '/');
+      /* userData.picture = 'http://localhost:8000' + fileData.fileUri.replace(/\\+/, '/'); */
+      userData.picture = 'https://beautyfool.herokuapp.com' + fileData.fileUri.replace(/\\+/, '/');
     };
 
     await UserController.editById(req.params.id, userData);

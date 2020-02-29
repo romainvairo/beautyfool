@@ -3,11 +3,11 @@ const path = require('path');
 
 const { app } = require('../../config/server');
 
-const build = express.static('../front/build');
-const filesPath = path.join(__dirname, '/../../../files');
+const build = express.static(path.join(__dirname, '/../../public/build'));
+const filesPath = path.join(__dirname, '/../../public');
 
-app.use('/', build);
-app.use('*', build);
+app.use(build);
+app.use(build);
 
 app.get('/api/files/:fileType/:fileName', (req, res) => {
   const { fileType, fileName } = req.params;
@@ -20,4 +20,9 @@ app.get('/api/files/:fileType/:fileName', (req, res) => {
 
     res.end();
   });
+});
+
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(__dirname, '/../../public/build/index.html'));
+  res.end();
 });

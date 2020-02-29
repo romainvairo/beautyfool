@@ -23,7 +23,7 @@ module.exports = async function fileWriter(fileData) {
   // make an URI for the file to create
   const fileUri = path.join('/api/files', fileData.type, fileName);
   // make a path where to create the file
-  const filePath = path.join(__dirname, '../../files', fileData.type, fileName);
+  const filePath = path.join(__dirname, '../public', fileData.type, fileName);
 
   // Utilisation du buffer de node pour préparer les données sous un format correct
   const buffer = Buffer.from(Object.values(fileData.buffer));
